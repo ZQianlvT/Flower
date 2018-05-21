@@ -469,96 +469,39 @@
     <div class="header">
         <div class="header-container">
             <h1 class="logo">
-                <a href="javascript:;" class="link-team-menu">
-                    <span class="name">alikes</span>
+                <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-team-menu">
+                    alikes
                 </a>
             </h1>
 
             <ul class="nav">
                 <li class="" id="nav-project">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/projects" data-stack data-stack-root>项目</a>
-                </li>
-                <li class="" id="nav-events">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/events" data-stack data-stack-root>动态</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/project/listProject">项目</a>
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-calendar">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/calendars" data-stack data-stack-fluid
-                       data-stack-root>日历</a>
-                </li>
-
-                <li class="" id="nav-dashboard">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/dashboard" data-stack data-stack-root>鹰眼</a>
-                </li>
-                <li class="" id="nav-reports">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/reports" data-stack data-stack-root>汇报</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/calendar/calendar">日历</a>
                 </li>
                 <li class="dividing"></li>
-
                 <li class="" id="nav-members">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/members" data-stack data-stack-root>团队</a>
-                </li>
-                <li class="" id="nav-me">
-                    <a href="/members/231e0ddd353440c883f9874a555f8adc?me=1" data-stack data-stack-root>我自己</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/team/listTeam">团队</a>
                 </li>
 
                 <li id="nav-upgrade">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/upgrade?utm_source=Tower&amp;utm_medium=Web&amp;utm_campaign=Nav-Pro-Trial-Remaining"
-                       class="link-remaining" data-tower-pro="header-upgrade-ad" target="_blank">
-                        试用剩余 26 天
+                    <a href="#"
+                       class="link-remaining" data-tower-pro="header-upgrade-ad" >
+                        本软件完全免费，并不禁止传播。
                     </a>
                 </li>
 
             </ul>
 
             <div class="command-bar">
-                <div class="search-wrap">
-                    <a href="javascript:;" class="link-search" title="搜索"><i class="twr twr-search"></i></a>
-                    <form id="form-search" class="form" method="get"
-                          action="/teams/7feef4ba8611443ebd06db497618beb4/search">
-                        <input id="txt-search" type="text" class="keyword no-border" name="keyword" placeholder="搜索"
-                               autocomplete="off"/>
-                    </form>
-                </div>
-
-                <audio src="/assets/notification-8c3a5ef39c8b88e19cf2b732747a6691d43ffa68d25b3db74ebe418bf41fad63.mp3"
-                       id="notification-audio" preload="auto"></audio>
-
-                <div class="notification-info">
-                    <a href="javascript:;" id="notification-count" class="label " title="新的通知" data-unread-count="0"
-                       data-url="/teams/7feef4ba8611443ebd06db497618beb4/notifications/unread_counts">
-                        <span class="twr twr-bell-o bell"></span>
-                        <span class="num">0</span>
-                    </a>
-                    <div class="noti-pop">
-                        <div class="noti-pop-hd">
-                            <b class="title">通知</b>
-                            <a class="mark-as-read" id="noti-mark-read" data-loading="true" data-remote="true"
-                               rel="nofollow" data-method="post"
-                               href="/teams/7feef4ba8611443ebd06db497618beb4/notifications/read_all">
-                                <span class="twr twr twr-check"></span>
-                                全部标记为已读
-                            </a></div>
-                        <div class="noti-pop-list-wrap">
-                            <div class="noti-pop-list notification-list">
-
-                            </div>
-                        </div>
-                        <div class="noti-pop-empty">- 没有新通知 -</div>
-                        <div class="noti-pop-footer">
-                            <a class="noti-settings" data-stack="true" data-stack-root="true"
-                               href="/members/231e0ddd353440c883f9874a555f8adc/notification_settings">
-                                <i class="twr twr-cog"></i> 通知设置
-                            </a> <a class="noti-all-link" data-stack="true" data-stack-root="true"
-                                    href="/teams/7feef4ba8611443ebd06db497618beb4/notifications">查看全部通知</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="account-info">
                     <div class="member-settings">
                         <a class="link-member-menu ab-test-old" href="javascript:;" data-new-feature="false">
                             <span class="twr twr-caret-down"></span>
-                            <img class="avatar" src="/assets/default_avatars/noon.jpg" alt="Noon"/>
+                            <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg" alt="Noon"/>
                         </a>
                     </div>
                 </div>
@@ -566,54 +509,14 @@
         </div>
     </div>
 
-
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a data-stack="true" data-stack-root="true" href="/members/231e0ddd353440c883f9874a555f8adc/settings">个人设置</a>
+            <li><a  href="${pageContext.request.contextPath}/base/goURL/user/updateUser">个人设置</a>
             </li>
-            <li><a data-stack="true" data-stack-root="true"
-                   href="/members/231e0ddd353440c883f9874a555f8adc/notification_settings">通知设置</a></li>
-            <li><a data-stack="true" data-stack-root="true"
-                   href="/members/231e0ddd353440c883f9874a555f8adc/stars">我的关注</a></li>
             <li class="part-line"></li>
-            <li><a target="_blank" href="/choices">企业服务精选</a></li>
-            <li><a target="_blank" href="/downloads">下载客户端</a></li>
-            <li><a target="_blank" href="/help">帮助中心</a></li>
-            <li><a id="link-roadmap" target="_blank" href="/roadmap">最新功能</a></li>
-            <li><a rel="nofollow" data-method="DELETE" href="/users/sign_out">退出</a></li>
+            <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
         </ul>
     </script>
-    <script id="tpl-team-menu" type="text/html">
-        <ul class="menu">
-            <li><a href="/teams/7feef4ba8611443ebd06db497618beb4/settings" data-stack data-stack-root>团队账户</a></li>
-
-            <li><a href="/teams/7feef4ba8611443ebd06db497618beb4/external_apps" data-stack data-stack-root>应用中心</a></li>
-
-            <li><a href="/teams/7feef4ba8611443ebd06db497618beb4/invite/new" data-stack data-stack-root>邀请成员</a></li>
-
-            <li>
-                <a class="js-feature-migrated" data-migrated-feature="team-stats" href="javascript:;">团队统计</a>
-            </li>
-
-            <li>
-                <a href="/teams/7feef4ba8611443ebd06db497618beb4/upgrade" data-stack data-stack-root>
-                    了解 Pro 版
-                </a>
-            </li>
-
-            <p class="title"><span>切换团队</span></p>
-            <ul class="menu scroll team-list">
-                <li>
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff">HYLT
-                    </a>
-                </li>
-            </ul>
-            <li class="part-line"></li>
-
-            <li class="small"><a href="/launchpad?skip=1">创建/管理团队</a></li>
-        </ul>
-    </script>
-
 
     <div class="container workspace">
         <div class="page">
