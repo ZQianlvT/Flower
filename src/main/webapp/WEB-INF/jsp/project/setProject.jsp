@@ -521,7 +521,7 @@
     <div class="container workspace">
         <div class="page "
              data-url="/projects/d5ca7313dcda442ba53d6d4190aa4d92">
-            <a href="/projects/d5ca7313dcda442ba53d6d4190aa4d92" class="link-page-behind" data-stack data-stack-fluid>test</a>
+            <a href="${pageContext.request.contextPath}/base/goURL/project/listBoard" class="link-page-behind">test</a>
         </div>
         <div class="page">
 
@@ -550,47 +550,6 @@
                         </div>
                     </div>
 
-                    <div class="form-item allow-visitor-lock">
-                        <div class="form-field">
-                            <label>
-                                <input type="checkbox" name="guest_lockable"/>
-                                对访客隐藏敏感内容
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-item select-section">
-                        <h4>项目类型</h4>
-
-                        <label class="project-radio">
-                            <input type="radio" name="project_type" value="0"/>
-                            标准项目
-                            <small>更好地组织、细分和管理任务，适用于一般项目管理</small>
-                        </label>
-
-                        <label class="project-radio">
-                            <input type="radio" name="project_type" value="1" checked/>
-                            看板项目
-                            <small>擅长处理流程化任务，适用于产品研发、用户支持等场景</small>
-                        </label>
-                    </div>
-
-                    <div class="form-item select-section">
-                        <h4>项目公开性</h4>
-
-                        <label class="project-radio">
-                            <input type="radio" name="project_is_public" value="false" checked/>
-                            私有项目
-                            <small>仅项目成员可以查看和编辑该项目</small>
-                        </label>
-
-                        <label class="project-radio">
-                            <input type="radio" name="project_is_public" value="true"/>
-                            <span>公开项目</span>
-                            <small>任何人都可以通过链接查看该项目，仅项目成员可以编辑该项目</small>
-                        </label>
-                    </div>
-
 
                     <div class="form-buttons">
                         <button type="submit" id="btn-save-settings" class="btn btn-primary btn-large"
@@ -602,28 +561,6 @@
                 <hr>
 
 
-                <div class="setting-section">
-                    <h4>导出任务</h4>
-                    <p class="desc">将项目中所有的任务导出成表格，方便自行统计整理。</p>
-                    <a class="btn btn-mini" id="link-export-as-csv" data-type="script" data-remote="true"
-                       data-method="get" href="/projects/d5ca7313dcda442ba53d6d4190aa4d92/export_as_csv">下载 CSV</a>
-                </div>
-
-                <div class="setting-section" id="section-webhooks">
-                    <h4>Webhooks</h4>
-                    <p class="desc">
-                        使用 webhooks，你可以在
-                        <a href="https://pubu.im" title="化繁为简，轻松整合你团队信息流的沟通服务" target="_blank">零信</a>、<a
-                            href="https://bearychat.com" title="以团队为中心的沟通工具" target="_blank">BearyChat</a>
-                        等工具上接收项目的最新动态。
-                    </p>
-
-                    <ul class="webhooks-list">
-                    </ul>
-
-                    <a href="/projects/d5ca7313dcda442ba53d6d4190aa4d92/webhooks/new" class="btn btn-mini" data-stack>添加
-                        webhook</a>
-                </div>
 
                 <div class="setting-section" id="section-archive">
                     <h4>归档项目</h4>
@@ -680,7 +617,7 @@
         </div>
     </div>
     <div class="footer">
-        &copy; 彩程设计
+        &copy; 晴天设计
     </div>
 
 
@@ -717,12 +654,6 @@
     //]]>
 </script>
 
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" data-intercom="false" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {
     "hide_default_launcher": true,
     "guid": "231e0ddd353440c883f9874a555f8adc",

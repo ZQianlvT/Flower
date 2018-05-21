@@ -520,7 +520,7 @@
 
     <div class="container workspace">
         <div class="page">
-            <a href="/teams/7feef4ba8611443ebd06db497618beb4/projects" class="link-page-behind" data-stack>所有项目</a>
+            <a href="${pageContext.request.contextPath}/base/goURL/project/listProject" class="link-page-behind">所有项目</a>
         </div>
         <div class="page">
 
@@ -545,46 +545,6 @@
                         </div>
                     </div>
 
-                    <div class="form-item allow-visitor-lock">
-                        <div class="form-field">
-                            <label>
-                                <input type="checkbox" name="guest_lockable"/>
-                                对访客隐藏敏感内容
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="setting-section select-section">
-                        <h4>项目类型</h4>
-
-                        <label class="project-radio">
-                            <input type="radio" name="project_type" value="0" checked/>
-                            标准项目
-                            <small>更好地组织、细分和管理任务，适用于一般项目管理</small>
-                        </label>
-
-                        <label class="project-radio">
-                            <input type="radio" name="project_type" value="1"/>
-                            看板项目
-                            <small>擅长处理流程化任务，适用于产品研发、用户支持等场景</small>
-                        </label>
-                    </div>
-
-                    <div class="setting-section select-section">
-                        <h4>项目公开性</h4>
-
-                        <label class="project-radio">
-                            <input type="radio" name="project_is_public" value="false" checked/>
-                            私有项目
-                            <small>仅项目成员可以查看和编辑该项目</small>
-                        </label>
-
-                        <label class="project-radio">
-                            <input type="radio" name="project_is_public" value="true"/>
-                            <span>公开项目</span>
-                            <small>任何人都可以通过链接查看该项目，仅项目成员可以编辑该项目</small>
-                        </label>
-                    </div>
 
 
                     <div class="setting-section">
@@ -593,18 +553,11 @@
                         </h4>
 
                         <p class="desc">
-                            管理员可以邀请和移除项目成员，只有被邀请的团队成员才能访问该项目的信息。点击这里查看<a href="https://tower.im/help/articles/27"
-                                                                         target="_blank" rel="nofollow">如何设置成员权限</a>。
+                            管理员可以邀请和移除项目成员，只有被邀请的团队成员才能访问该项目的信息。
                         </p>
 
 
                         <div class="manage-members-tabs">
-                            <div class="tabs-header">
-                                <a href="javascript:;" class="tab-header" data-tab="team">团队成员</a>
-                                <a href="javascript:;" class="tab-header" data-tab="email">邮件邀请</a>
-                                <a href="javascript:;" class="tab-header" data-tab="wechat">微信邀请</a>
-                            </div>
-
                             <div class="tab" data-tab="team">
                                 <div class="manage-members">
 
@@ -638,77 +591,6 @@
                                 </div>
                             </div>
 
-                            <div class="tab" data-tab="email">
-
-                                <div class="form-item">
-                                    <div class="form-field">
-                                        <div class="invite-item">
-                                            <div class="invite-field">
-                                                <input type="email" class="invite-email no-border"
-                                                       placeholder="请输入新成员的邮箱"/>
-
-                                                <div class="invite-role-field">
-                                                    <select class="invite-role" id="choose-role" tabindex="-1">
-                                                        <option value="0" selected>成员</option>
-                                                        <option value="1">管理员</option>
-                                                        <option value="3">访客</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="invite-item">
-                                            <div class="invite-field">
-                                                <input type="email" class="invite-email no-border"
-                                                       placeholder="请输入新成员的邮箱"/>
-
-                                                <div class="invite-role-field">
-                                                    <select class="invite-role" id="choose-role" tabindex="-1">
-                                                        <option value="0" selected>成员</option>
-                                                        <option value="1">管理员</option>
-                                                        <option value="3">访客</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="invite-item">
-                                            <div class="invite-field">
-                                                <input type="email" class="invite-email no-border"
-                                                       placeholder="请输入新成员的邮箱"/>
-
-                                                <div class="invite-role-field">
-                                                    <select class="invite-role" id="choose-role" tabindex="-1">
-                                                        <option value="0" selected>成员</option>
-                                                        <option value="1">管理员</option>
-                                                        <option value="3">访客</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="add-invite-wrap"><a href="javascript:;" id="add-invite-item">再加一个</a></p>
-                                </div>
-                            </div>
-
-                            <div class="tab" data-tab="wechat">
-
-
-                                <div class="form-item form-wechat-item">
-                                    <div class="form-field">
-                                        <div class="wechat-invite">
-                                            <div class="qrcode-wrap loading" data-url="/wechat/qrcode?type=8">
-                                                <p class="indicator">正在加载二维码</p>
-                                                <img class="qrcode" alt="微信二维码" title="扫描这个二维码获取微信邀请函"/>
-                                            </div>
-                                            <div class="wechat-desc">
-                                                <h5>扫码邀请</h5>
-                                                <p>用微信扫描二维码获取邀请函，<br>
-                                                    转发给微信好友，即可邀请他们加入你的项目。</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
 
@@ -726,7 +608,7 @@
         </div>
     </div>
     <div class="footer">
-        &copy; 彩程设计
+        &copy; 晴天设计
     </div>
 
 
@@ -763,12 +645,6 @@
     //]]>
 </script>
 
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" data-intercom="false" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {
     "hide_default_launcher": true,
     "guid": "231e0ddd353440c883f9874a555f8adc",

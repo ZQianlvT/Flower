@@ -553,8 +553,8 @@
 
                 <div class="projects grid-view">
                     <a class="project c2 i1 project-welcome"
-                       href="/projects/395a049851e94e85b852c7ba9287d3aa" data-access-id="20987441" data-group-ids="[]"
-                       data-stack data-stack-root>
+                       href="${pageContext.request.contextPath}/base/goURL/project/listBoard" data-access-id="20987441" data-group-ids="[]"
+                       >
 
                         <span class="badge"></span>
                         <span class="name">熟悉 Tower</span>
@@ -566,7 +566,7 @@
                     </a>
 
                     <a class="project c2 i2"
-                       href="/projects/d5ca7313dcda442ba53d6d4190aa4d92" data-access-id="21014433" data-group-ids="[]"
+                       href="${pageContext.request.contextPath}/projects/d5ca7313dcda442ba53d6d4190aa4d92" data-access-id="21014433" data-group-ids="[]"
                        data-stack data-stack-root data-stack-fluid>
 
                         <span class="badge"></span>
