@@ -469,7 +469,7 @@
     <div class="header">
         <div class="header-container">
             <h1 class="logo">
-                <a href="${pageContext.request.contextPath}/base/goURL/updateTeam" class="link-team-menu">
+                <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-team-menu">
                     alikes
                     <%--<span class="name">alikes</span>--%>
                 </a>
@@ -490,7 +490,7 @@
 
                 <li id="nav-upgrade">
                     <a href="#"
-                       class="link-remaining" data-tower-pro="header-upgrade-ad" >
+                       class="link-remaining" data-tower-pro="header-upgrade-ad">
                         本软件完全免费，并不禁止传播。
                     </a>
                 </li>
@@ -498,15 +498,6 @@
             </ul>
 
             <div class="command-bar">
-                <div class="search-wrap">
-                    <a href="#" class="link-search" title="搜索"><i class="twr twr-search"></i></a>
-                    <form id="form-search" class="form" method="get"
-                          action="${pageContext.request.contextPath}/project/search">
-                        <input id="txt-search" type="text" class="keyword no-border" name="keyword" placeholder="搜索"
-                               autocomplete="off"/>
-                    </form>
-                </div>
-
                 <div class="account-info">
                     <div class="member-settings">
                         <a class="link-member-menu ab-test-old" href="javascript:;" data-new-feature="false">
@@ -519,51 +510,12 @@
         </div>
     </div>
 
-
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a data-stack="true" data-stack-root="true" href="/members/231e0ddd353440c883f9874a555f8adc/settings">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/base/goURL/user/updateUser">个人设置</a>
             </li>
-            <li><a data-stack="true" data-stack-root="true"
-                   href="/members/231e0ddd353440c883f9874a555f8adc/notification_settings">通知设置</a></li>
-            <li><a data-stack="true" data-stack-root="true"
-                   href="/members/231e0ddd353440c883f9874a555f8adc/stars">我的关注</a></li>
             <li class="part-line"></li>
-            <li><a target="_blank" href="/choices">企业服务精选</a></li>
-            <li><a target="_blank" href="/downloads">下载客户端</a></li>
-            <li><a target="_blank" href="/help">帮助中心</a></li>
-            <li><a id="link-roadmap" target="_blank" href="/roadmap">最新功能</a></li>
-            <li><a rel="nofollow" data-method="DELETE" href="/users/sign_out">退出</a></li>
-        </ul>
-    </script>
-    <script id="tpl-team-menu" type="text/html">
-        <ul class="menu">
-            <li><a href="/teams/7feef4ba8611443ebd06db497618beb4/settings" data-stack data-stack-root>团队账户</a></li>
-
-            <li><a href="/teams/7feef4ba8611443ebd06db497618beb4/external_apps" data-stack data-stack-root>应用中心</a></li>
-
-            <li><a href="/teams/7feef4ba8611443ebd06db497618beb4/invite/new" data-stack data-stack-root>邀请成员</a></li>
-
-            <li>
-                <a class="js-feature-migrated" data-migrated-feature="team-stats" href="javascript:;">团队统计</a>
-            </li>
-
-            <li>
-                <a href="/teams/7feef4ba8611443ebd06db497618beb4/upgrade" data-stack data-stack-root>
-                    了解 Pro 版
-                </a>
-            </li>
-
-            <p class="title"><span>切换团队</span></p>
-            <ul class="menu scroll team-list">
-                <li>
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff">HYLT
-                    </a>
-                </li>
-            </ul>
-            <li class="part-line"></li>
-
-            <li class="small"><a href="/launchpad?skip=1">创建/管理团队</a></li>
+            <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
         </ul>
     </script>
 
@@ -575,8 +527,6 @@
                 <p class="page-tip moveout" style="display:none;"></p>
                 <h3 class="page-title">个人设置</h3>
 
-                <a href="javascript:;" id="btn-del-member"
-                   class="link-delete ">退出团队</a>
 
                 <form class="form settings-form" action="/members/231e0ddd353440c883f9874a555f8adc/settings"
                       method="post" data-remote="true">
@@ -607,8 +557,6 @@
                         </div>
                         <div class="form-field">
                             <input type="text" name="email" id="txt-email" value="2449832339@qq.com" disabled/>
-                            <a data-stack="true" class="modify-email"
-                               href="/members/231e0ddd353440c883f9874a555f8adc/settings/email">修改邮箱</a>
                         </div>
                     </div>
 
@@ -623,13 +571,7 @@
 
                                     2449832339@qq.com
                                 </p>
-                                <p class="member-comment"></p>
                             </div>
-                            <p class="desc">
-                                <a data-stack="true" href="/members/231e0ddd353440c883f9874a555f8adc/edit">设置在 alikes
-                                    团队中的名片</a>
-                                <br>名片仅在当前团队显示，你可以在不同团队填写不同信息。
-                            </p>
                         </div>
                     </div>
 
@@ -638,9 +580,8 @@
                             <label>密码</label>
                         </div>
                         <div class="form-field form-text-field">
-                            <a data-stack="true"
-                               href="/members/231e0ddd353440c883f9874a555f8adc/settings/password">修改密码</a>
-                            <a href="/users/forgot_password">找回密码</a>
+                            <a
+                               href="${pageContext.request.contextPath}/base/goURL/user/updatePassword">修改密码</a>
                         </div>
                     </div>
 
@@ -648,248 +589,8 @@
                         <div class="form-label">
                             <label>手机</label>
                         </div>
-                        <div class="form-field form-text-field">
-                            <span class="status">未绑定</span>
-                            <a data-type="script" data-loading="true" data-remote="true" data-method="get"
-                               href="/users/cell_phone_confirmation/new">绑定</a>
-                            <p class="desc">绑定后，可通过手机号登录和找回密码（即将发布）</p>
-                        </div>
-                    </div>
-
-                    <div class="form-item form-item-wechat">
-                        <div class="form-label">
-                            <label>微信</label>
-                        </div>
-                        <div class="form-field form-text-field">
-                            <span class="status">未绑定</span>
-                            <a class="link-bind-wechat" href="javascript:;">绑定</a>
-                            <p class="desc">绑定后，可直接使用微信登录 Tower 「桌面版」和「微信版」</p>
-                        </div>
-                    </div>
-
-
-                    <div class="form-item">
-                        <div class="form-label">
-                            <label>双保险</label>
-                        </div>
-                        <div class="form-field form-text-field">
-                            <span class="status">未启用</span>
-                            <a class="link-open-tfa" data-stack="true"
-                               href="/members/231e0ddd353440c883f9874a555f8adc/settings/two_factor_auth">开启</a>
-                            <p class="desc">启用后，每次登录 Tower 都需要使用你的微信进行验证，增强账号安全性</p>
-                        </div>
-                    </div>
-
-                    <div class="form-item">
-                        <div class="form-label">
-                            <label for="link-notify-settings">通知设置</label>
-                        </div>
-                        <div class="form-field form-text-field notification-field">
-                            <a class="link-notify-settings" data-stack="true"
-                               href="/members/231e0ddd353440c883f9874a555f8adc/notification_settings">修改通知设置</a>
-                            <p class="desc">
-                                桌面通知：关闭<br/>
-                                App 通知：开启<br/>
-                                邮件通知：关闭<br/>
-                                智能提醒：关闭<br/>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="form-item">
-                        <div class="form-label">
-                            <label for="link-time-zone-settings">时区设置</label>
-                        </div>
-                        <div class="form-field form-text-field time-zone-field">
-                            <p>
-                                <select name="user[time_zone]" id="user_time_zone">
-                                    <option value="America/Adak">(GMT-10:00) America/Adak</option>
-                                    <option value="Hawaii">(GMT-10:00) 夏威夷</option>
-                                    <option value="Alaska">(GMT-09:00) 阿拉斯加</option>
-                                    <option value="America/Anchorage">(GMT-09:00) America/Anchorage</option>
-                                    <option value="America/Metlakatla">(GMT-09:00) America/Metlakatla</option>
-                                    <option value="America/Nome">(GMT-09:00) America/Nome</option>
-                                    <option value="America/Sitka">(GMT-09:00) America/Sitka</option>
-                                    <option value="America/Yakutat">(GMT-09:00) America/Yakutat</option>
-                                    <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) 太平洋时区(美国与加拿大)</option>
-                                    <option value="America/Boise">(GMT-07:00) America/Boise</option>
-                                    <option value="Arizona">(GMT-07:00) 亚利桑那州</option>
-                                    <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) 山区时区(美国与加拿大)</option>
-                                    <option value="America/Indiana/Knox">(GMT-06:00) America/Indiana/Knox</option>
-                                    <option value="America/Indiana/Tell_City">(GMT-06:00) America/Indiana/Tell_City
-                                    </option>
-                                    <option value="America/Menominee">(GMT-06:00) America/Menominee</option>
-                                    <option value="America/North_Dakota/Beulah">(GMT-06:00)
-                                        America/North_Dakota/Beulah
-                                    </option>
-                                    <option value="America/North_Dakota/Center">(GMT-06:00)
-                                        America/North_Dakota/Center
-                                    </option>
-                                    <option value="America/North_Dakota/New_Salem">(GMT-06:00)
-                                        America/North_Dakota/New_Salem
-                                    </option>
-                                    <option value="Central Time (US &amp; Canada)">(GMT-06:00) 中部时区(美国与加拿大)</option>
-                                    <option value="America/Detroit">(GMT-05:00) America/Detroit</option>
-                                    <option value="America/Indiana/Marengo">(GMT-05:00) America/Indiana/Marengo</option>
-                                    <option value="America/Indiana/Petersburg">(GMT-05:00) America/Indiana/Petersburg
-                                    </option>
-                                    <option value="America/Indiana/Vevay">(GMT-05:00) America/Indiana/Vevay</option>
-                                    <option value="America/Indiana/Vincennes">(GMT-05:00) America/Indiana/Vincennes
-                                    </option>
-                                    <option value="America/Indiana/Winamac">(GMT-05:00) America/Indiana/Winamac</option>
-                                    <option value="America/Kentucky/Louisville">(GMT-05:00)
-                                        America/Kentucky/Louisville
-                                    </option>
-                                    <option value="America/Kentucky/Monticello">(GMT-05:00)
-                                        America/Kentucky/Monticello
-                                    </option>
-                                    <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) 东部时区(美国与加拿大)</option>
-                                    <option value="Indiana (East)">(GMT-05:00) 印第安那州(东部)</option>
-                                    <option value="" disabled="disabled">-------------</option>
-                                    <option value="American Samoa">(GMT-11:00) 美属萨摩亚群岛</option>
-                                    <option value="International Date Line West">(GMT-11:00) 国际换日线(西)</option>
-                                    <option value="Midway Island">(GMT-11:00) 中途岛</option>
-                                    <option value="Tijuana">(GMT-08:00) 提华纳</option>
-                                    <option value="Chihuahua">(GMT-07:00) 契瓦瓦</option>
-                                    <option value="Mazatlan">(GMT-07:00) 马萨特兰</option>
-                                    <option value="Central America">(GMT-06:00) 中美洲</option>
-                                    <option value="Guadalajara">(GMT-06:00) 瓜达拉哈拉</option>
-                                    <option value="Mexico City">(GMT-06:00) 墨西哥市</option>
-                                    <option value="Monterrey">(GMT-06:00) 蒙特雷</option>
-                                    <option value="Saskatchewan">(GMT-06:00) 萨斯喀彻温</option>
-                                    <option value="Bogota">(GMT-05:00) 波哥大</option>
-                                    <option value="Lima">(GMT-05:00) 利马</option>
-                                    <option value="Quito">(GMT-05:00) 基多</option>
-                                    <option value="Atlantic Time (Canada)">(GMT-04:00) 大西洋时间(加拿大)</option>
-                                    <option value="Caracas">(GMT-04:00) 卡拉卡斯</option>
-                                    <option value="Georgetown">(GMT-04:00) 乔治城</option>
-                                    <option value="La Paz">(GMT-04:00) 拉巴斯</option>
-                                    <option value="Santiago">(GMT-04:00) 圣地亚哥</option>
-                                    <option value="Newfoundland">(GMT-03:30) 纽芬兰</option>
-                                    <option value="Brasilia">(GMT-03:00) 巴西利亚</option>
-                                    <option value="Buenos Aires">(GMT-03:00) 布宜诺斯艾利斯</option>
-                                    <option value="Greenland">(GMT-03:00) 格陵兰</option>
-                                    <option value="Montevideo">(GMT-03:00) 蒙得维的亚</option>
-                                    <option value="Mid-Atlantic">(GMT-02:00) 大西洋中部</option>
-                                    <option value="Azores">(GMT-01:00) 亚速群岛</option>
-                                    <option value="Cape Verde Is.">(GMT-01:00) 维德角岛</option>
-                                    <option value="Casablanca">(GMT+00:00) 达尔贝达</option>
-                                    <option value="Dublin">(GMT+00:00) 都布林</option>
-                                    <option value="Edinburgh">(GMT+00:00) 爱丁堡</option>
-                                    <option value="Lisbon">(GMT+00:00) 里斯本</option>
-                                    <option value="London">(GMT+00:00) 伦敦</option>
-                                    <option value="Monrovia">(GMT+00:00) 蒙罗维亚</option>
-                                    <option value="UTC">(GMT+00:00) 世界标準时间</option>
-                                    <option value="Amsterdam">(GMT+01:00) 阿姆斯特丹</option>
-                                    <option value="Belgrade">(GMT+01:00) 贝尔格勒</option>
-                                    <option value="Berlin">(GMT+01:00) 柏林</option>
-                                    <option value="Bern">(GMT+01:00) 伯恩</option>
-                                    <option value="Bratislava">(GMT+01:00) 布拉提斯拉瓦</option>
-                                    <option value="Brussels">(GMT+01:00) 布鲁塞尔</option>
-                                    <option value="Budapest">(GMT+01:00) 布达佩斯</option>
-                                    <option value="Copenhagen">(GMT+01:00) 哥本哈根</option>
-                                    <option value="Ljubljana">(GMT+01:00) 卢比安纳</option>
-                                    <option value="Madrid">(GMT+01:00) 马德里</option>
-                                    <option value="Paris">(GMT+01:00) 巴黎</option>
-                                    <option value="Prague">(GMT+01:00) 布拉格</option>
-                                    <option value="Rome">(GMT+01:00) 罗马</option>
-                                    <option value="Sarajevo">(GMT+01:00) 塞拉耶佛</option>
-                                    <option value="Skopje">(GMT+01:00) 史高比耶</option>
-                                    <option value="Stockholm">(GMT+01:00) 斯德哥尔摩</option>
-                                    <option value="Vienna">(GMT+01:00) 维也纳</option>
-                                    <option value="Warsaw">(GMT+01:00) 华沙</option>
-                                    <option value="West Central Africa">(GMT+01:00) 中西非时区</option>
-                                    <option value="Zagreb">(GMT+01:00) 札格瑞布</option>
-                                    <option value="Zurich">(GMT+01:00) 苏黎世</option>
-                                    <option value="Athens">(GMT+02:00) 雅典</option>
-                                    <option value="Bucharest">(GMT+02:00) 布加勒斯特</option>
-                                    <option value="Cairo">(GMT+02:00) 开罗</option>
-                                    <option value="Harare">(GMT+02:00) 哈拉雷</option>
-                                    <option value="Helsinki">(GMT+02:00) 赫尔辛基</option>
-                                    <option value="Jerusalem">(GMT+02:00) 耶路撒冷</option>
-                                    <option value="Kaliningrad">(GMT+02:00) 加里宁格勒</option>
-                                    <option value="Kyiv">(GMT+02:00) 基辅</option>
-                                    <option value="Pretoria">(GMT+02:00) 普勒托利亚</option>
-                                    <option value="Riga">(GMT+02:00) 里加</option>
-                                    <option value="Sofia">(GMT+02:00) 索菲亚</option>
-                                    <option value="Tallinn">(GMT+02:00) 塔林</option>
-                                    <option value="Vilnius">(GMT+02:00) 维尔纽斯</option>
-                                    <option value="Baghdad">(GMT+03:00) 巴格达</option>
-                                    <option value="Istanbul">(GMT+03:00) 伊斯坦堡</option>
-                                    <option value="Kuwait">(GMT+03:00) 科威特</option>
-                                    <option value="Minsk">(GMT+03:00) 明斯克</option>
-                                    <option value="Moscow">(GMT+03:00) 莫斯科</option>
-                                    <option value="Nairobi">(GMT+03:00) 奈洛比</option>
-                                    <option value="Riyadh">(GMT+03:00) 利雅德</option>
-                                    <option value="St. Petersburg">(GMT+03:00) 圣彼得堡</option>
-                                    <option value="Volgograd">(GMT+03:00) 伏尔加格勒</option>
-                                    <option value="Tehran">(GMT+03:30) 德黑兰</option>
-                                    <option value="Abu Dhabi">(GMT+04:00) 阿布达比</option>
-                                    <option value="Baku">(GMT+04:00) 巴库</option>
-                                    <option value="Muscat">(GMT+04:00) 马斯喀特</option>
-                                    <option value="Samara">(GMT+04:00) 萨马拉</option>
-                                    <option value="Tbilisi">(GMT+04:00) 提比里斯</option>
-                                    <option value="Yerevan">(GMT+04:00) 叶里温</option>
-                                    <option value="Kabul">(GMT+04:30) 喀布尔</option>
-                                    <option value="Ekaterinburg">(GMT+05:00) 叶卡捷琳堡</option>
-                                    <option value="Islamabad">(GMT+05:00) 伊斯兰玛巴德</option>
-                                    <option value="Karachi">(GMT+05:00) 喀拉蚩</option>
-                                    <option value="Tashkent">(GMT+05:00) 塔什干</option>
-                                    <option value="Chennai">(GMT+05:30) 清奈</option>
-                                    <option value="Kolkata">(GMT+05:30) 加尔各答</option>
-                                    <option value="Mumbai">(GMT+05:30) 孟买</option>
-                                    <option value="New Delhi">(GMT+05:30) 新德里</option>
-                                    <option value="Sri Jayawardenepura">(GMT+05:30) 科泰</option>
-                                    <option value="Kathmandu">(GMT+05:45) 加德满都</option>
-                                    <option value="Almaty">(GMT+06:00) 阿拉木图</option>
-                                    <option value="Astana">(GMT+06:00) 阿斯塔纳</option>
-                                    <option value="Dhaka">(GMT+06:00) 达卡</option>
-                                    <option value="Urumqi">(GMT+06:00) 乌鲁木齐</option>
-                                    <option value="Rangoon">(GMT+06:30) 仰光</option>
-                                    <option value="Bangkok">(GMT+07:00) 曼谷</option>
-                                    <option value="Hanoi">(GMT+07:00) 河内</option>
-                                    <option value="Jakarta">(GMT+07:00) 雅加达</option>
-                                    <option value="Krasnoyarsk">(GMT+07:00) 克拉斯诺亚尔斯克</option>
-                                    <option value="Novosibirsk">(GMT+07:00) 新西伯利亚</option>
-                                    <option selected="selected" value="Beijing">(GMT+08:00) 北京</option>
-                                    <option value="Chongqing">(GMT+08:00) 重庆</option>
-                                    <option value="Hong Kong">(GMT+08:00) 香港</option>
-                                    <option value="Irkutsk">(GMT+08:00) 伊尔库茨克</option>
-                                    <option value="Kuala Lumpur">(GMT+08:00) 吉隆坡</option>
-                                    <option value="Perth">(GMT+08:00) 珀斯</option>
-                                    <option value="Singapore">(GMT+08:00) 新加坡</option>
-                                    <option value="Taipei">(GMT+08:00) 台北</option>
-                                    <option value="Ulaanbaatar">(GMT+08:00) 乌兰巴托</option>
-                                    <option value="Osaka">(GMT+09:00) 大阪</option>
-                                    <option value="Sapporo">(GMT+09:00) 札幌</option>
-                                    <option value="Seoul">(GMT+09:00) 首尔</option>
-                                    <option value="Tokyo">(GMT+09:00) 东京</option>
-                                    <option value="Yakutsk">(GMT+09:00) 雅库茨克</option>
-                                    <option value="Adelaide">(GMT+09:30) 阿得雷德</option>
-                                    <option value="Darwin">(GMT+09:30) 达尔文</option>
-                                    <option value="Brisbane">(GMT+10:00) 布里斯本</option>
-                                    <option value="Canberra">(GMT+10:00) 坎培拉</option>
-                                    <option value="Guam">(GMT+10:00) 关岛</option>
-                                    <option value="Hobart">(GMT+10:00) 荷巴特</option>
-                                    <option value="Melbourne">(GMT+10:00) 墨尔本</option>
-                                    <option value="Port Moresby">(GMT+10:00) 莫士比港</option>
-                                    <option value="Sydney">(GMT+10:00) 雪梨</option>
-                                    <option value="Vladivostok">(GMT+10:00) 海参崴</option>
-                                    <option value="Magadan">(GMT+11:00) 马加丹</option>
-                                    <option value="New Caledonia">(GMT+11:00) 新喀里多尼亚</option>
-                                    <option value="Solomon Is.">(GMT+11:00) 索罗门群岛</option>
-                                    <option value="Srednekolymsk">(GMT+11:00) 中科雷姆斯克</option>
-                                    <option value="Auckland">(GMT+12:00) 奥克兰</option>
-                                    <option value="Fiji">(GMT+12:00) 斐济</option>
-                                    <option value="Kamchatka">(GMT+12:00) 堪察加</option>
-                                    <option value="Marshall Is.">(GMT+12:00) 马绍尔群岛</option>
-                                    <option value="Wellington">(GMT+12:00) 威灵顿</option>
-                                    <option value="Chatham Is.">(GMT+12:45) 查塔姆</option>
-                                    <option value="Nuku&#39;alofa">(GMT+13:00) 努瓜娄发</option>
-                                    <option value="Samoa">(GMT+13:00) 萨摩亚</option>
-                                    <option value="Tokelau Is.">(GMT+13:00) 托克劳群岛</option>
-                                </select>
-                            </p>
+                        <div class="form-field">
+                            <input type="text" name="phone" id="phone" autocomplete="off" value="13196810037"/>
                         </div>
                     </div>
 
@@ -900,100 +601,7 @@
                     </div>
                 </form>
 
-                <script type="text/html" id="tpl-unbind-wechat">
-                    <div class="unbind-wechat-confirm">
-                        <p>确定要解除微信绑定吗？解除后，你将会：</p>
-                        <ul>
-                            <li>不能用微信扫码登录「桌面版」和「移动版」</li>
-                            <li>不能使用 Tower 微信版</li>
-                        </ul>
-                    </div>
-                </script>
 
-                <script type="text/html" id="tpl-del-owner">
-                    <h3>身为团队领袖，岂能说退就退。</h3>
-                    <p>请将 <a href="/teams/7feef4ba8611443ebd06db497618beb4/settings" data-stack
-                             data-stack-root>团队移交他人</a> 之后再行退出。</p>
-                </script>
-
-                <script type="text/html" id="tpl-del-member">
-                    <form class="form form-del-member-confirm"
-                          action="/members/231e0ddd353440c883f9874a555f8adc/kick_out" method="post" data-remote
-                          novalidate>
-                        <h4 class="simple-dialog-title">退出团队</h4>
-                        <p>你将会退出 alikes。</p>
-                        <p>如果你确定要这样做，请在下面输入登录密码确认。</p>
-                        <p>
-                            <input type="password" id="del-member-password" name="password" autocomplete="off"
-                                   data-validate="length:6;custom" data-validate-msg="密码输入错误"/>
-                        </p>
-                        <div class="form-buttons">
-                            <button type="submit" class="btn btn-primary">确认退出</button>
-                            <button type="button" class="btn btn-x btn-cancel">取消</button>
-                        </div>
-                    </form>
-                </script>
-
-                <script type="text/html" id="tpl-bind-wechat">
-                    <div class="qrcode-sheet">
-                        <div class="qrcode-wrap loading">
-                            <p class="indicator">正在加载二维码</p>
-                            <img class="qrcode" alt="微信扫码，完成账号绑定" title="微信扫码，完成账号绑定"/>
-                        </div>
-                        <p>微信扫码，完成账号绑定</p>
-                    </div>
-
-                    <div class="success-sheet">
-                        <div class="success-info">
-                            <h3 class="single-line">绑定成功</h3>
-                        </div>
-                        <p class="exit">
-                            现在你可以使用微信扫码登录和接收通知了。
-                        </p>
-                        <p class="desc">
-                            你已成功关注 Tower 微信服务号<br>
-                            为了更好的服务，请勿随意取关 :)
-                        </p>
-                    </div>
-
-                    <div class="rebind-wechat-sheet">
-                        <div class="error-info">
-                            <span class='icon-warning'></span>
-                            <h3 class="single-line">微信号已被绑定</h3>
-                        </div>
-                        <p class="error-desc">
-                            该微信号已与 Tower 账号「ifourxxxxx@gmail.com」 绑定，是否解绑并重新绑定到当前账号？
-                        </p>
-                        <div class="action-rebind">
-                            <form class="form-action-rebind" method="post" action="/sns_binds/rebind_wechat"
-                                  data-remote="true"><input class="btn btn-primary btn-action-rebind" type="submit"
-                                                            value="解绑「ifourxxxxx@gmail.com」，并重新绑定到当前账号"/><input
-                                    type="hidden" name="authenticity_token"
-                                    value="L5SelLqeRi5C+HqzYXZzmJ7jptKhgktyei/kgnaZmOdSrqSjT+5kG5hxTfPTR/dlCg0Lz4KX5wPOVxoLyCSTxg=="/>
-                            </form>
-                        </div>
-                        <div class="action-dismiss">
-                            <button type="button" class="btn btn-x btn-cancel btn-action-dismiss">取消本次绑定操作</button>
-                        </div>
-
-                        <div class="disclamer">
-                            <small>解绑后，你将不能使用微信扫码登录之前账号，也不会收到之前账号的通知提醒。</small>
-                        </div>
-                        <div>
-                </script>
-
-                <script type="text/html" id="tpl-bind-dingtalk">
-                    <div id="dingtalkQRCode" class="qrcode-sheet"></div>
-
-                    <div class="success-sheet">
-                        <div class="success-info">
-                            <h3 class="single-line">绑定成功</h3>
-                        </div>
-                        <p class="exit">
-                            现在你可以使用微信扫码登录和接收通知了。
-                        </p>
-                    </div>
-                </script>
 
                 <script type="text/html" id="tpl-two-factor-auth">
                     <div class="message-sheet">
@@ -1005,7 +613,7 @@
         </div>
     </div>
     <div class="footer">
-        &copy; 彩程设计
+        &copy; 晴天设计
     </div>
 
 
