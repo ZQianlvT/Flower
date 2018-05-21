@@ -469,43 +469,29 @@
     <div class="header">
         <div class="header-container">
             <h1 class="logo">
-                <a href="javascript:;" class="link-team-menu">
-                    <span class="name">alikes</span>
+                <a href="${pageContext.request.contextPath}/base/goURL/updateTeam" class="link-team-menu">
+                    alikes
+                    <%--<span class="name">alikes</span>--%>
                 </a>
             </h1>
 
             <ul class="nav">
                 <li class="" id="nav-project">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/projects" data-stack data-stack-root>项目</a>
-                </li>
-                <li class="" id="nav-events">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/events" data-stack data-stack-root>动态</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/project/listProject">项目</a>
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-calendar">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/calendars" data-stack data-stack-fluid
-                       data-stack-root>日历</a>
-                </li>
-
-                <li class="" id="nav-dashboard">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/dashboard" data-stack data-stack-root>鹰眼</a>
-                </li>
-                <li class="" id="nav-reports">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/reports" data-stack data-stack-root>汇报</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/calendar/calendar">日历</a>
                 </li>
                 <li class="dividing"></li>
-
                 <li class="" id="nav-members">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/members" data-stack data-stack-root>团队</a>
-                </li>
-                <li class="" id="nav-me">
-                    <a href="/members/231e0ddd353440c883f9874a555f8adc?me=1" data-stack data-stack-root>我自己</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/team/listTeam">团队</a>
                 </li>
 
                 <li id="nav-upgrade">
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4/upgrade?utm_source=Tower&amp;utm_medium=Web&amp;utm_campaign=Nav-Pro-Trial-Remaining"
-                       class="link-remaining" data-tower-pro="header-upgrade-ad" target="_blank">
-                        试用剩余 26 天
+                    <a href="#"
+                       class="link-remaining" data-tower-pro="header-upgrade-ad" >
+                        本软件完全免费，并不禁止传播。
                     </a>
                 </li>
 
@@ -513,47 +499,14 @@
 
             <div class="command-bar">
                 <div class="search-wrap">
-                    <a href="javascript:;" class="link-search" title="搜索"><i class="twr twr-search"></i></a>
+                    <a href="#" class="link-search" title="搜索"><i class="twr twr-search"></i></a>
                     <form id="form-search" class="form" method="get"
-                          action="/teams/7feef4ba8611443ebd06db497618beb4/search">
+                          action="${pageContext.request.contextPath}/project/search">
                         <input id="txt-search" type="text" class="keyword no-border" name="keyword" placeholder="搜索"
                                autocomplete="off"/>
                     </form>
                 </div>
 
-                <audio src="/assets/notification-8c3a5ef39c8b88e19cf2b732747a6691d43ffa68d25b3db74ebe418bf41fad63.mp3"
-                       id="notification-audio" preload="auto"></audio>
-
-                <div class="notification-info">
-                    <a href="javascript:;" id="notification-count" class="label " title="新的通知" data-unread-count="0"
-                       data-url="/teams/7feef4ba8611443ebd06db497618beb4/notifications/unread_counts">
-                        <span class="twr twr-bell-o bell"></span>
-                        <span class="num">0</span>
-                    </a>
-                    <div class="noti-pop">
-                        <div class="noti-pop-hd">
-                            <b class="title">通知</b>
-                            <a class="mark-as-read" id="noti-mark-read" data-loading="true" data-remote="true"
-                               rel="nofollow" data-method="post"
-                               href="/teams/7feef4ba8611443ebd06db497618beb4/notifications/read_all">
-                                <span class="twr twr twr-check"></span>
-                                全部标记为已读
-                            </a></div>
-                        <div class="noti-pop-list-wrap">
-                            <div class="noti-pop-list notification-list">
-
-                            </div>
-                        </div>
-                        <div class="noti-pop-empty">- 没有新通知 -</div>
-                        <div class="noti-pop-footer">
-                            <a class="noti-settings" data-stack="true" data-stack-root="true"
-                               href="/members/231e0ddd353440c883f9874a555f8adc/notification_settings">
-                                <i class="twr twr-cog"></i> 通知设置
-                            </a> <a class="noti-all-link" data-stack="true" data-stack-root="true"
-                                    href="/teams/7feef4ba8611443ebd06db497618beb4/notifications">查看全部通知</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="account-info">
                     <div class="member-settings">
                         <a class="link-member-menu ab-test-old" href="javascript:;" data-new-feature="false">
@@ -629,7 +582,7 @@
                       method="post" data-remote="true">
                     <label class="form-item upload-avatar" data-droppable>
                         <div class="avatar-wrapper">
-                            <img class="avatar" src="/assets/default_avatars/noon.jpg"/>
+                            <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg"/>
                             <div class="loading"></div>
                         </div>
                         <div class="link-upload" data-url="/members/231e0ddd353440c883f9874a555f8adc/avatars/">

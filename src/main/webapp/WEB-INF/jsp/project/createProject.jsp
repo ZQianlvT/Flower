@@ -558,7 +558,7 @@
                     <div class="member-settings">
                         <a class="link-member-menu ab-test-old" href="javascript:;" data-new-feature="false">
                             <span class="twr twr-caret-down"></span>
-                            <img class="avatar" src="/assets/default_avatars/noon.jpg" alt="Noon"/>
+                            <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg" alt="Noon"/>
                         </a>
                     </div>
                 </div>
