@@ -2,10 +2,11 @@
   Created by IntelliJ IDEA.
   User: 徐哲哲
   Date: 2018/5/21
-  Time: 19:35
+  Time: 21:57
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
 
     <script type="text/javascript">window.NREUM || (NREUM = {});
@@ -14,9 +15,9 @@
         "errorBeacon": "bam.nr-data.net",
         "licenseKey": "e644b8e723",
         "applicationID": "17322787",
-        "transactionName": "el8PEkJZWg4BR04FUVVVDwJRREVNDVsFA0g=",
+        "transactionName": "el8PEkJZWg4BR04WQlZaBAVERRkPAVgDA0JK",
         "queueTime": 0,
-        "applicationTime": 159,
+        "applicationTime": 92,
         "agent": ""
     }</script>
     <script type="text/javascript">window.NREUM || (NREUM = {}), __nr_require = function (e, t, n) {
@@ -228,9 +229,9 @@
         "errorBeacon": "bam.nr-data.net",
         "licenseKey": "e644b8e723",
         "applicationID": "17322787",
-        "transactionName": "el8PEkJZWg4BR04FUVVVDwJRREVNDVsFA0g=",
+        "transactionName": "el8PEkJZWg4BR04WQlZaBAVERRkPAVgDA0JK",
         "queueTime": 0,
-        "applicationTime": 159,
+        "applicationTime": 92,
         "agent": ""
     }</script>
     <script type="text/javascript">window.NREUM || (NREUM = {}), __nr_require = function (e, t, n) {
@@ -435,7 +436,7 @@
         }, {}]
     }, {}, ["loader"]);</script>
 
-    <title>2018年5月 - Tower</title>
+    <title>项目成员 - Tower</title>
     <meta name="renderer" content="webkit">
     <meta name="baidu-site-verification" content="qLDoHdGnb64RHlkm">
     <meta name="alexaVerifyID" content="SIgQikd9LazsFz9M1vPBaQyC4Gw">
@@ -456,7 +457,7 @@
 
     <meta name="csrf-param" content="authenticity_token"/>
     <meta name="csrf-token"
-          content="IbRNd3jRQwEfPYUXJZQGe5oJNEfDe2KKl58QdXxiZFMOi0whvEkntsAlIAZvI+IqmKZtL+UmAXOONaSXaHBEJg=="/>
+          content="LGZlnb2i85zkcaqImgJ2Uvj3Zgj4rTyhkFmLkiRE5NsDWWTLeTqXKztpD5nQtZID+lg/YN7wX1iJ8z9wMFbErg=="/>
 </head>
 
 <body class="">
@@ -481,7 +482,7 @@
                     <a href="/teams/982b79584a39484eb9e17459a6e1deff/events" data-stack data-stack-root>动态</a>
                 </li>
                 <li class="dividing"></li>
-                <li class="active" id="nav-calendar">
+                <li class="" id="nav-calendar">
                     <a href="/teams/982b79584a39484eb9e17459a6e1deff/calendars" data-stack data-stack-fluid
                        data-stack-root>日历</a>
                 </li>
@@ -901,370 +902,125 @@
     </script>
 
 
-    <div class="container workspace" data-stack-fluid>
+    <div class="container workspace">
+        <div class="page " data-url="/projects/e26956389763492f891259d7d9c5b94d">
+            <a href="/projects/e26956389763492f891259d7d9c5b94d" class="link-page-behind" data-stack
+               data-stack-fluid>Flower</a>
+        </div>
+
         <div class="page">
 
-            <div class="page-inner" id="page-calendar" data-page-name="2018年5月" data-stack-fluid>
-
-                <div class="calendar-container">
-
-                    <div class="calendar-sidebar">
-                        <div class="sidebar-wrapper">
-                            <div class="cals">
-                                <div class="standard-cals">
-                                    <div class="title">
-                                        <h3>日历</h3>
-                                        <a href="/teams/982b79584a39484eb9e17459a6e1deff/calendars/new/"
-                                           class="link-create-calendar" data-nocache data-visible-to="member"
-                                           data-stack data-stack-root data-parent-name="日历"
-                                           data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/calendars"
-                                           data-parent-fluid>添加日历</a>
-                                    </div>
-                                    <div class="no-cal-tour">请添加你的第一个日历</div>
-                                    <ul class="cal-list">
-                                    </ul>
-                                </div>
-
-                                <div class="project-cals">
-                                    <div class="title">
-                                        <h3>项目</h3>
-                                    </div>
-                                    <ul class="cal-list">
-                                        <li data-guid="e26956389763492f891259d7d9c5b94d" data-color="11" data-project
-                                            data-creator="f7e254d7f54e40dbb93a33b737752fbc"
-                                            data-members="f7e254d7f54e40dbb93a33b737752fbc,ce2b30066f034bf9a69113963da165fd">
-                                            <a href="javascript:;"
-                                               class="link-show-cal link-cal-color cal-color-11 selected"><span><i
-                                                    class="twr twr-check"></i></span></a>
-                                            <a href="javascript:;" class="cal-name" title="Flower">Flower</a>
-                                        </li>
-                                        <li data-guid="2a9e6f5664754cf99e61c6fbefe618d8" data-color="1" data-project
-                                            data-creator="f7e254d7f54e40dbb93a33b737752fbc"
-                                            data-members="f7e254d7f54e40dbb93a33b737752fbc,ce2b30066f034bf9a69113963da165fd">
-                                            <a href="javascript:;"
-                                               class="link-show-cal link-cal-color cal-color-1 selected"><span><i
-                                                    class="twr twr-check"></i></span></a>
-                                            <a href="javascript:;" class="cal-name" title="测试">测试</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="cals-control">
-                                <div class="title">
-                                    <h3>其他</h3>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a class="show-todos" href="javascript:;">
-                                            <i class="twr twr-check-circle-o"></i>
-                                            <span>显示任务</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/teams/982b79584a39484eb9e17459a6e1deff/calendars/subscribe" data-stack
-                                           data-stack-root data-parent-name="日历"
-                                           data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/calendars"
-                                           data-parent-fluid><i class="twr twr-calendar"></i> 订阅日历</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="calendar-wrapper">
-                        <div class="calendar-topbar">
-                            <h3>
-                                <span class="month"></span>
-                                <span class="year"></span>
-                            </h3>
-                            <div class="nav-buttons">
-                                <a class="btn-prev-month" title="上个月" data-stack data-stack-root data-stack-fluid>
-                                    <i class="twr twr-angle-left"></i>
-                                </a>
-                                <a class="btn-next-month" title="下个月" data-stack data-stack-root data-stack-fluid>
-                                    <i class="twr twr-angle-right"></i>
-                                </a>
-                            </div>
-                            <a href="javascript:;" class="btn btn-mini btn-today">今天</a>
-                            <div class="cal-loading"><i class="twr twr-refresh twr-spin"></i></div>
-                            <a href="javascript:;" class="btn-toggle-sidebar" title="隐藏侧边栏">&#8677;</a>
-                        </div>
-                        <div id="calendar" data-url="/teams/982b79584a39484eb9e17459a6e1deff/calendar_events/"></div>
-                    </div>
+            <div class="page-inner"
 
 
-                    <script type="text/html" id="tpl-event-popover">
-                        <div class="cal-event-popover">
-                            <div class="cal-event-form">
-                                <form class="form form-event"
-                                      action="/teams/982b79584a39484eb9e17459a6e1deff/calendar_events/" method="post"
-                                      accept-charset="utf-8">
-                                    <div class="form-item">
-                                        <textarea name="content" id="txt-event-content" class="no-border" rows="1"
-                                                  placeholder="在这里输入日程内容" data-validate="required"
-                                                  data-validate-msg="请填写日程内容">新的日程安排</textarea>
-                                    </div>
-                                    <div class="form-item">
-                                        <label>日历</label>
-                                        <select name="caleventable_guid" id="select-cal">
-                                        </select>
-                                        <input type="hidden" name="caleventable_type" value=""/>
-                                    </div>
-                                    <div class="form-item">
-                                        <label>类型</label>
-                                        <label class="all-day-event">
-                                            <input type="checkbox" class="cb-all-day"/>
-                                            全天事件
-                                        </label>
-                                    </div>
-                                    <div class="form-item event-time">
-                                        <label>开始</label>
-                                        <input type="datetime" id="start_moment" name="starts_at"
-                                               value="2018-05-21T00:00:00"/>
-                                    </div>
-                                    <div class="form-item event-time">
-                                        <label>结束</label>
-                                        <input type="datetime" id="end_moment" name="ends_at"
-                                               value="2018-05-21T23:59:59"/>
-                                    </div>
+                 data-project-creator="f7e254d7f54e40dbb93a33b737752fbc"
+                 data-page-name="项目成员" id="page-project-members">
+                <h3 class="page-title">
+                    <span>项目成员</span>
+                    <a href="javascript:;" class="link-edit-members" data-visible-to="admin">编辑</a>
+                </h3>
 
-                                    <div class="more-options">
-                                        <div class="toggle-more-options">
-                                            <a href="javascript:;" class="link-toggle-options"><span
-                                                    class="twr twr-caret-right"></span>更多选项</a>
-                                        </div>
-                                        <div class="options-content">
-                                            <div class="form-item event-show-creator">
-                                                <label>
-                                                    <input type="checkbox" name="is_show_creator" checked/>
-                                                    在月视图显示创建者
-                                                </label>
-                                            </div>
-                                            <div class="form-item event-schedule-every">
-                                                <label>重复</label>
-                                                <select class="cb-repeat" name="schedule_every"
-                                                        id="select-schedule-every">
-                                                    <option value="0">不重复</option>
-                                                    <option value="4">每日</option>
-                                                    <option value="2">每周</option>
-                                                    <option value="3">每月</option>
-                                                    <option value="1">每年</option>
-                                                    <option value="5">隔周</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-item event-schedule-until until-active hide">
-                                                <label>直到</label>
-                                                <input type="date" id="until_moment" name="schedule_until"
-                                                       value="2018-05-21 23:59:59"/>
-                                            </div>
-                                            <div class="form-item event-schedule-interval hide">
-                                                <label>间隔</label>
-                                                <select class="cb-repeat" name="schedule_interval"
-                                                        id="select-schedule-interval">
-                                                    <option value="1">无间隔</option>
-                                                    <option value="2">一周</option>
-                                                    <option value="3">二周</option>
-                                                    <option value="4">三周</option>
-                                                    <option value="5">四周</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-item event-schedule-weekdays hide">
-                                                <ul class="checkbox-group">
-                                                    <li>
-                                                        <input type="checkbox" name="schedule_weekdays" id="weekdays-1"
-                                                               value="1"/>
-                                                        <label for="weekdays-1">一</label>
-                                                    </li>
-                                                    <li>
-                                                        <input type="checkbox" name="schedule_weekdays" id="weekdays-2"
-                                                               value="2"/>
-                                                        <label for="weekdays-2">二</label>
-                                                    </li>
-                                                    <li>
-                                                        <input type="checkbox" name="schedule_weekdays" id="weekdays-3"
-                                                               value="3"/>
-                                                        <label for="weekdays-3">三</label>
-                                                    </li>
-                                                    <li>
-                                                        <input type="checkbox" name="schedule_weekdays" id="weekdays-4"
-                                                               value="4"/>
-                                                        <label for="weekdays-4">四</label>
-                                                    </li>
-                                                    <li>
-                                                        <input type="checkbox" name="schedule_weekdays" id="weekdays-5"
-                                                               value="5"/>
-                                                        <label for="weekdays-5">五</label>
-                                                    </li>
-                                                    <li>
-                                                        <input type="checkbox" name="schedule_weekdays" id="weekdays-6"
-                                                               value="6"/>
-                                                        <label for="weekdays-6">六</label>
-                                                    </li>
-                                                    <li>
-                                                        <input type="checkbox" name="schedule_weekdays" id="weekdays-0"
-                                                               value="0"/>
-                                                        <label for="weekdays-0">日</label>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="form-item event-remind">
-                                                <label>提醒</label>
-                                                <select id="select-remind" name="remind_time">
-                                                    <option value="">不提醒</option>
-                                                    <option value="" class="one-hour-ahead">提前一小时</option>
-                                                    <option value="" class="one-day-ahead">提前一天</option>
-                                                    <option value="" class="one-week-ahead">提前一周</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-item event-location">
-                                                <label>地点</label>
-                                                <input type="text" name="location" id="txt-event-location" value=""/>
-                                            </div>
+                <a href="/projects/e26956389763492f891259d7d9c5b94d/members" class="link-delete"
+                   data-remote="true" data-method="delete" data-confirm="确定要退出这个项目吗？">退出项目</a>
 
-                                            <div class="form-item">
-                                                <label>邀请</label>
-                                                <a href="/teams/982b79584a39484eb9e17459a6e1deff/calendar_events/new"
-                                                   class="link-add-more" data-stack>邀请成员</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                <div class="project-members">
+                    <ul>
+                        <li class="member">
+                            <a href="/members/ce2b30066f034bf9a69113963da165fd" title="浮点农国"
+                               class="member-link"
+                               data-stack>
+                                <img src="/assets/default_avatars/noon.jpg" class="avatar" alt="浮点农国"/>
+                                <span class="name">浮点农国</span>
+                                <span class="role">成员</span>
+                            </a>
+                        </li>
+                        <li class="member">
+                            <a href="/members/f7e254d7f54e40dbb93a33b737752fbc" title="OrionPax"
+                               class="member-link owner"
+                               data-stack>
+                                <img src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3" class="avatar"
+                                     alt="OrionPax"/>
+                                <span class="name">OrionPax</span>
+                                <span class="role">超级管理员</span>
+                            </a>
+                        </li>
 
-                                    <div class="popover-buttons">
-                                        <button type="submit" class="btn btn-primary btn-save-event"
-                                                data-disable-with="正在提交...">添加
-                                        </button>
-                                        <a href="javascript:;" class="link-hide-popover">取消</a>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="cal-event-confirm collapsed"></div>
-                        </div>
-                    </script>
-
-                    <script type="text/html" id="tpl-event-click-popover">
-                        <div class="cal-event-click-popover">
-                            <p class="time"></p>
-                            <div class="content">
-                                <a data-stack data-stack-root data-parent-name="日历"
-                                   data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/calendars"
-                                   data-parent-fluid>{{Content}}</a>
-                            </div>
-                            <ul class="participants"></ul>
-                            <div class="links">
-                                <a class="more-info link" data-stack data-stack-root data-parent-name="日历"
-                                   data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/calendars"
-                                   data-parent-fluid>查看详情</a>
-                                <a class="delete-link link" data-visible-to="admin,creator">删除</a>
-                                <a class="edit-link link" data-stack data-stack-root data-parent-name="日历"
-                                   data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/calendars" data-parent-fluid
-                                   data-visible-to="admin,creator">编辑</a>
-                            </div>
-                        </div>
-                    </script>
-
-                    <script type="text/html" id="tpl-period-destroy-confirm">
-                        <div class="period-destroy-confirm">
-                            <h5>这是一个重复事件，你想？</h5>
-                            <p>
-                                <button type="button" class="btn btn-mini btn-yes">删除当前和后续所有重复事件</button>
-                            </p>
-                            <p>
-                                <button type="button" class="btn btn-mini btn-no">只删除当前事件</button>
-                            </p>
-                            <p>
-                                <button type="button" class="btn btn-x btn-nevermind">取消删除</button>
-                            </p>
-                        </div>
-                    </script>
-
-                    <script type="text/html" id="tpl-cal-settings">
-                        <div class="cal-setting-popover">
-                            <div class="form-item cal-color-field">
-                                <h3>选择日历颜色</h3>
-                                <div class="cal-colors">
-                                    <a class="link-cal-color cal-color-1 selected" data-color="1"
-                                       href="javascript:;"><span><i class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-2" data-color="2" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-3" data-color="3" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-4" data-color="4" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-5" data-color="5" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-6" data-color="6" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-7" data-color="7" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-8" data-color="8" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-9" data-color="9" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-10" data-color="10" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-11" data-color="11" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-12" data-color="12" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-13" data-color="13" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-14" data-color="14" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-15" data-color="15" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-16" data-color="16" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-17" data-color="17" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                    <a class="link-cal-color cal-color-18" data-color="18" href="javascript:;"><span><i
-                                            class="twr twr-check"></i></span></a>
-                                </div>
-                            </div>
-
-                            <div class="form-item cal-setting-field">
-                                <p>
-                                    <a href="#" class="link-edit-cal" data-nocache data-stack data-stack-root
-                                       data-parent-name="日历"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/calendars"
-                                       data-parent-fluid>修改</a>
-                                    或者
-                                    <a href="#" class="link-delete-calendar" data-nocache data-method="post"
-                                       data-remote="true" data-loading
-                                       data-confirm="确定要删除这个日历吗？<br/>跟日历相关的事件会被一并删除，请谨慎操作。">删除日历</a>
-                                </p>
-                            </div>
-                        </div>
-                    </script>
-
-                    <script type="text/html" id="tpl-date-popover">
-                        <div class="select-event-date">
-                            <input type="text" class="txt-event-date" style="display: none;" value=""/>
-                        </div>
-                    </script>
-
-                    <script type="text/html" id="tpl-time-popover">
-                        <div class="select-event-time">
-                            <input type="text" class="txt-event-time" style="display: none;" value=""/>
-                        </div>
-                    </script>
-
-
-                    <script type="text/html" id="tpl-period-update-popover">
-                        <div class="period-update-popover">
-                            <h5>这是一个重复事件，你想？</h5>
-                            <p>
-                                <button type="button" class="btn btn-mini btn-yes">修改当前和后续所有重复事件</button>
-                            </p>
-                            <p>
-                                <button type="button" class="btn btn-mini btn-no">只修改当前事件</button>
-                            </p>
-                            <p>
-                                <button type="button" class="btn btn-x btn-nevermind">取消修改</button>
-                            </p>
-                        </div>
-                    </script>
-
+                    </ul>
                 </div>
+
+                <form class="form form-invite hide" id="form-members"
+                      action="/projects/e26956389763492f891259d7d9c5b94d/members"
+                      method="post" data-remote="true" data-visible-to="admin">
+
+                    <div class="setting-section">
+                        <h4>
+                            选择项目成员
+                        </h4>
+
+                        <p class="desc">
+                            管理员可以邀请和移除项目成员，只有被邀请的团队成员才能访问该项目的信息。点击这里查看<a href="https://tower.im/help/articles/27"
+                                                                         target="_blank" rel="nofollow">如何设置成员权限</a>。
+                        </p>
+
+
+                        <div class="manage-members-tabs">
+                            <div class="tabs-header">
+                                <a href="javascript:;" class="tab-header" data-tab="team">团队成员</a>
+                            </div>
+
+                            <div class="tab" data-tab="team">
+                                <div class="manage-members">
+
+                                    <div class="add-member">
+                                        <select id="select-add-member">
+                                            <option value="f7e254d7f54e40dbb93a33b737752fbc"
+                                                    data-guid="f7e254d7f54e40dbb93a33b737752fbc"
+                                                    data-key="OrionPax orionpax OrionPax"
+                                                    data-subgroup="0"
+                                                    data-gavatar="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
+                                                OrionPax
+                                            </option>
+                                        </select>
+
+                                        <div class="group-select">
+                                            <span class="all" data-subgroup="-1" unselectable="on">所有人</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="members member-checkbox-list">
+                                        <label title="OrionPax" class="member selected"
+                                               data-guid="f7e254d7f54e40dbb93a33b737752fbc"
+                                               data-subgroup="[]">
+
+                                            <input type="checkbox" name="" id=""
+                                                   value="f7e254d7f54e40dbb93a33b737752fbc" checked="checked"/>
+                                            <span class="name">OrionPax</span>
+                                        </label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-buttons">
+                        <button type="submit" id="btn-save-members" class="btn btn-primary" data-disable-with="正在保存..."
+                                data-success-text="保存成功"
+                                data-project-guid="e26956389763492f891259d7d9c5b94d">保存项目成员
+                        </button>
+                    </div>
+                </form>
+
+                <script type="text/html" id="tpl-invited-member">
+                    <li class="member selected invited" data-guid="{{ guid }}" title="{{ nickname }}">
+                        <img src="/assets/default_avatars/path-4077fe8fbe45c4519cf25abd0ed5d693c8f1ede2dcd6388e305a8243e16fbe79.jpg"
+                             class="avatar" alt="{{ nickname }}"/>
+                        <span class="name">{{ nickname }}</span>
+                        <span class="role">已邀请</span>
+                    </li>
+                </script>
             </div>
 
         </div>
@@ -1277,7 +1033,7 @@
 </div>
 
 <input type="hidden" id="d18n-enabled" value="false">
-<input type="hidden" id="server-time" value="2018-05-21 21:50:27">
+<input type="hidden" id="server-time" value="2018-05-21 21:56:23">
 
 <input type="hidden" id="team-guid" value="982b79584a39484eb9e17459a6e1deff">
 <input type="hidden" id="team-name" value="HYLT">
@@ -1292,7 +1048,7 @@
 <input type="hidden" id="member-nickname" value="浮点农国">
 <input type="hidden" id="member-avatar" value="/assets/default_avatars/noon.jpg">
 <input type="hidden" id="member-timezone" value="Asia/Shanghai">
-<input type="hidden" id="conn-guid" value="4fb6095f-7a92-4744-a62c-a2eb26f9cd65">
+<input type="hidden" id="conn-guid" value="70ddfcd5-9931-4494-80fb-74bf5baafa2c">
 
 
 <input type="hidden" id="electron" value="false">
