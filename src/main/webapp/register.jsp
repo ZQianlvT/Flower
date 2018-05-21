@@ -469,7 +469,7 @@
     <div class="page" id="page-signup">
         <div class="sign-page">
             <div class="hd">
-                <a class="link-logo" href="/">
+                <a class="link-logo" href="${pageContext.request.contextPath}/index.jsp">
                     <span class="twr twr-logo"></span>
                 </a></div>
 
@@ -508,7 +508,6 @@
                     </div>
 
                     <div class="form-item form-buttons">
-                        <p class="agree">点击注册表示你已阅读并同意<a target="_blank" href="/agreement">《Tower 服务条款》</a></p>
                         <button type="submit" id="btn-signup" class="btn btn-primary btn-block"
                                 data-disable-with="正在注册..."
                                 data-success-text="注册成功">
@@ -524,7 +523,7 @@
         </div>
 
         <div class="footer">
-            &copy; 彩程设计
+            &copy; 晴天设计
         </div>
 
     </div>
@@ -543,12 +542,6 @@
     //]]>
 </script>
 
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {"hide_default_launcher": true, "app_id": "xbtsuf77"};
 (function () {
     var w = window;

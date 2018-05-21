@@ -470,7 +470,7 @@
     <div class="page" id="page-signin">
         <div class="sign-page">
             <div class="hd">
-                <a class="link-logo" href="/">
+                <a class="link-logo" href="${pageContext.request.contextPath}/index.jsp">
                     <span class="twr twr-logo"></span>
                 </a></div>
 
@@ -493,15 +493,6 @@
                                 <input type="password" name="password" placeholder="密码"
                                        data-validate="required;length:6" data-validate-msg="请填写你的登录密码"/>
                             </div>
-                            <div class="desc">
-                                <p class="left">
-                                    <label for="cb-remember"><input type="checkbox" name="remember_me" id="cb-remember"
-                                                                    checked/> 下次自动登录</label>
-                                </p>
-                                <p class="right">
-                                    <span class="forgot-pw"><a href="/users/forgot_password">忘记密码了？</a></span>
-                                </p>
-                            </div>
                         </div>
 
                         <div class="form-buttons">
@@ -520,31 +511,15 @@
                     </div>
 
                     <div class="signin-footer">
-                        <div class="signin-dividing">
-                            <span class="content">你还可以使用</span>
-                        </div>
-
-                        <div class="signin-methods">
-                            <a href="javascript:;" class="link-normal-signin">
-                                <i class="twr twr-lock"></i>
-                                密码登录
-                            </a>
-                            <a href="javascript:;" class="link-wechat-signin">
-                                <i class="twr twr-weixin"></i> 微信
-                            </a>
-                            <a href="javascript:;" class="link-dingtalk-signin">
-                                <i class="twr twr-dingtalk"></i> 钉钉
-                            </a>
-                        </div>
-
-                        没有账号？<a href="/users/sign_up">立即注册 →</a>
+                        <br/>
+                        没有账号？<a href="${pageContext.request.contextPath}/register.jsp">立即注册 →</a>
                     </div>
                 </form>
             </div>
         </div>
 
         <div class="footer">
-            &copy; 彩程设计
+            &copy; 晴天设计
         </div>
 
     </div>
@@ -584,12 +559,6 @@
     //]]>
 </script>
 
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {"hide_default_launcher": true, "app_id": "xbtsuf77"};
 (function () {
     var w = window;

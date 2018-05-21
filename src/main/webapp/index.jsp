@@ -270,7 +270,7 @@
 <body id="home-index">
 <header class="header">
     <div class="container">
-        <a class="logo" href="/">
+        <a class="logo" href="${pageContext.request.contextPath}/index.jsp">
             <i class="twr twr-logo"></i>
         </a>
         <div class="btn-group">
