@@ -274,8 +274,8 @@
             <i class="twr twr-logo"></i>
         </a>
         <div class="btn-group">
-            <a class="btn btn-no-border" data-turbolinks="false" href="/users/sign_up">免费注册</a>
-            <a class="btn" data-turbolinks="false" href="/users/sign_in">登录</a>
+            <a class="btn btn-no-border" data-turbolinks="false" href="${pageContext.request.contextPath}/register.jsp">免费注册</a>
+            <a class="btn" data-turbolinks="false" href="${pageContext.request.contextPath}/login.jsp">登录</a>
         </div>
     </div>
 </header>
@@ -284,7 +284,7 @@
         <h1 class="solgan">深受用户喜爱的团队协作工具</h1>
         <p class="status">七十万团队、七百万人正在高效率地使用 Tower 进行协作，<br>你的团队也应如此。</p>
 
-        <p><a href="/users/sign_up" class="btn btn-signup">免费注册</a></p>
+        <p><a href="${pageContext.request.contextPath}/register.jsp" class="btn btn-signup">免费注册</a></p>
     </div>
 </div>
 
