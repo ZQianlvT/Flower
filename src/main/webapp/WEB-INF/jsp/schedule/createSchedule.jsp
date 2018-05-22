@@ -465,389 +465,42 @@
 
 <div class="wrapper">
 
-
     <div class="header">
         <div class="header-container">
             <h1 class="logo">
-                <a href="javascript:;" class="link-team-menu">
-                    <span class="name">HYLT</span>
+                <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-team-menu">
+                    alikes
                 </a>
             </h1>
 
             <ul class="nav">
                 <li class="" id="nav-project">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/projects" data-stack data-stack-root>项目</a>
-                </li>
-                <li class="" id="nav-events">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/events" data-stack data-stack-root>动态</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/project/listProject">项目</a>
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-calendar">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/calendars" data-stack data-stack-fluid
-                       data-stack-root>日历</a>
-                </li>
-
-                <li class="" id="nav-dashboard">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/dashboard" data-stack data-stack-root>鹰眼</a>
-                </li>
-                <li class="" id="nav-reports">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/reports" data-stack data-stack-root>汇报</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/calendar/calendar">日历</a>
                 </li>
                 <li class="dividing"></li>
-
                 <li class="" id="nav-members">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/members" data-stack data-stack-root>团队</a>
-                </li>
-                <li class="" id="nav-me">
-                    <a href="/members/ce2b30066f034bf9a69113963da165fd?me=1" data-stack data-stack-root>我自己</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/team/listTeam">团队</a>
                 </li>
 
                 <li id="nav-upgrade">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/upgrade?utm_source=Tower&amp;utm_medium=Web&amp;utm_campaign=Nav-Pro-Trial-Remaining"
-                       class="link-remaining" data-tower-pro="header-upgrade-ad" target="_blank">
-                        试用剩余 25 天
+                    <a href="#"
+                       class="link-remaining" data-tower-pro="header-upgrade-ad">
+                        本软件完全免费，并不禁止传播。
                     </a>
                 </li>
 
             </ul>
 
             <div class="command-bar">
-                <div class="search-wrap">
-                    <a href="javascript:;" class="link-search" title="搜索"><i class="twr twr-search"></i></a>
-                    <form id="form-search" class="form" method="get"
-                          action="/teams/982b79584a39484eb9e17459a6e1deff/search">
-                        <input id="txt-search" type="text" class="keyword no-border" name="keyword" placeholder="搜索"
-                               autocomplete="off"/>
-                    </form>
-                </div>
-
-                <audio src="/assets/notification-8c3a5ef39c8b88e19cf2b732747a6691d43ffa68d25b3db74ebe418bf41fad63.mp3"
-                       id="notification-audio" preload="auto"></audio>
-
-                <div class="notification-info">
-                    <a href="javascript:;" id="notification-count" class="label unread" title="新的通知"
-                       data-unread-count="9"
-                       data-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/unread_counts">
-                        <span class="twr twr-bell-o bell"></span>
-                        <span class="num">9</span>
-                    </a>
-                    <div class="noti-pop">
-                        <div class="noti-pop-hd">
-                            <b class="title">通知</b>
-                            <a class="mark-as-read" id="noti-mark-read" data-loading="true" data-remote="true"
-                               rel="nofollow" data-method="post"
-                               href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/read_all">
-                                <span class="twr twr twr-check"></span>
-                                全部标记为已读
-                            </a></div>
-                        <div class="noti-pop-list-wrap">
-                            <div class="noti-pop-list notification-list">
-
-                                <div data-notification-guid="139461fd246c480cabf662de9f9ed58c"
-                                     data-topic-guid="ce2b30066f034bf9a69113963da165fd"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-21 10:04:28 +0800"
-                                     data-key-id="187268174">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/139461fd246c480cabf662de9f9ed58c"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">邀请你加入项目</span>
-      <span class="target">测试</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-21T10:04:28+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/139461fd246c480cabf662de9f9ed58c/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="22e99b54fa324370be38d9b4ab53b329"
-                                     data-topic-guid="177ac58c1f6c4271b711c122461f2db2"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-21 09:56:56 +0800"
-                                     data-key-id="187263033">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/22e99b54fa324370be38d9b4ab53b329"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-21T09:56:56+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/22e99b54fa324370be38d9b4ab53b329/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="9693c6febb1c4ef0af507573552db6eb"
-                                     data-topic-guid="9b312b0f458b4388b32dff292022c5c4"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 15:01:26 +0800"
-                                     data-key-id="186584573">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/9693c6febb1c4ef0af507573552db6eb"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T15:01:26+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/9693c6febb1c4ef0af507573552db6eb/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="85c4314aa9e447b8b1c4affdb471e9cd"
-                                     data-topic-guid="ae785cbe80204636bb94c6d143a43f7b"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 14:33:53 +0800"
-                                     data-key-id="186572049">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/85c4314aa9e447b8b1c4affdb471e9cd"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T14:33:53+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/85c4314aa9e447b8b1c4affdb471e9cd/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="d530acf38cd046a5ad5f62a7d30afba7"
-                                     data-topic-guid="70d66a5f040f4f6caf6cb4aa172a3d0c"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 10:28:48 +0800"
-                                     data-key-id="186493117">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/d530acf38cd046a5ad5f62a7d30afba7"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">完成了任务</span>
-      <span class="target">网页流转设计</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T10:28:48+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/d530acf38cd046a5ad5f62a7d30afba7/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="cb0922633efe47ca8970da84d980746c"
-                                     data-topic-guid="c8975d5ea1b9479c960a62fda7cabfb9"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 09:24:22 +0800"
-                                     data-key-id="186437297">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/cb0922633efe47ca8970da84d980746c"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T09:24:22+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/cb0922633efe47ca8970da84d980746c/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="e70789a8ab0645418e812454f3fb74f3"
-                                     data-topic-guid="aff9e385ab5748d6a76379a375a54565"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-17 18:04:38 +0800"
-                                     data-key-id="186137730">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/e70789a8ab0645418e812454f3fb74f3"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">完成了任务</span>
-      <span class="target">网站需求分析</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-17T18:04:38+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/e70789a8ab0645418e812454f3fb74f3/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="7c01689b05c7464fabd0814e2d2d9cde"
-                                     data-topic-guid="e86bfd0ca2a14f0fb522f806e23ce8e2"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-17 16:05:40 +0800"
-                                     data-key-id="186090497">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/7c01689b05c7464fabd0814e2d2d9cde"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">编辑了日程</span>
-      <span class="target">需求设计</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-17T16:05:40+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/7c01689b05c7464fabd0814e2d2d9cde/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="995ddee00642453984ad251189f50b06"
-                                     data-topic-guid="d2869aecfc7b4f56a46fcddd4b20193f"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-17 16:02:13 +0800"
-                                     data-key-id="186088835">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/995ddee00642453984ad251189f50b06"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">编辑了日程</span>
-      <span class="target">项目需求分析</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-17T16:02:13+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/995ddee00642453984ad251189f50b06/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="noti-pop-empty hide">- 没有新通知 -</div>
-                        <div class="noti-pop-footer">
-                            <a class="noti-settings" data-stack="true" data-stack-root="true"
-                               href="/members/ce2b30066f034bf9a69113963da165fd/notification_settings">
-                                <i class="twr twr-cog"></i> 通知设置
-                            </a> <a class="noti-all-link" data-stack="true" data-stack-root="true"
-                                    href="/teams/982b79584a39484eb9e17459a6e1deff/notifications">查看全部通知</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="account-info">
                     <div class="member-settings">
                         <a class="link-member-menu ab-test-old" href="javascript:;" data-new-feature="false">
                             <span class="twr twr-caret-down"></span>
-                            <img class="avatar" src="/assets/default_avatars/noon.jpg" alt="Noon"/>
+                            <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg" alt="Noon"/>
                         </a>
                     </div>
                 </div>
@@ -855,57 +508,19 @@
         </div>
     </div>
 
-
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a data-stack="true" data-stack-root="true" href="/members/ce2b30066f034bf9a69113963da165fd/settings">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/base/goURL/user/updateUser">个人设置</a>
             </li>
-            <li><a data-stack="true" data-stack-root="true"
-                   href="/members/ce2b30066f034bf9a69113963da165fd/notification_settings">通知设置</a></li>
-            <li><a data-stack="true" data-stack-root="true"
-                   href="/members/ce2b30066f034bf9a69113963da165fd/stars">我的关注</a></li>
             <li class="part-line"></li>
-            <li><a target="_blank" href="/choices">企业服务精选</a></li>
-            <li><a target="_blank" href="/downloads">下载客户端</a></li>
-            <li><a target="_blank" href="/help">帮助中心</a></li>
-            <li><a id="link-roadmap" target="_blank" href="/roadmap">最新功能</a></li>
-            <li><a rel="nofollow" data-method="DELETE" href="/users/sign_out">退出</a></li>
-        </ul>
-    </script>
-    <script id="tpl-team-menu" type="text/html">
-        <ul class="menu">
-
-            <li><a href="/teams/982b79584a39484eb9e17459a6e1deff/external_apps" data-stack data-stack-root>应用中心</a></li>
-
-
-            <li>
-                <a class="js-feature-migrated" data-migrated-feature="team-stats" href="javascript:;">团队统计</a>
-            </li>
-
-            <li>
-                <a href="/teams/982b79584a39484eb9e17459a6e1deff/upgrade" data-stack data-stack-root>
-                    了解 Pro 版
-                </a>
-            </li>
-
-            <p class="title"><span>切换团队</span></p>
-            <ul class="menu scroll team-list">
-                <li>
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4">alikes
-                    </a>
-                </li>
-            </ul>
-            <li class="part-line"></li>
-
-            <li class="small"><a href="/launchpad?skip=1">创建/管理团队</a></li>
+            <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
         </ul>
     </script>
 
 
     <div class="container workspace">
         <div class="page">
-            <a href="/teams/982b79584a39484eb9e17459a6e1deff/calendars" class="link-page-behind" data-stack
-               data-stack-fluid>日历</a>
+            <a href="${pageContext.request.contextPath}/base/goURL/calendar/calendar" class="link-page-behind">日历</a>
         </div>
         <div class="page">
 
@@ -1098,7 +713,7 @@
     </div>
 
     <div class="footer">
-        &copy; 彩程设计
+        &copy; 晴天设计
     </div>
 
 
@@ -1132,12 +747,6 @@
     //]]>
 </script>
 
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" data-intercom="false" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {
     "hide_default_launcher": true,
     "guid": "ce2b30066f034bf9a69113963da165fd",

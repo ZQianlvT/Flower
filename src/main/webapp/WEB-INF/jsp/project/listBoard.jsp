@@ -523,21 +523,13 @@
         <div class="page">
 
             <div class="page-inner
-
-
-
         project-kanban"
-
-
                  data-guest-unlockable
                  data-stack-fluid
-
                  data-since="2018-05-21 07:26:44 UTC"
                  data-project-creator="f7e254d7f54e40dbb93a33b737752fbc"
                  data-page-name="Flower"
                  id="page-project">
-
-
                 <div class="project-header">
                     <div class="project-hd-info">
                         <span class="project-name">Flower</span>
@@ -564,10 +556,9 @@
 
                 <div class="project-tabs">
                     <a class="project-tab active">任务</a>
-                    <a href="/projects/e26956389763492f891259d7d9c5b94d/topics" class="project-tab">讨论</a>
-                    <a href="/projects/e26956389763492f891259d7d9c5b94d/calendar_events" class="project-tab">日程</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/discussion/continueDiscussion" class="project-tab">讨论</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/schedule/listSchedule" class="project-tab">日程</a>
                 </div>
-
 
                 <div id='fullscreen-header'>Flower</div>
                 <div class="section section-todos" id="todolists">
