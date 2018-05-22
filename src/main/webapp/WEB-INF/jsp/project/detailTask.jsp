@@ -522,7 +522,8 @@
     <div class="container workspace">
         <div class="page "
              data-url="/projects/e26956389763492f891259d7d9c5b94d">
-            <a href="${pageContext.request.contextPath}/base/goURL/project/listBoard" class="link-page-behind">Flower</a>
+            <a href="${pageContext.request.contextPath}/base/goURL/project/listBoard"
+               class="link-page-behind">Flower</a>
         </div>
         <div class="page">
 
@@ -543,11 +544,9 @@
                            data-stack data-stack-replace data-stack-root
                            data-stack-fluid>Flower</a>
                     </span>
-                        <span>
-                        <a data-stack="true" data-stack-replace="true"
-                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">开发</a>
-                    </span>
+
                     </div>
+                    <br/>
 
                     <div class="todolist">
                         <ul class="todos">
@@ -565,24 +564,6 @@
                                 data-completed-check-items-size="0"
                             >
 
-                                <div class="todo-actions actions">
-                                    <div class="inr">
-                                        <a class="run" title="标记成正在进行中" data-loading="true" data-remote="true"
-                                           data-method="post"
-                                           href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/running">执行</a>
-                                        <a class="pause" title="暂停" data-loading="true" data-remote="true"
-                                           data-method="post"
-                                           href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/pause">暂停</a>
-                                        <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/edit"
-                                           class="edit" data-request-members="e26956389763492f891259d7d9c5b94d"
-                                           title="编辑">编辑</a>
-
-                                        <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/destroy"
-                                           data-visible-to="creator,admin"
-                                           class="del" data-remote="true" data-method="post" data-confirm="确定要删除这条任务吗？"
-                                           title="删除">删除</a>
-                                    </div>
-                                </div>
 
                                 <div class="todo-wrap">
                                     <input type="checkbox" name="todo-done"/>
@@ -622,35 +603,6 @@
                         </ul>
                     </div>
 
-                    <div class="todo-desc empty ">
-                        <p class="todo-shortcut">
-                            <span class="both-hide">添加</span>
-                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/edit"
-                               class="detail-action-edit link-add-desc desc-hide" data-remote="true" data-method="get"
-                               data-loading>任务描述</a>
-                            <span class="desc-hide check-items-hide">或者</span>
-                            <a href="javascript:;" class="link-show-check-items check-items-hide">检查项</a>
-                        </p>
-
-                        <div class="editor-style"></div>
-
-                    </div>
-
-
-                    <div class="check-items" data-check-items-root>
-                        <div class="check-items-progress">
-                            <span class="progress-value">0%</span>
-                            <div class="progress-bar">
-                                <div class="progress-bar-inner" style="width: 0%;"></div>
-                            </div>
-                        </div>
-
-
-                        <a class="link-add-check-item" data-type="script" data-remote="true"
-                           href="/todos/ec69d30b1b5f4759b823771882da98e8/check_items/new">
-                            <i class="twr twr-plus"></i>
-                            <span>添加检查项</span>
-                        </a></div>
 
 
                 </div>
@@ -669,10 +621,6 @@
 
                         <div class="event-main">
                             <div class="event-head">
-                                <a href="#event-176798292" data-created-at="2018-05-20T12:43:07+08:00"
-                                   class="event-created-at">
-                                    2018-05-20 12:43
-                                </a>
                                 <span class="event-actor">
 				<a class="link-member" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
 			</span>
@@ -701,15 +649,11 @@
 
                         <div class="event-main">
                             <div class="event-head">
-                                <a href="#event-176798300" data-created-at="2018-05-20T12:43:19+08:00"
-                                   class="event-created-at">
-                                    2018-05-20 12:43
-                                </a>
                                 <span class="event-actor">
 				<a class="link-member" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
 			</span>
                                 <span class="event-action">
-				将任务完成时间从 <span data-readable-date="">没有截止日期</span> 修改为 <span
+				将任务完成时间设置为 <span
                                         data-readable-date="2018-05-20T23:59:59+08:00">没有截止日期</span>
 			</span>
                                 <span class="event-text">
@@ -734,10 +678,6 @@
 
                         <div class="event-main">
                             <div class="event-head">
-                                <a href="#event-176798301" data-created-at="2018-05-20T12:43:19+08:00"
-                                   class="event-created-at">
-                                    2018-05-20 12:43
-                                </a>
                                 <span class="event-actor">
 				<a class="link-member" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
 			</span>
@@ -754,38 +694,6 @@
                         </div>
                     </div>
 
-                    <div class="event event-common event-todo-due_at_changed" id="event-176810091"
-                         data-ancestor-guid="e26956389763492f891259d7d9c5b94d"
-                         data-ancestor-name="Flower"
-                         data-ancestor-url="/projects/e26956389763492f891259d7d9c5b94d">
-
-                        <a class="from" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc"><img
-                                class="avatar" alt="OrionPax"
-                                src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3"/></a>
-                        <i class="icon-event"></i>
-
-                        <div class="event-main">
-                            <div class="event-head">
-                                <a href="#event-176810091" data-created-at="2018-05-20T16:28:43+08:00"
-                                   class="event-created-at">
-                                    2018-05-20 16:28
-                                </a>
-                                <span class="event-actor">
-				<a class="link-member" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
-			</span>
-                                <span class="event-action">
-				将任务完成时间从 <span data-readable-date="2018-05-20T23:59:59+08:00">没有截止日期</span> 修改为 <span
-                                        data-readable-date="2018-05-21T23:59:59+08:00">没有截止日期</span>
-			</span>
-                                <span class="event-text">
-				<span class="emphasize">
-					<a class="todo-rest" data-stack="true"
-                       href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8">数据库表开发</a>
-				</span>
-			</span>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
 
@@ -800,70 +708,6 @@
                         </div>
                     </div>
                 </script>
-
-
-                <div class="detail-actions">
-                    <div class="item detail-star-action">
-                        <a class="detail-action detail-action-star" title="关注" data-remote="true" data-itemtype="Todo"
-                           data-itemid="41358133" data-loading="true" rel="nofollow" data-method="post"
-                           href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/star?muid=ec69d30b1b5f4759b823771882da98e8">关注</a>
-                    </div>
-
-                    <div class="item">
-                        <a class="detail-action detail-action-edit" data-method="get" data-remote="true"
-                           data-loading="true" data-request-members="e26956389763492f891259d7d9c5b94d"
-                           href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/edit">编辑</a>
-                    </div>
-
-                    <div class="item detail-action-copy-todo" data-visible-to="creator,admin">
-                        <a class="detail-action detail-action-todo-copy" href="javascript:;">复制</a>
-                        <div class="confirm">
-                            <form class="form-todo-copy"
-                                  action="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/copy"
-                                  method="post" data-remote>
-                                <p class="title">复制任务到当前任务清单</p>
-                                <p>
-                                    <input type="number" placeholder="复制数量[1~50]" min="1" max="50" name="count"
-                                           id="count">
-                                </p>
-                                <p>
-                                    <button type="submit" class="btn btn-mini" data-disable-with="正在复制...">复制</button>
-                                    <button type="button" class="btn btn-x cancel">取消</button>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="item detail-action-move" data-visible-to="creator,admin">
-                        <a class="detail-action detail-action-todo" href="javascript:;">移动</a>
-                        <div class="confirm">
-                            <form class="form form-move"
-                                  action="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/move"
-                                  method="post" data-remote>
-                                <p class="title">移动任务到项目</p>
-                                <p>
-                                    <select data-project="e26956389763492f891259d7d9c5b94d"
-                                            class="choose-projects loading"></select>
-                                    <input type="hidden" name="tpuid">
-                                </p>
-                                <p>
-                                    <select data-todolist="7eea1fdab77c4e6a84ec744bb869c7a6"
-                                            class="choose-todolists"></select>
-                                    <input type="hidden" name="tluid">
-                                </p>
-                                <p>
-                                    <button type="submit" class="btn btn-mini" disabled data-disable-with="正在移动...">移动
-                                    </button>
-                                    <button type="button" class="btn btn-x cancel">取消</button>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="item" data-visible-to="creator,admin">
-                        <a class="detail-action detail-action-del" href="javascript:;">删除</a>
-                    </div>
-                </div>
 
                 <script type="text/html" id="tpl-todo-form">
 
@@ -993,8 +837,7 @@
 
                 <div class="comment comment-form new">
                     <form class="form form-editor form-new-comment" method="post" data-remote="true"
-                          action="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/comments"
-                    >
+                          action="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/comments">
 
                         <a class="avatar-wrap" target="_blank">
                             <img class="avatar">
@@ -1024,70 +867,12 @@
                     </form>
                 </div>
 
-                <div class="zoom-meeting">
-                    <p>不想打字？试试 <a id="link-create-zoom" data-url="/teams/982b79584a39484eb9e17459a6e1deff/zoom/create"
-                                  data-type="comment" href="javascript:;">召开视频会议</a></p>
-
-                    <script type="text/html" id="tpl-zoom-dialog">
-                        <h3 class="simple-dialog-title">召开视频会议</h3>
-                        <p>会议室已经准备好了，邀请你的同事加入讨论吧</p>
-                        <p class="zoom-url">{{ zoom_url }}</p>
-                        <div class="simple-dialog-buttons">
-                            <button type="button" class="btn btn-primary btn-start-zoom" data-disable-with="正在发送...">
-                                发送链接
-                            </button>
-                            <button type="button" class="btn btn-x">取消</button>
-                        </div>
-                    </script>
-
-                    <script type="text/html" id="tpl-zoom-content">
-                        <p>点击下面的链接，加入我的视频会议吧：</p>
-                        <p>
-                            <a href="{{ zoom_url }}" target="_blank">{{ zoom_url }}</a>
-                        </p>
-                    </script>
-                </div>
-
-
-                <div class="cc-members" data-cc-members="f7e254d7f54e40dbb93a33b737752fbc">
-                    <div class="container">
-                        <div class="cc-members-left">
-                            <p class="cc-members-left-title">发布评论后，这些人会收到通知：</p>
-
-                            <div class="avatars" data-visible-count="5"
-                                 data-url="/todos/ec69d30b1b5f4759b823771882da98e8/cc_members">
-                                <a class="avatar" target="_blank" href="/members/f7e254d7f54e40dbb93a33b737752fbc">
-                                    <img alt="OrionPax" data-tooltip="OrionPax" data-position="top"
-                                         src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3"/>
-                                </a></div>
-
-                            <p class="cc-members-empty-tip">还没有成员会收到通知。</p>
-                        </div>
-
-                        <div class="cc-members-settings">
-                            <a class="btn btn-mini" id="donot-bother-me-button" data-loading="true" data-remote="true"
-                               rel="nofollow" data-method="delete"
-                               href="/todos/ec69d30b1b5f4759b823771882da98e8/notify_mes">停止接收该内容的通知</a>
-                            <a class="btn btn-mini" id="notify-me-button" data-loading="true" data-remote="true"
-                               rel="nofollow" data-method="post"
-                               href="/todos/ec69d30b1b5f4759b823771882da98e8/notify_mes">有新动态通知我</a>
-
-                            <a class="btn btn-mini" data-type="script" data-loading="true" data-remote="true"
-                               href="/todos/ec69d30b1b5f4759b823771882da98e8/cc_members/edit">编辑通知成员</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <script type="text/html" id="comments-liked-list">
-
-            </script>
             </div>
 
         </div>
     </div>
     <div class="footer">
-        &copy; 彩程设计
+        &copy; 晴天设计
     </div>
 
 
@@ -1107,7 +892,7 @@
 <input type="hidden" id="member-id" value="12535517">
 <input type="hidden" id="member-guid" value="ce2b30066f034bf9a69113963da165fd">
 <input type="hidden" id="member-nickname" value="浮点农国">
-<input type="hidden" id="member-avatar" value="/assets/default_avatars/noon.jpg">
+<input type="hidden" id="member-avatar" value="${pageContext.request.contextPath}/images/noon.jpg">
 <input type="hidden" id="member-timezone" value="Asia/Shanghai">
 <input type="hidden" id="conn-guid" value="c37131dd-3daf-435a-bc9c-2c98d5e1843b">
 
