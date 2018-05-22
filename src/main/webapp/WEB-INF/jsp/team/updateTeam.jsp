@@ -539,139 +539,22 @@
                 </div>
 
 
-                <div class="section account-section">
-                    <div class="account-summary">
-                        <table cellspacing="0">
-                            <tr>
-                                <td class="info-field">当前方案：</td>
-                                <td class="info-value">
-                                    Tower Pro 试用版
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="info-field">项目数量：</td>
-                                <td class="info-value">
-                                    <strong>1</strong>
-                                    <a class="tiny-link" data-stack="true"
-                                       href="/teams/7feef4ba8611443ebd06db497618beb4/projects_info">查看</a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="info-field">到期时间：</td>
-                                <td class="info-value">
-                                    2018-06-16
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="info-field">存储空间：</td>
-                                <td class="info-value">
-                                    0.0GB /
-                                    <span class="infinite"></span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="info-field">成员数量：</td>
-                                <td class="info-value">
-                                    2 /
-                                    <span class="infinite"></span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="info-field">账户余额：</td>
-                                <td class="info-value">
-                                    <em class="yen-price"><span class="yen">&yen;</span><span
-                                            class="price">0</span></em>
-                                    <a class="tiny-link" data-stack="true"
-                                       href="/teams/7feef4ba8611443ebd06db497618beb4/gift_charge">使用充值卡</a>
-
-                                </td>
-                            </tr>
-                        </table>
-
-                        <p class="payment-actions">
-                            <a class="btn btn-charge" data-stack="true" href="/subscriptions/new">立即升级为 Pro</a>
-
-                            <a target="_blank" href="/teams/7feef4ba8611443ebd06db497618beb4/upgrade">专属特权</a>
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="section">
-                    <h4>应用中心</h4>
-                    <p class="desc">使用 Tower 集成的扩展功能以及第三方服务，提升协作效率。</p>
-                    <a class="btn btn-mini" data-stack="true"
-                       href="/teams/7feef4ba8611443ebd06db497618beb4/external_apps">查看应用</a>
-                </div>
-
                 <div class="section">
                     <h4>批量删除成员</h4>
                     <p class="desc">如果团队成员从今往后都不再需要访问该团队的信息，可以删除他们的账号。</p>
-                    <a class="btn btn-mini" data-stack="true"
-                       href="/teams/7feef4ba8611443ebd06db497618beb4/members/batch_destroy/new">批量删除成员</a>
+                    <a class="btn btn-mini" href="${pageContext.request.contextPath}/base/goURL/team/deleteMembers">批量删除成员</a>
                 </div>
 
-                <div class="section export-section">
-                    <h4>数据备份</h4>
-                    <p class="desc">你可以给团队数据创建备份，下载到本地硬盘，永久保存。</p>
-                    <p>
-                        <a href="/teams/7feef4ba8611443ebd06db497618beb4/export" data-stack
-                           class="btn btn-mini">创建备份</a>
-                    </p>
-                </div>
 
-                <div class="section trans-account">
-                    <h4>移交团队？</h4>
-                    <p class="desc">你可以把 <b>超级管理员</b> 身份移交给其他 <b>管理员</b>，移交之后你将不能再访问「团队账户」页面。</p>
-                    <form class="form form-trans-account" data-confirm="移交后，你将不能再访问团队账户页面，但仍有其它管理权限。你确定要移交么？"
-                          action="/members/231e0ddd353440c883f9874a555f8adc/trans_account" method="post"
-                          data-remote="true">
-                        <div class="btn-group">
-                            <input type="hidden" class="auid" name="auid" data-validate="required;length:32"
-                                   data-validate-msg="请选择管理员">
-                            <a href="javascript:;" name="auid" date-admin="231e0ddd353440c883f9874a555f8adc"
-                               id="assign-admin" class="choose-admins loading label">点击选择成员</a>
-                            <button type="submit" class="btn btn-mini">移交</button>
-                        </div>
-                    </form>
-                    <p class="desc">
-                        但是，你的团队里没有其他管理员，去 <a data-stack="true" data-stack-root="true"
-                                             href="/teams/7feef4ba8611443ebd06db497618beb4/members">团队页面</a> 设置一位管理员吧。
-                    </p>
-                </div>
-
-                <div class="section rm-team">
-                    <h4>删除团队</h4>
-                    <p class="desc">如果你和你的团队成员，从今往后都不再需要访问该团队的信息，可以删除团队。</p>
-                    <button type="button" class="link-delete btn btn-mini" id="btn-del-team">了解风险，删除当前团队</button>
-                </div>
             </div>
 
-            <script type="text/html" id="tpl-del-team">
-                <form class="form form-del-team-confirm form-delete-need-password"
-                      action="/teams/7feef4ba8611443ebd06db497618beb4/destroy" method="post" data-remote novalidate>
-                    <h4 class="simple-dialog-title">删除团队：alikes</h4>
-                    <p><em>重要提示：</em>删除团队后，所有内容都会被立即删除，不可恢复。</p>
-                    <p><input type="password" name="password" id="del-team-password" placeholder="请输入你的登录密码"
-                              autocomplete="off"></p>
-                    <div class="form-buttons">
-                        <button type="submit" class="btn btn-primary">确认删除</button>
-                        <button type="button" class="btn btn-x btn-cancel">取消</button>
-                    </div>
-                </form>
-            </script>
 
         </div>
 
     </div>
 </div>
 <div class="footer">
-    &copy; 彩程设计
+    &copy; 晴天设计
 </div>
 
 
@@ -708,12 +591,6 @@
     //]]>
 </script>
 
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" data-intercom="false" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {
     "hide_default_launcher": true,
     "guid": "231e0ddd353440c883f9874a555f8adc",

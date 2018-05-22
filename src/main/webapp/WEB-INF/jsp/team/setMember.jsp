@@ -521,25 +521,13 @@
 
     <div class="container workspace">
         <div class="page">
-            <a href="/members/008d36bf2b694a66bfac2bf7e6b79512" class="link-page-behind" data-stack>OrionPax</a>
+            <a href="${pageContext.request.contextPath}/base/goURL/team/listTeam" class="link-page-behind">团队</a>
         </div>
         <div class="page">
 
             <div class="page-inner page-member" id="page-member" data-page-name="OrionPax 的设置">
                 <div class="member-section other-settings">
                     <h3 class="page-title">OrionPax 的设置</h3>
-                    <div class="sets-item">
-                        <a data-stack="true" href="/members/008d36bf2b694a66bfac2bf7e6b79512/edit">设置在 alikes 团队中的名片</a><br/>
-                        名片仅在当前团队显示，你可以在不同团队填写不同信息。<br/>
-                    </div>
-
-                    <div class="sets-item">
-                        <em>双保险状态</em>
-                        <span class="status closed">关闭</span>
-
-                        <br/>
-                        启用后，每次登录 Tower 都需要使用成员的微信进行验证，增强账号安全性。<br/>
-                    </div>
 
                     <div class="sets-item">
                         <em>从团队中移除 OrionPax</em><br/>
@@ -554,66 +542,13 @@
                         </p>
                     </div>
 
-                    <form class="form form-change-role"
-                          action="/members/008d36bf2b694a66bfac2bf7e6b79512/settings_other" method="post"
-                          data-remote="true" novalidate>
-
-                        <div class="sets-item">
-                            <em>权限</em>
-                            <a href="https://tower.im/help/articles/27" class="tiny-link"
-                               target="_blank">不同成员角色有什么区别？</a>
-                            <div class="form-item choose-roles">
-                                <label><input type="radio" name="role" value="1">管理员</label>
-                                <label><input type="radio" name="role" value="0" checked>成员</label>
-                                <label><input type="radio" name="role" value="3">访客</label>
-                            </div>
-                        </div>
-
-                        <div class="sets-item">
-                            <em>参与的项目</em>
-                            <span class="select-all"> [ <a href="#" class="select-all-proj">全选</a> | <a
-                                    class="select-none-proj" href="#">全不选</a> ]</span>
-                            <a href="/members/008d36bf2b694a66bfac2bf7e6b79512/settings_archived_projects"
-                               class="tiny-link" data-stack>设置归档项目权限</a>
-
-                            <div class="form-item proj-in">
-                                <div class="form-field">
-                                    <label title="熟悉 Tower" class=welcome><input type="checkbox"
-                                                                                 name="access-projects[]"
-                                                                                 value="395a049851e94e85b852c7ba9287d3aa"/>
-                                        熟悉 Tower</label>
-                                    <label title="test"><input type="checkbox" name="access-projects[]"
-                                                               value="d5ca7313dcda442ba53d6d4190aa4d92" checked/>
-                                        test</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="sets-item">
-                            <em>可访问的日历</em>
-                            <span class="select-all">[ <a href="#" class="select-all-cal">全选</a> | <a
-                                    class="select-none-cal" href="#">全不选</a> ]</span>
-                            <div class="form-item cal-in">
-                                <div class="form-field">
-                                    <label title="法定假日"><input type="checkbox" name="access-calendars[]"
-                                                               value="f96c484b7f15431eb8c75a09dbadf090"/> 法定假日</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="sets-item">
-                            <button type="submit" class="btn btn-primary btn-large" data-success-text="保存成功"
-                                    data-disable-with="正在保存...">保存设置
-                            </button>
-                        </div>
-                    </form>
                 </div>
             </div>
 
         </div>
     </div>
     <div class="footer">
-        &copy; 彩程设计
+        &copy; 晴天设计
     </div>
 
 
@@ -650,12 +585,6 @@
     //]]>
 </script>
 
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" data-intercom="false" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {
     "hide_default_launcher": true,
     "guid": "231e0ddd353440c883f9874a555f8adc",
