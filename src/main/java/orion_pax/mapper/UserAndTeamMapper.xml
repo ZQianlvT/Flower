@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orion_pax.dao.UserAndTeamMapper">
+  <resultMap id="BaseResultMap" type="orion_pax.entity.UserAndTeam">
+    <result column="uat_id" jdbcType="VARCHAR" property="id" />
+    <result column="uat_u_id" jdbcType="VARCHAR" property="uId" />
+    <result column="uat_t_id" jdbcType="VARCHAR" property="tId" />
+  </resultMap>
+  <insert id="insert" parameterType="orion_pax.entity.UserAndTeam">
+    insert into f_userandteam (uat_id, uat_u_id, uat_t_id)
+    values (#{id,jdbcType=VARCHAR}, #{uId,jdbcType=VARCHAR}, #{tId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="orion_pax.entity.UserAndTeam">
+    insert into f_userandteam
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        uat_id,
+      </if>
+      <if test="uId != null">
+        uat_u_id,
+      </if>
+      <if test="tId != null">
+        uat_t_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="uId != null">
+        #{uId,jdbcType=VARCHAR},
+      </if>
+      <if test="tId != null">
+        #{tId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

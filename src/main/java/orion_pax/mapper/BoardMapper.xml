@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orion_pax.dao.BoardMapper">
+  <resultMap id="BaseResultMap" type="orion_pax.entity.Board">
+    <result column="b_id" jdbcType="VARCHAR" property="id" />
+    <result column="b_name" jdbcType="VARCHAR" property="name" />
+    <result column="b_unfinished" jdbcType="INTEGER" property="unfinished" />
+    <result column="b_p_id" jdbcType="VARCHAR" property="pId" />
+  </resultMap>
+  <insert id="insert" parameterType="orion_pax.entity.Board">
+    insert into f_board (b_id, b_name, b_unfinished, 
+      b_p_id)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{unfinished,jdbcType=INTEGER}, 
+      #{pId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="orion_pax.entity.Board">
+    insert into f_board
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        b_id,
+      </if>
+      <if test="name != null">
+        b_name,
+      </if>
+      <if test="unfinished != null">
+        b_unfinished,
+      </if>
+      <if test="pId != null">
+        b_p_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="unfinished != null">
+        #{unfinished,jdbcType=INTEGER},
+      </if>
+      <if test="pId != null">
+        #{pId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orion_pax.dao.DiscussionMapper">
+  <resultMap id="BaseResultMap" type="orion_pax.entity.Discussion">
+    <result column="d_id" jdbcType="VARCHAR" property="id" />
+    <result column="d_name" jdbcType="VARCHAR" property="name" />
+    <result column="d_remark" jdbcType="VARCHAR" property="remark" />
+    <result column="d_startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="d_status" jdbcType="INTEGER" property="status" />
+    <result column="d_p_id" jdbcType="VARCHAR" property="pId" />
+    <result column="d_u_id" jdbcType="VARCHAR" property="uId" />
+  </resultMap>
+  <insert id="insert" parameterType="orion_pax.entity.Discussion">
+    insert into f_discussion (d_id, d_name, d_remark, 
+      d_startTime, d_status, d_p_id, 
+      d_u_id)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{starttime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{pId,jdbcType=VARCHAR}, 
+      #{uId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="orion_pax.entity.Discussion">
+    insert into f_discussion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        d_id,
+      </if>
+      <if test="name != null">
+        d_name,
+      </if>
+      <if test="remark != null">
+        d_remark,
+      </if>
+      <if test="starttime != null">
+        d_startTime,
+      </if>
+      <if test="status != null">
+        d_status,
+      </if>
+      <if test="pId != null">
+        d_p_id,
+      </if>
+      <if test="uId != null">
+        d_u_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="pId != null">
+        #{pId,jdbcType=VARCHAR},
+      </if>
+      <if test="uId != null">
+        #{uId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

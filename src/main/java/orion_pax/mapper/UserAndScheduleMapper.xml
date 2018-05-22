@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orion_pax.dao.UserAndScheduleMapper">
+  <resultMap id="BaseResultMap" type="orion_pax.entity.UserAndSchedule">
+    <result column="uas_id" jdbcType="VARCHAR" property="id" />
+    <result column="uas_s_id" jdbcType="VARCHAR" property="sId" />
+    <result column="uas_u_id" jdbcType="VARCHAR" property="uId" />
+  </resultMap>
+  <insert id="insert" parameterType="orion_pax.entity.UserAndSchedule">
+    insert into f_userandschedule (uas_id, uas_s_id, uas_u_id)
+    values (#{id,jdbcType=VARCHAR}, #{sId,jdbcType=VARCHAR}, #{uId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="orion_pax.entity.UserAndSchedule">
+    insert into f_userandschedule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        uas_id,
+      </if>
+      <if test="sId != null">
+        uas_s_id,
+      </if>
+      <if test="uId != null">
+        uas_u_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="sId != null">
+        #{sId,jdbcType=VARCHAR},
+      </if>
+      <if test="uId != null">
+        #{uId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

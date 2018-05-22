@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orion_pax.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="orion_pax.entity.User">
+    <result column="u_id" jdbcType="VARCHAR" property="id" />
+    <result column="u_email" jdbcType="VARCHAR" property="email" />
+    <result column="u_pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="u_name" jdbcType="VARCHAR" property="name" />
+    <result column="u_img" jdbcType="VARCHAR" property="img" />
+    <result column="u_tel" jdbcType="VARCHAR" property="tel" />
+  </resultMap>
+  <insert id="insert" parameterType="orion_pax.entity.User">
+    insert into f_user (u_id, u_email, u_pwd, 
+      u_name, u_img, u_tel)
+    values (#{id,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="orion_pax.entity.User">
+    insert into f_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        u_id,
+      </if>
+      <if test="email != null">
+        u_email,
+      </if>
+      <if test="pwd != null">
+        u_pwd,
+      </if>
+      <if test="name != null">
+        u_name,
+      </if>
+      <if test="img != null">
+        u_img,
+      </if>
+      <if test="tel != null">
+        u_tel,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
