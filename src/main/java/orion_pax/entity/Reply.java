@@ -7,7 +7,7 @@ public class Reply {
 
     private String remark;
 
-    private Date replytime;
+    private Date replyTime;
 
     private String uId;
 
@@ -29,12 +29,12 @@ public class Reply {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    public Date getReplytime() {
-        return replytime;
+    public Date getReplyTime() {
+        return replyTime;
     }
 
-    public void setReplytime(Date replytime) {
-        this.replytime = replytime;
+    public void setReplyTime(Date replyTime) {
+        this.replyTime = replyTime;
     }
 
     public String getuId() {

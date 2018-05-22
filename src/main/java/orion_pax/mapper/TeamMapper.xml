@@ -4,17 +4,17 @@
   <resultMap id="BaseResultMap" type="orion_pax.entity.Team">
     <result column="t_id" jdbcType="VARCHAR" property="id" />
     <result column="t_name" jdbcType="VARCHAR" property="name" />
-    <result column="t_createTime" jdbcType="TIMESTAMP" property="createtime" />
-    <result column="t_totalMembers" jdbcType="INTEGER" property="totalmembers" />
-    <result column="t_inviteLink" jdbcType="VARCHAR" property="invitelink" />
+    <result column="t_create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="t_total_members" jdbcType="INTEGER" property="totalMembers" />
+    <result column="t_invite_link" jdbcType="VARCHAR" property="inviteLink" />
     <result column="t_u_id" jdbcType="VARCHAR" property="uId" />
   </resultMap>
   <insert id="insert" parameterType="orion_pax.entity.Team">
-    insert into f_team (t_id, t_name, t_createTime, 
-      t_totalMembers, t_inviteLink, t_u_id
+    insert into f_team (t_id, t_name, t_create_time, 
+      t_total_members, t_invite_link, t_u_id
       )
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
-      #{totalmembers,jdbcType=INTEGER}, #{invitelink,jdbcType=VARCHAR}, #{uId,jdbcType=VARCHAR}
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{totalMembers,jdbcType=INTEGER}, #{inviteLink,jdbcType=VARCHAR}, #{uId,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="orion_pax.entity.Team">
@@ -26,14 +26,14 @@
       <if test="name != null">
         t_name,
       </if>
-      <if test="createtime != null">
-        t_createTime,
+      <if test="createTime != null">
+        t_create_time,
       </if>
-      <if test="totalmembers != null">
-        t_totalMembers,
+      <if test="totalMembers != null">
+        t_total_members,
       </if>
-      <if test="invitelink != null">
-        t_inviteLink,
+      <if test="inviteLink != null">
+        t_invite_link,
       </if>
       <if test="uId != null">
         t_u_id,
@@ -46,14 +46,14 @@
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="totalmembers != null">
-        #{totalmembers,jdbcType=INTEGER},
+      <if test="totalMembers != null">
+        #{totalMembers,jdbcType=INTEGER},
       </if>
-      <if test="invitelink != null">
-        #{invitelink,jdbcType=VARCHAR},
+      <if test="inviteLink != null">
+        #{inviteLink,jdbcType=VARCHAR},
       </if>
       <if test="uId != null">
         #{uId,jdbcType=VARCHAR},

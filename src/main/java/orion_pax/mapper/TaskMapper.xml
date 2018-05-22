@@ -4,14 +4,14 @@
   <resultMap id="BaseResultMap" type="orion_pax.entity.Task">
     <result column="t_id" jdbcType="VARCHAR" property="id" />
     <result column="t_name" jdbcType="VARCHAR" property="name" />
-    <result column="t_endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="t_end_time" jdbcType="TIMESTAMP" property="endTime" />
     <result column="t_u_id" jdbcType="VARCHAR" property="uId" />
     <result column="t_b_id" jdbcType="VARCHAR" property="bId" />
   </resultMap>
   <insert id="insert" parameterType="orion_pax.entity.Task">
-    insert into f_task (t_id, t_name, t_endTime, 
+    insert into f_task (t_id, t_name, t_end_time, 
       t_u_id, t_b_id)
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{endtime,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{endTime,jdbcType=TIMESTAMP}, 
       #{uId,jdbcType=VARCHAR}, #{bId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="orion_pax.entity.Task">
@@ -23,8 +23,8 @@
       <if test="name != null">
         t_name,
       </if>
-      <if test="endtime != null">
-        t_endTime,
+      <if test="endTime != null">
+        t_end_time,
       </if>
       <if test="uId != null">
         t_u_id,
@@ -40,8 +40,8 @@
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="endtime != null">
-        #{endtime,jdbcType=TIMESTAMP},
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="uId != null">
         #{uId,jdbcType=VARCHAR},

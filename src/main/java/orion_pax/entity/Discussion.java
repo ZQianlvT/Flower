@@ -9,7 +9,7 @@ public class Discussion {
 
     private String remark;
 
-    private Date starttime;
+    private Date startTime;
 
     private Integer status;
 
@@ -41,12 +41,12 @@ public class Discussion {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    public Date getStarttime() {
-        return starttime;
+    public Date getStartTime() {
+        return startTime;
     }
 
-    public void setStarttime(Date starttime) {
-        this.starttime = starttime;
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
     }
 
     public Integer getStatus() {

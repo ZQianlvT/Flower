@@ -7,11 +7,11 @@ public class Team {
 
     private String name;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Integer totalmembers;
+    private Integer totalMembers;
 
-    private String invitelink;
+    private String inviteLink;
 
     private String uId;
 
@@ -31,28 +31,28 @@ public class Team {
         this.name = name == null ? null : name.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Integer getTotalmembers() {
-        return totalmembers;
+    public Integer getTotalMembers() {
+        return totalMembers;
     }
 
-    public void setTotalmembers(Integer totalmembers) {
-        this.totalmembers = totalmembers;
+    public void setTotalMembers(Integer totalMembers) {
+        this.totalMembers = totalMembers;
     }
 
-    public String getInvitelink() {
-        return invitelink;
+    public String getInviteLink() {
+        return inviteLink;
     }
 
-    public void setInvitelink(String invitelink) {
-        this.invitelink = invitelink == null ? null : invitelink.trim();
+    public void setInviteLink(String inviteLink) {
+        this.inviteLink = inviteLink == null ? null : inviteLink.trim();
     }
 
     public String getuId() {

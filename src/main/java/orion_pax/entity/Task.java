@@ -7,7 +7,7 @@ public class Task {
 
     private String name;
 
-    private Date endtime;
+    private Date endTime;
 
     private String uId;
 
@@ -29,12 +29,12 @@ public class Task {
         this.name = name == null ? null : name.trim();
     }
 
-    public Date getEndtime() {
-        return endtime;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setEndtime(Date endtime) {
-        this.endtime = endtime;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
     public String getuId() {

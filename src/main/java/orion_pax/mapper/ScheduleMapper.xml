@@ -5,16 +5,16 @@
     <result column="s_id" jdbcType="VARCHAR" property="id" />
     <result column="s_name" jdbcType="VARCHAR" property="name" />
     <result column="s_status" jdbcType="INTEGER" property="status" />
-    <result column="s_startTime" jdbcType="TIMESTAMP" property="starttime" />
-    <result column="s_endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="s_start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="s_end_time" jdbcType="TIMESTAMP" property="endTime" />
     <result column="s_p_id" jdbcType="VARCHAR" property="pId" />
   </resultMap>
   <insert id="insert" parameterType="orion_pax.entity.Schedule">
     insert into f_schedule (s_id, s_name, s_status, 
-      s_startTime, s_endTime, s_p_id
+      s_start_time, s_end_time, s_p_id
       )
     values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{starttime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, #{pId,jdbcType=VARCHAR}
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{pId,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="orion_pax.entity.Schedule">
@@ -29,11 +29,11 @@
       <if test="status != null">
         s_status,
       </if>
-      <if test="starttime != null">
-        s_startTime,
+      <if test="startTime != null">
+        s_start_time,
       </if>
-      <if test="endtime != null">
-        s_endTime,
+      <if test="endTime != null">
+        s_end_time,
       </if>
       <if test="pId != null">
         s_p_id,
@@ -49,11 +49,11 @@
       <if test="status != null">
         #{status,jdbcType=INTEGER},
       </if>
-      <if test="starttime != null">
-        #{starttime,jdbcType=TIMESTAMP},
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="endtime != null">
-        #{endtime,jdbcType=TIMESTAMP},
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="pId != null">
         #{pId,jdbcType=VARCHAR},
