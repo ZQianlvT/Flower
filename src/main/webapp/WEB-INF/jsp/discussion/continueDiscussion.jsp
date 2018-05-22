@@ -563,30 +563,6 @@
                             </div>
                         </div>
                         <div class="form-item notify">
-                            <div class="notify-title">
-                                <div class="notify-title-title">发送通知给：</div>
-                                <div class="notify-title-select">
-                                    <span data-subgroup="-1" class="group-select" unselectable="on">所有人</span>
-                                </div>
-                            </div>
-                            <div class="form-field">
-                                <ul class="member-list">
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" tabindex="-1"
-                                                   value="ce2b30066f034bf9a69113963da165fd" data-subgroup="[]">
-                                            <span title="浮点农国">浮点农国</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" tabindex="-1"
-                                                   value="f7e254d7f54e40dbb93a33b737752fbc" data-subgroup="[]">
-                                            <span title="OrionPax">OrionPax</span>
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                         <div class="form-buttons">
                             <button tabindex="1" class="btn btn-primary" id="btn-post" type="submit"

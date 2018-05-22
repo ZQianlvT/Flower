@@ -610,20 +610,6 @@
                             <img class="avatar" src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
                         </a>
 
-                        <div class="comment-actions ">
-                            <div class="actions">
-                                <a href="javascript:;" class="reply">
-                                    <i class="twr twr-reply"></i>
-                                </a>
-                                <a href="/comments/6d3cf7d1e0864fc1b0d29902925312d4/like"
-                                   class="like" data-remote="true" data-loading="true" data-method="post">
-                                    <i class="twr twr-thumbs-o-up"></i> <span class="count"></span>
-                                </a>
-                                <a href="javascript:;" class="more" data-visible-to="creator,admin">
-                                    <i class="twr twr-bars"></i>
-                                </a>
-                            </div>
-                        </div>
 
                         <div class="comment-main">
                             <div class="info">
@@ -661,20 +647,7 @@
                             <img class="avatar" src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
                         </a>
 
-                        <div class="comment-actions ">
-                            <div class="actions">
-                                <a href="javascript:;" class="reply">
-                                    <i class="twr twr-reply"></i>
-                                </a>
-                                <a href="/comments/794865dd83224711a1c8cd68e5e799ba/like"
-                                   class="like" data-remote="true" data-loading="true" data-method="post">
-                                    <i class="twr twr-thumbs-o-up"></i> <span class="count"></span>
-                                </a>
-                                <a href="javascript:;" class="more" data-visible-to="creator,admin">
-                                    <i class="twr twr-bars"></i>
-                                </a>
-                            </div>
-                        </div>
+
 
                         <div class="comment-main">
                             <div class="info">
@@ -754,31 +727,6 @@
                         </div>
                     </form>
                 </div>
-
-                <div class="zoom-meeting">
-                    <p>不想打字？试试 <a id="link-create-zoom" data-url="/teams/982b79584a39484eb9e17459a6e1deff/zoom/create"
-                                  data-type="comment" href="javascript:;">召开视频会议</a></p>
-
-                    <script type="text/html" id="tpl-zoom-dialog">
-                        <h3 class="simple-dialog-title">召开视频会议</h3>
-                        <p>会议室已经准备好了，邀请你的同事加入讨论吧</p>
-                        <p class="zoom-url">{{ zoom_url }}</p>
-                        <div class="simple-dialog-buttons">
-                            <button type="button" class="btn btn-primary btn-start-zoom" data-disable-with="正在发送...">
-                                发送链接
-                            </button>
-                            <button type="button" class="btn btn-x">取消</button>
-                        </div>
-                    </script>
-
-                    <script type="text/html" id="tpl-zoom-content">
-                        <p>点击下面的链接，加入我的视频会议吧：</p>
-                        <p>
-                            <a href="{{ zoom_url }}" target="_blank">{{ zoom_url }}</a>
-                        </p>
-                    </script>
-                </div>
-
                 <script type="text/html" id="comments-liked-list">
 
             </script>

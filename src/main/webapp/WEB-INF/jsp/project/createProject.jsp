@@ -545,55 +545,6 @@
                         </div>
                     </div>
 
-
-
-                    <div class="setting-section">
-                        <h4>
-                            选择项目成员
-                        </h4>
-
-                        <p class="desc">
-                            管理员可以邀请和移除项目成员，只有被邀请的团队成员才能访问该项目的信息。
-                        </p>
-
-
-                        <div class="manage-members-tabs">
-                            <div class="tab" data-tab="team">
-                                <div class="manage-members">
-
-                                    <div class="add-member">
-                                        <select id="select-add-member">
-                                            <option value="008d36bf2b694a66bfac2bf7e6b79512"
-                                                    data-guid="008d36bf2b694a66bfac2bf7e6b79512"
-                                                    data-key="OrionPax orionpax OrionPax"
-                                                    data-subgroup="0"
-                                                    data-gavatar="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
-                                                OrionPax
-                                            </option>
-                                        </select>
-
-                                        <div class="group-select">
-                                            <span class="all" data-subgroup="-1" unselectable="on">所有人</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="members member-checkbox-list">
-                                        <label title="OrionPax" class="member "
-                                               data-guid="008d36bf2b694a66bfac2bf7e6b79512"
-                                               data-subgroup="[]">
-
-                                            <input type="checkbox" name="" id=""
-                                                   value="008d36bf2b694a66bfac2bf7e6b79512"/>
-                                            <span class="name">OrionPax</span>
-                                        </label>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                    </div>
-
-
                     <div class="form-buttons">
                         <button type="submit" class="btn btn-primary" id="btn-create-project"
                                 data-disable-with="正在创建..." data-success-text="创建成功">创建项目

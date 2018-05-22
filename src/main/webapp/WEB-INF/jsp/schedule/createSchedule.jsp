@@ -542,7 +542,7 @@
                         </div>
 
                         <div class="form-item">
-                            <label>日历</label>
+                            <label>项目</label>
 
                             <select name="caleventable_guid" id="select-cal" disabled>
                                 <option value="e26956389763492f891259d7d9c5b94d" data-project="true" selected
@@ -573,17 +573,6 @@
                             <input type="datetime" id="end_moment" name="ends_at" value="2018-05-21T23:59:59"/>
                         </div>
 
-                        <div class="form-item event-schedule-every">
-                            <label>重复</label>
-                            <select class="cb-repeat" name="schedule_every" id="select-schedule-every">
-                                <option value="0">不重复</option>
-                                <option value="4">每日</option>
-                                <option value="2">每周</option>
-                                <option value="3">每月</option>
-                                <option value="1">每年</option>
-                                <option value="5">隔周</option>
-                            </select>
-                        </div>
 
                         <div class="form-item event-schedule-until until-active hide">
                             <label>直到</label>
@@ -632,28 +621,6 @@
                                     <label for="weekdays-0">日</label>
                                 </li>
                             </ul>
-                        </div>
-
-                        <div class="form-item event-remind">
-                            <label>提醒</label>
-                            <select id="select-remind" name="remind_time">
-                                <option value="">不提醒</option>
-                                <option value="" class="one-hour-ahead">提前一小时</option>
-                                <option value="" class="one-day-ahead">提前一天</option>
-                                <option value="" class="one-week-ahead">提前一周</option>
-                            </select>
-                        </div>
-
-                        <div class="form-item event-location">
-                            <label>地点</label>
-                            <input type="text" name="location" id="txt-event-location" value=""/>
-                        </div>
-
-                        <div class="form-item event-show-creator">
-                            <label>
-                                <input type="checkbox" name="is_show_creator" checked/>
-                                在月视图显示创建者
-                            </label>
                         </div>
 
                         <div class="form-item cal-members-field">
