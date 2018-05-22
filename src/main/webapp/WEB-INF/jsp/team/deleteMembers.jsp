@@ -521,7 +521,7 @@
 
     <div class="container workspace">
         <div class="page">
-            <a href="/teams/7feef4ba8611443ebd06db497618beb4/settings" class="link-page-behind" data-stack>alikes
+            <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-page-behind">alikes
                 的团队账户</a>
         </div>
         <div class="page">
@@ -613,7 +613,7 @@
     </div>
 
     <div class="footer">
-        &copy; 彩程设计
+        &copy; 晴天设计
     </div>
 
 
@@ -649,13 +649,6 @@
     gon.oss_direct_upload = true;
     //]]>
 </script>
-
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" data-intercom="false" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {
     "hide_default_launcher": true,
     "guid": "231e0ddd353440c883f9874a555f8adc",

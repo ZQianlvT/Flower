@@ -520,7 +520,7 @@
 
     <div class="container workspace">
         <div class="page">
-            <a href="/teams/7feef4ba8611443ebd06db497618beb4/members" class="link-page-behind" data-stack>团队</a>
+            <a href="${pageContext.request.contextPath}/base/goURL/team/listTeam" class="link-page-behind">团队</a>
         </div>
         <div class="page">
 
@@ -546,30 +546,12 @@
                     </p>
                 </div>
 
-                <div class="section">
-                    <h5 class="title">通过邮件邀请，无需审核</h5>
-                    <p class="desc">你可以预先设置好访问权限，发送邀请给指定的邮箱，对方只需进行个人账号设置即可直接加入团队，无需等待审批。</p>
-                    <p class="email-invite">
-                        <a href="/teams/7feef4ba8611443ebd06db497618beb4/invite" data-stack>通过邮件邀请新成员 &rarr;</a>
-                    </p>
-                </div>
-
-                <div class="section">
-                    <h5 class="title">通过微信扫码，邀请好友</h5>
-                    <p class="desc">用微信扫描二维码获取邀请函，转发给微信好友/群，即可邀请他们加入你的团队。</p>
-                    <div class="wechat-invite">
-                        <div class="qrcode-wrap loading" data-url="/wechat/qrcode?type=8">
-                            <p class="indicator">正在加载二维码</p>
-                            <img class="qrcode" alt="微信二维码" title="扫描这个二维码获取微信邀请函"/>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
     </div>
     <div class="footer">
-        &copy; 彩程设计
+        &copy; 晴天设计
     </div>
 
 
@@ -606,12 +588,6 @@
     //]]>
 </script>
 
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" data-intercom="false" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {
     "hide_default_launcher": true,
     "guid": "231e0ddd353440c883f9874a555f8adc",

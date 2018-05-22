@@ -527,10 +527,7 @@
 
                 <div class="member-groups">
                     <a class="member-group" title="alikes" data-group-id="all" data-group-count="2" href="javascript:;">团队成员</a>
-                    <a class="member-group member-group-visitor" title="访客" data-group-id="visitor" data-group-count="0"
-                       href="javascript:;">
-                        <span class="twr twr-visitor"></span>访客
-                    </a></div>
+                   </div>
 
                 <div class="members-main">
                     <h1 class="group-title">
@@ -540,11 +537,8 @@
                     </h1>
 
                     <div class="member-links">
-                        <a class="link btn-invite-members" data-stack="true" data-nocache="true"
-                           href="/teams/7feef4ba8611443ebd06db497618beb4/invite/new">邀请新成员</a>
+                        <a class="link btn-invite-members" href="${pageContext.request.contextPath}/base/goURL/team/inviteMembers">邀请新成员</a>
 
-                        <a class="link btn-member-groups" data-stack="true"
-                           href="/teams/7feef4ba8611443ebd06db497618beb4/subgroups/new">新建分组</a>
                     </div>
 
                     <div class="init-members init-group">
@@ -563,7 +557,7 @@
                             <td class="member-detail">
                                 <a class="link-member" data-stack="true"
                                    href="/members/231e0ddd353440c883f9874a555f8adc">
-                                    <img class="avatar" src="/assets/default_avatars/noon.jpg" alt="Noon"/>
+                                    <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg" alt="Noon"/>
                                     <div class="member-title single-line">
         <span class="member-nickname">
           浮点农国
@@ -580,8 +574,8 @@
                         </tr>
                         <tr class="member" data-group-ids="[]" data-visitor="false">
                             <td class="member-detail">
-                                <a class="link-member" data-stack="true"
-                                   href="/members/008d36bf2b694a66bfac2bf7e6b79512">
+                                <a class="link-member"
+                                   href="${pageContext.request.contextPath}/base/goURL/team/setMember">
                                     <img class="avatar" src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3"
                                          alt="3e2790283b5947f7bb2da54a779c60f3"/>
                                     <div class="member-title single-line">
@@ -609,7 +603,7 @@
         </div>
     </div>
     <div class="footer">
-        &copy; 彩程设计
+        &copy; 晴天设计
     </div>
 
 
@@ -646,12 +640,6 @@
     //]]>
 </script>
 
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" data-intercom="false" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {
     "hide_default_launcher": true,
     "guid": "231e0ddd353440c883f9874a555f8adc",
