@@ -251,621 +251,227 @@
 </head>
 
 <body class="">
-<div id="page-loading-mask"></div>
+
 
 <div class="wrapper">
-
-
-
-
-
-
 
 
 
     <div class="header">
         <div class="header-container">
             <h1 class="logo">
-                <a href="javascript:;" class="link-team-menu">
-                    <span class="name">HYLT</span>
+                <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-team-menu">
+                    alikes
                 </a>
             </h1>
 
             <ul class="nav">
                 <li class="" id="nav-project">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/projects" data-stack data-stack-root>项目</a>
-                </li>
-                <li class="" id="nav-events">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/events" data-stack data-stack-root>动态</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/project/listProject">项目</a>
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-calendar">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/calendars" data-stack data-stack-fluid data-stack-root>日历</a>
-                </li>
-
-                <li class="" id="nav-dashboard">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/dashboard" data-stack data-stack-root>鹰眼</a>
-                </li>
-                <li class="" id="nav-reports">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/reports" data-stack data-stack-root>汇报</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/calendar/calendar">日历</a>
                 </li>
                 <li class="dividing"></li>
-
                 <li class="" id="nav-members">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/members" data-stack data-stack-root>团队</a>
-                </li>
-                <li class="" id="nav-me">
-                    <a href="/members/ce2b30066f034bf9a69113963da165fd?me=1" data-stack data-stack-root>我自己</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/team/listTeam">团队</a>
                 </li>
 
                 <li id="nav-upgrade">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/upgrade?utm_source=Tower&amp;utm_medium=Web&amp;utm_campaign=Nav-Pro-Trial-Remaining"
-                       class="link-remaining" data-tower-pro="header-upgrade-ad" target="_blank">
-                        试用剩余 25 天
+                    <a href="#"
+                       class="link-remaining" data-tower-pro="header-upgrade-ad">
+                        本软件完全免费，并不禁止传播。
                     </a>
                 </li>
 
             </ul>
 
             <div class="command-bar">
-                <div class="search-wrap">
-                    <a href="javascript:;" class="link-search" title="搜索"><i class="twr twr-search"></i></a>
-                    <form id="form-search" class="form" method="get" action="/teams/982b79584a39484eb9e17459a6e1deff/search">
-                        <input id="txt-search" type="text" class="keyword no-border" name="keyword" placeholder="搜索" autocomplete="off" />
-                    </form>
-                </div>
-
-                <audio src="/assets/notification-8c3a5ef39c8b88e19cf2b732747a6691d43ffa68d25b3db74ebe418bf41fad63.mp3" id="notification-audio" preload="auto"></audio>
-
-                <div class="notification-info">
-                    <a href="javascript:;" id="notification-count" class="label unread" title="新的通知" data-unread-count="9" data-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/unread_counts">
-                        <span class="twr twr-bell-o bell"></span>
-                        <span class="num">9</span>
-                    </a>
-                    <div class="noti-pop">
-                        <div class="noti-pop-hd">
-                            <b class="title">通知</b>
-                            <a class="mark-as-read" id="noti-mark-read" data-loading="true" data-remote="true" rel="nofollow" data-method="post" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/read_all">
-                                <span class="twr twr twr-check"></span>
-                                全部标记为已读
-                            </a>          </div>
-                        <div class="noti-pop-list-wrap">
-                            <div class="noti-pop-list notification-list">
-
-                                <div data-notification-guid="139461fd246c480cabf662de9f9ed58c"
-                                     data-topic-guid="ce2b30066f034bf9a69113963da165fd"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-21 10:04:28 +0800"
-                                     data-key-id="187268174" >
-
-                                    <a class="link" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/139461fd246c480cabf662de9f9ed58c"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">邀请你加入项目</span>
-      <span class="target">测试</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-21T10:04:28+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/139461fd246c480cabf662de9f9ed58c/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="22e99b54fa324370be38d9b4ab53b329"
-                                     data-topic-guid="177ac58c1f6c4271b711c122461f2db2"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-21 09:56:56 +0800"
-                                     data-key-id="187263033" >
-
-                                    <a class="link" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/22e99b54fa324370be38d9b4ab53b329"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-21T09:56:56+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/22e99b54fa324370be38d9b4ab53b329/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="9693c6febb1c4ef0af507573552db6eb"
-                                     data-topic-guid="9b312b0f458b4388b32dff292022c5c4"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 15:01:26 +0800"
-                                     data-key-id="186584573" >
-
-                                    <a class="link" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/9693c6febb1c4ef0af507573552db6eb"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T15:01:26+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/9693c6febb1c4ef0af507573552db6eb/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="85c4314aa9e447b8b1c4affdb471e9cd"
-                                     data-topic-guid="ae785cbe80204636bb94c6d143a43f7b"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 14:33:53 +0800"
-                                     data-key-id="186572049" >
-
-                                    <a class="link" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/85c4314aa9e447b8b1c4affdb471e9cd"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T14:33:53+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/85c4314aa9e447b8b1c4affdb471e9cd/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="d530acf38cd046a5ad5f62a7d30afba7"
-                                     data-topic-guid="70d66a5f040f4f6caf6cb4aa172a3d0c"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 10:28:48 +0800"
-                                     data-key-id="186493117" >
-
-                                    <a class="link" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/d530acf38cd046a5ad5f62a7d30afba7"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">完成了任务</span>
-      <span class="target">网页流转设计</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T10:28:48+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/d530acf38cd046a5ad5f62a7d30afba7/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="cb0922633efe47ca8970da84d980746c"
-                                     data-topic-guid="c8975d5ea1b9479c960a62fda7cabfb9"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 09:24:22 +0800"
-                                     data-key-id="186437297" >
-
-                                    <a class="link" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/cb0922633efe47ca8970da84d980746c"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T09:24:22+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/cb0922633efe47ca8970da84d980746c/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="e70789a8ab0645418e812454f3fb74f3"
-                                     data-topic-guid="aff9e385ab5748d6a76379a375a54565"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-17 18:04:38 +0800"
-                                     data-key-id="186137730" >
-
-                                    <a class="link" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/e70789a8ab0645418e812454f3fb74f3"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">完成了任务</span>
-      <span class="target">网站需求分析</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-17T18:04:38+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/e70789a8ab0645418e812454f3fb74f3/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="7c01689b05c7464fabd0814e2d2d9cde"
-                                     data-topic-guid="e86bfd0ca2a14f0fb522f806e23ce8e2"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-17 16:05:40 +0800"
-                                     data-key-id="186090497" >
-
-                                    <a class="link" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/7c01689b05c7464fabd0814e2d2d9cde"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">编辑了日程</span>
-      <span class="target">需求设计</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-17T16:05:40+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/7c01689b05c7464fabd0814e2d2d9cde/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="995ddee00642453984ad251189f50b06"
-                                     data-topic-guid="d2869aecfc7b4f56a46fcddd4b20193f"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-17 16:02:13 +0800"
-                                     data-key-id="186088835" >
-
-                                    <a class="link" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/995ddee00642453984ad251189f50b06"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">编辑了日程</span>
-      <span class="target">项目需求分析</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-17T16:02:13+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/995ddee00642453984ad251189f50b06/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="noti-pop-empty hide">- 没有新通知 -</div>
-                        <div class="noti-pop-footer">
-                            <a class="noti-settings" data-stack="true" data-stack-root="true" href="/members/ce2b30066f034bf9a69113963da165fd/notification_settings">
-                                <i class="twr twr-cog"></i> 通知设置
-                            </a>            <a class="noti-all-link" data-stack="true" data-stack-root="true" href="/teams/982b79584a39484eb9e17459a6e1deff/notifications">查看全部通知</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="account-info">
                     <div class="member-settings">
                         <a class="link-member-menu ab-test-old" href="javascript:;" data-new-feature="false">
                             <span class="twr twr-caret-down"></span>
-                            <img class="avatar" src="/assets/default_avatars/noon.jpg" alt="Noon" />
+                            <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg" alt="Noon"/>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a data-stack="true" data-stack-root="true" href="/members/ce2b30066f034bf9a69113963da165fd/settings">个人设置</a></li>
-            <li><a data-stack="true" data-stack-root="true" href="/members/ce2b30066f034bf9a69113963da165fd/notification_settings">通知设置</a></li>
-            <li><a data-stack="true" data-stack-root="true" href="/members/ce2b30066f034bf9a69113963da165fd/stars">我的关注</a></li>
-            <li class="part-line"></li>
-            <li><a target="_blank" href="/choices">企业服务精选</a></li>
-            <li><a target="_blank" href="/downloads">下载客户端</a></li>
-            <li><a target="_blank" href="/help">帮助中心</a></li>
-            <li><a id="link-roadmap" target="_blank" href="/roadmap">最新功能</a></li>
-            <li><a rel="nofollow" data-method="DELETE" href="/users/sign_out">退出</a></li>
-        </ul>
-    </script>
-    <script id="tpl-team-menu" type="text/html">
-        <ul class="menu">
-
-            <li><a href="/teams/982b79584a39484eb9e17459a6e1deff/external_apps" data-stack data-stack-root>应用中心</a></li>
-
-
-            <li>
-                <a class="js-feature-migrated" data-migrated-feature="team-stats" href="javascript:;">团队统计</a>
+            <li><a href="${pageContext.request.contextPath}/base/goURL/user/updateUser">个人设置</a>
             </li>
-
-            <li>
-                <a href="/teams/982b79584a39484eb9e17459a6e1deff/upgrade" data-stack data-stack-root>
-                    了解 Pro 版
-                </a>
-            </li>
-
-            <p class="title"><span>切换团队</span></p>
-            <ul class="menu scroll team-list">
-                <li>
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4">alikes
-                    </a>
-                </li>
-            </ul>
             <li class="part-line"></li>
-
-            <li class="small"><a href="/launchpad?skip=1">创建/管理团队</a></li>
+            <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
         </ul>
     </script>
 
 
 
+    <div class="container workspace simple-stack simple-stack-transition"><div class="page page-root simple-pjax page-behind" style=""><a class="link-page-behind" href="${pageContext.request.contextPath}/base/goURL/project/listBoard">Flower</a></div><div class="page page-1 simple-pjax" style=""><div class="page-inner finished" data-since="2018-05-21 02:25:24 UTC" data-guest-unlockable="" data-project-creator="f7e254d7f54e40dbb93a33b737752fbc" data-page-name="已经结束的讨论" id="page-topics">
 
-    <div class="container workspace">
-        <div class="page "
-             data-url="/projects/e26956389763492f891259d7d9c5b94d">
-            <a href="/projects/e26956389763492f891259d7d9c5b94d" class="link-page-behind" data-stack data-stack-fluid>Flower</a>
-        </div>
-        <div class="page">
+        <h3 class="page-title ">
+            已经结束的讨论
+            <span class="twr twr-chevron-down"></span>
+        </h3>
 
+        <div class="editor-wrapper">
+            <div class="editor-placeholder fake-textarea" data-droppable="">点击发起讨论</div>
 
-
-            <div class="page-inner " data-since="2018-05-22 02:54:22 UTC"
-
-
-                 data-guest-unlockable
-                 data-project-creator="f7e254d7f54e40dbb93a33b737752fbc"
-                 data-page-name="正在进行的讨论" id="page-topics">
-
-                <h3 class="page-title ">
-                    正在进行的讨论
-                    <span class="twr twr-chevron-down"></span>
-                </h3>
-
-                <div class="editor-wrapper">
-                    <div class="editor-placeholder fake-textarea" data-droppable>点击发起讨论</div>
-
-                    <form class="form form-editor form-new-discussion" action="/projects/e26956389763492f891259d7d9c5b94d/messages/" method="post" data-remote="true" data-type="json">
-                        <div class="form-item">
-                            <div class="form-field">
-                                <input tabindex="1" type="text" name="subject" id="txt-title" placeholder="话题"
-                                       data-validate="length:0,255" data-validate-msg="话题最长255个字符" data-autosave="project-e26956389763492f891259d7d9c5b94d-new-message-title" />
-                            </div>
-                        </div>
-                        <div class="form-item">
-                            <div class="form-field">
-            <textarea tabindex="1" name="content" id="txt-content" class="hide" placeholder="说点什么..."
-                      data-mention-group="e26956389763492f891259d7d9c5b94d"
-                      data-validate="custom" data-autosave="new-message-content"></textarea>
-                                <input type="hidden" name="is_html" value="1">
-                            </div>
-                        </div>
-                        <div class="form-item visitor-lock" data-visible-to="member">
-                            <div class="form-field">
-                                <label>
-                                    <input type="checkbox" name="invisible_for_visitor" class="cb-visitor-lock" value="1" />
-                                    对访客隐藏这个讨论
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-item notify">
-                            <div class="notify-title">
-                                <div class="notify-title-title">发送通知给：</div>
-                                <div class="notify-title-select">
-                                    <span data-subgroup="-1" class="group-select" unselectable="on">所有人</span>
-                                </div>
-                            </div>
-                            <div class="form-field">
-                                <ul class="member-list">
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" tabIndex="-1" value="ce2b30066f034bf9a69113963da165fd"
-                                                   data-subgroup="[]" />
-                                            <span title="浮点农国">浮点农国</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" tabIndex="-1" value="f7e254d7f54e40dbb93a33b737752fbc"
-                                                   data-subgroup="[]" />
-                                            <span title="OrionPax">OrionPax</span>
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="form-buttons">
-                            <button tabindex="1" class="btn btn-primary" id="btn-post" type="submit" data-disable-with="正在提交...">发起讨论</button>
-                            <a tabindex="2" href="javascript:;" class="btn btn-x" id="link-cancel-post">取消</a>
-                        </div>
-                    </form>
-
-
+            <form class="form form-editor form-new-discussion" action="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/messages/" method="post" data-remote="true" data-type="json">
+                <div class="form-item">
+                    <div class="form-field">
+                        <input tabindex="1" type="text" name="subject" id="txt-title" placeholder="话题" data-validate="length:0,255" data-validate-msg="话题最长255个字符" data-autosave="project-e26956389763492f891259d7d9c5b94d-new-message-title">
+                    </div>
                 </div>
-
-                <div class="init init-discussion hide">
-                    <p class="title">
-                        所有讨论都已结束
-                    </p>
+                <div class="form-item">
+                    <div class="form-field">
+                        <textarea tabindex="1" name="content" id="txt-content" class="hide" placeholder="说点什么..." data-mention-group="e26956389763492f891259d7d9c5b94d" data-validate="custom" data-autosave="new-message-content"></textarea>
+                        <input type="hidden" name="is_html" value="1">
+                    </div>
                 </div>
-
-                <div class="messages">
-                    <div class="message "
-                         data-last-comment-at="2018-05-17 15:25:31 +0800"
-                         data-guid="a96ccdc538634352a7703d20a36a6608">
-
-                        <div class="message-actions actions" data-visible-to="member">
-                            <div class="inr">
-                                <a href="/projects/e26956389763492f891259d7d9c5b94d/topics/a96ccdc538634352a7703d20a36a6608/stick" class="stick" title="置顶"
-                                   data-method="post" data-remote="true" data-loading="true">
-                                    <i class="twr twr-arrow-circle-up"></i>
-                                </a>
-                                <a href="/projects/e26956389763492f891259d7d9c5b94d/topics/a96ccdc538634352a7703d20a36a6608/unstick" class="unstick" title="取消置顶"
-                                   data-method="post" data-remote="true" data-loading="true">
-                                    <i class="twr twr-arrow-circle-up"></i>
-                                </a>
-                                <a href="/projects/e26956389763492f891259d7d9c5b94d/topics/a96ccdc538634352a7703d20a36a6608/archive" class="archive" title="结束讨论"
-                                   data-method="post" data-remote="true" data-loading="true">
-                                    <i class="twr twr-archive-custom"></i>
-                                </a>
-                                <a href="/projects/e26956389763492f891259d7d9c5b94d/topics/a96ccdc538634352a7703d20a36a6608/unarchive" class="unarchive" title="重新打开讨论"
-                                   data-method="post" data-remote="true" data-loading="true">
-                                    <i class="twr twr-unarchive"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <a title="OrionPax" target="_blank" href="/members/f7e254d7f54e40dbb93a33b737752fbc"><img class="avatar" alt="OrionPax" src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3" /></a>
-
-                        <div class="name">
-                            <a title="OrionPax" data-stack="true" data-stack-root="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
-                        </div>
-
-                        <a data-stack href="/projects/e26956389763492f891259d7d9c5b94d/messages/bbdc9b57608446f0978d6edadc712459" class="message-link">
-
-        <span class="message-title">
-                <span class="message-rest">测试讨论</span>
-        </span>
-                            <span class="message-content">
-            巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
-        </span>
-                        </a>
-
-                        <span class="time" title="2018-05-17" data-readable-time="2018-05-17T15:25:31+08:00"></span>
-
-
-                        <div class="comment-info">
-
-                            <a class="comments-count" data-stack="true" href="/projects/e26956389763492f891259d7d9c5b94d/messages/bbdc9b57608446f0978d6edadc712459">1</a>
+                <div class="form-item visitor-lock" data-visible-to="member">
+                    <div class="form-field">
+                        <label>
+                            <input type="checkbox" name="invisible_for_visitor" class="cb-visitor-lock" value="1">
+                            对访客隐藏这个讨论
+                        </label>
+                    </div>
+                </div>
+                <div class="form-item notify">
+                    <div class="notify-title">
+                        <div class="notify-title-title">发送通知给：</div>
+                        <div class="notify-title-select">
+                            <span data-subgroup="-1" class="group-select" unselectable="on">所有人</span>
                         </div>
                     </div>
+                    <div class="form-field">
+                        <ul class="member-list">
+                            <li>
+                                <label>
+                                    <input type="checkbox" tabindex="-1" value="ce2b30066f034bf9a69113963da165fd" data-subgroup="[]">
+                                    <span title="浮点农国">浮点农国</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" tabindex="-1" value="f7e254d7f54e40dbb93a33b737752fbc" data-subgroup="[]">
+                                    <span title="OrionPax">OrionPax</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button tabindex="1" class="btn btn-primary" id="btn-post" type="submit" data-disable-with="正在提交...">发起讨论</button>
+                    <a tabindex="2" href="javascript:;" class="btn btn-x" id="link-cancel-post">取消</a>
+                </div>
+            </form>
 
+
+        </div>
+
+        <div class="init init-discussion hide">
+            <p class="title">
+                所有讨论都在进行
+            </p>
+        </div>
+
+        <div class="messages">
+            <div class="message " data-last-comment-at="2018-05-21 10:24:06 +0800" data-guid="b1538a5f695446dda8a0752f44fd8f74">
+
+                <div class="message-actions actions" data-visible-to="member">
+                    <div class="inr">
+                        <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/b1538a5f695446dda8a0752f44fd8f74/stick" class="stick" title="置顶" data-method="post" data-remote="true" data-loading="true">
+                            <i class="twr twr-arrow-circle-up"></i>
+                        </a>
+                        <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/b1538a5f695446dda8a0752f44fd8f74/unstick" class="unstick" title="取消置顶" data-method="post" data-remote="true" data-loading="true">
+                            <i class="twr twr-arrow-circle-up"></i>
+                        </a>
+                        <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/b1538a5f695446dda8a0752f44fd8f74/archive" class="archive" title="结束讨论" data-method="post" data-remote="true" data-loading="true">
+                            <i class="twr twr-archive-custom"></i>
+                        </a>
+                        <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/b1538a5f695446dda8a0752f44fd8f74/unarchive" class="unarchive" title="重新打开讨论" data-method="post" data-remote="true" data-loading="true">
+                            <i class="twr twr-unarchive"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <a href="javascript:;" id="btn-load-more">加载更多内容</a>
+                <a title="OrionPax" target="_blank" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc"><img class="avatar" alt="OrionPax" src="./listDiscussion2_files/3e2790283b5947f7bb2da54a779c60f3"></a>
 
-                <script type="text/html" id="tpl-topics-select">
-                    <ul>
-                        <li>
-                            <a href="/projects/e26956389763492f891259d7d9c5b94d/topics" class="active" data-stack data-stack-replace>
-                                <i class="twr twr-clock-o"></i> 正在进行
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/projects/e26956389763492f891259d7d9c5b94d/topics?finish=true" class="" data-stack data-stack-replace>
-                                <i class="twr twr-inbox"></i> 已经结束
-                            </a>
-                        </li>
-                    </ul>
-                </script>
+                <div class="name">
+                    <a title="OrionPax" data-stack="true" data-stack-root="true" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
+                </div>
+
+                <a href="${pageContext.request.contextPath}/base/goURL/discussion/detailDiscussion" class="message-link">
+
+        <span class="message-title">
+                <span class="message-rest">Test</span>
+        </span>
+                    <span class="message-content">
+            qqgqwgqwg
+        </span>
+                </a>
+
+                <span class="time" title="2018-05-21" data-readable-time="2018-05-21T10:24:06+08:00">刚刚</span>
+
+
+                <div class="comment-info">
+
+                    <a class="comments-count" data-stack="true" href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/messages/7e54272c59ed4702a14222f45788182a">2</a>
+                </div>
             </div>
 
         </div>
-    </div>
+
+        <a href="javascript:;" id="btn-load-more" class="over">没有更多内容了</a>
+
+        <script type="text/html" id="tpl-topics-select">
+            <ul>
+                <li>
+                    <a href="${pageContext.request.contextPath}/base/goURL/discussion/continueDiscussion">
+                        <i class="twr twr-clock-o"></i> 正在进行
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="active">
+                        <i class="twr twr-inbox"></i> 已经结束
+                    </a>
+                </li>
+            </ul>
+        </script>
+    </div></div></div>
     <div class="footer">
-        &copy; 彩程设计
+        © 晴天设计
     </div>
 
 
 </div>
 
 <input type="hidden" id="d18n-enabled" value="false">
-<input type="hidden" id="server-time" value="2018-05-22 10:54:22">
+<input type="hidden" id="server-time" value="2018-05-21 10:18:29">
 
 <input type="hidden" id="team-guid" value="982b79584a39484eb9e17459a6e1deff">
 <input type="hidden" id="team-name" value="HYLT">
 <input type="hidden" id="team-enable-pusher" value="true">
 
-<input type="hidden" id="user-id" value="7432036">
-<input type="hidden" id="user-email" value="2449832339@qq.com">
+<input type="hidden" id="user-id" value="7431820">
+<input type="hidden" id="user-email" value="1875709296@qq.com">
 
 <input type="hidden" id="unused-bubbles" value="12,13">
-<input type="hidden" id="member-id" value="12535517">
-<input type="hidden" id="member-guid" value="ce2b30066f034bf9a69113963da165fd">
-<input type="hidden" id="member-nickname" value="浮点农国">
-<input type="hidden" id="member-avatar" value="/assets/default_avatars/noon.jpg">
+<input type="hidden" id="member-id" value="12534361">
+<input type="hidden" id="member-guid" value="f7e254d7f54e40dbb93a33b737752fbc">
+<input type="hidden" id="member-nickname" value="OrionPax">
+<input type="hidden" id="member-avatar" value="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
 <input type="hidden" id="member-timezone" value="Asia/Shanghai">
-<input type="hidden" id="conn-guid" value="9052f9eb-68df-4754-a833-dd2fc7e36a50">
+<input type="hidden" id="conn-guid" value="e665f9cf-f87e-423f-9d95-548e31ce2ac8">
 
+<input type="hidden" id="member-owner">
 
+<input type="hidden" id="member-admin">
 
 <input type="hidden" id="electron" value="false">
 
@@ -874,13 +480,7 @@
     window.gon={};gon.oss_direct_upload=true;
     //]]>
 </script>
-
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" data-intercom="false" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>  <script id="IntercomSettingsScriptTag">window.intercomSettings = {"hide_default_launcher":true,"guid":"ce2b30066f034bf9a69113963da165fd","name":"浮点农国","email":"2449832339@qq.com","user_id":12535517,"desktop_notification_enabled":false,"wechat_notification_enabled":true,"email_notification_enabled":false,"ai_notify_enabled":false,"role":0,"user_guid":"f7eba6660ed54cec965e9058ee595fc5","avatar":"https://tower.im/assets/default_avatars/noon.jpg","comment":null,"has_wechat":false,"wechat":null,"has_dingtalk":false,"dingtalk":"浮点农国","two_factor_auth":false,"teams":2,"projects":2,"starred_projects":0,"calendars":0,"open_todos":0,"closed_todos":0,"messages_created":0,"uploads_created":0,"attachments_uploaded":0,"comments_created":0,"resources_starred":0,"weekly_reports_created":0,"events_involved":2,"unread_notifications":29,"email_received":0,"data_updated_at":"2018-05-21T06:53:20.499Z","user_hash":"99bb70a8e9ae5b39924f6bc16c6a8f29e44b0b2227bd29c578f9873989e91402","app_id":"xbtsuf77","company":{"id":701217,"name":"HYLT","created_at":"2018-05-17T01:24:47.000Z","guid":"982b79584a39484eb9e17459a6e1deff","next_charge_date":null,"plan":"pro_trial","ever_paid":false,"total_paid":0,"alipay_used":0,"haopay_used":0,"owner_guid":"f7e254d7f54e40dbb93a33b737752fbc","has_dingtalk":false,"has_yiqixie":false,"has_api":false,"members":2,"subgroups":0,"active_projects":2,"archived_projects":0,"project_groups":0,"project_templates":0,"calendars":0,"calendar_events":2,"messages":2,"comments":3,"open_todos":2,"closed_todos":6,"documents":0,"files":0,"file_bytesize":0.0,"answers":0,"is_upgraded_to_plus":false}};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/xbtsuf77';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+<script id="IntercomSettingsScriptTag">window.intercomSettings = {"hide_default_launcher":true,"guid":"f7e254d7f54e40dbb93a33b737752fbc","name":"OrionPax","email":"1875709296@qq.com","user_id":12534361,"desktop_notification_enabled":false,"wechat_notification_enabled":true,"email_notification_enabled":false,"ai_notify_enabled":false,"role":2,"user_guid":"dae5776700474b90bcb1038c52d18948","avatar":"https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3","comment":null,"has_wechat":false,"wechat":null,"has_dingtalk":false,"dingtalk":"OrionPax","two_factor_auth":false,"teams":1,"projects":1,"starred_projects":0,"calendars":0,"open_todos":0,"closed_todos":5,"messages_created":1,"uploads_created":0,"attachments_uploaded":0,"comments_created":1,"resources_starred":0,"weekly_reports_created":0,"events_involved":4,"unread_notifications":0,"email_received":0,"data_updated_at":"2018-05-20T04:41:45.431Z","user_hash":"619810073cd033088c93746bc1ac73423230d332c7283a8c76e7aed1be86e789","app_id":"xbtsuf77","company":{"id":701217,"name":"HYLT","created_at":"2018-05-17T01:24:47.000Z","guid":"982b79584a39484eb9e17459a6e1deff","next_charge_date":null,"plan":"pro_trial","ever_paid":false,"total_paid":0,"alipay_used":0,"haopay_used":0,"owner_guid":"f7e254d7f54e40dbb93a33b737752fbc","has_dingtalk":false,"has_yiqixie":false,"has_api":false,"members":1,"subgroups":0,"active_projects":1,"archived_projects":0,"project_groups":0,"project_templates":0,"calendars":0,"calendar_events":2,"messages":1,"comments":1,"open_todos":0,"closed_todos":5,"documents":0,"files":0,"file_bytesize":0.0,"answers":0,"is_upgraded_to_plus":false}};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/xbtsuf77';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
 
 <script type="text/javascript">
     (function() {
@@ -919,13 +519,13 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-100449807-1', 'auto', { userId: '12535517' });
+    ga('create', 'UA-100449807-1', 'auto', { userId: '12534361' });
     ga('create', 'UA-100449807-2', 'auto', 'teamTracker', { userId: '701217' });
 
     ga('send', 'pageview', {
-        'userId': '12535517',
+        'userId': '12534361',
         'dimension1': '701217 : HYLT',
-        'dimension2': '7432036',
+        'dimension2': '7431820',
         'dimension3': 'pro_trial'
     });
     ga('teamTracker.send', 'pageview', {
@@ -939,5 +539,10 @@
 </script>
 
 
-</body>
-</html>
+
+
+<textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; height: 0px !important; min-height: 0px !important; font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 16px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; word-spacing: 0px; text-indent: 0px; line-height: 19.2px; width: 240px;" class="autosizejs"></textarea><div class="offline-ui offline-ui-up"><div class="offline-ui-content"></div><a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/?finish=true" class="offline-ui-retry"></a></div><iframe id="intercom-frame" style="display: none;" src="./listDiscussion2_files/saved_resource.html"></iframe><div id="intercom-container" style="position: fixed; width: 0px; height: 0px; bottom: 0px; right: 0px; z-index: 2147483647;"><div data-reactroot="" class="intercom-app"><span></span><span></span><!-- react-empty: 4 --><span></span><!-- react-empty: 6 --></div></div><div class="simple-filedrop" style="display: none;">
+    <div class="filedrop-dropzone">
+        <div class="filedrop-hints">拖拽到这里上传</div>
+    </div>
+</div></body></html></html>

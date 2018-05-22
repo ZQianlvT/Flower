@@ -460,7 +460,7 @@
 </head>
 
 <body class="">
-<div id="page-loading-mask"></div>
+
 
 <div class="wrapper">
 
@@ -468,385 +468,39 @@
     <div class="header">
         <div class="header-container">
             <h1 class="logo">
-                <a href="javascript:;" class="link-team-menu">
-                    <span class="name">HYLT</span>
+                <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-team-menu">
+                    alikes
                 </a>
             </h1>
 
             <ul class="nav">
                 <li class="" id="nav-project">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/projects" data-stack data-stack-root>项目</a>
-                </li>
-                <li class="" id="nav-events">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/events" data-stack data-stack-root>动态</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/project/listProject">项目</a>
                 </li>
                 <li class="dividing"></li>
-                <li class="active" id="nav-calendar">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/calendars" data-stack data-stack-fluid
-                       data-stack-root>日历</a>
-                </li>
-
-                <li class="" id="nav-dashboard">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/dashboard" data-stack data-stack-root>鹰眼</a>
-                </li>
-                <li class="" id="nav-reports">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/reports" data-stack data-stack-root>汇报</a>
+                <li class="" id="nav-calendar">
+                    <a href="${pageContext.request.contextPath}/base/goURL/calendar/calendar">日历</a>
                 </li>
                 <li class="dividing"></li>
-
                 <li class="" id="nav-members">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/members" data-stack data-stack-root>团队</a>
-                </li>
-                <li class="" id="nav-me">
-                    <a href="/members/ce2b30066f034bf9a69113963da165fd?me=1" data-stack data-stack-root>我自己</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/team/listTeam">团队</a>
                 </li>
 
                 <li id="nav-upgrade">
-                    <a href="/teams/982b79584a39484eb9e17459a6e1deff/upgrade?utm_source=Tower&amp;utm_medium=Web&amp;utm_campaign=Nav-Pro-Trial-Remaining"
-                       class="link-remaining" data-tower-pro="header-upgrade-ad" target="_blank">
-                        试用剩余 25 天
+                    <a href="#"
+                       class="link-remaining" data-tower-pro="header-upgrade-ad">
+                        本软件完全免费，并不禁止传播。
                     </a>
                 </li>
 
             </ul>
 
             <div class="command-bar">
-                <div class="search-wrap">
-                    <a href="javascript:;" class="link-search" title="搜索"><i class="twr twr-search"></i></a>
-                    <form id="form-search" class="form" method="get"
-                          action="/teams/982b79584a39484eb9e17459a6e1deff/search">
-                        <input id="txt-search" type="text" class="keyword no-border" name="keyword" placeholder="搜索"
-                               autocomplete="off"/>
-                    </form>
-                </div>
-
-                <audio src="/assets/notification-8c3a5ef39c8b88e19cf2b732747a6691d43ffa68d25b3db74ebe418bf41fad63.mp3"
-                       id="notification-audio" preload="auto"></audio>
-
-                <div class="notification-info">
-                    <a href="javascript:;" id="notification-count" class="label unread" title="新的通知"
-                       data-unread-count="9"
-                       data-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/unread_counts">
-                        <span class="twr twr-bell-o bell"></span>
-                        <span class="num">9</span>
-                    </a>
-                    <div class="noti-pop">
-                        <div class="noti-pop-hd">
-                            <b class="title">通知</b>
-                            <a class="mark-as-read" id="noti-mark-read" data-loading="true" data-remote="true"
-                               rel="nofollow" data-method="post"
-                               href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/read_all">
-                                <span class="twr twr twr-check"></span>
-                                全部标记为已读
-                            </a></div>
-                        <div class="noti-pop-list-wrap">
-                            <div class="noti-pop-list notification-list">
-
-                                <div data-notification-guid="139461fd246c480cabf662de9f9ed58c"
-                                     data-topic-guid="ce2b30066f034bf9a69113963da165fd"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-21 10:04:28 +0800"
-                                     data-key-id="187268174">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/139461fd246c480cabf662de9f9ed58c"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">邀请你加入项目</span>
-      <span class="target">测试</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-21T10:04:28+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/139461fd246c480cabf662de9f9ed58c/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="22e99b54fa324370be38d9b4ab53b329"
-                                     data-topic-guid="177ac58c1f6c4271b711c122461f2db2"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-21 09:56:56 +0800"
-                                     data-key-id="187263033">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/22e99b54fa324370be38d9b4ab53b329"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-21T09:56:56+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/22e99b54fa324370be38d9b4ab53b329/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="9693c6febb1c4ef0af507573552db6eb"
-                                     data-topic-guid="9b312b0f458b4388b32dff292022c5c4"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 15:01:26 +0800"
-                                     data-key-id="186584573">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/9693c6febb1c4ef0af507573552db6eb"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T15:01:26+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/9693c6febb1c4ef0af507573552db6eb/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="85c4314aa9e447b8b1c4affdb471e9cd"
-                                     data-topic-guid="ae785cbe80204636bb94c6d143a43f7b"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 14:33:53 +0800"
-                                     data-key-id="186572049">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/85c4314aa9e447b8b1c4affdb471e9cd"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T14:33:53+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/85c4314aa9e447b8b1c4affdb471e9cd/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="d530acf38cd046a5ad5f62a7d30afba7"
-                                     data-topic-guid="70d66a5f040f4f6caf6cb4aa172a3d0c"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 10:28:48 +0800"
-                                     data-key-id="186493117">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/d530acf38cd046a5ad5f62a7d30afba7"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">完成了任务</span>
-      <span class="target">网页流转设计</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T10:28:48+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/d530acf38cd046a5ad5f62a7d30afba7/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="cb0922633efe47ca8970da84d980746c"
-                                     data-topic-guid="c8975d5ea1b9479c960a62fda7cabfb9"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-18 09:24:22 +0800"
-                                     data-key-id="186437297">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/cb0922633efe47ca8970da84d980746c"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">通过了你的加入申请</span>
-      <span class="target">HYLT</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-18T09:24:22+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/cb0922633efe47ca8970da84d980746c/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="e70789a8ab0645418e812454f3fb74f3"
-                                     data-topic-guid="aff9e385ab5748d6a76379a375a54565"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-17 18:04:38 +0800"
-                                     data-key-id="186137730">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/e70789a8ab0645418e812454f3fb74f3"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">完成了任务</span>
-      <span class="target">网站需求分析</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-17T18:04:38+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/e70789a8ab0645418e812454f3fb74f3/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="7c01689b05c7464fabd0814e2d2d9cde"
-                                     data-topic-guid="e86bfd0ca2a14f0fb522f806e23ce8e2"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-17 16:05:40 +0800"
-                                     data-key-id="186090497">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/7c01689b05c7464fabd0814e2d2d9cde"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">编辑了日程</span>
-      <span class="target">需求设计</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-17T16:05:40+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/7c01689b05c7464fabd0814e2d2d9cde/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                                <div data-notification-guid="995ddee00642453984ad251189f50b06"
-                                     data-topic-guid="d2869aecfc7b4f56a46fcddd4b20193f"
-                                     class="notice unread no-content"
-                                     data-created-at="2018-05-17 16:02:13 +0800"
-                                     data-key-id="186088835">
-
-                                    <a class="link"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/995ddee00642453984ad251189f50b06"
-                                       data-stack
-                                       data-stack-root
-                                       data-parent-name="全部通知"
-                                       data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/notifications/">
-
-    <span class="title">
-        <span class="actor member">OrionPax</span>
-
-      <span class="action">编辑了日程</span>
-      <span class="target">项目需求分析</span>
-    </span>
-
-                                    </a>
-
-                                    <div class="date" data-readable-time="2018-05-17T16:02:13+08:00"></div>
-
-                                    <a class="mark-read"
-                                       href="/teams/982b79584a39484eb9e17459a6e1deff/notifications/995ddee00642453984ad251189f50b06/read"
-                                       title="标记为已读"
-                                       data-remote="true"
-                                       data-method="post"
-                                       data-loading><i class="twr twr-check"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="noti-pop-empty hide">- 没有新通知 -</div>
-                        <div class="noti-pop-footer">
-                            <a class="noti-settings" data-stack="true" data-stack-root="true"
-                               href="/members/ce2b30066f034bf9a69113963da165fd/notification_settings">
-                                <i class="twr twr-cog"></i> 通知设置
-                            </a> <a class="noti-all-link" data-stack="true" data-stack-root="true"
-                                    href="/teams/982b79584a39484eb9e17459a6e1deff/notifications">查看全部通知</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="account-info">
                     <div class="member-settings">
                         <a class="link-member-menu ab-test-old" href="javascript:;" data-new-feature="false">
                             <span class="twr twr-caret-down"></span>
-                            <img class="avatar" src="/assets/default_avatars/noon.jpg" alt="Noon"/>
+                            <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg" alt="Noon"/>
                         </a>
                     </div>
                 </div>
@@ -854,57 +508,18 @@
         </div>
     </div>
 
-
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a data-stack="true" data-stack-root="true" href="/members/ce2b30066f034bf9a69113963da165fd/settings">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/base/goURL/user/updateUser">个人设置</a>
             </li>
-            <li><a data-stack="true" data-stack-root="true"
-                   href="/members/ce2b30066f034bf9a69113963da165fd/notification_settings">通知设置</a></li>
-            <li><a data-stack="true" data-stack-root="true"
-                   href="/members/ce2b30066f034bf9a69113963da165fd/stars">我的关注</a></li>
             <li class="part-line"></li>
-            <li><a target="_blank" href="/choices">企业服务精选</a></li>
-            <li><a target="_blank" href="/downloads">下载客户端</a></li>
-            <li><a target="_blank" href="/help">帮助中心</a></li>
-            <li><a id="link-roadmap" target="_blank" href="/roadmap">最新功能</a></li>
-            <li><a rel="nofollow" data-method="DELETE" href="/users/sign_out">退出</a></li>
-        </ul>
-    </script>
-    <script id="tpl-team-menu" type="text/html">
-        <ul class="menu">
-
-            <li><a href="/teams/982b79584a39484eb9e17459a6e1deff/external_apps" data-stack data-stack-root>应用中心</a></li>
-
-
-            <li>
-                <a class="js-feature-migrated" data-migrated-feature="team-stats" href="javascript:;">团队统计</a>
-            </li>
-
-            <li>
-                <a href="/teams/982b79584a39484eb9e17459a6e1deff/upgrade" data-stack data-stack-root>
-                    了解 Pro 版
-                </a>
-            </li>
-
-            <p class="title"><span>切换团队</span></p>
-            <ul class="menu scroll team-list">
-                <li>
-                    <a href="/teams/7feef4ba8611443ebd06db497618beb4">alikes
-                    </a>
-                </li>
-            </ul>
-            <li class="part-line"></li>
-
-            <li class="small"><a href="/launchpad?skip=1">创建/管理团队</a></li>
+            <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
         </ul>
     </script>
 
-
-    <div class="container workspace" data-stack-fluid>
-        <div class="page">
-
-            <div class="page-inner" id="page-calendar" data-page-name="2018年5月" data-stack-fluid>
+    <div class="container workspace simple-stack simple-stack-transition simple-stack-fluid">
+        <div class="page page-root simple-pjax">
+            <div class="page-inner" id="page-calendar" data-page-name="2018年5月" data-stack-fluid="">
 
                 <div class="calendar-container">
 
@@ -914,37 +529,43 @@
                                 <div class="standard-cals">
                                     <div class="title">
                                         <h3>日历</h3>
-                                        <a href="/teams/982b79584a39484eb9e17459a6e1deff/calendars/new/"
-                                           class="link-create-calendar" data-nocache data-visible-to="member"
-                                           data-stack data-stack-root data-parent-name="日历"
+                                        <a href="https://tower.im/teams/982b79584a39484eb9e17459a6e1deff/calendars/new/"
+                                           class="link-create-calendar" data-nocache="" data-visible-to="member"
+                                           data-stack="" data-stack-root="" data-parent-name="日历"
                                            data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/calendars"
-                                           data-parent-fluid>添加日历</a>
+                                           data-parent-fluid="">添加日历</a>
                                     </div>
                                     <div class="no-cal-tour">请添加你的第一个日历</div>
                                     <ul class="cal-list">
                                     </ul>
                                 </div>
 
-                                <div class="project-cals">
+                                <div class="project-cals" style="display: block;">
                                     <div class="title">
                                         <h3>项目</h3>
                                     </div>
                                     <ul class="cal-list">
-                                        <li data-guid="e26956389763492f891259d7d9c5b94d" data-color="11" data-project
+                                        <li data-guid="e26956389763492f891259d7d9c5b94d" data-color="11" data-project=""
                                             data-creator="f7e254d7f54e40dbb93a33b737752fbc"
-                                            data-members="f7e254d7f54e40dbb93a33b737752fbc,ce2b30066f034bf9a69113963da165fd">
+                                            data-members="f7e254d7f54e40dbb93a33b737752fbc,ce2b30066f034bf9a69113963da165fd"
+                                            style="display: list-item;">
                                             <a href="javascript:;"
                                                class="link-show-cal link-cal-color cal-color-11 selected"><span><i
                                                     class="twr twr-check"></i></span></a>
                                             <a href="javascript:;" class="cal-name" title="Flower">Flower</a>
+                                            <a href="javascript:;" class="link-cal-setting" title="设置"
+                                               data-url="/projects/e26956389763492f891259d7d9c5b94d/calendar_color"></a>
                                         </li>
-                                        <li data-guid="2a9e6f5664754cf99e61c6fbefe618d8" data-color="1" data-project
+                                        <li data-guid="2a9e6f5664754cf99e61c6fbefe618d8" data-color="1" data-project=""
                                             data-creator="f7e254d7f54e40dbb93a33b737752fbc"
-                                            data-members="f7e254d7f54e40dbb93a33b737752fbc,ce2b30066f034bf9a69113963da165fd">
+                                            data-members="f7e254d7f54e40dbb93a33b737752fbc,ce2b30066f034bf9a69113963da165fd"
+                                            style="display: none;">
                                             <a href="javascript:;"
                                                class="link-show-cal link-cal-color cal-color-1 selected"><span><i
                                                     class="twr twr-check"></i></span></a>
                                             <a href="javascript:;" class="cal-name" title="测试">测试</a>
+                                            <a href="javascript:;" class="link-cal-setting" title="设置"
+                                               data-url="/projects/2a9e6f5664754cf99e61c6fbefe618d8/calendar_color"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -962,10 +583,10 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/teams/982b79584a39484eb9e17459a6e1deff/calendars/subscribe" data-stack
-                                           data-stack-root data-parent-name="日历"
+                                        <a href="https://tower.im/teams/982b79584a39484eb9e17459a6e1deff/calendars/subscribe"
+                                           data-stack="" data-stack-root="" data-parent-name="日历"
                                            data-parent-url="/teams/982b79584a39484eb9e17459a6e1deff/calendars"
-                                           data-parent-fluid><i class="twr twr-calendar"></i> 订阅日历</a>
+                                           data-parent-fluid=""><i class="twr twr-calendar"></i> 订阅日历</a>
                                     </li>
                                 </ul>
                             </div>
@@ -974,22 +595,422 @@
                     <div class="calendar-wrapper">
                         <div class="calendar-topbar">
                             <h3>
-                                <span class="month"></span>
-                                <span class="year"></span>
+                                <span class="month">五月</span>
+                                <span class="year">2018</span>
                             </h3>
                             <div class="nav-buttons">
-                                <a class="btn-prev-month" title="上个月" data-stack data-stack-root data-stack-fluid>
+                                <a class="btn-prev-month" title="上个月" data-stack="" data-stack-root=""
+                                   data-stack-fluid=""
+                                   href="https://tower.im/teams/982b79584a39484eb9e17459a6e1deff/calendars/?month=2018-04">
                                     <i class="twr twr-angle-left"></i>
                                 </a>
-                                <a class="btn-next-month" title="下个月" data-stack data-stack-root data-stack-fluid>
+                                <a class="btn-next-month" title="下个月" data-stack="" data-stack-root=""
+                                   data-stack-fluid=""
+                                   href="https://tower.im/teams/982b79584a39484eb9e17459a6e1deff/calendars/?month=2018-06">
                                     <i class="twr twr-angle-right"></i>
                                 </a>
                             </div>
                             <a href="javascript:;" class="btn btn-mini btn-today">今天</a>
-                            <div class="cal-loading"><i class="twr twr-refresh twr-spin"></i></div>
-                            <a href="javascript:;" class="btn-toggle-sidebar" title="隐藏侧边栏">&#8677;</a>
+                            <div class="cal-loading" style="display: none;"><i class="twr twr-refresh twr-spin"></i>
+                            </div>
+                            <a href="javascript:;" class="btn-toggle-sidebar" title="隐藏侧边栏">⇥</a>
                         </div>
-                        <div id="calendar" data-url="/teams/982b79584a39484eb9e17459a6e1deff/calendar_events/"></div>
+                        <div id="calendar" data-url="/teams/982b79584a39484eb9e17459a6e1deff/calendar_events/"
+                             class="simple-calendar">
+                            <div class="weeks"></div>
+                            <div class="week-title">
+                                <div class="weekdays">
+                                    <div class="weekday">周一</div>
+                                    <div class="weekday">周二</div>
+                                    <div class="weekday">周三</div>
+                                    <div class="weekday">周四</div>
+                                    <div class="weekday">周五</div>
+                                    <div class="weekday">周六</div>
+                                    <div class="weekday">周日</div>
+                                </div>
+                            </div>
+                            <div class="weeks">
+                                <div class="week" data-week="2018-04-30">
+                                    <div class="days">
+                                        <div class="day other-month" data-date="2018-04-30">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">30</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-01">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">1</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-02">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">2</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-03">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">3</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-04">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">4</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day sat" data-date="2018-05-05">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">5</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day sun" data-date="2018-05-06">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">6</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                    </div>
+                                    <div class="events"></div>
+                                </div>
+                                <div class="week" data-week="2018-05-07">
+                                    <div class="days">
+                                        <div class="day" data-date="2018-05-07">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">7</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-08">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">8</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-09">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">9</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-10">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">10</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-11">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">11</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day sat" data-date="2018-05-12">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">12</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day sun" data-date="2018-05-13">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">13</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                    </div>
+                                    <div class="events"></div>
+                                </div>
+                                <div class="week" data-week="2018-05-14">
+                                    <div class="days">
+                                        <div class="day" data-date="2018-05-14">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">14</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-15">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">15</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-16">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">16</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-17">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">17</span>
+                                            </div>
+                                            <div class="event-spacers">
+                                                <div class="event-spacer"
+                                                     data-id="d2869aecfc7b4f56a46fcddd4b20193f"></div>
+                                            </div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-18">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">18</span>
+                                            </div>
+                                            <div class="event-spacers">
+                                                <div class="event-spacer"
+                                                     data-id="e86bfd0ca2a14f0fb522f806e23ce8e2"></div>
+                                            </div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day sat" data-date="2018-05-19">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">19</span>
+                                            </div>
+                                            <div class="event-spacers">
+                                                <div class="event-spacer"
+                                                     data-id="e86bfd0ca2a14f0fb522f806e23ce8e2"></div>
+                                            </div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day sun" data-date="2018-05-20">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">20</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                    </div>
+                                    <div class="events">
+                                        <div class="event cal-color-11" data-id="d2869aecfc7b4f56a46fcddd4b20193f"
+                                             title="Flower: 项目需求分析" data-project-guid="e26956389763492f891259d7d9c5b94d"
+                                             style="width: 14.2857%; top: 0px; left: 42.8571%;">
+                                            <div class="event-wrapper">
+                                                <p class="content"><span class="text">项目需求分析</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="event cal-color-11" data-id="e86bfd0ca2a14f0fb522f806e23ce8e2"
+                                             title="Flower: 需求设计" data-project-guid="e26956389763492f891259d7d9c5b94d"
+                                             style="width: 28.5714%; top: 0px; left: 57.1429%;">
+                                            <div class="event-wrapper">
+                                                <p class="content"><span class="text">需求设计</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="week" data-week="2018-05-21">
+                                    <div class="days">
+                                        <div class="day today" data-date="2018-05-21">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">21</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos">
+                                                <div class="todo cal-color-11"
+                                                     data-id="364ac59771ef44ccae88bf0a137e5533">
+                                                    <div class="todo-wrapper">
+                                                        <input type="checkbox" class="cb-done">
+                                                        <span class="content">静态网页开发</span>
+                                                    </div>
+                                                </div>
+                                                <div class="todo cal-color-11"
+                                                     data-id="ec69d30b1b5f4759b823771882da98e8">
+                                                    <div class="todo-wrapper">
+                                                        <input type="checkbox" class="cb-done">
+                                                        <span class="content">数据库表开发</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-22">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">22</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-23">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">23</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-24">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">24</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-25">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">25</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day sat" data-date="2018-05-26">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">26</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day sun" data-date="2018-05-27">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">27</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                    </div>
+                                    <div class="events"></div>
+                                </div>
+                                <div class="week" data-week="2018-05-28">
+                                    <div class="days">
+                                        <div class="day" data-date="2018-05-28">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">28</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-29">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">29</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-30">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">30</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day" data-date="2018-05-31">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">31</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day other-month" data-date="2018-06-01">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">1</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day sat other-month" data-date="2018-06-02">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">2</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                        <div class="day sun other-month" data-date="2018-06-03">
+                                            <div class="info">
+                                                <span class="desc"></span>
+                                                <span class="num">3</span>
+                                            </div>
+                                            <div class="event-spacers"></div>
+                                            <div class="day-events"></div>
+                                            <div class="day-todos"></div>
+                                        </div>
+                                    </div>
+                                    <div class="events"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -1230,7 +1251,7 @@
                                     或者
                                     <a href="#" class="link-delete-calendar" data-nocache data-method="post"
                                        data-remote="true" data-loading
-                                       data-confirm="确定要删除这个日历吗？<br/>跟日历相关的事件会被一并删除，请谨慎操作。">删除日历</a>
+                                       data-confirm="确定要删除这个日历吗？<br></a>跟日历相关的事件会被一并删除，请谨慎操作。">删除日历</a>
                                 </p>
                             </div>
                         </div>
@@ -1266,34 +1287,36 @@
 
                 </div>
             </div>
-
         </div>
     </div>
     <div class="footer">
-        &copy; 彩程设计
+        © 晴天设计
     </div>
 
 
 </div>
 
 <input type="hidden" id="d18n-enabled" value="false">
-<input type="hidden" id="server-time" value="2018-05-21 21:50:27">
+<input type="hidden" id="server-time" value="2018-05-21 10:18:29">
 
 <input type="hidden" id="team-guid" value="982b79584a39484eb9e17459a6e1deff">
 <input type="hidden" id="team-name" value="HYLT">
 <input type="hidden" id="team-enable-pusher" value="true">
 
-<input type="hidden" id="user-id" value="7432036">
-<input type="hidden" id="user-email" value="2449832339@qq.com">
+<input type="hidden" id="user-id" value="7431820">
+<input type="hidden" id="user-email" value="1875709296@qq.com">
 
 <input type="hidden" id="unused-bubbles" value="12,13">
-<input type="hidden" id="member-id" value="12535517">
-<input type="hidden" id="member-guid" value="ce2b30066f034bf9a69113963da165fd">
-<input type="hidden" id="member-nickname" value="浮点农国">
-<input type="hidden" id="member-avatar" value="/assets/default_avatars/noon.jpg">
+<input type="hidden" id="member-id" value="12534361">
+<input type="hidden" id="member-guid" value="f7e254d7f54e40dbb93a33b737752fbc">
+<input type="hidden" id="member-nickname" value="OrionPax">
+<input type="hidden" id="member-avatar" value="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
 <input type="hidden" id="member-timezone" value="Asia/Shanghai">
-<input type="hidden" id="conn-guid" value="4fb6095f-7a92-4744-a62c-a2eb26f9cd65">
+<input type="hidden" id="conn-guid" value="e665f9cf-f87e-423f-9d95-548e31ce2ac8">
 
+<input type="hidden" id="member-owner">
+
+<input type="hidden" id="member-admin">
 
 <input type="hidden" id="electron" value="false">
 
@@ -1304,48 +1327,42 @@
     //]]>
 </script>
 
-<a id="back-to-top" href="javascript:;">
-    <i class="twr twr-chevron-up"></i>
-</a>
-<a id="link-to-help" data-intercom="false" target="_blank" href="/help">
-    <span class="twr twr-help"></span>
-</a>
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {
     "hide_default_launcher": true,
-    "guid": "ce2b30066f034bf9a69113963da165fd",
-    "name": "浮点农国",
-    "email": "2449832339@qq.com",
-    "user_id": 12535517,
+    "guid": "f7e254d7f54e40dbb93a33b737752fbc",
+    "name": "OrionPax",
+    "email": "1875709296@qq.com",
+    "user_id": 12534361,
     "desktop_notification_enabled": false,
     "wechat_notification_enabled": true,
     "email_notification_enabled": false,
     "ai_notify_enabled": false,
-    "role": 0,
-    "user_guid": "f7eba6660ed54cec965e9058ee595fc5",
-    "avatar": "https://tower.im/assets/default_avatars/noon.jpg",
+    "role": 2,
+    "user_guid": "dae5776700474b90bcb1038c52d18948",
+    "avatar": "https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3",
     "comment": null,
     "has_wechat": false,
     "wechat": null,
     "has_dingtalk": false,
-    "dingtalk": "浮点农国",
+    "dingtalk": "OrionPax",
     "two_factor_auth": false,
-    "teams": 2,
-    "projects": 2,
+    "teams": 1,
+    "projects": 1,
     "starred_projects": 0,
     "calendars": 0,
     "open_todos": 0,
-    "closed_todos": 0,
-    "messages_created": 0,
+    "closed_todos": 5,
+    "messages_created": 1,
     "uploads_created": 0,
     "attachments_uploaded": 0,
-    "comments_created": 0,
+    "comments_created": 1,
     "resources_starred": 0,
     "weekly_reports_created": 0,
-    "events_involved": 2,
-    "unread_notifications": 29,
+    "events_involved": 4,
+    "unread_notifications": 0,
     "email_received": 0,
-    "data_updated_at": "2018-05-21T06:53:20.499Z",
-    "user_hash": "99bb70a8e9ae5b39924f6bc16c6a8f29e44b0b2227bd29c578f9873989e91402",
+    "data_updated_at": "2018-05-20T04:41:45.431Z",
+    "user_hash": "619810073cd033088c93746bc1ac73423230d332c7283a8c76e7aed1be86e789",
     "app_id": "xbtsuf77",
     "company": {
         "id": 701217,
@@ -1362,18 +1379,18 @@
         "has_dingtalk": false,
         "has_yiqixie": false,
         "has_api": false,
-        "members": 2,
+        "members": 1,
         "subgroups": 0,
-        "active_projects": 2,
+        "active_projects": 1,
         "archived_projects": 0,
         "project_groups": 0,
         "project_templates": 0,
         "calendars": 0,
         "calendar_events": 2,
-        "messages": 2,
-        "comments": 3,
-        "open_todos": 2,
-        "closed_todos": 6,
+        "messages": 1,
+        "comments": 1,
+        "open_todos": 0,
+        "closed_todos": 5,
         "documents": 0,
         "files": 0,
         "file_bytesize": 0.0,
@@ -1463,13 +1480,13 @@
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-100449807-1', 'auto', {userId: '12535517'});
+    ga('create', 'UA-100449807-1', 'auto', {userId: '12534361'});
     ga('create', 'UA-100449807-2', 'auto', 'teamTracker', {userId: '701217'});
 
     ga('send', 'pageview', {
-        'userId': '12535517',
+        'userId': '12534361',
         'dimension1': '701217 : HYLT',
-        'dimension2': '7432036',
+        'dimension2': '7431820',
         'dimension3': 'pro_trial'
     });
     ga('teamTracker.send', 'pageview', {
@@ -1483,5 +1500,17 @@
 </script>
 
 
+<textarea tabindex="-1"
+          style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; height: 0px !important; min-height: 0px !important; font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 16px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; word-spacing: 0px; text-indent: 0px; line-height: 19.2px; width: 240px;"
+          class="autosizejs"></textarea>
+<div class="offline-ui offline-ui-up">
+    <div class="offline-ui-content"></div>
+    <a href="https://tower.im/teams/982b79584a39484eb9e17459a6e1deff/calendars/" class="offline-ui-retry"></a></div>
+<iframe id="intercom-frame" style="display: none;" src="./calendar_files/saved_resource.html"></iframe>
+<div id="intercom-container"
+     style="position: fixed; width: 0px; height: 0px; bottom: 0px; right: 0px; z-index: 2147483647;">
+    <div data-reactroot="" class="intercom-app"><span></span><span></span><!-- react-empty: 4 --><span></span>
+        <!-- react-empty: 6 --></div>
+</div>
 </body>
 </html>

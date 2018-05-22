@@ -469,7 +469,7 @@
     <div class="page" id="page-signup">
         <div class="sign-page">
             <div class="hd">
-                <a class="link-logo" href="/">
+                <a class="link-logo" href="${pageContext.request.contextPath}/index.jsp">
                     <span class="twr twr-logo"></span>
                 </a></div>
 

@@ -520,7 +520,7 @@
 
     <div class="container workspace">
         <div class="page">
-            <a href="${pageContext.request.contextPath}/base/goURL/calendar/calendar" class="link-page-behind">日历</a>
+            <a href="${pageContext.request.contextPath}/base/goURL/schedule/listSchedule" class="link-page-behind">日程</a>
         </div>
         <div class="page">
 
