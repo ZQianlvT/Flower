@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
+    <script src="js/jquery.min.js"></script>
     <script type="text/javascript">window.NREUM || (NREUM = {});
     NREUM.info = {
         "beacon": "bam.nr-data.net",
@@ -441,8 +441,8 @@
     <meta name="baidu-site-verification" content="qLDoHdGnb64RHlkm">
     <meta name="alexaVerifyID" content="SIgQikd9LazsFz9M1vPBaQyC4Gw">
 
-    <link rel="dns-prefetch" href="//avatar.tower.im">
-    <link rel="dns-prefetch" href="//atttachments.tower.im">
+    <%--<link rel="dns-prefetch" href="//avatar.tower.im">--%>
+    <%--<link rel="dns-prefetch" href="//atttachments.tower.im">--%>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico" sizes="32x32">
     <link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico" sizes="64x64">
@@ -474,21 +474,22 @@
                 </a></div>
 
             <div class="bd">
-                <form class="form box" action="/users/sign_up" method="post" data-remote="true" novalidate>
+                <form id="userFormId" class="form box" action="${pageContext.request.contextPath}/user/login"
+                      method="post" data-remote="true" novalidate>
                     <div class="form-item">
                         <h1 class="bd-title">注册</h1>
                     </div>
 
                     <div class="form-item">
                         <div class="form-field">
-                            <input class="team" name="team" type="text" placeholder="团队名称" autocomplete="off"
+                            <input class="team" name="teamName" type="text" placeholder="团队名称" autocomplete="off"
                                    data-validate="required;length:1,255" data-validate-msg="请填写你的团队名称" autofocus/>
                         </div>
                     </div>
 
                     <div class="form-item">
                         <div class="form-field">
-                            <input class="nickname" name="nickname" type="text" placeholder="你的名字" autocomplete="off"
+                            <input class="nickname" name="name" type="text" placeholder="你的名字" autocomplete="off"
                                    data-validate="required;length:1,255" data-validate-msg="请填写你的名字"/>
                         </div>
                     </div>
@@ -497,12 +498,13 @@
                         <div class="form-field">
                             <input class="email" name="email" type="email" placeholder="邮箱，例如: 10001@qq.com"
                                    autocomplete="off" data-validate="required;email" data-validate-msg="请填写你的常用邮箱地址"/>
+                            <%--<p class="error">该账号已存在，请直接<a href="/users/sign_in">登录</a></p>--%>
                         </div>
                     </div>
 
                     <div class="form-item">
                         <div class="form-field">
-                            <input class="password" name="password" type="password" placeholder="密码，至少包含 6 位字符"
+                            <input class="password" name="pwd" type="password" placeholder="密码，至少包含 6 位字符"
                                    autocomplete="off" data-validate="required;length:6" data-validate-msg="请设置一个登录密码">
                         </div>
                     </div>
@@ -530,18 +532,14 @@
 
 
 </div>
-
 <input type="hidden" id="d18n-enabled" value="false">
 <input type="hidden" id="server-time" value="2018-05-21 06:55:55">
-
-
 <script>
     //<![CDATA[
     window.gon = {};
     gon.oss_direct_upload = true;
     //]]>
 </script>
-
 <script id="IntercomSettingsScriptTag">window.intercomSettings = {"hide_default_launcher": true, "app_id": "xbtsuf77"};
 (function () {
     var w = window;
@@ -577,7 +575,6 @@
     }
     ;
 })()</script>
-
 <script type="text/javascript">
     (function () {
         setTimeout(function () {
@@ -610,8 +607,6 @@
         }, 5000)
     })()
 </script>
-
-
 <script>
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -633,8 +628,25 @@
 
     ga('set', 'dimension4', 'false');
 </script>
-
-
+<script>
+    $("#userFormId").submit(function () {
+        var data = $(this).serialize();
+        alert(data);
+        $.ajax({
+            type: "POST",
+            url: "${pageContext.request.contextPath}/user/register",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json.errors != null) {
+                    $("#userFormId .form-item .email").addClass("error").after('<p class="error">' + json.errors + '</p>');
+                } else {
+                    location.href = "${pageContext.request.contextPath}/user/login?"+data;
+                }
+            }
+        });
+    })
+</script>
 </body>
 </html>
 

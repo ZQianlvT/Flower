@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="orion_pax.dao.TeamMapper">
-  <resultMap id="BaseResultMap" type="orion_pax.entity.Team">
+  <resultMap id="TeamBaseResultMap" type="orion_pax.entity.Team">
     <result column="t_id" jdbcType="VARCHAR" property="id" />
     <result column="t_name" jdbcType="VARCHAR" property="name" />
     <result column="t_create_time" jdbcType="TIMESTAMP" property="createTime" />
@@ -9,15 +9,8 @@
     <result column="t_invite_link" jdbcType="VARCHAR" property="inviteLink" />
     <result column="t_u_id" jdbcType="VARCHAR" property="uId" />
   </resultMap>
+
   <insert id="insert" parameterType="orion_pax.entity.Team">
-    insert into f_team (t_id, t_name, t_create_time, 
-      t_total_members, t_invite_link, t_u_id
-      )
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{totalMembers,jdbcType=INTEGER}, #{inviteLink,jdbcType=VARCHAR}, #{uId,jdbcType=VARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="orion_pax.entity.Team">
     insert into f_team
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

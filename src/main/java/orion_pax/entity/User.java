@@ -60,4 +60,16 @@ public class User {
     public void setTel(String tel) {
         this.tel = tel == null ? null : tel.trim();
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", email='" + email + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", name='" + name + '\'' +
+                ", img='" + img + '\'' +
+                ", tel='" + tel + '\'' +
+                '}';
+    }
 }
