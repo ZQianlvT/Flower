@@ -54,6 +54,6 @@
     </trim>
   </insert>
   <select id="getByEmail" parameterType="orion_pax.entity.User" resultMap="UserBaseResultMap">
-    select * from f_user where u_email = #{mail}
+    select * from f_user where u_email = #{email}
   </select>
 </mapper>

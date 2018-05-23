@@ -36,6 +36,6 @@ public class UserController extends BaseController {
         System.out.println("-----------OrionPax测试变量值----------user值=" + user + "," + "当前类=UserController.login()");
         System.out.println("-----------OrionPax测试变量值----------teamName值=" + teamName + "," + "当前类=UserController.login()");
         //Service登录方法
-        return "forward:/index.jsp";
+        return "forward:/WEB-INF/jsp/project/listProject.jsp";
     }
 }

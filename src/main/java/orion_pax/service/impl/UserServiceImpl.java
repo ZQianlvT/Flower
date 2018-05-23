@@ -24,21 +24,21 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
             return null;
         }
         //添加一个用户
-        user.setId(UUID.randomUUID().toString());
+        user.setId(UUID.randomUUID().toString().replace("-",""));
         user.setImg("/head/ChatHead.jpg");
         userMapper.insert(user);
         //添加一个团队
         Team team = new Team();
-        team.setId(UUID.randomUUID().toString());
+        team.setId(UUID.randomUUID().toString().replace("-",""));
         team.setuId(user.getId());
         team.setTotalMembers(1);
-        team.setInviteLink(UUID.randomUUID().toString());
+        team.setInviteLink(UUID.randomUUID().toString().replace("-",""));
         team.setCreateTime(new Date());
         team.setName(teamName);
         teamMapper.insert(team);
         //添加一条用户团队中间表记录
         UserAndTeam userAndTeam = new UserAndTeam();
-        userAndTeam.setId(UUID.randomUUID().toString());
+        userAndTeam.setId(UUID.randomUUID().toString().replace("-",""));
         userAndTeam.setuId(user.getId());
         userAndTeam.settId(team.getId());
         userAndTeamMapper.insert(userAndTeam);
