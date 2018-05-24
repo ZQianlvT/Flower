@@ -17,6 +17,9 @@ public interface BaseService<T> {
 	// 根据主键数组删除多条条记录
 	public int deleteArr(String[] ids);
 
+	// 根据主键查询
+	T getByPK(T entity);
+
 	// 查询多条记录
 	public List<T> select(T entity);
 

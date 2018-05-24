@@ -9,6 +9,7 @@
 <html>
 <head>
 
+    <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
     <script type="text/javascript">window.NREUM || (NREUM = {});
     NREUM.info = {
         "beacon": "bam.nr-data.net",
@@ -512,7 +513,7 @@
 
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a href="${pageContext.request.contextPath}/base/goURL/user/updateUser">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
             </li>
             <li class="part-line"></li>
             <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
@@ -526,81 +527,101 @@
             <div class="page-inner page-member-settings" id="page-member-settings" data-page-name="个人设置">
                 <p class="page-tip moveout" style="display:none;"></p>
                 <h3 class="page-title">个人设置</h3>
+                <%--<div class="form">--%>
+                    <%--<div class="form-item upload-avatar">--%>
+                        <%--&lt;%&ndash;<div class="link-upload">&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<a type="button" onclick="openFile()">选择新头像</a>&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<div class="link-upload"></div>&ndash;%&gt;--%>
 
-
-                <form class="form settings-form" action="/members/231e0ddd353440c883f9874a555f8adc/settings"
+                        <%--<div class="avatar-wrapper">--%>
+                            <%--<img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg"/>--%>
+                            <%--<div class="loading"></div>--%>
+                        <%--</div>--%>
+                        <%--<div class="link-upload" data-url="${pageContext.request.contextPath}/user/updateImg">--%>
+                            <%--<a id="btn-upload" onclick="openFile()">选择新头像</a>--%>
+                        <%--</div>--%>
+                        <%--<p class="desc">你可以选择 png/jpg 图片作为头像</p>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <form class="form settings-form" action="${pageContext.request.contextPath}/user/updateUser"
                       method="post" data-remote="true">
-                    <label class="form-item upload-avatar" data-droppable>
+
+                    <input type="hidden" name="id" value="${requestScope.user.id}"/>
+                    <label class="upload-avatar">
+                        <label class="form-item upload-avatar" data-droppable>
                         <div class="avatar-wrapper">
-                            <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg"/>
-                            <div class="loading"></div>
+                        <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg"/>
+                        <div class="loading"></div>
                         </div>
-                        <div class="link-upload" data-url="/members/231e0ddd353440c883f9874a555f8adc/avatars/">
-                            <a id="btn-upload" href="javascript:;">选择新头像</a>
+                        <div class="link-upload" data-url="${pageContext.request.contextPath}/user/updateImg">
+                        <a id="btn-upload" href="javascript:;">选择新头像</a>
                         </div>
                         <p class="desc">你可以选择 png/jpg 图片作为头像</p>
-                    </label>
+                        </label>
 
-                    <div class="form-item">
-                        <div class="form-label">
-                            <label for="txt-nickname">名字</label>
-                        </div>
-                        <div class="form-field">
-                            <input type="text" name="nickname" id="txt-nickname" autocomplete="off" value="浮点农国"
-                                   data-validate="required;length:1,30" data-validate-msg="好像还没有输入名字呢;名字最长30个字符"/>
-                        </div>
-                    </div>
-
-                    <div class="form-item">
-                        <div class="form-label">
-                            <label for="txt-email">邮箱</label>
-                        </div>
-                        <div class="form-field">
-                            <input type="text" name="email" id="txt-email" value="2449832339@qq.com" disabled/>
-                        </div>
-                    </div>
-
-                    <div class="form-item">
-                        <div class="form-label">
-                            <label>名片</label>
-                        </div>
-                        <div class="form-field">
-                            <div class="member-card">
-                                <p><b>浮点农国</b></p>
-                                <p class="member-comment">
-
-                                    2449832339@qq.com
-                                </p>
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label for="txt-nickname">名字</label>
+                            </div>
+                            <div class="form-field">
+                                <input type="text" name="name" id="txt-nickname" autocomplete="off"
+                                       value="${requestScope.user.name}"
+                                       data-validate="required;length:1,30" data-validate-msg="好像还没有输入名字呢;名字最长30个字符"/>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-item">
-                        <div class="form-label">
-                            <label>密码</label>
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label for="txt-email">邮箱</label>
+                            </div>
+                            <div class="form-field">
+                                <input type="text" name="email" id="txt-email" value="${requestScope.user.email}"
+                                       disabled/>
+                            </div>
                         </div>
-                        <div class="form-field form-text-field">
-                            <a
-                               href="${pageContext.request.contextPath}/base/goURL/user/updatePassword">修改密码</a>
-                        </div>
-                    </div>
 
-                    <div class="form-item">
-                        <div class="form-label">
-                            <label>手机</label>
-                        </div>
-                        <div class="form-field">
-                            <input type="text" name="phone" id="phone" autocomplete="off" value="13196810037"/>
-                        </div>
-                    </div>
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label>名片</label>
+                            </div>
+                            <div class="form-field">
+                                <div class="member-card">
+                                    <p><b>${requestScope.user.name}</b></p>
+                                    <p class="member-comment">
 
-                    <div class="form-buttons">
-                        <button class="btn btn-primary btn-large" id="btn-save" data-disable-with="正在保存..."
-                                data-success-text="保存成功">保存
-                        </button>
-                    </div>
+                                        ${requestScope.user.email}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label>密码</label>
+                            </div>
+                            <div class="form-field form-text-field">
+                                <a
+                                        href="${pageContext.request.contextPath}/base/goURL/user/updatePassword">修改密码</a>
+                            </div>
+                        </div>
+
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label>手机</label>
+                            </div>
+                            <div class="form-field">
+                                <input type="text" name="tel" id="phone" autocomplete="off" placeholder="请尽快绑定手机号"
+                                       value="${requestScope.user.tel}"/>
+                            </div>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button class="btn btn-primary btn-large" id="btn-save" data-disable-with="正在保存..."
+                                    data-success-text="保存成功">保存
+                            </button>
+                        </div>
                 </form>
-
 
 
                 <script type="text/html" id="tpl-two-factor-auth">
@@ -619,29 +640,29 @@
 
 </div>
 
-<input type="hidden" id="d18n-enabled" value="false">
-<input type="hidden" id="server-time" value="2018-05-21 15:40:09">
+<%--<input type="hidden" id="d18n-enabled" value="false">--%>
+<%--<input type="hidden" id="server-time" value="2018-05-21 15:40:09">--%>
 
-<input type="hidden" id="team-guid" value="7feef4ba8611443ebd06db497618beb4">
-<input type="hidden" id="team-name" value="alikes">
-<input type="hidden" id="team-enable-pusher" value="true">
+<%--<input type="hidden" id="team-guid" value="7feef4ba8611443ebd06db497618beb4">--%>
+<%--<input type="hidden" id="team-name" value="alikes">--%>
+<%--<input type="hidden" id="team-enable-pusher" value="true">--%>
 
-<input type="hidden" id="user-id" value="7432036">
-<input type="hidden" id="user-email" value="2449832339@qq.com">
+<%--<input type="hidden" id="user-id" value="7432036">--%>
+<%--<input type="hidden" id="user-email" value="2449832339@qq.com">--%>
 
-<input type="hidden" id="unused-bubbles" value="8,12,13">
-<input type="hidden" id="member-id" value="12535468">
-<input type="hidden" id="member-guid" value="231e0ddd353440c883f9874a555f8adc">
-<input type="hidden" id="member-nickname" value="浮点农国">
-<input type="hidden" id="member-avatar" value="/assets/default_avatars/noon.jpg">
-<input type="hidden" id="member-timezone" value="Asia/Shanghai">
-<input type="hidden" id="conn-guid" value="d8020e20-fb6e-48ee-b3f2-cf505afc4356">
+<%--<input type="hidden" id="unused-bubbles" value="8,12,13">--%>
+<%--<input type="hidden" id="member-id" value="12535468">--%>
+<%--<input type="hidden" id="member-guid" value="231e0ddd353440c883f9874a555f8adc">--%>
+<%--<input type="hidden" id="member-nickname" value="浮点农国">--%>
+<%--<input type="hidden" id="member-avatar" value="/assets/default_avatars/noon.jpg">--%>
+<%--<input type="hidden" id="member-timezone" value="Asia/Shanghai">--%>
+<%--<input type="hidden" id="conn-guid" value="d8020e20-fb6e-48ee-b3f2-cf505afc4356">--%>
 
-<input type="hidden" id="member-owner">
+<%--<input type="hidden" id="member-owner">--%>
 
-<input type="hidden" id="member-admin">
+<%--<input type="hidden" id="member-admin">--%>
 
-<input type="hidden" id="electron" value="false">
+<%--<input type="hidden" id="electron" value="false">--%>
 
 <script>
     //<![CDATA[
@@ -650,144 +671,144 @@
     //]]>
 </script>
 
-<script id="IntercomSettingsScriptTag">window.intercomSettings = {
-    "hide_default_launcher": true,
-    "guid": "231e0ddd353440c883f9874a555f8adc",
-    "name": "浮点农国",
-    "email": "2449832339@qq.com",
-    "user_id": 12535468,
-    "desktop_notification_enabled": false,
-    "wechat_notification_enabled": true,
-    "email_notification_enabled": false,
-    "ai_notify_enabled": false,
-    "role": 2,
-    "user_guid": "f7eba6660ed54cec965e9058ee595fc5",
-    "avatar": "https://tower.im/assets/default_avatars/noon.jpg",
-    "comment": null,
-    "has_wechat": false,
-    "wechat": null,
-    "has_dingtalk": false,
-    "dingtalk": "浮点农国",
-    "two_factor_auth": false,
-    "teams": 2,
-    "projects": 1,
-    "starred_projects": 0,
-    "calendars": 1,
-    "open_todos": 0,
-    "closed_todos": 0,
-    "messages_created": 0,
-    "uploads_created": 0,
-    "attachments_uploaded": 0,
-    "comments_created": 0,
-    "resources_starred": 0,
-    "weekly_reports_created": 0,
-    "events_involved": 0,
-    "unread_notifications": 0,
-    "email_received": 0,
-    "data_updated_at": "2018-05-21T07:33:30.051Z",
-    "user_hash": "6d6adb4779074ee3e10ca63e8077d4b0d488851a273f1977a3e5667d93729d00",
-    "app_id": "xbtsuf77",
-    "company": {
-        "id": 701306,
-        "name": "alikes",
-        "created_at": "2018-05-17T03:17:32.000Z",
-        "guid": "7feef4ba8611443ebd06db497618beb4",
-        "next_charge_date": null,
-        "plan": "pro_trial",
-        "ever_paid": false,
-        "total_paid": 0,
-        "alipay_used": 0,
-        "haopay_used": 0,
-        "owner_guid": "231e0ddd353440c883f9874a555f8adc",
-        "has_dingtalk": false,
-        "has_yiqixie": false,
-        "has_api": false,
-        "members": 1,
-        "subgroups": 0,
-        "active_projects": 1,
-        "archived_projects": 0,
-        "project_groups": 0,
-        "project_templates": 0,
-        "calendars": 1,
-        "calendar_events": 7,
-        "messages": 3,
-        "comments": 1,
-        "open_todos": 8,
-        "closed_todos": 3,
-        "documents": 2,
-        "files": 2,
-        "file_bytesize": 0.0,
-        "answers": 0,
-        "is_upgraded_to_plus": false
-    }
-};
-(function () {
-    var w = window;
-    var ic = w.Intercom;
-    if (typeof ic === "function") {
-        ic('reattach_activator');
-        ic('update', intercomSettings);
-    } else {
-        var d = document;
-        var i = function () {
-            i.c(arguments)
-        };
-        i.q = [];
-        i.c = function (args) {
-            i.q.push(args)
-        };
-        w.Intercom = i;
+<%--<script id="IntercomSettingsScriptTag">window.intercomSettings = {--%>
+    <%--"hide_default_launcher": true,--%>
+    <%--"guid": "231e0ddd353440c883f9874a555f8adc",--%>
+    <%--"name": "浮点农国",--%>
+    <%--"email": "2449832339@qq.com",--%>
+    <%--"user_id": 12535468,--%>
+    <%--"desktop_notification_enabled": false,--%>
+    <%--"wechat_notification_enabled": true,--%>
+    <%--"email_notification_enabled": false,--%>
+    <%--"ai_notify_enabled": false,--%>
+    <%--"role": 2,--%>
+    <%--"user_guid": "f7eba6660ed54cec965e9058ee595fc5",--%>
+    <%--"avatar": "https://tower.im/assets/default_avatars/noon.jpg",--%>
+    <%--"comment": null,--%>
+    <%--"has_wechat": false,--%>
+    <%--"wechat": null,--%>
+    <%--"has_dingtalk": false,--%>
+    <%--"dingtalk": "浮点农国",--%>
+    <%--"two_factor_auth": false,--%>
+    <%--"teams": 2,--%>
+    <%--"projects": 1,--%>
+    <%--"starred_projects": 0,--%>
+    <%--"calendars": 1,--%>
+    <%--"open_todos": 0,--%>
+    <%--"closed_todos": 0,--%>
+    <%--"messages_created": 0,--%>
+    <%--"uploads_created": 0,--%>
+    <%--"attachments_uploaded": 0,--%>
+    <%--"comments_created": 0,--%>
+    <%--"resources_starred": 0,--%>
+    <%--"weekly_reports_created": 0,--%>
+    <%--"events_involved": 0,--%>
+    <%--"unread_notifications": 0,--%>
+    <%--"email_received": 0,--%>
+    <%--"data_updated_at": "2018-05-21T07:33:30.051Z",--%>
+    <%--"user_hash": "6d6adb4779074ee3e10ca63e8077d4b0d488851a273f1977a3e5667d93729d00",--%>
+    <%--"app_id": "xbtsuf77",--%>
+    <%--"company": {--%>
+        <%--"id": 701306,--%>
+        <%--"name": "alikes",--%>
+        <%--"created_at": "2018-05-17T03:17:32.000Z",--%>
+        <%--"guid": "7feef4ba8611443ebd06db497618beb4",--%>
+        <%--"next_charge_date": null,--%>
+        <%--"plan": "pro_trial",--%>
+        <%--"ever_paid": false,--%>
+        <%--"total_paid": 0,--%>
+        <%--"alipay_used": 0,--%>
+        <%--"haopay_used": 0,--%>
+        <%--"owner_guid": "231e0ddd353440c883f9874a555f8adc",--%>
+        <%--"has_dingtalk": false,--%>
+        <%--"has_yiqixie": false,--%>
+        <%--"has_api": false,--%>
+        <%--"members": 1,--%>
+        <%--"subgroups": 0,--%>
+        <%--"active_projects": 1,--%>
+        <%--"archived_projects": 0,--%>
+        <%--"project_groups": 0,--%>
+        <%--"project_templates": 0,--%>
+        <%--"calendars": 1,--%>
+        <%--"calendar_events": 7,--%>
+        <%--"messages": 3,--%>
+        <%--"comments": 1,--%>
+        <%--"open_todos": 8,--%>
+        <%--"closed_todos": 3,--%>
+        <%--"documents": 2,--%>
+        <%--"files": 2,--%>
+        <%--"file_bytesize": 0.0,--%>
+        <%--"answers": 0,--%>
+        <%--"is_upgraded_to_plus": false--%>
+    <%--}--%>
+<%--};--%>
+<%--(function () {--%>
+    <%--var w = window;--%>
+    <%--var ic = w.Intercom;--%>
+    <%--if (typeof ic === "function") {--%>
+        <%--ic('reattach_activator');--%>
+        <%--ic('update', intercomSettings);--%>
+    <%--} else {--%>
+        <%--var d = document;--%>
+        <%--var i = function () {--%>
+            <%--i.c(arguments)--%>
+        <%--};--%>
+        <%--i.q = [];--%>
+        <%--i.c = function (args) {--%>
+            <%--i.q.push(args)--%>
+        <%--};--%>
+        <%--w.Intercom = i;--%>
 
-        function l() {
-            var s = d.createElement('script');
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = 'https://widget.intercom.io/widget/xbtsuf77';
-            var x = d.getElementsByTagName('script')[0];
-            x.parentNode.insertBefore(s, x);
-        }
+        <%--function l() {--%>
+            <%--var s = d.createElement('script');--%>
+            <%--s.type = 'text/javascript';--%>
+            <%--s.async = true;--%>
+            <%--s.src = 'https://widget.intercom.io/widget/xbtsuf77';--%>
+            <%--var x = d.getElementsByTagName('script')[0];--%>
+            <%--x.parentNode.insertBefore(s, x);--%>
+        <%--}--%>
 
-        if (w.attachEvent) {
-            w.attachEvent('onload', l);
-        } else {
-            w.addEventListener('load', l, false);
-        }
-    }
-    ;
-})()</script>
+        <%--if (w.attachEvent) {--%>
+            <%--w.attachEvent('onload', l);--%>
+        <%--} else {--%>
+            <%--w.addEventListener('load', l, false);--%>
+        <%--}--%>
+    <%--}--%>
+    <%--;--%>
+<%--})()</script>--%>
 
-<script type="text/javascript">
-    (function () {
-        setTimeout(function () {
-            if (!document.querySelector('iframe#intercom-frame')) {
-                var w = window;
-                var ic = w.Intercom;
-                if (ic.toString().length < 100) {
-                    var d = document;
-                    var i = function () {
-                        i.c(arguments)
-                    };
-                    i.q = [];
-                    i.c = function (args) {
-                        i.q.push(args)
-                    };
-                    w.Intercom = i;
+<%--<script type="text/javascript">--%>
+    <%--(function () {--%>
+        <%--setTimeout(function () {--%>
+            <%--if (!document.querySelector('iframe#intercom-frame')) {--%>
+                <%--var w = window;--%>
+                <%--var ic = w.Intercom;--%>
+                <%--if (ic.toString().length < 100) {--%>
+                    <%--var d = document;--%>
+                    <%--var i = function () {--%>
+                        <%--i.c(arguments)--%>
+                    <%--};--%>
+                    <%--i.q = [];--%>
+                    <%--i.c = function (args) {--%>
+                        <%--i.q.push(args)--%>
+                    <%--};--%>
+                    <%--w.Intercom = i;--%>
 
-                    function l() {
-                        var s = d.createElement('script');
-                        s.type = 'text/javascript';
-                        s.async = true;
-                        s.src = 'https://jsintercom.tuanliao.com/widgets/xbtsuf77';
-                        var x = d.getElementsByTagName('script')[0];
-                        x.parentNode.insertBefore(s, x);
-                    }
+                    <%--function l() {--%>
+                        <%--var s = d.createElement('script');--%>
+                        <%--s.type = 'text/javascript';--%>
+                        <%--s.async = true;--%>
+                        <%--s.src = 'https://jsintercom.tuanliao.com/widgets/xbtsuf77';--%>
+                        <%--var x = d.getElementsByTagName('script')[0];--%>
+                        <%--x.parentNode.insertBefore(s, x);--%>
+                    <%--}--%>
 
-                    l();
-                }
-            }
-        }, 5000)
-    })()
-</script>
+                    <%--l();--%>
+                <%--}--%>
+            <%--}--%>
+        <%--}, 5000)--%>
+    <%--})()--%>
+<%--</script>--%>
 
 
 <script>
@@ -822,6 +843,10 @@
     ga('set', 'dimension4', 'false');
 </script>
 
-
+<script>
+    function openFile() {
+        document.getElementById("imgFileId").click();
+    }
+</script>
 </body>
 </html>

@@ -33,4 +33,13 @@ public interface UserService extends BaseService<User> {
      * @return true存在 false不存在
      */
     boolean isExistEmail(User user);
+
+    /**
+     * 根据用户邮箱和用户密码判断用户密码是否正确
+     *
+     * @param user 封装用户邮箱和用户密码的User
+     * @return true正确 false不正确
+     */
+    boolean isRightPwd(User user);
+
 }

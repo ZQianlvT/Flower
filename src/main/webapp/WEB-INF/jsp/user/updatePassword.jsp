@@ -9,6 +9,7 @@
 <html>
 <head>
 
+    <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
     <script type="text/javascript">window.NREUM || (NREUM = {});
     NREUM.info = {
         "beacon": "bam.nr-data.net",
@@ -511,7 +512,7 @@
 
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a  href="${pageContext.request.contextPath}/base/goURL/user/updateUser">个人设置</a>
+            <li><a  href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
             </li>
             <li class="part-line"></li>
             <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
@@ -528,15 +529,15 @@
             <div class="page-inner page-member-settings" id="page-member-settings-password" data-page-name="更改密码">
                 <h3 class="page-title">更改密码</h3>
 
-                <form class="form form-member-setting-password"
-                      action="/members/231e0ddd353440c883f9874a555f8adc/settings/password" method="post"
+                <form class="form form-member-setting-password" id="pwdFormId"
+                      action="#" method="post"
                       data-remote="true">
                     <div class="form-item">
                         <div class="form-label">
                             <label for="txt-old-password">当前密码</label>
                         </div>
                         <div class="form-field">
-                            <input type="password" id="txt-old-password" name="old_password" autocomplete="off"
+                            <input type="password" id="txt-old-password" name="oldPwd" autocomplete="off" class="pwd"
                                    data-validate="required;length:6"
                                    data-validate-msg="还没有填写当前登录密码;登录密码需要至少有6位"/>
                         </div>
@@ -546,7 +547,7 @@
                             <label for="txt-password">新密码</label>
                         </div>
                         <div class="form-field">
-                            <input type="password" id="txt-password" name="password" autocomplete="off"
+                            <input type="password" id="txt-password" name="newPwd" autocomplete="off"
                                    data-validate="required;length:6"
                                    data-validate-msg="还没有填写新的密码;登录密码需要至少有6位"/>
                             <p class="desc">强烈建议密码同时包含字母、数字和标点符号。</p>
@@ -772,6 +773,23 @@
     ga('set', 'dimension4', 'false');
 </script>
 
-
+<script>
+    $("#pwdFormId").submit(function () {
+        var data = $(this).serialize();
+        $.ajax({
+            type: "POST",
+            url: "${pageContext.request.contextPath}/user/updatePwd",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json.errors != null) {
+                    $("#pwdFormId .form-item .pwd").addClass("error").after('<p class="error">' + json.errors + '</p>');
+                } else {
+                    location.href="${pageContext.request.contextPath}/user/findUser";
+                }
+            }
+        });
+    })
+</script>
 </body>
 </html>

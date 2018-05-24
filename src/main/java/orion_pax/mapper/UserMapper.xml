@@ -60,4 +60,27 @@
     <select id="getByEmailAndPwd" parameterType="orion_pax.entity.User" resultMap="UserBaseResultMap">
     select u_id,u_email,u_pwd,u_name,u_img,u_tel from f_user where u_email = #{email} and u_pwd = #{pwd}
   </select>
+
+    <select id="getByPK" parameterType="orion_pax.entity.User" resultMap="UserBaseResultMap">
+    select u_id,u_email,u_pwd,u_name,u_img,u_tel from f_user where u_id = #{id}
+  </select>
+
+    <update id="updateByPK" parameterType="orion_pax.entity.User">
+      update f_user
+      <set>
+          <if test="name!=null">
+              u_name = #{name},
+          </if>
+          <if test="img!=null">
+              u_img = #{img},
+          </if>
+          <if test="pwd!=null">
+              u_pwd = #{pwd},
+          </if>
+          <if test="tel!=null">
+              u_tel = #{tel},
+          </if>
+      </set>
+      where u_id =#{id}
+    </update>
 </mapper>

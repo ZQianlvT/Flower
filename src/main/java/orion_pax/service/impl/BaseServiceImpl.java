@@ -75,6 +75,11 @@ public class BaseServiceImpl<T> implements BaseService<T> {
     }
 
     @Override
+    public T getByPK(T entity) {
+        return baseMapper.getByPK(entity);
+    }
+
+    @Override
     public List<T> select(T entity) {
         // TODO Auto-generated method stub
         return baseMapper.select(entity);

@@ -68,4 +68,16 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     public boolean isExistEmail(User user) {
         return userMapper.getByEmail(user) != null;
     }
+
+    /**
+     * 根据用户邮箱和用户密码判断用户密码是否正确
+     *
+     * @param user 封装用户邮箱和用户密码的User
+     * @return true正确 false不正确
+     */
+    @Override
+    public boolean isRightPwd(User user) {
+        user = userMapper.getByEmailAndPwd(user);
+        return user != null;
+    }
 }

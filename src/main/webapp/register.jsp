@@ -640,7 +640,15 @@
                 if (json.errors != null) {
                     $("#userFormId .form-item .email").addClass("error").after('<p class="error">' + json.errors + '</p>');
                 } else {
-                    location.href = "${pageContext.request.contextPath}/user/login?"+data;
+                    $.ajax({
+                        type: "POST",
+                        url: "${pageContext.request.contextPath}/user/login",
+                        data: data,
+                        dataType: "json",
+                        success: function () {
+                                location.href = "${pageContext.request.contextPath}/base/goURL/project/listProject";
+                        }
+                    });
                 }
             }
         });
