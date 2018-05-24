@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -274,8 +276,17 @@
             <i class="twr twr-logo"></i>
         </a>
         <div class="btn-group">
-            <a class="btn btn-no-border" data-turbolinks="false" href="${pageContext.request.contextPath}/register.jsp">免费注册</a>
-            <a class="btn" data-turbolinks="false" href="${pageContext.request.contextPath}/login.jsp">登录</a>
+            <c:choose>
+                <c:when test="${sessionScope.currUser!=null}">
+                    <a class="btn" data-turbolinks="false"
+                       href="${pageContext.request.contextPath}/base/goURL/project/listProject">进入 Tower</a>
+                </c:when>
+                <c:otherwise>
+                    <a class="btn btn-no-border" data-turbolinks="false"
+                       href="${pageContext.request.contextPath}/register.jsp">免费注册</a>
+                    <a class="btn" data-turbolinks="false" href="${pageContext.request.contextPath}/login.jsp">登录</a>
+                </c:otherwise>
+            </c:choose>
         </div>
     </div>
 </header>
@@ -283,8 +294,16 @@
     <div class="container">
         <h1 class="solgan">深受用户喜爱的团队协作工具</h1>
         <p class="status">七十万团队、七百万人正在高效率地使用 Tower 进行协作，<br>你的团队也应如此。</p>
-
-        <p><a href="${pageContext.request.contextPath}/register.jsp" class="btn btn-signup">免费注册</a></p>
+        <c:choose>
+            <c:when test="${sessionScope.currUser!=null}">
+                <p><a href="${pageContext.request.contextPath}/base/goURL/project/listProject"
+                      class="btn btn-signin">进入
+                    Tower <i class="twr twr-fighter-jet"></i></a></p>
+            </c:when>
+            <c:otherwise>
+                <p><a href="${pageContext.request.contextPath}/register.jsp" class="btn btn-signup">免费注册</a></p>
+            </c:otherwise>
+        </c:choose>
     </div>
 </div>
 
