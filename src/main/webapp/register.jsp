@@ -631,7 +631,6 @@
 <script>
     $("#userFormId").submit(function () {
         var data = $(this).serialize();
-        alert(data);
         $.ajax({
             type: "POST",
             url: "${pageContext.request.contextPath}/user/register",

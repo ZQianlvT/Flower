@@ -475,7 +475,8 @@
                 </a></div>
 
             <div class="bd">
-                <form class="form box" action="/users/sign_in" data-remote="true" method="post" novalidate>
+                <form id="userFormId" class="form box" action="/users/sign_in" data-remote="true" method="post"
+                      novalidate>
                     <div class="form-item">
                         <h1 class="bd-title">登录</h1>
                     </div>
@@ -490,7 +491,7 @@
 
                         <div class="form-item">
                             <div class="form-field">
-                                <input type="password" name="password" placeholder="密码"
+                                <input type="password" name="pwd" id="pwd" placeholder="密码"
                                        data-validate="required;length:6" data-validate-msg="请填写你的登录密码"/>
                             </div>
                         </div>
@@ -651,6 +652,30 @@
     ga('set', 'dimension4', 'false');
 </script>
 
+<script>
+    $("#userFormId").submit(function () {
+        var data = $(this).serialize();
+        $.ajax({
+            type: "POST",
+            url: "${pageContext.request.contextPath}/user/login",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json.errors != null) {
+                    if ("email" == json.target){
+                        $("#userFormId .form-item #email").addClass("error").after('<p class="error">' + json.msg + '</p>');
+                    }
+                    if("pwd" == json.target){
+                        $("#userFormId .form-item #pwd").addClass("error").after('<p class="error">' + json.msg + '</p>');
+                    }
+
+                } else {
+                    location.href = "${pageContext.request.contextPath}/base/goURL/project/listProject";
+                }
+            }
+        });
+    })
+</script>
 
 </body>
 </html>

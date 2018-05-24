@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS f_board(
 CREATE TABLE IF NOT EXISTS f_task(
 	t_id VARCHAR(40) PRIMARY KEY,
 	t_name VARCHAR(40),
+	t_status INT,			-- 0未完成 1已完成
 	t_end_time DATETIME,
 	t_u_id VARCHAR(40),
 	t_b_id VARCHAR(40)
