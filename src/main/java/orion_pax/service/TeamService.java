@@ -1,9 +1,9 @@
-package orion_pax.dao;
+package orion_pax.service;
 
 import orion_pax.entity.Team;
 import orion_pax.entity.User;
 
-public interface TeamMapper extends BaseMapper<Team> {
+public interface TeamService extends BaseService<Team> {
     /**
      * 通过管理员id查询Team对象
      *

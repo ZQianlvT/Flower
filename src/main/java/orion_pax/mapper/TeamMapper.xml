@@ -1,56 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="orion_pax.dao.TeamMapper">
-  <resultMap id="TeamBaseResultMap" type="orion_pax.entity.Team">
-    <result column="t_id" jdbcType="VARCHAR" property="id" />
-    <result column="t_name" jdbcType="VARCHAR" property="name" />
-    <result column="t_create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="t_total_members" jdbcType="INTEGER" property="totalMembers" />
-    <result column="t_invite_link" jdbcType="VARCHAR" property="inviteLink" />
-    <result column="t_u_id" jdbcType="VARCHAR" property="uId" />
-  </resultMap>
+    <resultMap id="TeamBaseResultMap" type="orion_pax.entity.Team">
+        <result column="t_id" jdbcType="VARCHAR" property="id"/>
+        <result column="t_name" jdbcType="VARCHAR" property="name"/>
+        <result column="t_create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="t_total_members" jdbcType="INTEGER" property="totalMembers"/>
+        <result column="t_invite_link" jdbcType="VARCHAR" property="inviteLink"/>
+        <result column="t_u_id" jdbcType="VARCHAR" property="uId"/>
+    </resultMap>
 
-  <insert id="insert" parameterType="orion_pax.entity.Team">
-    insert into f_team
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        t_id,
-      </if>
-      <if test="name != null">
-        t_name,
-      </if>
-      <if test="createTime != null">
-        t_create_time,
-      </if>
-      <if test="totalMembers != null">
-        t_total_members,
-      </if>
-      <if test="inviteLink != null">
-        t_invite_link,
-      </if>
-      <if test="uId != null">
-        t_u_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="totalMembers != null">
-        #{totalMembers,jdbcType=INTEGER},
-      </if>
-      <if test="inviteLink != null">
-        #{inviteLink,jdbcType=VARCHAR},
-      </if>
-      <if test="uId != null">
-        #{uId,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
+    <insert id="insert" parameterType="orion_pax.entity.Team">
+        insert into f_team
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                t_id,
+            </if>
+            <if test="name != null">
+                t_name,
+            </if>
+            <if test="createTime != null">
+                t_create_time,
+            </if>
+            <if test="totalMembers != null">
+                t_total_members,
+            </if>
+            <if test="inviteLink != null">
+                t_invite_link,
+            </if>
+            <if test="uId != null">
+                t_u_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="totalMembers != null">
+                #{totalMembers,jdbcType=INTEGER},
+            </if>
+            <if test="inviteLink != null">
+                #{inviteLink,jdbcType=VARCHAR},
+            </if>
+            <if test="uId != null">
+                #{uId,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="getByUId" parameterType="orion_pax.entity.User" resultMap="TeamBaseResultMap">
+    select t_id,t_name,t_create_time,t_total_members,t_invite_link,t_u_id
+    FROM f_team
+    where t_u_id = #{id}
+  </select>
 </mapper>
