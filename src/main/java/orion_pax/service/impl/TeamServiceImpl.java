@@ -15,6 +15,6 @@ public class TeamServiceImpl extends BaseServiceImpl<Team> implements TeamServic
      */
     @Override
     public Team getByUId(User user) {
-        return null;
+        return teamMapper.getByUId(user);
     }
 }
