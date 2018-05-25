@@ -34,23 +34,7 @@
                              targetPackage="orion_pax.dao" targetProject="src/main/java"/>
 
         <!--处理6 指定表及实体类的映射
-        <table tableName="account" domainObjectName="Account"
-            enableSelectByExample="true" enableDeleteByExample="true"
-            enableCountByExample="true" enableUpdateByExample="true"
-            enableInsert="true" />
-        <table tableName="supplier" domainObjectName="Supplier"
-            enableSelectByExample="true" enableDeleteByExample="true"
-            enableCountByExample="true" enableUpdateByExample="true"
-            enableInsert="true" />
-        <table tableName="goods" domainObjectName="Goods"
-            enableSelectByExample="true" enableDeleteByExample="true"
-            enableCountByExample="true" enableUpdateByExample="true"
-            enableInsert="true" />
-        <table tableName="buy_order" domainObjectName="BuyOrder" />
-        <table tableName="buy_order_detail" domainObjectName="BuyOrderDetail" />
-        <table tableName="account_records" domainObjectName="AccountRecords" />
-        <table tableName="sys_param" domainObjectName="SysParam" />
-        -->
+
         <table tableName="f_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
             <columnRenamingRule searchString="^u_" replaceString=""/>
@@ -100,7 +84,7 @@
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
             <columnRenamingRule searchString="^t_" replaceString=""/>
         </table>
-
+-->
 
     </context>
 </generatorConfiguration>

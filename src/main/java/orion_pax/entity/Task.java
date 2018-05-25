@@ -7,6 +7,8 @@ public class Task {
 
     private String name;
 
+    private Integer status;
+
     private Date endTime;
 
     private String uId;
@@ -27,6 +29,14 @@ public class Task {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Date getEndTime() {

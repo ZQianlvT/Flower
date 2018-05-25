@@ -2,17 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="orion_pax.dao.TaskMapper">
   <resultMap id="BaseResultMap" type="orion_pax.entity.Task">
-    <result column="t_id" jdbcType="VARCHAR" property="id" />
+    <id column="t_id" jdbcType="VARCHAR" property="id" />
     <result column="t_name" jdbcType="VARCHAR" property="name" />
+    <result column="t_status" jdbcType="INTEGER" property="status" />
     <result column="t_end_time" jdbcType="TIMESTAMP" property="endTime" />
     <result column="t_u_id" jdbcType="VARCHAR" property="uId" />
     <result column="t_b_id" jdbcType="VARCHAR" property="bId" />
   </resultMap>
+  <sql id="Base_Column_List">
+    t_id, t_name, t_status, t_end_time, t_u_id, t_b_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from f_task
+    where t_id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from f_task
+    where t_id = #{id,jdbcType=VARCHAR}
+  </delete>
   <insert id="insert" parameterType="orion_pax.entity.Task">
-    insert into f_task (t_id, t_name, t_end_time, 
-      t_u_id, t_b_id)
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{endTime,jdbcType=TIMESTAMP}, 
-      #{uId,jdbcType=VARCHAR}, #{bId,jdbcType=VARCHAR})
+    insert into f_task (t_id, t_name, t_status, 
+      t_end_time, t_u_id, t_b_id
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{uId,jdbcType=VARCHAR}, #{bId,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="orion_pax.entity.Task">
     insert into f_task
@@ -22,6 +38,9 @@
       </if>
       <if test="name != null">
         t_name,
+      </if>
+      <if test="status != null">
+        t_status,
       </if>
       <if test="endTime != null">
         t_end_time,
@@ -40,6 +59,9 @@
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
       <if test="endTime != null">
         #{endTime,jdbcType=TIMESTAMP},
       </if>
@@ -51,4 +73,34 @@
       </if>
     </trim>
   </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="orion_pax.entity.Task">
+    update f_task
+    <set>
+      <if test="name != null">
+        t_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        t_status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null">
+        t_end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="uId != null">
+        t_u_id = #{uId,jdbcType=VARCHAR},
+      </if>
+      <if test="bId != null">
+        t_b_id = #{bId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where t_id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="orion_pax.entity.Task">
+    update f_task
+    set t_name = #{name,jdbcType=VARCHAR},
+      t_status = #{status,jdbcType=INTEGER},
+      t_end_time = #{endTime,jdbcType=TIMESTAMP},
+      t_u_id = #{uId,jdbcType=VARCHAR},
+      t_b_id = #{bId,jdbcType=VARCHAR}
+    where t_id = #{id,jdbcType=VARCHAR}
+  </update>
 </mapper>
