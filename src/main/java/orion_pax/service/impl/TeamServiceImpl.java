@@ -5,7 +5,7 @@ import orion_pax.entity.Team;
 import orion_pax.entity.User;
 import orion_pax.service.TeamService;
 
-@Service("TeamService")
+@Service("teamService")
 public class TeamServiceImpl extends BaseServiceImpl<Team> implements TeamService {
     /**
      * 通过管理员id查询Team对象
