@@ -32,4 +32,10 @@
       </if>
     </trim>
   </insert>
+
+  <delete id="deleteByTIdAndUId" parameterType="orion_pax.entity.UserAndTeam">
+      DELETE FROM f_userandteam
+      WHERE uat_u_id = #{uId}
+      AND uat_t_id = #{tId}
+  </delete>
 </mapper>

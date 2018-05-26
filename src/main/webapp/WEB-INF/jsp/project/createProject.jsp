@@ -529,7 +529,7 @@
                 <h3 class="page-title">创建新项目</h3>
 
                 <form class="form form-invite" action="${pageContext.request.contextPath}/project/createProject" method="post"
-                      data-remote="true" novalidate>
+                      data-remote="false" novalidate>
                     <div class="form-item">
                         <div class="form-field">
                             <input type="text" name="name" id="project-name" placeholder="项目名称"

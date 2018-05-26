@@ -2,6 +2,7 @@ package orion_pax.service;
 
 import orion_pax.entity.Team;
 import orion_pax.entity.User;
+import orion_pax.entity.UserAndTeam;
 
 import java.util.List;
 
@@ -53,4 +54,12 @@ public interface UserService extends BaseService<User> {
      * @return 查询到的用户列表
      */
     List<User> getByTeamId(Team team);
+
+    /**
+     * 根据团队id和用户id，从当前团队中删除一个成员
+     *
+     * @param userAndTeam 封装团队id和用户id的UserAndTeam对象
+     * @return 正整数，大于零删除成功
+     */
+    int removeMember(UserAndTeam userAndTeam);
 }

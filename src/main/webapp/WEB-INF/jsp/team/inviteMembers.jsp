@@ -532,17 +532,17 @@
 
                 <div class="section">
                     <h5 class="title">通过公开链接，快速邀请</h5>
-                    <p class="desc">将下面的公共邀请链接通过钉钉，QQ或微信发送给需要邀请的人</p>
+                    <p class="desc">将下面的公共邀请链接通过QQ或微信发送给需要邀请的人，可以将其复制到本网站网址后来加入你的团队。</p>
                     <p class="join-link">
-                        <input type="text" value="https://tower.im/join?t=a47d4fbbdbf619bc17446e5d3049891a"
+                        <input type="text" value="${pageContext.request.contextPath}/team/joinTeam?inviteLink=${sessionScope.currTeam.inviteLink}"
                                class="clipboard-text" readonly/>
                         <a href="javascript:;" class="hide" id="link-copy-text">复制</a>
                     </p>
                     <p class="caution">
                         <em>注意：</em>任何看到邀请链接的人，都可以申请加入团队。如果你想让邀请链接失效，请
                         <a class="btn-reset-invite-token" data-confirm="此操作将导致当前邀请链接失效，确定要重新生成邀请链接吗？"
-                           data-loading="true" data-remote="true" rel="nofollow" data-method="post"
-                           href="/teams/7feef4ba8611443ebd06db497618beb4/reset_invite_token">重新生成邀请链接</a>
+                           data-loading="true" rel="nofollow" data-method="post"
+                           href="${pageContext.request.contextPath}/team/updateInviteLink">重新生成邀请链接</a>
                     </p>
                 </div>
 

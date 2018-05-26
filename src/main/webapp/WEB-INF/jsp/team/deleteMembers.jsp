@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 徐哲哲
@@ -527,70 +528,65 @@
         <div class="page">
 
 
-            <div class="page-inner" id="members-batch_destroys-new" data-page-name=批量删除成员>
-                <h3 class="page-title">批量删除成员</h3>
-                <p class="desc">请从下面选择要删除的成员，成员删除后，他将不能访问团队内的任何数据，历史数据并不会删除，请放心。</p>
+            <%--<div class="page-inner" id="members-batch_destroys-new" data-page-name=批量删除成员>--%>
+                <%--<h3 class="page-title">批量删除成员</h3>--%>
+                <%--<p class="desc">请从下面选择要删除的成员，成员删除后，他将不能访问团队内的任何数据，历史数据并不会删除，请放心。</p>--%>
 
-                <form class="members-batch-destroy-form" data-type="script"
-                      action="/teams/7feef4ba8611443ebd06db497618beb4/members/batch_destroy" accept-charset="UTF-8"
-                      data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;"/>
+                <%--<form class="members-batch-destroy-form" data-type="script"--%>
+                      <%--action="${pageContext.request.contextPath}/team/deleteMebers" accept-charset="UTF-8" data-remote="true"--%>
+                      <%--method="post"><input name="utf8" type="hidden" value="&#x2713;"/>--%>
 
 
-                    <div class="manage-members">
-                        <div class="add-member">
-                            <select id="select-add-member"
-                                    data-member-guids="231e0ddd353440c883f9874a555f8adc,008d36bf2b694a66bfac2bf7e6b79512"></select>
-                            <div class="group-select">
-                                <span class="all" data-subgroup="-1" unselectable="on">所有人</span>
-                            </div>
-                        </div>
+                    <%--<div class="manage-members">--%>
+                        <%--<div class="add-member">--%>
+                            <%--<select id="select-add-member" data-member-guids="231e0ddd353440c883f9874a555f8adc,008d36bf2b694a66bfac2bf7e6b79512"></select>--%>
+                            <%--<div class="group-select">--%>
+                                <%--&lt;%&ndash;<span class="all" data-subgroup="-1" unselectable="on">所有人</span>&ndash;%&gt;--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="members member-checkbox-list">--%>
+                            <%--<label--%>
+                                    <%--class="member  unselectable"--%>
+                                    <%--data-guid="231e0ddd353440c883f9874a555f8adc"--%>
+                                    <%--data-subgroup="[]"--%>
+                                    <%--data-shortcut-key="浮点农国 fudiannongguo fdng"--%>
+                                    <%--data-gavatar="/assets/default_avatars/noon.jpg">--%>
 
-                        <div class="members member-checkbox-list">
+                                <%--<input type="checkbox" name="batch_destroy[deleting_members][]"--%>
+                                       <%--id="batch_destroy_deleting_members_" value="231e0ddd353440c883f9874a555f8adc"--%>
+                                       <%--disabled="disabled"/>--%>
+                                <%--<span class="name"data-tooltip="该成员为项目「test」的唯一管理员">--%>
+                                  <%--浮点农国--%>
+                                <%--</span>--%>
+                                <%--<span class="email">(2449832339@qq.com)</span>--%>
+                            <%--</label>--%>
 
-                            <label
-                                    class="member  unselectable"
-                                    data-guid="231e0ddd353440c883f9874a555f8adc"
-                                    data-subgroup="[]"
-                                    data-shortcut-key="浮点农国 fudiannongguo fdng"
-                                    data-gavatar="/assets/default_avatars/noon.jpg">
+                            <%--<label--%>
+                                    <%--class="member  "--%>
+                                    <%--data-guid="008d36bf2b694a66bfac2bf7e6b79512"--%>
+                                    <%--data-subgroup="[]"--%>
+                                    <%--data-shortcut-key="OrionPax orionpax OrionPax"--%>
+                                    <%--data-gavatar="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">--%>
 
-                                <input type="checkbox" name="batch_destroy[deleting_members][]"
-                                       id="batch_destroy_deleting_members_" value="231e0ddd353440c883f9874a555f8adc"
-                                       disabled="disabled"/>
-                                <span class="name"
-                                      data-tooltip="该成员为项目「test」的唯一管理员">
-          浮点农国
-        </span>
-                                <span class="email">(2449832339@qq.com)</span>
-                            </label>
+                                <%--<input type="checkbox" name="batch_destroy[deleting_members][]"--%>
+                                       <%--id="batch_destroy_deleting_members_" value="008d36bf2b694a66bfac2bf7e6b79512"/>--%>
+                                <%--<span class="name">--%>
+                                    <%--OrionPax--%>
+                                <%--</span>--%>
+                                <%--<span class="email">(1875709296@qq.com)</span>--%>
+                            <%--</label>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
 
-                            <label
-                                    class="member  "
-                                    data-guid="008d36bf2b694a66bfac2bf7e6b79512"
-                                    data-subgroup="[]"
-                                    data-shortcut-key="OrionPax orionpax OrionPax"
-                                    data-gavatar="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
+                    <%--<input type="password" name="pwd" class="hidden">--%>
 
-                                <input type="checkbox" name="batch_destroy[deleting_members][]"
-                                       id="batch_destroy_deleting_members_" value="008d36bf2b694a66bfac2bf7e6b79512"/>
-                                <span class="name"
-                                >
-          OrionPax
-        </span>
-                                <span class="email">(1875709296@qq.com)</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <input type="password" name="password_confirmation" class="hidden">
-
-                    <div class="form-buttons">
-                        <button class="btn btn-reject btn-large btn-submit" type="button">
-                            从团队中删除所选成员
-                        </button>
-                    </div>
-                </form>
-            </div>
+                    <%--<div class="form-buttons">--%>
+                        <%--<button class="btn btn-reject btn-large btn-submit" type="button">--%>
+                            <%--从团队中删除所选成员--%>
+                        <%--</button>--%>
+                    <%--</div>--%>
+                <%--</form>--%>
+            <%--</div>--%>
 
             <script type="text/html" id="tpl-confirm-destroy-members">
                 <form class="form form-confirm-destroy-members">
@@ -598,7 +594,7 @@
                     <p class="warn-tip">删除后无法撤销，只能重新邀请他们加入，成员历史数据不会被删除。请在下面输入你的登录密码以确认。</p>
                     <div class="form-item">
                         <input class="form-field" type="password" autocomplete="off"
-                               name="password_confirmation"
+                               name="pwd"
                                placeholder="请输入你的登录密码"
                                data-empty-tip="请输入密码"
                                data-invalid-tip="密码错误">

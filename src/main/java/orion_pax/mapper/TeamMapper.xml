@@ -58,9 +58,29 @@
     FROM f_team
     where t_u_id = #{id}
   </select>
+    <select id="getByPK" parameterType="orion_pax.entity.Team" resultMap="TeamBaseResultMap">
+    select t_id,t_name,t_create_time,t_total_members,t_invite_link,t_u_id
+    FROM f_team
+    where t_id = #{id}
+  </select>
     <select id="getByInviteLink" parameterType="orion_pax.entity.Team" resultMap="TeamBaseResultMap">
     select t_id,t_name,t_create_time,t_total_members,t_invite_link,t_u_id
     FROM f_team
     where t_invite_link = #{inviteLink}
   </select>
+    <update id="updateByPK" parameterType="orion_pax.entity.Team">
+        update f_team
+        <set>
+            <if test="name!=null">
+                t_name = #{name},
+            </if>
+            <if test="totalMembers!=null">
+                t_total_members = #{totalMembers},
+            </if>
+            <if test="inviteLink!=null">
+                t_invite_link = #{inviteLink},
+            </if>
+        </set>
+        where t_id =#{id}
+    </update>
 </mapper>

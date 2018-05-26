@@ -8,16 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <script>
-        var strURL = window.location;
-        if(strURL.toString().match("ref")!=null) {
-            // alert(strURL);
-        }else {
-            // alert(11);
-            strURL += "?ref";
-            document.location.href = strURL;
-        }
-    </script>
+    <%--<script>--%>
+        <%--var strURL = window.location;--%>
+        <%--if(strURL.toString().match("ref")!=null) {--%>
+            <%--// alert(strURL);--%>
+        <%--}else {--%>
+            <%--// alert(11);--%>
+            <%--strURL += "?ref";--%>
+            <%--document.location.href = strURL;--%>
+        <%--}--%>
+    <%--</script>--%>
 
 
 
@@ -582,7 +582,7 @@
                     <a class="project c2 i2"
                        href="${pageContext.request.contextPath}/projects/d5ca7313dcda442ba53d6d4190aa4d92"
                        data-access-id="21014433" data-group-ids="[]"
-                       data-stack data-stack-root data-stack-fluid>
+                      >
 
                         <span class="badge"></span>
                         <span class="name">test</span>

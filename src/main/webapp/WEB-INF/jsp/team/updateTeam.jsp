@@ -5,7 +5,8 @@
   Time: 18:09
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
 
@@ -525,24 +526,20 @@
             <div class="page-inner" id="page-team-settings" data-page-name="alikes 的团队账户">
                 <div class="team-name">
                     <h3 class="page-title">
-                        <span class="name">alikes</span>
+                        <span class="name">${sessionScope.currTeam.name}</span>
                         <a href="javascript:;" class="edit">修改团队名称</a>
                     </h3>
-                    <form class="form form-team" action="${pageContext.request.contextPath}/team/updateTeamName" method="post"
-                          data-remote="true">
+                    <form class="form form-team" action="${pageContext.request.contextPath}/team/updateTeamName" method="post">
                         <input type="text" class="no-border" name="name" id="txt-team-name"
                                data-validate="required;length:1,255" data-validate-msg="请填写团队名称;团队名称最长255个字符"/>
-                        <button type="submit" class="btn btn-primary btn-save" data-disable-with="正在保存...">保存</button>
-                        <button type="button" class="btn btn-x btn-cancel">取消</button>
+                        <button type="submit" class="btn btn-primary btn-save">保存</button>
                     </form>
-                    <p class="page-desc">团队创建于 2018年05月17日</p>
+                    <p class="page-desc">团队创建于 <fmt:formatDate value="${sessionScope.currTeam.createTime}" pattern="yyyy年MM月dd日HH点mm分ss秒" /></p>
                 </div>
-
-
                 <div class="section">
                     <h4>批量删除成员</h4>
                     <p class="desc">如果团队成员从今往后都不再需要访问该团队的信息，可以删除他们的账号。</p>
-                    <a class="btn btn-mini" href="${pageContext.request.contextPath}/base/goURL/team/deleteMembers">批量删除成员</a>
+                    <a class="btn btn-mini" href="${pageContext.request.contextPath}/team/listDeleteMembers">批量删除成员</a>
                 </div>
 
 

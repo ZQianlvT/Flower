@@ -489,7 +489,7 @@
 
                 <li id="nav-upgrade">
                     <a href="#"
-                       class="link-remaining" data-tower-pro="header-upgrade-ad" >
+                       class="link-remaining" data-tower-pro="header-upgrade-ad">
                         本软件完全免费，并不禁止传播。
                     </a>
                 </li>
@@ -511,7 +511,7 @@
 
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a  href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
             </li>
             <li class="part-line"></li>
             <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
@@ -525,21 +525,17 @@
         </div>
         <div class="page">
 
-            <div class="page-inner page-member" id="page-member" data-page-name="OrionPax 的设置">
+            <div class="page-inner page-member" id="page-member" data-page-name="${requestScope.user.name} 的设置">
                 <div class="member-section other-settings">
-                    <h3 class="page-title">OrionPax 的设置</h3>
+                    <h3 class="page-title">${requestScope.user.name} 的设置</h3>
 
                     <div class="sets-item">
-                        <em>从团队中移除 OrionPax</em><br/>
+                        <em>从团队中移除 ${requestScope.user.name}</em><br/>
                         被移除的成员，将不能再访问 Tower 上的项目信息，但跟他相关的数据不会被删除。<br/>
                         <a id="link-remove-member" class="link-delete"
-                           data-confirm="&lt;h3&gt;确定要移除 OrionPax 吗？&lt;/h3&gt;&lt;p&gt;跟 OrionPax 相关的数据不会被移除，你还可以重新邀请他加入团队。&lt;/p&gt;"
-                           data-remote="true" rel="nofollow" data-method="post"
-                           href="/members/008d36bf2b694a66bfac2bf7e6b79512/destroy">了解，从团队中移除 OrionPax</a>
-                        <p class="desc">
-                            在 2018-05-21 15:44，
-                            由管理员 <strong>浮点农国</strong> 审核加入团队
-                        </p>
+                           data-confirm="&lt;h3&gt;确定要移除 ${requestScope.user.name} 吗？&lt;/h3&gt;&lt;p&gt;跟 ${requestScope.user.name} 相关的数据不会被移除，你还可以重新邀请他加入团队。&lt;/p&gt;"
+                           rel="nofollow" data-method="post"
+                           href="${pageContext.request.contextPath}/team/removeMember?id=${requestScope.user.id}">了解，从团队中移除 ${requestScope.user.name}</a>
                     </div>
 
                 </div>

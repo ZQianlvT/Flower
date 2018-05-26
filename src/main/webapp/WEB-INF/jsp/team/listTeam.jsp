@@ -557,27 +557,52 @@
                     <table class="table-members">
                         <tbody>
                         <c:forEach items="${requestScope.userList}" var="user">
-                            <tr class="member" data-group-ids="[]" data-visitor="false">
-                                <td class="member-detail">
-                                    <a class="link-member"
-                                       href="${pageContext.request.contextPath}/base/goURL/team/setMember">
-                                        <img class="avatar"
-                                             src="${pageContext.request.contextPath}${user.img}"
-                                             alt="${user.img}"/>
-                                        <div class="member-title single-line">
-                                            <span class="member-nickname">
-                                              ${user.name}
-                                            </span>
-                                            <span class="role owner"><c:if test="${user.id==sessionScope.currUser.id}">超级管理员</c:if>
-                                            </span>
-                                        </div>
-                                        <div class="member-tags">
-                                        </div>
-                                    </a></td>
-                                <td class="member-phone"></td>
-                                <td class="member-mail" title="${user.email}">${user.email}</td>
-                                <td class="member-comment"></td>
-                            </tr>
+                            <c:choose>
+                                <c:when test="${user.id==sessionScope.currUser.id}">
+                                    <tr class="member" data-group-ids="[]" data-visitor="false">
+                                        <td class="member-detail">
+                                                <img class="avatar"
+                                                     src="${pageContext.request.contextPath}${user.img}"
+                                                     alt="${user.img}"/>
+                                                <div class="member-title single-line">
+                                                <span class="member-nickname">
+                                                        ${user.name}
+                                                </span>
+                                                    <span class="role owner">超级管理员
+                                                </span>
+                                                </div>
+                                                <div class="member-tags">
+                                                </div>
+                                        </td>
+                                        <td class="member-phone"></td>
+                                        <td class="member-mail" title="${user.email}">${user.email}</td>
+                                        <td class="member-comment"></td>
+                                    </tr>
+                                </c:when>
+                                <c:otherwise>
+                                    <tr class="member" data-group-ids="[]" data-visitor="false">
+                                        <td class="member-detail">
+                                            <a class="link-member"
+                                               href="${pageContext.request.contextPath}/team/setMember?id=${user.id}">
+                                                <img class="avatar"
+                                                     src="${pageContext.request.contextPath}${user.img}"
+                                                     alt="${user.img}"/>
+                                                <div class="member-title single-line">
+                                                <span class="member-nickname">
+                                                        ${user.name}
+                                                </span>
+                                                    <span class="role owner"></span>
+                                                </div>
+                                                <div class="member-tags">
+                                                </div>
+                                            </a>
+                                        </td>
+                                        <td class="member-phone"></td>
+                                        <td class="member-mail" title="${user.email}">${user.email}</td>
+                                        <td class="member-comment"></td>
+                                    </tr>
+                                </c:otherwise>
+                            </c:choose>
                         </c:forEach>
 
 

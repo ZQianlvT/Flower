@@ -62,4 +62,16 @@ public class Team {
     public void setuId(String uId) {
         this.uId = uId == null ? null : uId.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", createTime=" + createTime +
+                ", totalMembers=" + totalMembers +
+                ", inviteLink='" + inviteLink + '\'' +
+                ", uId='" + uId + '\'' +
+                '}';
+    }
 }

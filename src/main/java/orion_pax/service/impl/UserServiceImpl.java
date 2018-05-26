@@ -92,4 +92,25 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     public List<User> getByTeamId(Team team) {
         return userMapper.getByTeamId(team);
     }
+
+    /**
+     * 根据团队id和用户id，从当前团队中删除一个成员
+     *
+     * @param userAndTeam 封装团队id和用户id的UserAndTeam对象
+     * @return 正整数，大于零删除成功
+     */
+    @Override
+    public int removeMember(UserAndTeam userAndTeam) {
+        //去用户团队中间表删除一条数据
+        int i = userAndTeamMapper.deleteByTIdAndUId(userAndTeam);
+        if(i>0){
+            //修改团队表剩余成员数
+            Team team = new Team();
+            team.setId(userAndTeam.gettId());
+            team = teamMapper.getByPK(team);
+            team.setTotalMembers(team.getTotalMembers()-1);
+            teamMapper.updateByPK(team);
+        }
+        return i;
+    }
 }

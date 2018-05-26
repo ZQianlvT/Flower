@@ -23,18 +23,54 @@ public class TeamController extends BaseController {
 
     @RequestMapping("/listTeam")
     public String listTeam(Map<String,Object> map) {
-        User currUser = (User) session.getAttribute("currUser");
-        Team team = teamService.getByUId(currUser);
+        Team team = (Team) session.getAttribute("currTeam");
         List<User> userList = userService.getByTeamId(team);
         map.put("userList",userList);
         return "forward:/WEB-INF/jsp/team/listTeam.jsp";
     }
 
+    @RequestMapping("/listDeleteMembers")
+    public String listDeleteMembers(Map<String,Object> map) {
+        Team team = (Team) session.getAttribute("currTeam");
+        List<User> userList = userService.getByTeamId(team);
+        map.put("userList",userList);
+        return "forward:/WEB-INF/jsp/team/deleteMembers.jsp";
+    }
+
     @RequestMapping("/updateTeamName")
     public String updateTeamName(Team team) {
+        Team currTeam = (Team) session.getAttribute("currTeam");
+        team.setId(currTeam.getId());
         teamService.updateByPK(team);
-        List<User> userList = userService.getByTeamId(team);
-        return "forward:/WEB-INF/jsp/team/listTeam.jsp";
+        currTeam.setName(team.getName());
+        return "/WEB-INF/jsp/team/updateTeam.jsp";
+    }
+
+    @RequestMapping("/setMember")
+    public String setMember(Map<String,Object> map,User user) {
+        user = userService.getByPK(user);
+        map.put("user",user);
+        return "forward:/WEB-INF/jsp/team/setMember.jsp";
+    }
+
+    @RequestMapping("/updateInviteLink")
+    public String updateInviteLink() {
+        Team currTeam = (Team) session.getAttribute("currTeam");
+        System.out.println("-----------OrionPax测试变量值----------currTeam值=" + currTeam + "," + "当前类=TeamController.updateInviteLink()");
+        currTeam.setInviteLink(UUID.randomUUID().toString().replace("-",""));
+        System.out.println("-----------OrionPax测试变量值2----------currTeam值=" + currTeam + "," + "当前类=TeamController.updateInviteLink()");
+        teamService.updateByPK(currTeam);
+        return "/WEB-INF/jsp/team/inviteMembers.jsp";
+    }
+
+    @RequestMapping("/removeMember")
+    public String removeMember(User user) {
+        Team currTeam = (Team) session.getAttribute("currTeam");
+        UserAndTeam userAndTeam = new UserAndTeam();
+        userAndTeam.setuId(user.getId());
+        userAndTeam.settId(currTeam.getId());
+        userService.removeMember(userAndTeam);
+        return "/team/listTeam";
     }
 
     @RequestMapping("/joinTeam")
@@ -49,10 +85,14 @@ public class TeamController extends BaseController {
         Team team = new Team();
         team.setInviteLink(inviteLink);
         team = teamService.getByInviteLink(team);
+        System.out.println("-----------OrionPax测试变量值----------team值=" + team + "," + "当前类=TeamController.joinTeam()");
         if(team==null){
             //邀请码不存在
             return "/error.jsp";
         }
+        //修改团队表当前人数
+        team.setTotalMembers(team.getTotalMembers()+1);
+        teamService.updateByPK(team);
         //调用Service向用户团队中间表添加一条数据
         UserAndTeam userAndTeam = new UserAndTeam();
         userAndTeam.setId(UUID.randomUUID().toString().replace("-",""));
