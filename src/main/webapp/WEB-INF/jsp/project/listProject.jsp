@@ -8,8 +8,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <script>
+        var strURL = window.location;
+        if(strURL.toString().match("ref")!=null) {
+            // alert(strURL);
+        }else {
+            // alert(11);
+            strURL += "?ref";
+            document.location.href = strURL;
+        }
+    </script>
 
-    <script type="text/javascript">window.NREUM || (NREUM = {});
+
+
+    <script>
+    type = "text/javascript" > window.NREUM || (NREUM = {});
     NREUM.info = {
         "beacon": "bam.nr-data.net",
         "errorBeacon": "bam.nr-data.net",
@@ -460,7 +473,7 @@
           content="HJisKOqxo1JjyP4h05WsIQR9EMqg4MDCiFlwJeH3vrB5DpSrMV1BMZ3tI9Uk+fpzDyiVtozk34PjBNhJyxa/SQ=="/>
 </head>
 
-<body class="">
+<body>
 <div id="page-loading-mask"></div>
 
 <div class="wrapper">
@@ -489,7 +502,7 @@
 
                 <li id="nav-upgrade">
                     <a href="#"
-                       class="link-remaining" data-tower-pro="header-upgrade-ad" >
+                       class="link-remaining" data-tower-pro="header-upgrade-ad">
                         本软件完全免费，并不禁止传播。
                     </a>
                 </li>
@@ -511,7 +524,7 @@
 
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a  href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
             </li>
             <li class="part-line"></li>
             <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
@@ -530,7 +543,7 @@
                         <div class="project-tools-right">
                             <a class="link-create-project new "
                                href="${pageContext.request.contextPath}/base/goURL/project/createProject"
-                              >
+                            >
                                 新建项目
                             </a>
 
@@ -553,8 +566,9 @@
 
                 <div class="projects grid-view">
                     <a class="project c2 i1 project-welcome"
-                       href="${pageContext.request.contextPath}/base/goURL/project/listBoard" data-access-id="20987441" data-group-ids="[]"
-                       >
+                       href="${pageContext.request.contextPath}/base/goURL/project/listBoard" data-access-id="20987441"
+                       data-group-ids="[]"
+                    >
 
                         <span class="badge"></span>
                         <span class="name">熟悉 Tower</span>
@@ -566,7 +580,8 @@
                     </a>
 
                     <a class="project c2 i2"
-                       href="${pageContext.request.contextPath}/projects/d5ca7313dcda442ba53d6d4190aa4d92" data-access-id="21014433" data-group-ids="[]"
+                       href="${pageContext.request.contextPath}/projects/d5ca7313dcda442ba53d6d4190aa4d92"
+                       data-access-id="21014433" data-group-ids="[]"
                        data-stack data-stack-root data-stack-fluid>
 
                         <span class="badge"></span>
@@ -797,4 +812,5 @@
 
 
 </body>
+
 </html>

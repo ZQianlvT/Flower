@@ -528,11 +528,11 @@
             <div class="page-inner" id="page-new-project" data-page-name="创建新项目">
                 <h3 class="page-title">创建新项目</h3>
 
-                <form class="form form-invite" action="/teams/7feef4ba8611443ebd06db497618beb4/projects" method="post"
+                <form class="form form-invite" action="${pageContext.request.contextPath}/project/createProject" method="post"
                       data-remote="true" novalidate>
                     <div class="form-item">
                         <div class="form-field">
-                            <input type="text" name="project_name" id="project-name" placeholder="项目名称"
+                            <input type="text" name="name" id="project-name" placeholder="项目名称"
                                    autofocus data-validate="required;length:1,255"
                                    data-validate-msg="请填写项目名称;项目名称最长255个字符"/>
                         </div>
@@ -540,17 +540,19 @@
 
                     <div class="form-item">
                         <div class="form-field">
-          <textarea name="project_desc" id="project-desc" placeholder="简单描述项目，便于其他人理解（选填）"
+          <textarea name="remark" id="project-desc" placeholder="简单描述项目，便于其他人理解（选填）"
                     data-validate="length:1,500" data-validate-msg="项目描述最长500个字符"></textarea>
                         </div>
                     </div>
 
                     <div class="form-buttons">
-                        <button type="submit" class="btn btn-primary" id="btn-create-project"
+                        <button type="submit" class="btn btn-primary" id="btn-create-project1"
                                 data-disable-with="正在创建..." data-success-text="创建成功">创建项目
                         </button>
-                        <a href="/teams/7feef4ba8611443ebd06db497618beb4/projects" class="btn btn-x" data-stack
-                           data-stack-root>取消</a>
+
+
+                        <%--<a href="/teams/7feef4ba8611443ebd06db497618beb4/projects" class="btn btn-x" data-stack--%>
+                           <%--data-stack-root>取消</a>--%>
                     </div>
                 </form>
 
@@ -770,4 +772,5 @@
 
 
 </body>
+
 </html>

@@ -8,11 +8,8 @@ import javax.annotation.PostConstruct;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import orion_pax.dao.BaseMapper;
+import orion_pax.dao.*;
 
-import orion_pax.dao.TeamMapper;
-import orion_pax.dao.UserAndTeamMapper;
-import orion_pax.dao.UserMapper;
 import orion_pax.entity.Page;
 import orion_pax.service.BaseService;
 
@@ -28,6 +25,9 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 
     @Autowired
     protected UserAndTeamMapper userAndTeamMapper;
+
+    @Autowired
+    protected ProjectMapper projectMapper;
 
     @PostConstruct
     // 在构造方法后，初化前执行

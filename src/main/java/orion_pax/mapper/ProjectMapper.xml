@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="orion_pax.dao.ProjectMapper">
-  <resultMap id="BaseResultMap" type="orion_pax.entity.Project">
+  <resultMap id="ProjectBaseResultMap" type="orion_pax.entity.Project">
     <result column="p_id" jdbcType="VARCHAR" property="id" />
     <result column="p_name" jdbcType="VARCHAR" property="name" />
     <result column="p_remark" jdbcType="VARCHAR" property="remark" />
@@ -9,12 +9,6 @@
     <result column="p_t_id" jdbcType="VARCHAR" property="tId" />
   </resultMap>
   <insert id="insert" parameterType="orion_pax.entity.Project">
-    insert into f_project (p_id, p_name, p_remark, 
-      p_status, p_t_id)
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER}, #{tId,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="orion_pax.entity.Project">
     insert into f_project
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -51,4 +45,8 @@
       </if>
     </trim>
   </insert>
+  <select id="getByid" resultMap="ProjectBaseResultMap" parameterType="orion_pax.entity.Project" >
+
+
+  </select>
 </mapper>

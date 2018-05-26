@@ -2,8 +2,6 @@ package orion_pax.dao;
 
 import orion_pax.entity.Project;
 
-public interface ProjectMapper {
-    int insert(Project record);
+public interface ProjectMapper extends BaseMapper<Project> {
 
-    int insertSelective(Project record);
 }
