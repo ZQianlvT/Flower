@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import orion_pax.entity.Team;
 import orion_pax.entity.User;
 import orion_pax.service.UserService;
 
@@ -108,6 +109,8 @@ public class UserController extends BaseController {
             map.put("target", "pwd");
             map.put("msg", "密码错误，请重新输入！");
         }
+        Team currTeam = teamService.getByUId(user);
+        session.setAttribute("currTeam", currTeam);
         return map;
     }
 
@@ -115,7 +118,7 @@ public class UserController extends BaseController {
     @ResponseBody
     public Object updateImg(HttpServletRequest request,MultipartFile upload_file) throws IOException {
         String requestURL = request.getRequestURL().toString();
-        String requestURI = request.getRequestURI().toString();
+        String requestURI = request.getRequestURI();
         String realPath = request.getSession().getServletContext().getRealPath("");
         String baseURL = requestURL.replace(requestURI, "");
         System.out.println("-----------OrionPax测试变量值----------baseURL值=" + baseURL + "," + "当前类=UserController.updateImg()");

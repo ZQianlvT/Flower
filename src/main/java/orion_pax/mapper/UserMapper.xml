@@ -66,21 +66,26 @@
   </select>
 
     <update id="updateByPK" parameterType="orion_pax.entity.User">
-      update f_user
-      <set>
-          <if test="name!=null">
-              u_name = #{name},
-          </if>
-          <if test="img!=null">
-              u_img = #{img},
-          </if>
-          <if test="pwd!=null">
-              u_pwd = #{pwd},
-          </if>
-          <if test="tel!=null">
-              u_tel = #{tel},
-          </if>
-      </set>
-      where u_id =#{id}
+        update f_user
+        <set>
+            <if test="name!=null">
+                u_name = #{name},
+            </if>
+            <if test="img!=null">
+                u_img = #{img},
+            </if>
+            <if test="pwd!=null">
+                u_pwd = #{pwd},
+            </if>
+            <if test="tel!=null">
+                u_tel = #{tel},
+            </if>
+        </set>
+        where u_id =#{id}
     </update>
+    <select id="getByTeamId" parameterType="orion_pax.entity.Team" resultMap="UserBaseResultMap">
+        SELECT u_id,u_email,u_pwd,u_name,u_img,u_tel
+        FROM  f_userandteam uat ,f_team t ,f_user u
+        WHERE uat.uat_u_id = u.u_id and t.t_id=uat.uat_t_id and t_id = #{id}
+    </select>
 </mapper>

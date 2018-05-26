@@ -58,4 +58,9 @@
     FROM f_team
     where t_u_id = #{id}
   </select>
+    <select id="getByInviteLink" parameterType="orion_pax.entity.Team" resultMap="TeamBaseResultMap">
+    select t_id,t_name,t_create_time,t_total_members,t_invite_link,t_u_id
+    FROM f_team
+    where t_invite_link = #{inviteLink}
+  </select>
 </mapper>

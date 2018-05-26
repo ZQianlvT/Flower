@@ -5,7 +5,9 @@
   Time: 18:01
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
 
@@ -484,12 +486,12 @@
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-members">
-                    <a href="${pageContext.request.contextPath}/base/goURL/team/listTeam">团队</a>
+                    <a href="${pageContext.request.contextPath}/team/listTeam">团队</a>
                 </li>
 
                 <li id="nav-upgrade">
                     <a href="#"
-                       class="link-remaining" data-tower-pro="header-upgrade-ad" >
+                       class="link-remaining" data-tower-pro="header-upgrade-ad">
                         本软件完全免费，并不禁止传播。
                     </a>
                 </li>
@@ -511,7 +513,7 @@
 
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a  href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
             </li>
             <li class="part-line"></li>
             <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
@@ -527,7 +529,7 @@
 
                 <div class="member-groups">
                     <a class="member-group" title="alikes" data-group-id="all" data-group-count="2" href="javascript:;">团队成员</a>
-                   </div>
+                </div>
 
                 <div class="members-main">
                     <h1 class="group-title">
@@ -537,7 +539,8 @@
                     </h1>
 
                     <div class="member-links">
-                        <a class="link btn-invite-members" href="${pageContext.request.contextPath}/base/goURL/team/inviteMembers">邀请新成员</a>
+                        <a class="link btn-invite-members"
+                           href="${pageContext.request.contextPath}/base/goURL/team/inviteMembers">邀请新成员</a>
 
                     </div>
 
@@ -553,45 +556,29 @@
 
                     <table class="table-members">
                         <tbody>
-                        <tr class="member" data-group-ids="[]" data-visitor="false">
-                            <td class="member-detail">
-                                <a class="link-member" data-stack="true"
-                                   href="/members/231e0ddd353440c883f9874a555f8adc">
-                                    <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg" alt="Noon"/>
-                                    <div class="member-title single-line">
-        <span class="member-nickname">
-          浮点农国
-        </span>
-                                        <span class="role owner">
-          超级管理员</span>
-                                    </div>
-                                    <div class="member-tags">
-                                    </div>
-                                </a></td>
-                            <td class="member-phone">-</td>
-                            <td class="member-mail" title="2449832339@qq.com">2449832339@qq.com</td>
-                            <td class="member-comment">-</td>
-                        </tr>
-                        <tr class="member" data-group-ids="[]" data-visitor="false">
-                            <td class="member-detail">
-                                <a class="link-member"
-                                   href="${pageContext.request.contextPath}/base/goURL/team/setMember">
-                                    <img class="avatar" src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3"
-                                         alt="3e2790283b5947f7bb2da54a779c60f3"/>
-                                    <div class="member-title single-line">
-        <span class="member-nickname">
-          OrionPax
-        </span>
-                                        <span class="role ">
-          </span>
-                                    </div>
-                                    <div class="member-tags">
-                                    </div>
-                                </a></td>
-                            <td class="member-phone">-</td>
-                            <td class="member-mail" title="1875709296@qq.com">1875709296@qq.com</td>
-                            <td class="member-comment">-</td>
-                        </tr>
+                        <c:forEach items="${requestScope.userList}" var="user">
+                            <tr class="member" data-group-ids="[]" data-visitor="false">
+                                <td class="member-detail">
+                                    <a class="link-member"
+                                       href="${pageContext.request.contextPath}/base/goURL/team/setMember">
+                                        <img class="avatar"
+                                             src="${pageContext.request.contextPath}${user.img}"
+                                             alt="${user.img}"/>
+                                        <div class="member-title single-line">
+                                            <span class="member-nickname">
+                                              ${user.name}
+                                            </span>
+                                            <span class="role owner"><c:if test="${user.id==sessionScope.currUser.id}">超级管理员</c:if>
+                                            </span>
+                                        </div>
+                                        <div class="member-tags">
+                                        </div>
+                                    </a></td>
+                                <td class="member-phone"></td>
+                                <td class="member-mail" title="${user.email}">${user.email}</td>
+                                <td class="member-comment"></td>
+                            </tr>
+                        </c:forEach>
 
 
                         </tbody>

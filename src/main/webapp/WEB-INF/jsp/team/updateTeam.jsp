@@ -484,7 +484,7 @@
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-members">
-                    <a href="${pageContext.request.contextPath}/base/goURL/team/listTeam">团队</a>
+                    <a href="${pageContext.request.contextPath}/team/listTeam">团队</a>
                 </li>
 
                 <li id="nav-upgrade">
@@ -528,9 +528,9 @@
                         <span class="name">alikes</span>
                         <a href="javascript:;" class="edit">修改团队名称</a>
                     </h3>
-                    <form class="form form-team" action="/teams/7feef4ba8611443ebd06db497618beb4/rename" method="post"
+                    <form class="form form-team" action="${pageContext.request.contextPath}/team/updateTeamName" method="post"
                           data-remote="true">
-                        <input type="text" class="no-border" name="team_name" id="txt-team-name"
+                        <input type="text" class="no-border" name="name" id="txt-team-name"
                                data-validate="required;length:1,255" data-validate-msg="请填写团队名称;团队名称最长255个字符"/>
                         <button type="submit" class="btn btn-primary btn-save" data-disable-with="正在保存...">保存</button>
                         <button type="button" class="btn btn-x btn-cancel">取消</button>

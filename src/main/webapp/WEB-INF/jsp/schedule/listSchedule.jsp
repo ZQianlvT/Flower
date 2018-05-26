@@ -484,7 +484,7 @@
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-members">
-                    <a href="${pageContext.request.contextPath}/base/goURL/team/listTeam">团队</a>
+                    <a href="${pageContext.request.contextPath}/team/listTeam">团队</a>
                 </li>
 
                 <li id="nav-upgrade">

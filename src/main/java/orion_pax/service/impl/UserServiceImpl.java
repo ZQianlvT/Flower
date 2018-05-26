@@ -7,6 +7,7 @@ import orion_pax.entity.UserAndTeam;
 import orion_pax.service.UserService;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Service("userService")
@@ -79,5 +80,16 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     public boolean isRightPwd(User user) {
         user = userMapper.getByEmailAndPwd(user);
         return user != null;
+    }
+
+    /**
+     * 根据团队id查询出用户列表
+     *
+     * @param team 封装团队id的Team对象
+     * @return 查询到的用户列表
+     */
+    @Override
+    public List<User> getByTeamId(Team team) {
+        return userMapper.getByTeamId(team);
     }
 }

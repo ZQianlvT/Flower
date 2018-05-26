@@ -11,4 +11,12 @@ public interface TeamMapper extends BaseMapper<Team> {
      * @return 查询到的Team
      */
     Team getByUId(User user);
+
+    /**
+     * 通过邀请链接获取Team对象
+     *
+     * @param team 封装邀请链接的team
+     * @return 查询到的Team
+     */
+    Team getByInviteLink(Team team);
 }
