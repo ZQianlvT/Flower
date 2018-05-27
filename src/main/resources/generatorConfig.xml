@@ -84,7 +84,11 @@
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
             <columnRenamingRule searchString="^t_" replaceString=""/>
         </table>
--->
 
+        <table tableName="f_board" domainObjectName="Board" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnRenamingRule searchString="^b_" replaceString=""/>
+        </table>
+        -->
     </context>
 </generatorConfiguration>

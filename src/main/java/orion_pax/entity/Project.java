@@ -1,5 +1,7 @@
 package orion_pax.entity;
 
+import java.util.List;
+
 public class Project {
     private String id;
 
@@ -10,6 +12,8 @@ public class Project {
     private Integer status;
 
     private String tId;
+
+    private List<Board> boardList;
 
     public String getId() {
         return id;
@@ -49,5 +53,25 @@ public class Project {
 
     public void settId(String tId) {
         this.tId = tId == null ? null : tId.trim();
+    }
+
+    public List<Board> getBoardList() {
+        return boardList;
+    }
+
+    public void setBoardList(List<Board> boardList) {
+        this.boardList = boardList;
+    }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", remark='" + remark + '\'' +
+                ", status=" + status +
+                ", tId='" + tId + '\'' +
+                ", boardList=" + boardList +
+                '}';
     }
 }

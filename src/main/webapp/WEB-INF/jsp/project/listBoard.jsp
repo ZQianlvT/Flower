@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
 
@@ -453,6 +455,7 @@
     <link rel="stylesheet" media="all"
           href="${pageContext.request.contextPath}/css/application-b82ad007940d21bea7a8c87658d6aa956d8b0aeb0ec12ff0c8282dbb97ee1085.css"/>
     <script src="${pageContext.request.contextPath}/js/application-6079413f7ac9d58f25bf968fe88bbd90bc60f812c817db4644fb1d2543bce6d0.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 
 
     <meta name="csrf-param" content="authenticity_token"/>
@@ -476,7 +479,7 @@
 
             <ul class="nav">
                 <li class="" id="nav-project">
-                    <a href="${pageContext.request.contextPath}/base/goURL/project/listProject">项目</a>
+                    <a href="${pageContext.request.contextPath}/project/listProject">项目</a>
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-calendar">
@@ -511,7 +514,7 @@
 
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a  href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
             </li>
             <li class="part-line"></li>
             <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
@@ -556,8 +559,10 @@
 
                 <div class="project-tabs">
                     <a class="project-tab active">任务</a>
-                    <a href="${pageContext.request.contextPath}/base/goURL/discussion/continueDiscussion" class="project-tab">讨论</a>
-                    <a href="${pageContext.request.contextPath}/base/goURL/schedule/listSchedule" class="project-tab">日程</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/discussion/continueDiscussion"
+                       class="project-tab">讨论</a>
+                    <a href="${pageContext.request.contextPath}/base/goURL/schedule/listSchedule"
+                       class="project-tab">日程</a>
                 </div>
 
                 <div id='fullscreen-header'>Flower</div>
@@ -668,1132 +673,518 @@
                     <div class="kanban-todos">
                         <div class="todolists-wrap">
                             <div class="todolists">
-                                <div class="todolist"
-                                     data-guid="5e741fbd17df40629cc72469b50fcb0c"
-                                     data-sort="0"
-                                     data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
 
-                                     data-project-guid="e26956389763492f891259d7d9c5b94d">
+                                <c:forEach items="${requestScope.project.boardList}" var="board">
+                                    <div class="todolist ui-sortable" data-guid="7eea1fdab77c4e6a84ec744bb869c7a6" data-sort="2" data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc" data-project-guid="e26956389763492f891259d7d9c5b94d">
 
-                                    <div class="flex-container">
-                                        <div class="title">
-                                            <div class="todolist-actions actions">
-                                                <div class="inr">
-                                                    <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/5e741fbd17df40629cc72469b50fcb0c/edit"
-                                                       class="edit" data-remote="true" data-loading="true"
-                                                       data-mothod="get">编辑</a>
-                                                    <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/5e741fbd17df40629cc72469b50fcb0c/destroy"
-                                                       data-visible-to="admin,creator"
-                                                       class="del" data-confirm="确定要删除这个任务清单吗？" data-remote="true"
-                                                       data-method="post">删除</a>
-                                                </div>
-                                            </div>
-
-                                            <h4>
-    <span class="name-non-linkable">
-        <span class="todolist-rest">需求</span>
-    </span>
-                                                <span class="name">
-            <span class="todolist-todos-count">0</span>
-        <a class="todolist-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/lists/5e741fbd17df40629cc72469b50fcb0c/show">需求</a>
-    </span>
-
-
-                                                <a href="javascript:;" class="fold">
-                                                    <i class="twr twr-angle-up"></i>
-                                                </a>
-                                            </h4>
-
-                                            <a href="javascript:;" class="btn-new-todo"
-                                               data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/5e741fbd17df40629cc72469b50fcb0c"
-                                               data-request-members="e26956389763492f891259d7d9c5b94d">
-                                                <i class="twr twr-plus"></i>
-                                            </a>
-                                            <a href="javascript:;" class="link-kanban-menu">
-                                                <i class="twr twr-bars"></i>
-                                            </a>
-                                            <div class="kanban-menu-content hide">
-                                                <a href="javascript:;" class="edit">编辑</a>
-                                                <a href="javascript:;" data-visible-to="admin,creator"
-                                                   class="del">删除</a>
-                                            </div>
-                                        </div>
-                                        <div class="todos-container">
-                                            <ul class="todos todos-uncompleted">
-
-                                            </ul>
-
-                                            <ul class="todo-new-wrap"></ul>
-
-                                            <ul class="todos todos-completed" data-length="2"
-                                                data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/5e741fbd17df40629cc72469b50fcb0c/completed">
-
-                                                <li class="todo completed"
-                                                    data-guid="79b9b26712604aa09f2bcb61361d3476"
-                                                    data-sort="2048.0"
-                                                    data-sequence-mine="0.0"
-                                                    data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/reorder"
-                                                    data-project-guid="e26956389763492f891259d7d9c5b94d"
-                                                    data-project-name="Flower"
-                                                    data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-updated-at="1526552705"
-                                                    data-check-items-size="0"
-                                                    data-completed-check-items-size="0"
-                                                    data-closed-at="1526552705">
-
-                                                    <div class="todo-actions actions">
-                                                        <div class="inr">
-
-                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/destroy"
-                                                               data-visible-to="creator,admin"
-                                                               class="del" data-remote="true" data-method="post"
-                                                               data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
-                                                        </div>
+                                        <div class="flex-container">
+                                            <div class="title" style="display: block;">
+                                                <div class="todolist-actions actions">
+                                                    <div class="inr">
+                                                        <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/edit" class="edit simple-loading" data-remote="true" data-loading="true" data-mothod="get" style="">编辑</a>
+                                                        <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/destroy" data-visible-to="admin,creator" class="del" data-confirm="确定要删除这个任务清单吗？" data-remote="true" data-method="post">删除</a>
                                                     </div>
-
-                                                    <div class="todo-wrap">
-                                                        <input type="checkbox" name="todo-done" checked/>
+                                                </div>
 
 
-                                                        <span class="todo-content">
+
+                                                <a href="javascript:;" class="btn-new-todo" data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6" data-request-members="e26956389763492f891259d7d9c5b94d">
+                                                    <i class="twr twr-plus"></i>
+                                                </a>
+                                                <a href="javascript:;" class="link-kanban-menu">
+                                                    <i class="twr twr-bars"></i>
+                                                </a>
+                                                <div class="kanban-menu-content hide">
+                                                    <a href="javascript:;" class="edit">编辑</a>
+                                                    <a href="javascript:;" data-visible-to="admin,creator" class="del">删除</a>
+                                                </div>
+                                                <h4>
+    <span class="name-non-linkable">
+        <span class="todolist-rest">开发</span>
+    </span>
+                                                    <span class="name">
+            <span class="todolist-todos-count">1</span>
+        <a class="todolist-rest" data-stack="true" href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">开发</a>
+    </span>
+
+
+                                                    <a href="javascript:;" class="fold">
+                                                        <i class="twr twr-angle-up"></i>
+                                                    </a>
+                                                </h4></div>
+                                            <div class="todos-container">
+                                                <ul class="todos todos-uncompleted">
+
+                                                    <li class="todo" data-guid="79b9b26712604aa09f2bcb61361d3476" data-sort="2048.0" data-sequence-mine="1024.0" data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/reorder" data-project-guid="e26956389763492f891259d7d9c5b94d" data-project-name="Flower" data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc" data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc" data-updated-at="1527431052" data-check-items-size="0" data-completed-check-items-size="0">
+
+                                                        <div class="todo-actions actions">
+                                                            <div class="inr">
+                                                                <a class="run" title="标记成正在进行中" data-loading="true" data-remote="true" data-method="post" href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/running">执行</a>
+                                                                <a class="pause" title="暂停" data-loading="true" data-remote="true" data-method="post" href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/pause">暂停</a>
+                                                                <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/edit" class="edit" data-request-members="e26956389763492f891259d7d9c5b94d" title="编辑">编辑</a>
+
+                                                                <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/destroy" data-visible-to="creator,admin" class="del" data-remote="true" data-method="post" data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="todo-wrap">
+                                                            <div class="simple-checkbox" style="height: 18px; width: 18px;">
+                                                                <div class="checkbox-container" style="border: 1.8px solid;">
+                                                                    <div class="checkbox-tick" style="border-right: 2.52px solid; border-bottom: 2.52px solid;">
+                                                                    </div>
+                                                                </div>
+                                                                <input type="checkbox" name="todo-done" class="checkbox-input" style="display: none;"></div>
+
+
+                                                            <span class="todo-content">
       <span class="raw">可行性分析</span>
       <span class="content-non-linkable">
         <span class="todo-rest">可行性分析</span>
       </span>
       <span class="content-linkable">
-        <a class="todo-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476">可行性分析</a>
+        <a class="todo-rest" data-stack="true" href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476">可行性分析</a>
       </span>
     </span>
 
-                                                        <span class="todo-detail">
-        <span class="label completed-member">( OrionPax <span class="completed-time"
-                                                              data-readable-time="2018-05-17T18:25:05+08:00"></span> )</span>
-    </span>
-
-                                                        <a class="label todo-proj" title="Flower - 需求" data-stack="true"
-                                                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/5e741fbd17df40629cc72469b50fcb0c/show">Flower
-                                                            - 需求</a>
-                                                    </div>
-                                                </li>
-
-                                                <li class="todo completed"
-                                                    data-guid="aff9e385ab5748d6a76379a375a54565"
-                                                    data-sort="1024.0"
-                                                    data-sequence-mine="1024.0"
-                                                    data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/aff9e385ab5748d6a76379a375a54565/reorder"
-                                                    data-project-guid="e26956389763492f891259d7d9c5b94d"
-                                                    data-project-name="Flower"
-                                                    data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-updated-at="1526604378"
-                                                    data-check-items-size="0"
-                                                    data-completed-check-items-size="0"
-                                                    data-closed-at="1526551478">
-
-                                                    <div class="todo-actions actions">
-                                                        <div class="inr">
-
-                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/aff9e385ab5748d6a76379a375a54565/destroy"
-                                                               data-visible-to="creator,admin"
-                                                               class="del" data-remote="true" data-method="post"
-                                                               data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="todo-wrap">
-                                                        <input type="checkbox" name="todo-done" checked/>
-
-
-                                                        <span class="todo-content">
-      <span class="raw">网站需求分析</span>
-      <span class="content-non-linkable">
-        <span class="todo-rest">网站需求分析</span>
-      </span>
-      <span class="content-linkable">
-        <a class="todo-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/aff9e385ab5748d6a76379a375a54565">网站需求分析</a>
-      </span>
-    </span>
-
-                                                        <span class="todo-detail">
-        <span class="label completed-member">( OrionPax <span class="completed-time"
-                                                              data-readable-time="2018-05-17T18:04:38+08:00"></span> )</span>
-    </span>
-
-                                                        <a class="label todo-proj" title="Flower - 需求" data-stack="true"
-                                                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/5e741fbd17df40629cc72469b50fcb0c/show">Flower
-                                                            - 需求</a>
-                                                    </div>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="todolist"
-                                     data-guid="7c3f0c6c597247cd961433da97d6f2f7"
-                                     data-sort="1"
-                                     data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-
-                                     data-project-guid="e26956389763492f891259d7d9c5b94d">
-
-                                    <div class="flex-container">
-                                        <div class="title">
-                                            <div class="todolist-actions actions">
-                                                <div class="inr">
-                                                    <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/7c3f0c6c597247cd961433da97d6f2f7/edit"
-                                                       class="edit" data-remote="true" data-loading="true"
-                                                       data-mothod="get">编辑</a>
-                                                    <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/7c3f0c6c597247cd961433da97d6f2f7/destroy"
-                                                       data-visible-to="admin,creator"
-                                                       class="del" data-confirm="确定要删除这个任务清单吗？" data-remote="true"
-                                                       data-method="post">删除</a>
-                                                </div>
-                                            </div>
-
-                                            <h4>
-    <span class="name-non-linkable">
-        <span class="todolist-rest">设计</span>
-    </span>
-                                                <span class="name">
-            <span class="todolist-todos-count">0</span>
-        <a class="todolist-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/lists/7c3f0c6c597247cd961433da97d6f2f7/show">设计</a>
-    </span>
-
-
-                                                <a href="javascript:;" class="fold">
-                                                    <i class="twr twr-angle-up"></i>
-                                                </a>
-                                            </h4>
-
-                                            <a href="javascript:;" class="btn-new-todo"
-                                               data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/7c3f0c6c597247cd961433da97d6f2f7"
-                                               data-request-members="e26956389763492f891259d7d9c5b94d">
-                                                <i class="twr twr-plus"></i>
-                                            </a>
-                                            <a href="javascript:;" class="link-kanban-menu">
-                                                <i class="twr twr-bars"></i>
-                                            </a>
-                                            <div class="kanban-menu-content hide">
-                                                <a href="javascript:;" class="edit">编辑</a>
-                                                <a href="javascript:;" data-visible-to="admin,creator"
-                                                   class="del">删除</a>
-                                            </div>
-                                        </div>
-                                        <div class="todos-container">
-                                            <ul class="todos todos-uncompleted">
-
-                                            </ul>
-
-                                            <ul class="todo-new-wrap"></ul>
-
-                                            <ul class="todos todos-completed" data-length="3"
-                                                data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/7c3f0c6c597247cd961433da97d6f2f7/completed">
-
-                                                <li class="todo completed"
-                                                    data-guid="f6c7dd7cb55b486a9607398c113804cb"
-                                                    data-sort="6144.0"
-                                                    data-sequence-mine="6144.0"
-                                                    data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/f6c7dd7cb55b486a9607398c113804cb/reorder"
-                                                    data-project-guid="e26956389763492f891259d7d9c5b94d"
-                                                    data-project-name="Flower"
-                                                    data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-updated-at="1526628871"
-                                                    data-check-items-size="0"
-                                                    data-completed-check-items-size="0"
-                                                    data-closed-at="1526628871">
-
-                                                    <div class="todo-actions actions">
-                                                        <div class="inr">
-
-                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/f6c7dd7cb55b486a9607398c113804cb/destroy"
-                                                               data-visible-to="creator,admin"
-                                                               class="del" data-remote="true" data-method="post"
-                                                               data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="todo-wrap">
-                                                        <input type="checkbox" name="todo-done" checked/>
-
-
-                                                        <span class="todo-content">
-      <span class="raw">开发规范统一</span>
-      <span class="content-non-linkable">
-        <span class="todo-rest">开发规范统一</span>
-      </span>
-      <span class="content-linkable">
-        <a class="todo-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/f6c7dd7cb55b486a9607398c113804cb">开发规范统一</a>
-      </span>
-    </span>
-
-                                                        <span class="todo-detail">
-        <span class="label completed-member">( OrionPax <span class="completed-time"
-                                                              data-readable-time="2018-05-18T15:34:31+08:00"></span> )</span>
-    </span>
-
-                                                        <a class="label todo-proj" title="Flower - 设计" data-stack="true"
-                                                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/7c3f0c6c597247cd961433da97d6f2f7/show">Flower
-                                                            - 设计</a>
-                                                    </div>
-                                                </li>
-
-                                                <li class="todo completed"
-                                                    data-guid="3a667b2b9a92497ea8178ffddc312549"
-                                                    data-sort="4608.0"
-                                                    data-sequence-mine="0.0"
-                                                    data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/3a667b2b9a92497ea8178ffddc312549/reorder"
-                                                    data-project-guid="e26956389763492f891259d7d9c5b94d"
-                                                    data-project-name="Flower"
-                                                    data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-updated-at="1526627960"
-                                                    data-check-items-size="0"
-                                                    data-completed-check-items-size="0"
-                                                    data-closed-at="1526627960">
-
-                                                    <div class="todo-actions actions">
-                                                        <div class="inr">
-
-                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/3a667b2b9a92497ea8178ffddc312549/destroy"
-                                                               data-visible-to="creator,admin"
-                                                               class="del" data-remote="true" data-method="post"
-                                                               data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="todo-wrap">
-                                                        <input type="checkbox" name="todo-done" checked/>
-
-
-                                                        <span class="todo-content">
-      <span class="raw">模块功能设计</span>
-      <span class="content-non-linkable">
-        <span class="todo-rest">模块功能设计</span>
-      </span>
-      <span class="content-linkable">
-        <a class="todo-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/3a667b2b9a92497ea8178ffddc312549">模块功能设计</a>
-      </span>
-    </span>
-
-                                                        <span class="todo-detail">
-        <span class="label completed-member">( OrionPax <span class="completed-time"
-                                                              data-readable-time="2018-05-18T15:19:20+08:00"></span> )</span>
-    </span>
-
-                                                        <a class="label todo-proj" title="Flower - 设计" data-stack="true"
-                                                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/7c3f0c6c597247cd961433da97d6f2f7/show">Flower
-                                                            - 设计</a>
-                                                    </div>
-                                                </li>
-
-                                                <li class="todo completed"
-                                                    data-guid="70d66a5f040f4f6caf6cb4aa172a3d0c"
-                                                    data-sort="0.0"
-                                                    data-sequence-mine="7168.0"
-                                                    data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c/reorder"
-                                                    data-project-guid="e26956389763492f891259d7d9c5b94d"
-                                                    data-project-name="Flower"
-                                                    data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-updated-at="1526610531"
-                                                    data-check-items-size="0"
-                                                    data-completed-check-items-size="0"
-                                                    data-closed-at="1526610528">
-
-                                                    <div class="todo-actions actions">
-                                                        <div class="inr">
-
-                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c/destroy"
-                                                               data-visible-to="creator,admin"
-                                                               class="del" data-remote="true" data-method="post"
-                                                               data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="todo-wrap">
-                                                        <input type="checkbox" name="todo-done" checked/>
-
-
-                                                        <span class="todo-content">
-      <span class="raw">网页流转设计</span>
-      <span class="content-non-linkable">
-        <span class="todo-rest">网页流转设计</span>
-      </span>
-      <span class="content-linkable">
-        <a class="todo-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c">网页流转设计</a>
-      </span>
-    </span>
-
-                                                        <span class="todo-detail">
-        <span class="label completed-member">( OrionPax <span class="completed-time"
-                                                              data-readable-time="2018-05-18T10:28:48+08:00"></span> )</span>
-    </span>
-
-                                                        <a class="label todo-proj" title="Flower - 设计" data-stack="true"
-                                                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/7c3f0c6c597247cd961433da97d6f2f7/show">Flower
-                                                            - 设计</a>
-                                                    </div>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="todolist"
-                                     data-guid="7eea1fdab77c4e6a84ec744bb869c7a6"
-                                     data-sort="2"
-                                     data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-
-                                     data-project-guid="e26956389763492f891259d7d9c5b94d">
-
-                                    <div class="flex-container">
-                                        <div class="title">
-                                            <div class="todolist-actions actions">
-                                                <div class="inr">
-                                                    <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/edit"
-                                                       class="edit" data-remote="true" data-loading="true"
-                                                       data-mothod="get">编辑</a>
-                                                    <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/destroy"
-                                                       data-visible-to="admin,creator"
-                                                       class="del" data-confirm="确定要删除这个任务清单吗？" data-remote="true"
-                                                       data-method="post">删除</a>
-                                                </div>
-                                            </div>
-
-                                            <h4>
-    <span class="name-non-linkable">
-        <span class="todolist-rest">开发</span>
-    </span>
-                                                <span class="name">
-            <span class="todolist-todos-count">2</span>
-        <a class="todolist-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">开发</a>
-    </span>
-
-
-                                                <a href="javascript:;" class="fold">
-                                                    <i class="twr twr-angle-up"></i>
-                                                </a>
-                                            </h4>
-
-                                            <a href="javascript:;" class="btn-new-todo"
-                                               data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6"
-                                               data-request-members="e26956389763492f891259d7d9c5b94d">
-                                                <i class="twr twr-plus"></i>
-                                            </a>
-                                            <a href="javascript:;" class="link-kanban-menu">
-                                                <i class="twr twr-bars"></i>
-                                            </a>
-                                            <div class="kanban-menu-content hide">
-                                                <a href="javascript:;" class="edit">编辑</a>
-                                                <a href="javascript:;" data-visible-to="admin,creator"
-                                                   class="del">删除</a>
-                                            </div>
-                                        </div>
-                                        <div class="todos-container">
-                                            <ul class="todos todos-uncompleted">
-
-                                                <li class="todo"
-                                                    data-guid="364ac59771ef44ccae88bf0a137e5533"
-                                                    data-sort="1024.0"
-                                                    data-sequence-mine="0.0"
-                                                    data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/364ac59771ef44ccae88bf0a137e5533/reorder"
-                                                    data-project-guid="e26956389763492f891259d7d9c5b94d"
-                                                    data-project-name="Flower"
-                                                    data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-updated-at="1526804920"
-                                                    data-check-items-size="0"
-                                                    data-completed-check-items-size="0"
-                                                >
-
-                                                    <div class="todo-actions actions">
-                                                        <div class="inr">
-                                                            <a class="run" title="标记成正在进行中" data-loading="true"
-                                                               data-remote="true" data-method="post"
-                                                               href="/projects/e26956389763492f891259d7d9c5b94d/todos/364ac59771ef44ccae88bf0a137e5533/running">执行</a>
-                                                            <a class="pause" title="暂停" data-loading="true"
-                                                               data-remote="true" data-method="post"
-                                                               href="/projects/e26956389763492f891259d7d9c5b94d/todos/364ac59771ef44ccae88bf0a137e5533/pause">暂停</a>
-                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/364ac59771ef44ccae88bf0a137e5533/edit"
-                                                               class="edit"
-                                                               data-request-members="e26956389763492f891259d7d9c5b94d"
-                                                               title="编辑">编辑</a>
-
-                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/364ac59771ef44ccae88bf0a137e5533/destroy"
-                                                               data-visible-to="creator,admin"
-                                                               class="del" data-remote="true" data-method="post"
-                                                               data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="todo-wrap">
-                                                        <input type="checkbox" name="todo-done"/>
-
-
-                                                        <span class="todo-content">
-      <span class="raw">静态网页开发</span>
-      <span class="content-non-linkable">
-        <span class="todo-rest">静态网页开发</span>
-      </span>
-      <span class="content-linkable">
-        <a class="todo-rest""
-           href="${pageContext.request.contextPath}/base/goURL/project/detailTask">静态网页开发</a>
-      </span>
-    </span>
-
-                                                        <span class="todo-detail">
+                                                            <span class="todo-detail">
 
           <a class="label todo-assign-due" href="javascript:;" data-request-members="e26956389763492f891259d7d9c5b94d">
-              <span class="assignee" data-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                    data-gavatar="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
+              <span class="assignee" data-guid="f7e254d7f54e40dbb93a33b737752fbc" data-gavatar="https://avatar.tower.im/b8d097bc5a95408395bf6023807ec958">
                 OrionPax
               </span>
 
-              <span class="due" data-date="2018-05-21T23:59:59+08:00">2018-05-21</span>
           </a>
 
 
     </span>
 
-                                                        <a class="label todo-proj" title="Flower - 开发" data-stack="true"
-                                                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">Flower
-                                                            - 开发</a>
-                                                    </div>
-                                                </li>
-
-                                                <li class="todo"
-                                                    data-guid="ec69d30b1b5f4759b823771882da98e8"
-                                                    data-sort="2048.0"
-                                                    data-sequence-mine="0.0"
-                                                    data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/reorder"
-                                                    data-project-guid="e26956389763492f891259d7d9c5b94d"
-                                                    data-project-name="Flower"
-                                                    data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-updated-at="1526804923"
-                                                    data-check-items-size="0"
-                                                    data-completed-check-items-size="0"
-                                                >
-
-                                                    <div class="todo-actions actions">
-                                                        <div class="inr">
-                                                            <a class="run" title="标记成正在进行中" data-loading="true"
-                                                               data-remote="true" data-method="post"
-                                                               href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/running">执行</a>
-                                                            <a class="pause" title="暂停" data-loading="true"
-                                                               data-remote="true" data-method="post"
-                                                               href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/pause">暂停</a>
-                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/edit"
-                                                               class="edit"
-                                                               data-request-members="e26956389763492f891259d7d9c5b94d"
-                                                               title="编辑">编辑</a>
-
-                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/destroy"
-                                                               data-visible-to="creator,admin"
-                                                               class="del" data-remote="true" data-method="post"
-                                                               data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
+                                                            <a class="label todo-proj" title="Flower - qwe" data-stack="true" href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">Flower - qwe</a>
                                                         </div>
-                                                    </div>
+                                                    </li></ul>
 
-                                                    <div class="todo-wrap">
-                                                        <input type="checkbox" name="todo-done"/>
+                                                <ul class="todo-new-wrap"></ul>
 
-
-                                                        <span class="todo-content">
-      <span class="raw">数据库表开发</span>
-      <span class="content-non-linkable">
-        <span class="todo-rest">数据库表开发</span>
-      </span>
-      <span class="content-linkable">
-        <a class="todo-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8">数据库表开发</a>
-      </span>
-    </span>
-
-                                                        <span class="todo-detail">
-
-          <a class="label todo-assign-due" href="javascript:;" data-request-members="e26956389763492f891259d7d9c5b94d">
-              <span class="assignee" data-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                    data-gavatar="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
-                OrionPax
-              </span>
-
-              <span class="due" data-date="2018-05-21T23:59:59+08:00">2018-05-21</span>
-          </a>
+                                                <ul class="todos todos-completed" data-length="3" data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/completed">
 
 
-    </span>
 
-                                                        <a class="label todo-proj" title="Flower - 开发" data-stack="true"
-                                                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">Flower
-                                                            - 开发</a>
-                                                    </div>
-                                                </li>
 
-                                            </ul>
 
-                                            <ul class="todo-new-wrap"></ul>
+                                                    <li class="todo completed" data-guid="70d66a5f040f4f6caf6cb4aa172a3d0c" data-sort="2048.0" data-sequence-mine="7168.0" data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c/reorder" data-project-guid="e26956389763492f891259d7d9c5b94d" data-project-name="Flower" data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc" data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc" data-updated-at="1527075878" data-check-items-size="0" data-completed-check-items-size="0" data-closed-at="1526610528">
 
-                                            <ul class="todos todos-completed" data-length="1"
-                                                data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/completed">
+                                                        <div class="todo-actions actions">
+                                                            <div class="inr">
 
-                                                <li class="todo completed"
-                                                    data-guid="2bd23859ddf04eaeb1de9ac1d4747935"
-                                                    data-sort="0.0"
-                                                    data-sequence-mine="0.0"
-                                                    data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/2bd23859ddf04eaeb1de9ac1d4747935/reorder"
-                                                    data-project-guid="e26956389763492f891259d7d9c5b94d"
-                                                    data-project-name="Flower"
-                                                    data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                    data-updated-at="1526866396"
-                                                    data-check-items-size="0"
-                                                    data-completed-check-items-size="0"
-                                                    data-closed-at="1526866396">
-
-                                                    <div class="todo-actions actions">
-                                                        <div class="inr">
-
-                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/2bd23859ddf04eaeb1de9ac1d4747935/destroy"
-                                                               data-visible-to="creator,admin"
-                                                               class="del" data-remote="true" data-method="post"
-                                                               data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
+                                                                <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c/destroy" data-visible-to="creator,admin" class="del" data-remote="true" data-method="post" data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="todo-wrap">
-                                                        <input type="checkbox" name="todo-done" checked/>
+                                                        <div class="todo-wrap">
+                                                            <div class="simple-checkbox checked" style="height: 18px; width: 18px;">
+                                                                <div class="checkbox-container" style="border: 1.8px solid;">
+                                                                    <div class="checkbox-tick" style="border-right: 2.52px solid; border-bottom: 2.52px solid;">
+                                                                    </div>
+                                                                </div>
+                                                                <input type="checkbox" name="todo-done" checked="" class="checkbox-input" style="display: none;"></div>
 
 
-                                                        <span class="todo-content">
-      <span class="raw">项目环境搭建</span>
-      <span class="content-non-linkable">
-        <span class="todo-rest">项目环境搭建</span>
-      </span>
-      <span class="content-linkable">
-        <a class="todo-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/2bd23859ddf04eaeb1de9ac1d4747935">项目环境搭建</a>
-      </span>
-    </span>
+                                                            <span class="todo-content">
+                                                          <span class="raw">网页流转设计</span>
+                                                          <span class="content-non-linkable">
+                                                            <span class="todo-rest">网页流转设计</span>
+                                                          </span>
+                                                          <span class="content-linkable">
+                                                            <a class="todo-rest" data-stack="true" href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c">网页流转设计</a>
+                                                          </span>
+                                                        </span>
 
-                                                        <span class="todo-detail">
-        <span class="label completed-member">( OrionPax <span class="completed-time"
-                                                              data-readable-time="2018-05-21T09:33:16+08:00"></span> )</span>
-    </span>
+                                                                                                                <span class="todo-detail">
+                                                            <span class="label completed-member">( OrionPax <span class="completed-time" data-readable-time="2018-05-18T10:28:48+08:00">5月18日</span> )</span>
+                                                        </span>
 
-                                                        <a class="label todo-proj" title="Flower - 开发" data-stack="true"
-                                                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">Flower
-                                                            - 开发</a>
-                                                    </div>
-                                                </li>
+                                                            <a class="label todo-proj" title="Flower - qwe" data-stack="true" href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">Flower - qwe</a>
+                                                        </div>
+                                                    </li>
 
-                                            </ul>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
+                                </c:forEach>
+                                <script>
+
+                                </script>
+
+
+                                <a href="javascript:;" class="link-show-todolist-form">
+                                    <i class="twr twr-plus"></i>
+                                    <span>添加新清单</span>
+                                </a>
+
+                                <div class="todolist-form new ">
+                                    <form class="form" method="post"
+                                          action="/projects/e26956389763492f891259d7d9c5b94d/lists" data-remote="true">
+                                        <input type="text" class="todolist-name no-border"
+                                               data-autosave="project-e26956389763492f891259d7d9c5b94d-new-todolist"
+                                               name="todolist_name" placeholder="输入清单名称" data-validate="custom"
+                                               data-validate-msg=""/>
+                                        <textarea class="todolist-desc no-border" name="todolist_desc"
+                                                  placeholder="补充说明（可选）"
+                                                  data-autosave="project-e26956389763492f891259d7d9c5b94d-new-todolist-desc"></textarea>
+
+                                        <div class="visitor-lock" data-visible-to="member">
+                                            <label>
+                                                <input type="checkbox" name="invisible_for_visitor"
+                                                       class="cb-visitor-lock"
+                                                       value="1"/>
+                                                对访客隐藏这个任务清单
+                                            </label>
+                                        </div>
+                                        <p class="form-buttons">
+                                            <button type="submit" class="btn btn-create-todolist btn-primary"
+                                                    data-disable-with="正在创建...">
+                                                创建清单
+                                            </button>
+                                            <button type="button" class="btn btn-x btn-cancel-todolist">取消</button>
+                                        </p>
+                                    </form>
                                 </div>
-                                <div class="todolist"
-                                     data-guid="3fc8d0c9669e4dd0aa3281074f6e2b0d"
-                                     data-sort="3"
-                                     data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
 
-                                     data-project-guid="e26956389763492f891259d7d9c5b94d">
-
-                                    <div class="flex-container">
-                                        <div class="title">
-                                            <div class="todolist-actions actions">
-                                                <div class="inr">
-                                                    <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/3fc8d0c9669e4dd0aa3281074f6e2b0d/edit"
-                                                       class="edit" data-remote="true" data-loading="true"
-                                                       data-mothod="get">编辑</a>
-                                                    <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/3fc8d0c9669e4dd0aa3281074f6e2b0d/destroy"
-                                                       data-visible-to="admin,creator"
-                                                       class="del" data-confirm="确定要删除这个任务清单吗？" data-remote="true"
-                                                       data-method="post">删除</a>
-                                                </div>
-                                            </div>
-
-                                            <h4>
-    <span class="name-non-linkable">
-        <span class="todolist-rest">测试</span>
-    </span>
-                                                <span class="name">
-            <span class="todolist-todos-count">0</span>
-        <a class="todolist-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/lists/3fc8d0c9669e4dd0aa3281074f6e2b0d/show">测试</a>
-    </span>
-
-
-                                                <a href="javascript:;" class="fold">
-                                                    <i class="twr twr-angle-up"></i>
-                                                </a>
-                                            </h4>
-
-                                            <a href="javascript:;" class="btn-new-todo"
-                                               data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/3fc8d0c9669e4dd0aa3281074f6e2b0d"
-                                               data-request-members="e26956389763492f891259d7d9c5b94d">
-                                                <i class="twr twr-plus"></i>
-                                            </a>
-                                            <a href="javascript:;" class="link-kanban-menu">
-                                                <i class="twr twr-bars"></i>
-                                            </a>
-                                            <div class="kanban-menu-content hide">
-                                                <a href="javascript:;" class="edit">编辑</a>
-                                                <a href="javascript:;" data-visible-to="admin,creator"
-                                                   class="del">删除</a>
-                                            </div>
-                                        </div>
-                                        <div class="todos-container">
-                                            <ul class="todos todos-uncompleted">
-
-                                            </ul>
-
-                                            <ul class="todo-new-wrap"></ul>
-
-                                            <ul class="todos todos-completed" data-length="0"
-                                                data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/3fc8d0c9669e4dd0aa3281074f6e2b0d/completed">
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="todolist"
-                                     data-guid="139c90a8f1db4377aa31af8b2652f235"
-                                     data-sort="4"
-                                     data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-
-                                     data-project-guid="e26956389763492f891259d7d9c5b94d">
-
-                                    <div class="flex-container">
-                                        <div class="title">
-                                            <div class="todolist-actions actions">
-                                                <div class="inr">
-                                                    <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/139c90a8f1db4377aa31af8b2652f235/edit"
-                                                       class="edit" data-remote="true" data-loading="true"
-                                                       data-mothod="get">编辑</a>
-                                                    <a href="/projects/e26956389763492f891259d7d9c5b94d/lists/139c90a8f1db4377aa31af8b2652f235/destroy"
-                                                       data-visible-to="admin,creator"
-                                                       class="del" data-confirm="确定要删除这个任务清单吗？" data-remote="true"
-                                                       data-method="post">删除</a>
-                                                </div>
-                                            </div>
-
-                                            <h4>
-    <span class="name-non-linkable">
-        <span class="todolist-rest">上线</span>
-    </span>
-                                                <span class="name">
-            <span class="todolist-todos-count">0</span>
-        <a class="todolist-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/lists/139c90a8f1db4377aa31af8b2652f235/show">上线</a>
-    </span>
-
-
-                                                <a href="javascript:;" class="fold">
-                                                    <i class="twr twr-angle-up"></i>
-                                                </a>
-                                            </h4>
-
-                                            <a href="javascript:;" class="btn-new-todo"
-                                               data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/139c90a8f1db4377aa31af8b2652f235"
-                                               data-request-members="e26956389763492f891259d7d9c5b94d">
-                                                <i class="twr twr-plus"></i>
-                                            </a>
-                                            <a href="javascript:;" class="link-kanban-menu">
-                                                <i class="twr twr-bars"></i>
-                                            </a>
-                                            <div class="kanban-menu-content hide">
-                                                <a href="javascript:;" class="edit">编辑</a>
-                                                <a href="javascript:;" data-visible-to="admin,creator"
-                                                   class="del">删除</a>
-                                            </div>
-                                        </div>
-                                        <div class="todos-container">
-                                            <ul class="todos todos-uncompleted">
-
-                                            </ul>
-
-                                            <ul class="todo-new-wrap"></ul>
-
-                                            <ul class="todos todos-completed" data-length="0"
-                                                data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/139c90a8f1db4377aa31af8b2652f235/completed">
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <a href="javascript:;" class="link-show-todolist-form">
-                                <i class="twr twr-plus"></i>
-                                <span>添加新清单</span>
-                            </a>
-
-                            <div class="todolist-form new ">
-                                <form class="form" method="post"
-                                      action="/projects/e26956389763492f891259d7d9c5b94d/lists" data-remote="true">
-                                    <input type="text" class="todolist-name no-border"
-                                           data-autosave="project-e26956389763492f891259d7d9c5b94d-new-todolist"
-                                           name="todolist_name" placeholder="输入清单名称" data-validate="custom"
-                                           data-validate-msg=""/>
-                                    <textarea class="todolist-desc no-border" name="todolist_desc"
-                                              placeholder="补充说明（可选）"
-                                              data-autosave="project-e26956389763492f891259d7d9c5b94d-new-todolist-desc"></textarea>
-
-                                    <div class="visitor-lock" data-visible-to="member">
-                                        <label>
-                                            <input type="checkbox" name="invisible_for_visitor" class="cb-visitor-lock"
-                                                   value="1"/>
-                                            对访客隐藏这个任务清单
-                                        </label>
-                                    </div>
-                                    <p class="form-buttons">
-                                        <button type="submit" class="btn btn-create-todolist btn-primary"
-                                                data-disable-with="正在创建...">
-                                            创建清单
-                                        </button>
-                                        <button type="button" class="btn btn-x btn-cancel-todolist">取消</button>
-                                    </p>
-                                </form>
                             </div>
 
                         </div>
 
+                        <script type="text/html" id="tpl-kanban-todolist-menu">
+                            <a href="javascript:;" class="btn-new-todo" data-url=""
+                               data-request-members="e26956389763492f891259d7d9c5b94d">
+                                <i class="twr twr-plus"></i>
+                            </a>
+                            <a href="javascript:;" class="link-kanban-menu">
+                                <i class="twr twr-bars"></i>
+                            </a>
+                            <div class="kanban-menu-content hide">
+                                <a href="javascript:;" class="edit">编辑</a>
+                                <a href="javascript:;" data-visible-to="admin,creator" class="del">删除</a>
+                            </div>
+                        </script>
+
+
+                        <script type="text/html" id="tpl-todo-form">
+
+                            <li class="todo-form">
+                                <form class="form form-edit-todo" method="post" data-remote="true">
+                                    <div class="form-body">
+                                        <input type="checkbox" name="todo-done" disabled/>
+                                        <textarea name="todo_content" class="todo-content no-border" placeholder="新的任务"
+                                                  data-validate="custom" data-validate-msg=""></textarea>
+
+                                        <div class="todo-toolbar">
+                                            <a href="javascript:;" class="add-tag" title="点击添加标签">#</a>
+                                            <a href="javascript:;" class="add-priority" title="点击添加优先级">!</a>
+                                        </div>
+
+                                        <a href="javascript:;" class="todo-label">
+                                            <span class="assignee">未指派</span> ·
+                                            <span class="due">没有截止时间</span>
+                                        </a>
+                                    </div>
+                                    <div class="buttons create-buttons">
+                                        <button type="submit" class="btn btn-primary btn-create-todo"
+                                                data-disable-with="正在保存...">添加任务
+                                        </button>
+                                        <a href="javascript:;" class="btn-cancel-todo">取消</a>
+                                    </div>
+                                    <div class="buttons edit-buttons">
+                                        <button type="submit" class="btn btn-primary btn-update-todo"
+                                                data-disable-with="正在保存...">保存
+                                        </button>
+                                        <a href="javascript:;" class="btn-cancel-update-todo">取消</a>
+                                    </div>
+
+                                    <input type="hidden" name="assignee_guid" class="hidden-assignee" value="-1"/>
+                                    <input type="hidden" name="due_at" class="hidden-due-date" value=""/>
+                                </form>
+                            </li>
+
+
+                        </script>
+
+                        <script type="text/html" id="tpl-todo-popover">
+                            <div class="todo-popover">
+                                <div class="select-assignee">
+                                    <h3>将任务指派给</h3>
+                                    <div class="assignee-wrapper">
+                                        <select id="txt-assignee"></select>
+                                    </div>
+                                </div>
+
+                                <div class="select-due-date">
+                                    <h3>任务截止时间</h3>
+                                    <div class="due-date-wrapper">
+                                        <input type="text" class="txt-due-date" placeholder="选择截止时间"/>
+                                        <a href="javascript:;" class="link-remove-due-date" title="取消截止时间"><span
+                                                class='twr twr-times'></span></a>
+
+                                        <div class="due-date-picker">
+                                            <div class="cal-wrapper">
+                                                <div class="cal-shortcuts">
+                                                    <a href="javascript:;" class="link-cal-shortcut today">[今天]</a>
+                                                    <a href="javascript:;" class="link-cal-shortcut tomorrow">[明天]</a>
+                                                    <a href="javascript:;"
+                                                       class="link-cal-shortcut this-friday">[本周]</a>
+                                                    <a href="javascript:;"
+                                                       class="link-cal-shortcut next-friday">[下周]</a>
+                                                </div>
+                                                <input type="date" class="hidden-due-date"/>
+                                            </div>
+                                            <div class="shortcuts-wrapper">
+                                                <a href="javascript:;" class="link-date-shortcut today"
+                                                   data-shortcut="today|td|jintian|jt|今天">今天</a>
+                                                <a href="javascript:;" class="link-date-shortcut tomorrow"
+                                                   data-shortcut="tomorrow|tm|mingtian|mt|明天">明天</a>
+                                                <a href="javascript:;" class="link-date-shortcut after-tomorrow"
+                                                   data-shortcut="houtian|ht|dat|后天">后天</a>
+                                                <a href="javascript:;" class="link-date-shortcut monday"
+                                                   data-shortcut="monday|zhouyi|xingqiyi|zy|xqy|周一|星期一|1">周一</a>
+                                                <a href="javascript:;" class="link-date-shortcut tuesday"
+                                                   data-shortcut="tuesday|zhouer|xingqier|ze|xqe|周二|星期二|2">周二</a>
+                                                <a href="javascript:;" class="link-date-shortcut wednesday"
+                                                   data-shortcut="wednesday|zhousan|xingqisan|zs|xqs|周三|星期三|3">周三</a>
+                                                <a href="javascript:;" class="link-date-shortcut thursday"
+                                                   data-shortcut="thursday|zhousi|xingqisi|zs|xqs|周四|星期四|4">周四</a>
+                                                <a href="javascript:;" class="link-date-shortcut friday"
+                                                   data-shortcut="friday|zhouwu|xingqiwu|zw|xqw|周五|星期五|5">周五</a>
+                                                <a href="javascript:;" class="link-date-shortcut saturday"
+                                                   data-shortcut="saturday|zhouliu|xingqiliu|zl|xql|周六|星期日|6">周六</a>
+                                                <a href="javascript:;" class="link-date-shortcut sunday"
+                                                   data-shortcut="sunday|zhouri|xingqiri|zr|xqr|周日|星期日|7">周日</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </script>
                     </div>
 
-                    <script type="text/html" id="tpl-kanban-todolist-menu">
-                        <a href="javascript:;" class="btn-new-todo" data-url=""
-                           data-request-members="e26956389763492f891259d7d9c5b94d">
-                            <i class="twr twr-plus"></i>
-                        </a>
-                        <a href="javascript:;" class="link-kanban-menu">
-                            <i class="twr twr-bars"></i>
-                        </a>
-                        <div class="kanban-menu-content hide">
-                            <a href="javascript:;" class="edit">编辑</a>
-                            <a href="javascript:;" data-visible-to="admin,creator" class="del">删除</a>
-                        </div>
-                    </script>
 
-
-                    <script type="text/html" id="tpl-todo-form">
-
-                        <li class="todo-form">
-                            <form class="form form-edit-todo" method="post" data-remote="true">
-                                <div class="form-body">
-                                    <input type="checkbox" name="todo-done" disabled/>
-                                    <textarea name="todo_content" class="todo-content no-border" placeholder="新的任务"
-                                              data-validate="custom" data-validate-msg=""></textarea>
-
-                                    <div class="todo-toolbar">
-                                        <a href="javascript:;" class="add-tag" title="点击添加标签">#</a>
-                                        <a href="javascript:;" class="add-priority" title="点击添加优先级">!</a>
-                                    </div>
-
-                                    <a href="javascript:;" class="todo-label">
-                                        <span class="assignee">未指派</span> ·
-                                        <span class="due">没有截止时间</span>
-                                    </a>
-                                </div>
-                                <div class="buttons create-buttons">
-                                    <button type="submit" class="btn btn-primary btn-create-todo"
-                                            data-disable-with="正在保存...">添加任务
-                                    </button>
-                                    <a href="javascript:;" class="btn-cancel-todo">取消</a>
-                                </div>
-                                <div class="buttons edit-buttons">
-                                    <button type="submit" class="btn btn-primary btn-update-todo"
-                                            data-disable-with="正在保存...">保存
-                                    </button>
-                                    <a href="javascript:;" class="btn-cancel-update-todo">取消</a>
-                                </div>
-
-                                <input type="hidden" name="assignee_guid" class="hidden-assignee" value="-1"/>
-                                <input type="hidden" name="due_at" class="hidden-due-date" value=""/>
-                            </form>
-                        </li>
-
-
-                    </script>
-
-                    <script type="text/html" id="tpl-todo-popover">
-                        <div class="todo-popover">
-                            <div class="select-assignee">
-                                <h3>将任务指派给</h3>
-                                <div class="assignee-wrapper">
-                                    <select id="txt-assignee"></select>
-                                </div>
-                            </div>
-
-                            <div class="select-due-date">
-                                <h3>任务截止时间</h3>
-                                <div class="due-date-wrapper">
-                                    <input type="text" class="txt-due-date" placeholder="选择截止时间"/>
-                                    <a href="javascript:;" class="link-remove-due-date" title="取消截止时间"><span
-                                            class='twr twr-times'></span></a>
-
-                                    <div class="due-date-picker">
-                                        <div class="cal-wrapper">
-                                            <div class="cal-shortcuts">
-                                                <a href="javascript:;" class="link-cal-shortcut today">[今天]</a>
-                                                <a href="javascript:;" class="link-cal-shortcut tomorrow">[明天]</a>
-                                                <a href="javascript:;" class="link-cal-shortcut this-friday">[本周]</a>
-                                                <a href="javascript:;" class="link-cal-shortcut next-friday">[下周]</a>
-                                            </div>
-                                            <input type="date" class="hidden-due-date"/>
-                                        </div>
-                                        <div class="shortcuts-wrapper">
-                                            <a href="javascript:;" class="link-date-shortcut today"
-                                               data-shortcut="today|td|jintian|jt|今天">今天</a>
-                                            <a href="javascript:;" class="link-date-shortcut tomorrow"
-                                               data-shortcut="tomorrow|tm|mingtian|mt|明天">明天</a>
-                                            <a href="javascript:;" class="link-date-shortcut after-tomorrow"
-                                               data-shortcut="houtian|ht|dat|后天">后天</a>
-                                            <a href="javascript:;" class="link-date-shortcut monday"
-                                               data-shortcut="monday|zhouyi|xingqiyi|zy|xqy|周一|星期一|1">周一</a>
-                                            <a href="javascript:;" class="link-date-shortcut tuesday"
-                                               data-shortcut="tuesday|zhouer|xingqier|ze|xqe|周二|星期二|2">周二</a>
-                                            <a href="javascript:;" class="link-date-shortcut wednesday"
-                                               data-shortcut="wednesday|zhousan|xingqisan|zs|xqs|周三|星期三|3">周三</a>
-                                            <a href="javascript:;" class="link-date-shortcut thursday"
-                                               data-shortcut="thursday|zhousi|xingqisi|zs|xqs|周四|星期四|4">周四</a>
-                                            <a href="javascript:;" class="link-date-shortcut friday"
-                                               data-shortcut="friday|zhouwu|xingqiwu|zw|xqw|周五|星期五|5">周五</a>
-                                            <a href="javascript:;" class="link-date-shortcut saturday"
-                                               data-shortcut="saturday|zhouliu|xingqiliu|zl|xql|周六|星期日|6">周六</a>
-                                            <a href="javascript:;" class="link-date-shortcut sunday"
-                                               data-shortcut="sunday|zhouri|xingqiri|zr|xqr|周日|星期日|7">周日</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </script>
                 </div>
 
 
             </div>
-
-
         </div>
+        <div class="footer">
+            &copy; 彩程设计
+        </div>
+
     </div>
-    <div class="footer">
-        &copy; 彩程设计
     </div>
 
+    <input type="hidden" id="d18n-enabled" value="false">
+    <input type="hidden" id="server-time" value="2018-05-21 21:05:14">
 
-</div>
+    <input type="hidden" id="team-guid" value="982b79584a39484eb9e17459a6e1deff">
+    <input type="hidden" id="team-name" value="HYLT">
+    <input type="hidden" id="team-enable-pusher" value="true">
 
-<input type="hidden" id="d18n-enabled" value="false">
-<input type="hidden" id="server-time" value="2018-05-21 21:05:14">
+    <input type="hidden" id="user-id" value="7432036">
+    <input type="hidden" id="user-email" value="2449832339@qq.com">
 
-<input type="hidden" id="team-guid" value="982b79584a39484eb9e17459a6e1deff">
-<input type="hidden" id="team-name" value="HYLT">
-<input type="hidden" id="team-enable-pusher" value="true">
-
-<input type="hidden" id="user-id" value="7432036">
-<input type="hidden" id="user-email" value="2449832339@qq.com">
-
-<input type="hidden" id="unused-bubbles" value="12,13">
-<input type="hidden" id="member-id" value="12535517">
-<input type="hidden" id="member-guid" value="ce2b30066f034bf9a69113963da165fd">
-<input type="hidden" id="member-nickname" value="浮点农国">
-<input type="hidden" id="member-avatar" value="/assets/default_avatars/noon.jpg">
-<input type="hidden" id="member-timezone" value="Asia/Shanghai">
-<input type="hidden" id="conn-guid" value="175ea352-867e-4958-8747-fc671201e314">
+    <input type="hidden" id="unused-bubbles" value="12,13">
+    <input type="hidden" id="member-id" value="12535517">
+    <input type="hidden" id="member-guid" value="ce2b30066f034bf9a69113963da165fd">
+    <input type="hidden" id="member-nickname" value="浮点农国">
+    <input type="hidden" id="member-avatar" value="/assets/default_avatars/noon.jpg">
+    <input type="hidden" id="member-timezone" value="Asia/Shanghai">
+    <input type="hidden" id="conn-guid" value="175ea352-867e-4958-8747-fc671201e314">
 
 
-<input type="hidden" id="electron" value="false">
+    <input type="hidden" id="electron" value="false">
 
-<script>
-    //<![CDATA[
-    window.gon = {};
-    gon.oss_direct_upload = true;
-    //]]>
-</script>
+    <script>
+        //<![CDATA[
+        window.gon = {};
+        gon.oss_direct_upload = true;
+        //]]>
+    </script>
 
-<script id="IntercomSettingsScriptTag">window.intercomSettings = {
-    "hide_default_launcher": true,
-    "guid": "ce2b30066f034bf9a69113963da165fd",
-    "name": "浮点农国",
-    "email": "2449832339@qq.com",
-    "user_id": 12535517,
-    "desktop_notification_enabled": false,
-    "wechat_notification_enabled": true,
-    "email_notification_enabled": false,
-    "ai_notify_enabled": false,
-    "role": 0,
-    "user_guid": "f7eba6660ed54cec965e9058ee595fc5",
-    "avatar": "https://tower.im/assets/default_avatars/noon.jpg",
-    "comment": null,
-    "has_wechat": false,
-    "wechat": null,
-    "has_dingtalk": false,
-    "dingtalk": "浮点农国",
-    "two_factor_auth": false,
-    "teams": 2,
-    "projects": 2,
-    "starred_projects": 0,
-    "calendars": 0,
-    "open_todos": 0,
-    "closed_todos": 0,
-    "messages_created": 0,
-    "uploads_created": 0,
-    "attachments_uploaded": 0,
-    "comments_created": 0,
-    "resources_starred": 0,
-    "weekly_reports_created": 0,
-    "events_involved": 2,
-    "unread_notifications": 29,
-    "email_received": 0,
-    "data_updated_at": "2018-05-21T06:53:20.499Z",
-    "user_hash": "99bb70a8e9ae5b39924f6bc16c6a8f29e44b0b2227bd29c578f9873989e91402",
-    "app_id": "xbtsuf77",
-    "company": {
-        "id": 701217,
-        "name": "HYLT",
-        "created_at": "2018-05-17T01:24:47.000Z",
-        "guid": "982b79584a39484eb9e17459a6e1deff",
-        "next_charge_date": null,
-        "plan": "pro_trial",
-        "ever_paid": false,
-        "total_paid": 0,
-        "alipay_used": 0,
-        "haopay_used": 0,
-        "owner_guid": "f7e254d7f54e40dbb93a33b737752fbc",
+    <script id="IntercomSettingsScriptTag">window.intercomSettings = {
+        "hide_default_launcher": true,
+        "guid": "ce2b30066f034bf9a69113963da165fd",
+        "name": "浮点农国",
+        "email": "2449832339@qq.com",
+        "user_id": 12535517,
+        "desktop_notification_enabled": false,
+        "wechat_notification_enabled": true,
+        "email_notification_enabled": false,
+        "ai_notify_enabled": false,
+        "role": 0,
+        "user_guid": "f7eba6660ed54cec965e9058ee595fc5",
+        "avatar": "https://tower.im/assets/default_avatars/noon.jpg",
+        "comment": null,
+        "has_wechat": false,
+        "wechat": null,
         "has_dingtalk": false,
-        "has_yiqixie": false,
-        "has_api": false,
-        "members": 2,
-        "subgroups": 0,
-        "active_projects": 2,
-        "archived_projects": 0,
-        "project_groups": 0,
-        "project_templates": 0,
+        "dingtalk": "浮点农国",
+        "two_factor_auth": false,
+        "teams": 2,
+        "projects": 2,
+        "starred_projects": 0,
         "calendars": 0,
-        "calendar_events": 2,
-        "messages": 2,
-        "comments": 3,
-        "open_todos": 2,
-        "closed_todos": 6,
-        "documents": 0,
-        "files": 0,
-        "file_bytesize": 0.0,
-        "answers": 0,
-        "is_upgraded_to_plus": false
-    }
-};
-(function () {
-    var w = window;
-    var ic = w.Intercom;
-    if (typeof ic === "function") {
-        ic('reattach_activator');
-        ic('update', intercomSettings);
-    } else {
-        var d = document;
-        var i = function () {
-            i.c(arguments)
-        };
-        i.q = [];
-        i.c = function (args) {
-            i.q.push(args)
-        };
-        w.Intercom = i;
-
-        function l() {
-            var s = d.createElement('script');
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = 'https://widget.intercom.io/widget/xbtsuf77';
-            var x = d.getElementsByTagName('script')[0];
-            x.parentNode.insertBefore(s, x);
+        "open_todos": 0,
+        "closed_todos": 0,
+        "messages_created": 0,
+        "uploads_created": 0,
+        "attachments_uploaded": 0,
+        "comments_created": 0,
+        "resources_starred": 0,
+        "weekly_reports_created": 0,
+        "events_involved": 2,
+        "unread_notifications": 29,
+        "email_received": 0,
+        "data_updated_at": "2018-05-21T06:53:20.499Z",
+        "user_hash": "99bb70a8e9ae5b39924f6bc16c6a8f29e44b0b2227bd29c578f9873989e91402",
+        "app_id": "xbtsuf77",
+        "company": {
+            "id": 701217,
+            "name": "HYLT",
+            "created_at": "2018-05-17T01:24:47.000Z",
+            "guid": "982b79584a39484eb9e17459a6e1deff",
+            "next_charge_date": null,
+            "plan": "pro_trial",
+            "ever_paid": false,
+            "total_paid": 0,
+            "alipay_used": 0,
+            "haopay_used": 0,
+            "owner_guid": "f7e254d7f54e40dbb93a33b737752fbc",
+            "has_dingtalk": false,
+            "has_yiqixie": false,
+            "has_api": false,
+            "members": 2,
+            "subgroups": 0,
+            "active_projects": 2,
+            "archived_projects": 0,
+            "project_groups": 0,
+            "project_templates": 0,
+            "calendars": 0,
+            "calendar_events": 2,
+            "messages": 2,
+            "comments": 3,
+            "open_todos": 2,
+            "closed_todos": 6,
+            "documents": 0,
+            "files": 0,
+            "file_bytesize": 0.0,
+            "answers": 0,
+            "is_upgraded_to_plus": false
         }
-
-        if (w.attachEvent) {
-            w.attachEvent('onload', l);
-        } else {
-            w.addEventListener('load', l, false);
-        }
-    }
-    ;
-})()</script>
-
-<script type="text/javascript">
+    };
     (function () {
-        setTimeout(function () {
-            if (!document.querySelector('iframe#intercom-frame')) {
-                var w = window;
-                var ic = w.Intercom;
-                if (ic.toString().length < 100) {
-                    var d = document;
-                    var i = function () {
-                        i.c(arguments)
-                    };
-                    i.q = [];
-                    i.c = function (args) {
-                        i.q.push(args)
-                    };
-                    w.Intercom = i;
+        var w = window;
+        var ic = w.Intercom;
+        if (typeof ic === "function") {
+            ic('reattach_activator');
+            ic('update', intercomSettings);
+        } else {
+            var d = document;
+            var i = function () {
+                i.c(arguments)
+            };
+            i.q = [];
+            i.c = function (args) {
+                i.q.push(args)
+            };
+            w.Intercom = i;
 
-                    function l() {
-                        var s = d.createElement('script');
-                        s.type = 'text/javascript';
-                        s.async = true;
-                        s.src = 'https://jsintercom.tuanliao.com/widgets/xbtsuf77';
-                        var x = d.getElementsByTagName('script')[0];
-                        x.parentNode.insertBefore(s, x);
-                    }
-
-                    l();
-                }
+            function l() {
+                var s = d.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://widget.intercom.io/widget/xbtsuf77';
+                var x = d.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
             }
-        }, 5000)
-    })()
-</script>
+
+            if (w.attachEvent) {
+                w.attachEvent('onload', l);
+            } else {
+                w.addEventListener('load', l, false);
+            }
+        }
+        ;
+    })()</script>
+
+    <script type="text/javascript">
+        (function () {
+            setTimeout(function () {
+                if (!document.querySelector('iframe#intercom-frame')) {
+                    var w = window;
+                    var ic = w.Intercom;
+                    if (ic.toString().length < 100) {
+                        var d = document;
+                        var i = function () {
+                            i.c(arguments)
+                        };
+                        i.q = [];
+                        i.c = function (args) {
+                            i.q.push(args)
+                        };
+                        w.Intercom = i;
+
+                        function l() {
+                            var s = d.createElement('script');
+                            s.type = 'text/javascript';
+                            s.async = true;
+                            s.src = 'https://jsintercom.tuanliao.com/widgets/xbtsuf77';
+                            var x = d.getElementsByTagName('script')[0];
+                            x.parentNode.insertBefore(s, x);
+                        }
+
+                        l();
+                    }
+                }
+            }, 5000)
+        })()
+    </script>
 
 
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-100449807-1', 'auto', {userId: '12535517'});
-    ga('create', 'UA-100449807-2', 'auto', 'teamTracker', {userId: '701217'});
+        ga('create', 'UA-100449807-1', 'auto', {userId: '12535517'});
+        ga('create', 'UA-100449807-2', 'auto', 'teamTracker', {userId: '701217'});
 
-    ga('send', 'pageview', {
-        'userId': '12535517',
-        'dimension1': '701217 : HYLT',
-        'dimension2': '7432036',
-        'dimension3': 'pro_trial'
-    });
-    ga('teamTracker.send', 'pageview', {
-        'userId': '701217',
-        'dimension1': 'HYLT',
-        'dimension2': 11,
-        'dimension3': 'pro_trial'
-    });
+        ga('send', 'pageview', {
+            'userId': '12535517',
+            'dimension1': '701217 : HYLT',
+            'dimension2': '7432036',
+            'dimension3': 'pro_trial'
+        });
+        ga('teamTracker.send', 'pageview', {
+            'userId': '701217',
+            'dimension1': 'HYLT',
+            'dimension2': 11,
+            'dimension3': 'pro_trial'
+        });
 
-    ga('set', 'dimension4', 'false');
-</script>
+        ga('set', 'dimension4', 'false');
+    </script>
 
 
 </body>
+<script>
+    $(function () {
+        $("a.link-more-completed").css("display","none");
+    })
+</script>
 </html>

@@ -477,7 +477,7 @@
 
             <ul class="nav">
                 <li class="" id="nav-project">
-                    <a href="${pageContext.request.contextPath}/base/goURL/project/listProject">项目</a>
+                    <a href="${pageContext.request.contextPath}/project/listProject">项目</a>
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-calendar">

@@ -67,6 +67,7 @@ CREATE TABLE IF NOT EXISTS f_userAndSchedule(
 
 CREATE TABLE IF NOT EXISTS f_board(
 	b_id VARCHAR(40) PRIMARY KEY,
+	b_index int,
 	b_name VARCHAR(40),
 	b_unfinished INT,
 	b_p_id VARCHAR(40)

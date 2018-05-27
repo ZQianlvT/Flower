@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="orion_pax.dao.BoardMapper">
-  <resultMap id="BaseResultMap" type="orion_pax.entity.Board">
-    <result column="b_id" jdbcType="VARCHAR" property="id" />
+  <resultMap id="BoardBaseResultMap" type="orion_pax.entity.Board">
+    <id column="b_id" jdbcType="VARCHAR" property="id" />
+    <result column="b_index" jdbcType="INTEGER" property="index" />
     <result column="b_name" jdbcType="VARCHAR" property="name" />
     <result column="b_unfinished" jdbcType="INTEGER" property="unfinished" />
     <result column="b_p_id" jdbcType="VARCHAR" property="pId" />
   </resultMap>
+  <sql id="Base_Column_List">
+    b_id, b_index, b_name, b_unfinished, b_p_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BoardBaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from f_board
+    where b_id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from f_board
+    where b_id = #{id,jdbcType=VARCHAR}
+  </delete>
+
   <insert id="insert" parameterType="orion_pax.entity.Board">
-    insert into f_board (b_id, b_name, b_unfinished, 
-      b_p_id)
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{unfinished,jdbcType=INTEGER}, 
-      #{pId,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="orion_pax.entity.Board">
     insert into f_board
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         b_id,
+      </if>
+      <if test="index != null">
+        b_index,
       </if>
       <if test="name != null">
         b_name,
@@ -33,6 +45,9 @@
       <if test="id != null">
         #{id,jdbcType=VARCHAR},
       </if>
+      <if test="index != null">
+        #{index,jdbcType=INTEGER},
+      </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
@@ -44,4 +59,30 @@
       </if>
     </trim>
   </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="orion_pax.entity.Board">
+    update f_board
+    <set>
+      <if test="index != null">
+        b_index = #{index,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        b_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="unfinished != null">
+        b_unfinished = #{unfinished,jdbcType=INTEGER},
+      </if>
+      <if test="pId != null">
+        b_p_id = #{pId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where b_id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="orion_pax.entity.Board">
+    update f_board
+    set b_index = #{index,jdbcType=INTEGER},
+      b_name = #{name,jdbcType=VARCHAR},
+      b_unfinished = #{unfinished,jdbcType=INTEGER},
+      b_p_id = #{pId,jdbcType=VARCHAR}
+    where b_id = #{id,jdbcType=VARCHAR}
+  </update>
 </mapper>

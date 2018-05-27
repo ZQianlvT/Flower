@@ -5,7 +5,9 @@
   Time: 16:23
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <%--<script>--%>
@@ -489,7 +491,7 @@
 
             <ul class="nav">
                 <li class="" id="nav-project">
-                    <a href="${pageContext.request.contextPath}/base/goURL/project/listProject">项目</a>
+                    <a href="${pageContext.request.contextPath}/project/listProject">项目</a>
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-calendar">
@@ -565,33 +567,48 @@
                 </div>
 
                 <div class="projects grid-view">
-                    <a class="project c2 i1 project-welcome"
-                       href="${pageContext.request.contextPath}/base/goURL/project/listBoard" data-access-id="20987441"
-                       data-group-ids="[]"
-                    >
+                    <c:forEach items="${requestScope.projectList}" var="project">
+                        <a class="project c2 i2"
+                           href="${pageContext.request.contextPath}/project/detailProject?id=${project.id}"
+                           data-access-id="21014433" data-group-ids="[]"
+                        >
+                            <span class="badge"></span>
+                            <span class="name">${project.name}</span>
+                            <%--<span class="edit-badge" title="点击修改项目图标和颜色"></span>--%>
+                            <%--<span class="pin-icon" title="星标"></span>--%>
+                            <%--<span class="progress list-item">--%>
+                                <%--待处理任务 <em>0</em>--%>
+                            <%--</span>--%>
+                        </a>
+                    </c:forEach>
 
-                        <span class="badge"></span>
-                        <span class="name">熟悉 Tower</span>
-                        <span class="edit-badge" title="点击修改项目图标和颜色"></span>
-                        <span class="pin-icon" title="星标"></span>
-                        <span class="progress list-item">
-        待处理任务 <em>8</em>
-    </span>
-                    </a>
 
-                    <a class="project c2 i2"
-                       href="${pageContext.request.contextPath}/projects/d5ca7313dcda442ba53d6d4190aa4d92"
-                       data-access-id="21014433" data-group-ids="[]"
-                      >
+                    <%--<a class="project c2 i1 project-welcome"--%>
+                       <%--href="${pageContext.request.contextPath}/base/goURL/project/listBoard" data-access-id="20987441"--%>
+                       <%--data-group-ids="[]">--%>
 
-                        <span class="badge"></span>
-                        <span class="name">test</span>
-                        <span class="edit-badge" title="点击修改项目图标和颜色"></span>
-                        <span class="pin-icon" title="星标"></span>
-                        <span class="progress list-item">
-        待处理任务 <em>0</em>
-    </span>
-                    </a>
+                        <%--<span class="badge"></span>--%>
+                        <%--<span class="name">熟悉 Tower</span>--%>
+                        <%--<span class="edit-badge" title="点击修改项目图标和颜色"></span>--%>
+                        <%--<span class="pin-icon" title="星标"></span>--%>
+                        <%--<span class="progress list-item">--%>
+                            <%--待处理任务 <em>8</em>--%>
+                        <%--</span>--%>
+                    <%--</a>--%>
+
+                    <%--<a class="project c2 i2"--%>
+                       <%--href="${pageContext.request.contextPath}/projects/d5ca7313dcda442ba53d6d4190aa4d92"--%>
+                       <%--data-access-id="21014433" data-group-ids="[]"--%>
+                      <%-->--%>
+
+                        <%--<span class="badge"></span>--%>
+                        <%--<span class="name">test</span>--%>
+                        <%--<span class="edit-badge" title="点击修改项目图标和颜色"></span>--%>
+                        <%--<span class="pin-icon" title="星标"></span>--%>
+                        <%--<span class="progress list-item">--%>
+        <%--待处理任务 <em>0</em>--%>
+    <%--</span>--%>
+                    <%--</a>--%>
 
                 </div>
 

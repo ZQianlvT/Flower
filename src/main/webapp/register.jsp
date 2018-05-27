@@ -646,7 +646,7 @@
                         data: data,
                         dataType: "json",
                         success: function () {
-                                location.href = "${pageContext.request.contextPath}/base/goURL/project/listProject";
+                                location.href = "${pageContext.request.contextPath}/project/listProject";
                         }
                     });
                 }
