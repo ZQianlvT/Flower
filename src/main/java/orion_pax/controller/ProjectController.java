@@ -30,8 +30,8 @@ public class ProjectController extends BaseController{
     }
 
     @RequestMapping("/createProject")
-    @ResponseBody
-    public Object createProject(Project project) {
+    //@ResponseBody
+    public String createProject(Project project) {
         //获取当前用户id
         User currUser= (User) session.getAttribute("currUser");
         project.setId(UUID.randomUUID().toString().replace("-",""));
@@ -48,7 +48,7 @@ public class ProjectController extends BaseController{
         Map<String,Object> map = new HashMap<>();
         map.put("success",true);
         map.put("target_url","/Flower/base/goURL/project/listProject");
-        return map;
+        return "/WEB-INF/jsp/project/listProject.jsp";
 
 
     }

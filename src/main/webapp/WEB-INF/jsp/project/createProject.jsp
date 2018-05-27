@@ -528,8 +528,7 @@
             <div class="page-inner" id="page-new-project" data-page-name="创建新项目">
                 <h3 class="page-title">创建新项目</h3>
 
-                <form class="form form-invite" action="${pageContext.request.contextPath}/project/createProject" method="post"
-                      data-remote="false" novalidate>
+                <form class="form form-invite" action="${pageContext.request.contextPath}/project/createProject" method="post">
                     <div class="form-item">
                         <div class="form-field">
                             <input type="text" name="name" id="project-name" placeholder="项目名称"
@@ -549,10 +548,6 @@
                         <button type="submit" class="btn btn-primary" id="btn-create-project1"
                                 data-disable-with="正在创建..." data-success-text="创建成功">创建项目
                         </button>
-
-
-                        <%--<a href="/teams/7feef4ba8611443ebd06db497618beb4/projects" class="btn btn-x" data-stack--%>
-                           <%--data-stack-root>取消</a>--%>
                     </div>
                 </form>
 
