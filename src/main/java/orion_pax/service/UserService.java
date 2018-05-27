@@ -62,4 +62,13 @@ public interface UserService extends BaseService<User> {
      * @return 正整数，大于零删除成功
      */
     int removeMember(UserAndTeam userAndTeam);
+
+    /**
+     * 根据团队id和用户id数组，从当前团队中删除多个成员
+     *
+     * @param ids 封装用户id的数组
+     * @param teamId 团队id
+     * @return 正整数，代表删除多少个用户
+     */
+    int removeMembers(String[] ids, String teamId);
 }

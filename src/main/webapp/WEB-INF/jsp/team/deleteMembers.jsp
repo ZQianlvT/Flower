@@ -490,7 +490,7 @@
 
                 <li id="nav-upgrade">
                     <a href="#"
-                       class="link-remaining" data-tower-pro="header-upgrade-ad" >
+                       class="link-remaining" data-tower-pro="header-upgrade-ad">
                         本软件完全免费，并不禁止传播。
                     </a>
                 </li>
@@ -512,7 +512,7 @@
 
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a  href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
             </li>
             <li class="part-line"></li>
             <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
@@ -528,65 +528,77 @@
         <div class="page">
 
 
-            <%--<div class="page-inner" id="members-batch_destroys-new" data-page-name=批量删除成员>--%>
-                <%--<h3 class="page-title">批量删除成员</h3>--%>
-                <%--<p class="desc">请从下面选择要删除的成员，成员删除后，他将不能访问团队内的任何数据，历史数据并不会删除，请放心。</p>--%>
+            <div class="page-inner" id="members-batch_destroys-new" data-page-name=批量删除成员>
+                <h3 class="page-title">批量删除成员</h3>
+                <p class="desc">请从下面选择要删除的成员，成员删除后，他将不能访问团队内的任何数据，历史数据并不会删除，请放心。</p>
 
-                <%--<form class="members-batch-destroy-form" data-type="script"--%>
-                      <%--action="${pageContext.request.contextPath}/team/deleteMebers" accept-charset="UTF-8" data-remote="true"--%>
-                      <%--method="post"><input name="utf8" type="hidden" value="&#x2713;"/>--%>
+                <form class="members-batch-destroy-form" action="${pageContext.request.contextPath}/team/removeMembers"
+                      method="post">
 
-
-                    <%--<div class="manage-members">--%>
-                        <%--<div class="add-member">--%>
-                            <%--<select id="select-add-member" data-member-guids="231e0ddd353440c883f9874a555f8adc,008d36bf2b694a66bfac2bf7e6b79512"></select>--%>
+                    <div class="manage-members">
+                        <div class="add-member" style="display: none;">
+                            <select id="select-add-member"
+                                    data-member-guids="231e0ddd353440c883f9874a555f8adc,008d36bf2b694a66bfac2bf7e6b79512"></select>
                             <%--<div class="group-select">--%>
-                                <%--&lt;%&ndash;<span class="all" data-subgroup="-1" unselectable="on">所有人</span>&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<span class="all" data-subgroup="-1" unselectable="on">所有人</span>&ndash;%&gt;--%>
                             <%--</div>--%>
-                        <%--</div>--%>
+                        </div>
+
+                        <c:forEach items="${requestScope.userList}" var="user">
+                        <c:choose>
+                        <c:when test="${sessionScope.currUser.id==user.id}">
+                            <label><input disabled type="checkbox" name="ids" value="${user.id}">  ${user.name}  (${user.email})</label><br>
+                        </c:when>
+                        <c:otherwise>
+                            <label><input type="checkbox" name="ids" value="${user.id}">  ${user.name}  (${user.email})</label><br>
+                        </c:otherwise>
+                        </c:choose>
+                        </c:forEach>
+
                         <%--<div class="members member-checkbox-list">--%>
-                            <%--<label--%>
-                                    <%--class="member  unselectable"--%>
-                                    <%--data-guid="231e0ddd353440c883f9874a555f8adc"--%>
-                                    <%--data-subgroup="[]"--%>
-                                    <%--data-shortcut-key="浮点农国 fudiannongguo fdng"--%>
-                                    <%--data-gavatar="/assets/default_avatars/noon.jpg">--%>
+                        <%--<label--%>
 
-                                <%--<input type="checkbox" name="batch_destroy[deleting_members][]"--%>
-                                       <%--id="batch_destroy_deleting_members_" value="231e0ddd353440c883f9874a555f8adc"--%>
-                                       <%--disabled="disabled"/>--%>
-                                <%--<span class="name"data-tooltip="该成员为项目「test」的唯一管理员">--%>
-                                  <%--浮点农国--%>
-                                <%--</span>--%>
-                                <%--<span class="email">(2449832339@qq.com)</span>--%>
-                            <%--</label>--%>
+                        <%--class="member  unselectable"--%>
+                        <%--data-guid="231e0ddd353440c883f9874a555f8adc"--%>
+                        <%--data-subgroup="[]"--%>
+                        <%--data-shortcut-key="浮点农国 fudiannongguo fdng"--%>
+                        <%--data-gavatar="/assets/default_avatars/noon.jpg">--%>
 
-                            <%--<label--%>
-                                    <%--class="member  "--%>
-                                    <%--data-guid="008d36bf2b694a66bfac2bf7e6b79512"--%>
-                                    <%--data-subgroup="[]"--%>
-                                    <%--data-shortcut-key="OrionPax orionpax OrionPax"--%>
-                                    <%--data-gavatar="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">--%>
+                        <%--<input type="checkbox" name="batch_destroy[deleting_members][]"--%>
+                        <%--id="batch_destroy_deleting_members_" value="231e0ddd353440c883f9874a555f8adc"--%>
+                        <%--disabled="disabled"/>--%>
+                        <%--<span class="name"data-tooltip="该成员为项目「test」的唯一管理员">--%>
+                        <%--浮点农国--%>
+                        <%--</span>--%>
+                        <%--<span class="email">(2449832339@qq.com)</span>--%>
+                        <%--</label>--%>
 
-                                <%--<input type="checkbox" name="batch_destroy[deleting_members][]"--%>
-                                       <%--id="batch_destroy_deleting_members_" value="008d36bf2b694a66bfac2bf7e6b79512"/>--%>
-                                <%--<span class="name">--%>
-                                    <%--OrionPax--%>
-                                <%--</span>--%>
-                                <%--<span class="email">(1875709296@qq.com)</span>--%>
-                            <%--</label>--%>
+                        <%--<label--%>
+                        <%--class="member  "--%>
+                        <%--data-guid="008d36bf2b694a66bfac2bf7e6b79512"--%>
+                        <%--data-subgroup="[]"--%>
+                        <%--data-shortcut-key="OrionPax orionpax OrionPax"--%>
+                        <%--data-gavatar="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">--%>
+
+                        <%--<input type="checkbox" name="batch_destroy[deleting_members][]"--%>
+                        <%--id="batch_destroy_deleting_members_" value="008d36bf2b694a66bfac2bf7e6b79512"/>--%>
+                        <%--<span class="name">--%>
+                        <%--OrionPax--%>
+                        <%--</span>--%>
+                        <%--<span class="email">(1875709296@qq.com)</span>--%>
+                        <%--</label>--%>
                         <%--</div>--%>
-                    <%--</div>--%>
+                        <%--</div>--%>
 
-                    <%--<input type="password" name="pwd" class="hidden">--%>
+                        <%--<input type="password" name="pwd" class="hidden">--%>
 
-                    <%--<div class="form-buttons">--%>
-                        <%--<button class="btn btn-reject btn-large btn-submit" type="button">--%>
-                            <%--从团队中删除所选成员--%>
-                        <%--</button>--%>
-                    <%--</div>--%>
-                <%--</form>--%>
-            <%--</div>--%>
+                        <div class="form-buttons">
+                            <button class="btn btn-reject btn-large" type="submit">
+                                从团队中删除所选成员
+                            </button>
+                        </div>
+                </form>
+            </div>
 
             <script type="text/html" id="tpl-confirm-destroy-members">
                 <form class="form form-confirm-destroy-members">

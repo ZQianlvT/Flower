@@ -6,7 +6,6 @@ import orion_pax.entity.User;
 import orion_pax.entity.UserAndTeam;
 import orion_pax.service.TeamService;
 
-import java.util.List;
 
 @Service("teamService")
 public class TeamServiceImpl extends BaseServiceImpl<Team> implements TeamService {

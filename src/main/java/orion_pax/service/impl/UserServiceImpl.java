@@ -6,9 +6,7 @@ import orion_pax.entity.User;
 import orion_pax.entity.UserAndTeam;
 import orion_pax.service.UserService;
 
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Service("userService")
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
@@ -111,6 +109,29 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
             team.setTotalMembers(team.getTotalMembers()-1);
             teamMapper.updateByPK(team);
         }
+        return i;
+    }
+
+    /**
+     * 根据团队id和用户id数组，从当前团队中删除多个成员
+     *
+     * @param ids    封装用户id的数组
+     * @param teamId 团队id
+     * @return 正整数，代表删除多少个用户
+     */
+    @Override
+    public int removeMembers(String[] ids, String teamId) {
+        //去用户团队中间表删除多条数据
+        Map<String,Object> map = new HashMap<>();
+        map.put("ids",ids);
+        map.put("teamId",teamId);
+        int i = userAndTeamMapper.deleteByTIdAndUIds(map);
+        //修改团队表剩余成员数
+        Team team = new Team();
+        team.setId(teamId);
+        team = teamMapper.getByPK(team);
+        team.setTotalMembers(team.getTotalMembers()-i);
+        teamMapper.updateByPK(team);
         return i;
     }
 }

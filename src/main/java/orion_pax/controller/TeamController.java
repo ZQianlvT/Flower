@@ -73,6 +73,18 @@ public class TeamController extends BaseController {
         return "/team/listTeam";
     }
 
+    @RequestMapping("/removeMembers")
+    public String removeMember(String[] ids) {
+        Team currTeam = (Team) session.getAttribute("currTeam");
+        if(ids!=null){
+            for (String id : ids) {
+                System.out.println("-----------OrionPax测试变量值----------id值=" + id + "," + "当前类=TeamController.removeMember()");
+            }
+            userService.removeMembers(ids,currTeam.getId());
+        }
+        return "/team/listTeam";
+    }
+
     @RequestMapping("/joinTeam")
     public String joinTeam(HttpServletRequest request) {
         //判断用户是否已登录
