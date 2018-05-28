@@ -77,9 +77,13 @@
     WHERE p.p_t_id=uat.uat_t_id AND uat.uat_u_id = #{id} AND p_status = 0
   </select>
     <select id="getByPK" resultMap="ProjectResultMap" parameterType="orion_pax.entity.Project">
-    SELECT p_id,p_name,p_remark,p_status,p_t_id,b_id,b_index,b_name,b_unfinished,b_p_id,t_id,t_name,t_status,t_end_time,t_u_id,t_b_id
-    FROM f_project p,f_board b,f_task t
-    WHERE p.p_id = b.b_p_id AND b.b_id = t.t_b_id AND p_id ='1446286a4691437b941293cd01d910d5'
-    ORDER BY b_index ASC ;
+   SELECT p_id,p_name,p_remark,p_status,p_t_id,b_id,b_index,b_name,b_unfinished,b_p_id,t_id,t_name,t_status,t_end_time,t_u_id,t_b_id
+    FROM f_project p
+    LEFT JOIN f_board b
+    ON p.p_id = b.b_p_id
+    LEFT JOIN f_task t
+    ON b.b_id = t.t_b_id
+    WHERE p_id = #{id}
+    ORDER BY b_index ASC;
   </select>
 </mapper>

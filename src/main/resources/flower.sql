@@ -84,4 +84,18 @@ CREATE TABLE IF NOT EXISTS f_task(
 
 /*
 DROP DATABASE flower;
+
+SELECT p_id,p_name,p_remark,p_status,p_t_id,b_id,b_index,b_name,b_unfinished,b_p_id,t_id,t_name,t_status,t_end_time,t_u_id,t_b_id
+FROM f_project p,f_board b,f_task t
+WHERE p.p_id = b.b_p_id AND b.b_id = t.t_b_id AND p_id ='1446286a4691437b941293cd01d910d5'
+ORDER BY b_index ASC;
+
+select t_id,t_name,t_create_time,t_total_members,t_invite_link,t_u_id FROM f_team
+where t_u_id = 'b89a87b923294beca4fc105cf2f092d1'
+
+SELECT u_id,u_email,u_pwd,u_name,u_img,u_tel
+FROM  f_userandteam uat ,f_team t ,f_user u
+WHERE uat.uat_u_id = u.u_id and t.t_id=uat.uat_t_id and t_id = '8c7000f128644d6bb2b1282e2d3d4c45';
+
+DELETE FROM f_userandteam WHERE uat_u_id = '6fd2de767a72499e96ffcdc24885e50d' and uat_t_id = '8c7000f128644d6bb2b1282e2d3d4c45';
 */
