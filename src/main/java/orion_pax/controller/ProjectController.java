@@ -35,7 +35,6 @@ public class ProjectController extends BaseController {
     @RequestMapping("/detailProject")
     public String detailProject(Map<String, Object> map,Project project) {
         project = projectService.getByPK(project);
-        System.out.println("-----------OrionPax测试变量值----------project值=" + project + "," + "当前类=ProjectController.detailProject()");
         map.put("project", project);
         return "forward:/WEB-INF/jsp/project/listBoard.jsp";
     }
