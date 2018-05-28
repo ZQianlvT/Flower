@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import orion_pax.service.ProjectService;
-import orion_pax.service.ScheduleService;
-import orion_pax.service.TeamService;
-import orion_pax.service.UserService;
+import orion_pax.service.*;
 
 @Controller
 @RequestMapping("/base")
@@ -29,6 +26,9 @@ public class BaseController {
 
     @Autowired
     protected ScheduleService scheduleService;
+
+    @Autowired
+    protected DiscussionService discussionService;
 
     @RequestMapping("/goURL/{folder}/{file}")
     public String goURL(@PathVariable String folder,@PathVariable String file){

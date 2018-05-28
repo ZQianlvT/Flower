@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <html>
 <head>
 
@@ -381,8 +382,8 @@
         </div>
 
         <div class="messages">
+            <c:forEach items="${requestScope.discussionList }" var="discussion" >
             <div class="message " data-last-comment-at="2018-05-21 10:24:06 +0800" data-guid="b1538a5f695446dda8a0752f44fd8f74">
-
                 <div class="message-actions actions" data-visible-to="member">
                     <div class="inr">
                         <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/b1538a5f695446dda8a0752f44fd8f74/stick" class="stick" title="置顶" data-method="post" data-remote="true" data-loading="true">
@@ -400,30 +401,26 @@
                     </div>
                 </div>
 
-                <a title="OrionPax" target="_blank" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc"><img class="avatar" alt="OrionPax" src="./listDiscussion2_files/3e2790283b5947f7bb2da54a779c60f3"></a>
+                <a title="OrionPax" target="_blank" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc"><img class="avatar" alt="OrionPax" src="${pageContext.request.contextPath}${discussion.user.img}"></a>
 
                 <div class="name">
-                    <a title="OrionPax" data-stack="true" data-stack-root="true" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
+                    <a title="OrionPax" data-stack="true" data-stack-root="true" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">${discussion.user.name}</a>
                 </div>
 
                 <a href="${pageContext.request.contextPath}/base/goURL/discussion/detailDiscussion" class="message-link">
 
-        <span class="message-title">
-                <span class="message-rest">Test</span>
-        </span>
+                <span class="message-title">
+                <span class="message-rest">${discussion.name}</span>
+                </span>
                     <span class="message-content">
-            qqgqwgqwg
-        </span>
+                        ${discussion.remark}
+                    </span>
                 </a>
 
-                <span class="time" title="2018-05-21" data-readable-time="2018-05-21T10:24:06+08:00">刚刚</span>
+                <span class="time" title="${discussion.startTime}" data-readable-time="${discussion.startTime}">${discussion.startTime}</span>
 
-
-                <div class="comment-info">
-
-                    <a class="comments-count" data-stack="true" href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/messages/7e54272c59ed4702a14222f45788182a">2</a>
-                </div>
             </div>
+            </c:forEach>
 
         </div>
 
@@ -432,7 +429,7 @@
         <script type="text/html" id="tpl-topics-select">
             <ul>
                 <li>
-                    <a href="${pageContext.request.contextPath}/base/goURL/discussion/continueDiscussion">
+                    <a href="${pageContext.request.contextPath}/discussion/continueDiscussion">
                         <i class="twr twr-clock-o"></i> 正在进行
                     </a>
                 </li>
@@ -545,4 +542,4 @@
     <div class="filedrop-dropzone">
         <div class="filedrop-hints">拖拽到这里上传</div>
     </div>
-</div></body></html></html>
+</div></body></html>

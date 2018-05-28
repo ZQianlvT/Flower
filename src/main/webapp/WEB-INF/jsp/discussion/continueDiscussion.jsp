@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
 
@@ -511,7 +513,7 @@
 
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a  href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
             </li>
             <li class="part-line"></li>
             <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
@@ -521,7 +523,8 @@
 
     <div class="container workspace simple-stack simple-stack-transition">
         <div class="page page-root simple-pjax page-behind" style="">
-            <a class="link-page-behind" href="${pageContext.request.contextPath}/base/goURL/project/listBoard">Flower</a>
+            <a class="link-page-behind"
+               href="${pageContext.request.contextPath}/base/goURL/project/listBoard">Flower</a>
         </div>
         <div class="page page-1 simple-pjax" style="">
             <div class="page-inner " data-since="2018-05-21 02:24:19 UTC" data-guest-unlockable=""
@@ -536,18 +539,18 @@
                     <div class="editor-placeholder fake-textarea" data-droppable="">点击发起讨论</div>
 
                     <form class="form form-editor form-new-discussion"
-                          action="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/messages/" method="post"
-                          data-remote="true" data-type="json">
+                          action="${pageContext.request.contextPath}/discussion/addDiscussion" method="post">
+                        <input type="hidden" name="pId" value="${requestScope.pId}">
                         <div class="form-item">
                             <div class="form-field">
-                                <input tabindex="1" type="text" name="subject" id="txt-title" placeholder="话题"
+                                <input tabindex="1" type="text" name="name" id="txt-title" placeholder="话题"
                                        data-validate="length:0,255" data-validate-msg="话题最长255个字符"
                                        data-autosave="project-e26956389763492f891259d7d9c5b94d-new-message-title">
                             </div>
                         </div>
                         <div class="form-item">
                             <div class="form-field">
-                                <textarea tabindex="1" name="content" id="txt-content" class="hide"
+                                <textarea tabindex="1" name="remark" id="txt-content" class="hide"
                                           placeholder="说点什么..." data-mention-group="e26956389763492f891259d7d9c5b94d"
                                           data-validate="custom" data-autosave="new-message-content"></textarea>
                                 <input type="hidden" name="is_html" value="1">
@@ -582,7 +585,8 @@
                 </div>
 
                 <div class="messages">
-                    <div class="message " data-last-comment-at="2018-05-17 15:25:31 +0800"
+                    <c:forEach items="${requestScope.discussionList}" var="discussion">
+                    <div class="message " data-last-comment-at="2018-01-01"
                          data-guid="a96ccdc538634352a7703d20a36a6608">
 
                         <div class="message-actions actions" data-visible-to="member">
@@ -601,27 +605,30 @@
                         </div>
 
                         <a title="OrionPax" target="_blank"
-                           href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc"><img class="avatar"
-                                                                                                 alt="OrionPax"
-                                                                                                 src="${pageContext.request.contextPath}/images/OrionPax.jpg"></a>
+                           href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">
+                            <img class="avatar"
+                                 alt="OrionPax"
+                                 src="${pageContext.request.contextPath}${discussion.user.img}"></a>
 
                         <div class="name">
                             <a title="OrionPax" data-stack="true" data-stack-root="true"
-                               href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
+                               href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">${discussion.user.name}</a>
                         </div>
 
-                        <a href="${pageContext.request.contextPath}/base/goURL/discussion/detailDiscussion" class="message-link">
-        <span class="message-title">
-                <span class="message-rest">测试讨论</span>
-        </span>
-                            <span class="message-content">
-            巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
-        </span>
+                        <a href="${pageContext.request.contextPath}/base/goURL/discussion/detailDiscussion"
+                           class="message-link">
+                        <span class="message-title">
+                                <span class="message-rest">${discussion.name}</span>
+                        </span>
+                                            <span class="message-content">
+                            ${discussion.remark}
+                        </span>
                         </a>
 
-                        <span class="time" title="2018-05-17"
-                              data-readable-time="2018-05-17T15:25:31+08:00">5月17日</span>
+                        <span class="time" title="${discussion.startTime}"
+                              data-readable-time="${discussion.startTime}">${discussion.startTime}</span>
                     </div>
+                    </c:forEach>
 
                 </div>
 
@@ -635,7 +642,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/base/goURL/discussion/overDiscussion">
+                            <a href="${pageContext.request.contextPath}/discussion/overDiscussion?pId=${requestScope.pId}">
                                 <i class="twr twr-inbox"></i> 已经结束
                             </a>
                         </li>

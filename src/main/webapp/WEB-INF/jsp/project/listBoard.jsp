@@ -559,7 +559,7 @@
 
                 <div class="project-tabs">
                     <a class="project-tab active">任务</a>
-                    <a href="${pageContext.request.contextPath}/base/goURL/discussion/continueDiscussion"
+                    <a href="${pageContext.request.contextPath}/discussion/continueDiscussion?pId=${requestScope.project.id}"
                        class="project-tab">讨论</a>
                     <a href="${pageContext.request.contextPath}/schedule/listSchedule?pId=${requestScope.project.id}"
                        class="project-tab">日程</a>
