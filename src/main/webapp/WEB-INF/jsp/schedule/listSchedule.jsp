@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 徐哲哲
@@ -6,6 +7,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html>
 <head>
 
@@ -522,7 +526,7 @@
     <div class="container workspace">
         <div class="page "
              data-url="/projects/e26956389763492f891259d7d9c5b94d">
-            <a href="${pageContext.request.contextPath}/base/goURL/project/listBoard" class="link-page-behind">Flower</a>
+            <a href="${pageContext.request.contextPath}/project/listBoard" class="link-page-behind">Flower</a>
         </div>
         <div class="page">
 
@@ -535,77 +539,54 @@
 
                 <div class="calendar-events-topbar">
                     <a class="btn btn-mini btn-new-calendar-event"
-                       href="${pageContext.request.contextPath}/base/goURL/schedule/createSchedule">创建日程</a>
-                    <h4 class="date" data-date="2018-05-01"></h4>
+                       href="${pageContext.request.contextPath}/schedule/createSchedule?id=${requestScope.pId}">创建日程</a>
+                    <h4 class="date" data-date="<fmt:formatDate value='${sessionScope.currTimeStr}' pattern='yyyy-MM' />"></h4>
+
                     <div class="nav-buttons">
-                        <a href="javascript:;" class="left" title="上个月"
-                           data-url="/teams/982b79584a39484eb9e17459a6e1deff/calendar_events/">
+                        <a href="${pageContext.request.contextPath}/schedule/listSchedule?pId=${requestScope.pId}&month=left" class="" title="上个月">
                             <i class="twr twr-angle-left"></i>
                         </a>
-                        <a href="javascript:;" class="right" title="下个月"
-                           data-url="/teams/982b79584a39484eb9e17459a6e1deff/calendar_events/">
+                        <a href="${pageContext.request.contextPath}/schedule/listSchedule?pId=${requestScope.pId}&month=right" class="" title="下个月">
                             <i class="twr twr-angle-right"></i>
                         </a>
                     </div>
                 </div>
 
                 <div class="calendar-events">
+
+                    <c:forEach items="${requestScope.scheduleList}" var="schedule">
                     <div class="calendar-event">
 
                         <div class="date">
-        <span class="start-time" data-time="2018-05-18T00:00:00+08:00"
-              title="2018年5月18日 星期五">
-    5月18日
-</span>
-                            <span class="end-time" data-time="2018-05-19T23:59:59+08:00"
-                                  title="2018年5月19日 星期六">
-    - 5月19日
-</span>
+                            <span class="start-time" data-time="${schedule.startTime}"
+                                  title="<fmt:formatDate value='${schedule.startTime}' pattern='yyyy-MM-dd'/>">
+                                <fmt:formatDate value="${schedule.startTime}" pattern="yyyy-MM-dd" />
+                            </span>
 
-
+                                <span class="end-time" data-time="${schedule.endTime}"
+                                      title="<fmt:formatDate value='${schedule.endTime}' pattern='yyyy-MM-dd'/>">
+                                - <fmt:formatDate value="${schedule.endTime}" pattern="yyyy-MM-dd" />
+                            </span>
                         </div>
 
                         <div class="event">
                             <p class="event-detail">
-            <span class="event-content">
-                <a class="calendar_event-rest" data-stack="true"
-                   href="https://tower.im/teams/982b79584a39484eb9e17459a6e1deff/calendar_events/e86bfd0ca2a14f0fb522f806e23ce8e2">需求设计</a>
-            </span>
+                            <span class="event-content">
+                                <div class="calendar_event-rest">${schedule.name}</div>
+                            </span>
                             </p>
-                            <div class="calendar">
-                                <span class="name">日历：<span class="cal-color-11">Flower</span></span>
-                            </div>
-                            <p class="member-list">参与人：OrionPax、浮点农国</p>
+                            <%--<div class="calendar">--%>
+                                <%--<span class="name">日历：<span class="cal-color-11">Flower</span></span>--%>
+                            <%--</div>--%>
+                            <p class="member-list">参与人：
+                                <c:forEach items="${schedule.userList}" var="user">
+                                    ${user.name}&nbsp&nbsp&nbsp
+                                </c:forEach></p>
                         </div>
                     </div>
-
-                    <div class="calendar-event">
-
-                        <div class="date">
-        <span class="start-time" data-time="2018-05-17T00:00:00+08:00"
-              title="2018年5月17日 星期四">
-    5月17日
-</span>
+                    </c:forEach>
 
 
-                        </div>
-
-                        <div class="event">
-                            <p class="event-detail">
-            <span class="event-content">
-                <a class="calendar_event-rest" data-stack="true"
-                   href="https://tower.im/teams/982b79584a39484eb9e17459a6e1deff/calendar_events/d2869aecfc7b4f56a46fcddd4b20193f">项目需求分析</a>
-            </span>
-                            </p>
-                            <div class="calendar">
-                                <span class="name">日历：<span class="cal-color-11">Flower</span></span>
-                            </div>
-                            <p class="member-list">参与人：OrionPax</p>
-                        </div>
-                    </div>
-
-
-                </div>
             </div>
 
         </div>

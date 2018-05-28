@@ -39,4 +39,15 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
         }
         return count;
     }
+
+    /**
+     * 通过projectId获取Project的基本信息对象
+     *
+     * @param project 封装projectId的对象
+     * @return 查询到的Project
+     */
+    @Override
+    public Project getBaseByPK(Project project) {
+        return projectMapper.getBaseByPK(project);
+    }
 }

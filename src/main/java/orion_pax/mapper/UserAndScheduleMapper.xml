@@ -7,10 +7,6 @@
     <result column="uas_u_id" jdbcType="VARCHAR" property="uId" />
   </resultMap>
   <insert id="insert" parameterType="orion_pax.entity.UserAndSchedule">
-    insert into f_userandschedule (uas_id, uas_s_id, uas_u_id)
-    values (#{id,jdbcType=VARCHAR}, #{sId,jdbcType=VARCHAR}, #{uId,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="orion_pax.entity.UserAndSchedule">
     insert into f_userandschedule
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

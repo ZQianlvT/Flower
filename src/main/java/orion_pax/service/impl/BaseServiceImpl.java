@@ -35,6 +35,9 @@ public class BaseServiceImpl<T> implements BaseService<T> {
     @Autowired
     protected ScheduleMapper scheduleMapper;
 
+    @Autowired
+    protected UserAndScheduleMapper userAndScheduleMapper;
+
     @PostConstruct
     // 在构造方法后，初化前执行
     protected void initBaseMapper() throws Exception {

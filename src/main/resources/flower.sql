@@ -53,7 +53,6 @@ CREATE TABLE IF NOT EXISTS f_reply(
 CREATE TABLE IF NOT EXISTS f_schedule(
 	s_id VARCHAR(40) PRIMARY KEY,
 	s_name VARCHAR(40),
-	s_status INT,			-- 0 全天类型 1普通类型
 	s_start_time DATETIME,
 	s_end_time DATETIME,
 	s_p_id VARCHAR(40)

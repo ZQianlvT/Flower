@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
 
@@ -532,11 +534,11 @@
                 <h3 class="page-title">创建日程</h3>
 
                 <div class="cal-event-form">
-                    <form class="form form-event" action="/teams/982b79584a39484eb9e17459a6e1deff/calendar_events"
-                          method="post" accept-charset="utf-8" data-remote="true">
-
+                    <form class="form form-event" action="${pageContext.request.contextPath}/schedule/addSchedule"
+                          method="post" accept-charset="utf-8" >
+                        <input type="hidden" name="pId" value="${requestScope.currProject.id}">
                         <div class="form-item">
-                            <textarea name="content" id="txt-event-content" class="no-border" rows="1"
+                            <textarea name="name" id="txt-event-content" class="no-border" rows="1"
                                       placeholder="在这里输入日程内容" data-validate="required"
                                       data-validate-msg="请填写日程内容"></textarea>
                         </div>
@@ -547,30 +549,28 @@
                             <select name="caleventable_guid" id="select-cal" disabled>
                                 <option value="e26956389763492f891259d7d9c5b94d" data-project="true" selected
                                         data-member-guids="[&quot;f7e254d7f54e40dbb93a33b737752fbc&quot;, &quot;ce2b30066f034bf9a69113963da165fd&quot;]">
-                                    Flower
+                                    ${requestScope.currProject.name}
                                 </option>
                             </select>
-
-
                             <input type="hidden" name="caleventable_type" value="Project"/>
                         </div>
 
-                        <div class="form-item">
+                        <div class="form-item" hidden>
                             <label>类型</label>
                             <label class="all-day-event">
                                 <input type="checkbox" class="cb-all-day"/>
-                                全天事件
+                                <%--全天事件--%>
                             </label>
                         </div>
 
                         <div class="form-item event-time">
                             <label>开始</label>
-                            <input type="datetime" id="start_moment" name="starts_at" value="2018-05-21T00:00:00"/>
+                            <input type="datetime" id="start_moment" name="startTime" value=""/>
                         </div>
 
                         <div class="form-item event-time">
                             <label>结束</label>
-                            <input type="datetime" id="end_moment" name="ends_at" value="2018-05-21T23:59:59"/>
+                            <input type="datetime" id="end_moment" name="endTime" value=""/>
                         </div>
 
 
@@ -623,47 +623,11 @@
                             </ul>
                         </div>
 
-                        <div class="form-item cal-members-field">
-                            <h4>日程参与人</h4>
+                        <h4>日程参与人</h4>
+                        <c:forEach items="${requestScope.userList}" var="user">
+                            <label><input type="checkbox" name="ids" value="${user.id}">  ${user.name}  (${user.email})</label><br>
+                        </c:forEach>
 
-                            <div class="manage-members">
-                                <div class="add-member">
-                                    <select id="select-add-member"></select>
-
-                                    <div class="group-select">
-                                        <span class="all" data-subgroup="-1" unselectable="on">所有人</span>
-                                    </div>
-                                </div>
-
-                                <div class="members member-checkbox-list">
-                                    <label title="OrionPax" class="member"
-                                           data-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                           data-subgroup="[]"
-                                           data-shortcut-key="OrionPax orionpax OrionPax">
-
-                                        <input type="checkbox" name="" id="" value="f7e254d7f54e40dbb93a33b737752fbc"/>
-                                        <span class="name">OrionPax</span>
-                                    </label>
-                                    <label title="浮点农国" class="member"
-                                           data-guid="ce2b30066f034bf9a69113963da165fd"
-                                           data-subgroup="[]"
-                                           data-shortcut-key="浮点农国 fudiannongguo fdng">
-
-                                        <input type="checkbox" name="" id="" value="ce2b30066f034bf9a69113963da165fd"/>
-                                        <span class="name">浮点农国</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-item visitor-lock" data-visible-to="member">
-                            <div class="form-field">
-                                <label>
-                                    <input type="checkbox" name="invisible_for_visitor" class="cb-visitor-lock"/>
-                                    对访客隐藏这个日程
-                                </label>
-                            </div>
-                        </div>
 
                         <div class="buttons">
                             <button type="submit" class="btn btn-primary btn-save-event" data-disable-with="正在提交...">

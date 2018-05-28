@@ -1,19 +1,20 @@
 package orion_pax.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Schedule {
     private String id;
 
     private String name;
 
-    private Integer status;
-
     private Date startTime;
 
     private Date endTime;
 
     private String pId;
+
+    private List<User> userList;
 
     public String getId() {
         return id;
@@ -29,14 +30,6 @@ public class Schedule {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
     }
 
     public Date getStartTime() {
@@ -61,5 +54,25 @@ public class Schedule {
 
     public void setpId(String pId) {
         this.pId = pId == null ? null : pId.trim();
+    }
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
+
+    @Override
+    public String toString() {
+        return "Schedule{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", pId='" + pId + '\'' +
+                ", userList=" + userList +
+                '}';
     }
 }

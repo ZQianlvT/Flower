@@ -20,4 +20,12 @@ public interface ProjectService extends BaseService<Project> {
      * @return 正整数，大于零修改成功
      */
     int createProject(Project project);
+
+    /**
+     * 通过projectId获取Project的基本信息对象
+     *
+     * @param project 封装projectId的对象
+     * @return 查询到的Project
+     */
+    Project getBaseByPK(Project project);
 }

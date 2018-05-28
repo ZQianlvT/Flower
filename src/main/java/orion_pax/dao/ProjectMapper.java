@@ -9,4 +9,6 @@ public interface ProjectMapper extends BaseMapper<Project> {
     List<Project> getByTeamId (Project project);
 
     List<Project> selectAll(User currUser);
+
+    Project getBaseByPK(Project project);
 }

@@ -86,4 +86,8 @@
     WHERE p_id = #{id}
     ORDER BY b_index ASC;
   </select>
+
+    <select id="getBaseByPK" parameterType="orion_pax.entity.Project" resultMap="ProjectBaseResultMap">
+        SELECT p_id,p_name,p_remark,p_status,p_t_id FROM f_project WHERE p_id = #{id}
+    </select>
 </mapper>
