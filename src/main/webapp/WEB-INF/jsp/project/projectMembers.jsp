@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 
@@ -520,7 +521,7 @@
 
     <div class="container workspace">
         <div class="page " data-url="/projects/e26956389763492f891259d7d9c5b94d">
-            <a href="${pageContext.request.contextPath}/base/goURL/project/listBoard" class="link-page-behind">Flower</a>
+            <a href="${pageContext.request.contextPath}/project/detailProject?id=${requestScope.project.id}" class="link-page-behind">${project.name}</a>
         </div>
 
         <div class="page">
@@ -539,13 +540,13 @@
                 <div class="project-members">
                     <ul>
                         <li class="member">
-                            <a href="/members/ce2b30066f034bf9a69113963da165fd" title="浮点农国"
+                            <span href="/members/ce2b30066f034bf9a69113963da165fd" title="浮点农国"
                                class="member-link"
                                data-stack>
                                 <img src="${pageContext.request.contextPath}${sessionScope.currUser.img}" class="avatar" alt="浮点农国"/>
                                 <span class="name">浮点农国</span>
                                 <span class="role">成员</span>
-                            </a>
+                            </span>
                         </li>
                         <li class="member">
                             <a href="/members/f7e254d7f54e40dbb93a33b737752fbc" title="OrionPax"

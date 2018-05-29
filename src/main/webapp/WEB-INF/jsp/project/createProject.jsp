@@ -520,7 +520,7 @@
 
     <div class="container workspace">
         <div class="page">
-            <a href="${pageContext.request.contextPath}/base/goURL/project/listProject" class="link-page-behind">所有项目</a>
+            <a href="${pageContext.request.contextPath}/project/listProject?id=${requestScope.project.id}" class="link-page-behind">所有项目</a>
         </div>
         <div class="page">
 

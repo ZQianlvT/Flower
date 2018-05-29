@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import orion_pax.entity.Discussion;
+import orion_pax.entity.Reply;
 import orion_pax.entity.User;
 
 
@@ -29,7 +30,7 @@ public class DiscussionController extends BaseController {
         List<Discussion> discussionList = discussionService.select(discussion);
         map.put("discussionList",discussionList);
         map.put("pId",discussion.getpId());
-        System.out.println("++++++++++++++++++++"+discussion+"++++++++++++++++++++++++++++");
+        System.out.println("++++++++++++++++++++"+discussionList+"++++++++++++++++++++++++++++");
         return "forward:/WEB-INF/jsp/discussion/continueDiscussion.jsp";
     }
 
@@ -48,8 +49,13 @@ public class DiscussionController extends BaseController {
     }
 
     @RequestMapping("/detailDiscussion")
-    public String detailDiscussion(){
-
+    public String detailDiscussion(Map<String,Object> map,Discussion discussion){
+        //调用Service显示所有评论信息
+        System.out.println("11111111111122222222222222"+discussion);
+        discussion = discussionService.getDiscussionDetail(discussion);
+        discussion.setStartUser(discussionService.getByPK(discussion).getStartUser());
+        map.put("currDiscussion",discussion);
+        System.out.println("*233333333333333333333333333333"+discussion);
         return "forward:/WEB-INF/jsp/discussion/detailDiscussion.jsp";
     }
     @RequestMapping("/addDiscussion")
@@ -65,5 +71,34 @@ public class DiscussionController extends BaseController {
         discussionService.insert(discussion);
         System.out.println("11111111111"+discussion);
         return "/discussion/continueDiscussion";
+    }
+    @RequestMapping("/addReply")
+    public String addReply(Reply reply){
+        //获取并封装相关信息
+        User currUser = (User) session.getAttribute("currUser");
+        reply.setuId(currUser.getId());
+        reply.setReplyTime(new Date());
+        reply.setId(UUID.randomUUID().toString().replace("-",""));
+        System.out.println("0000000000000000000000"+reply);
+        //调用Service方法添加
+        discussionService.insertReply(reply);
+        System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzz"+reply);
+        return "/discussion/detailDiscussion?id="+reply.getdId();
+    }
+    @RequestMapping("/closeDiscussion")
+    public String closeDiscussion(Discussion discussion){
+        //获取要修改的讨论discussion的id
+        System.out.println("qqqqqqqqqqqqqqqqqqqqqqqq"+discussion.getId());
+        //调用Service修改Status状态
+        discussionService.updateByPK(discussion);
+        System.out.println("sssssssssssssssssssssssss"+discussion);
+        return "/discussion/continueDiscussion";
+    }
+    @RequestMapping("/openDiscussion")
+    public String openDiscussion(Discussion discussion){
+        //调用Service修改Status状态
+        discussionService.openDiscussion(discussion);
+        System.out.println("66666666666666666666666s"+discussion);
+        return "/discussion/overDiscussion";
     }
 }

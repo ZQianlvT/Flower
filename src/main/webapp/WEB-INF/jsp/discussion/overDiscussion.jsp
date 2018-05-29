@@ -6,7 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 
@@ -151,7 +152,7 @@
                 var r = n();
                 if (Object.defineProperty && Object.keys) try {
                     return Object.defineProperty(e, t, {value: r, writable: !0, enumerable: !1}), r
-                    } catch (i) {
+                } catch (i) {
                 }
                 return e[t] = r, r
             }
@@ -312,7 +313,7 @@
 
 
 
-    <div class="container workspace simple-stack simple-stack-transition"><div class="page page-root simple-pjax page-behind" style=""><a class="link-page-behind" href="${pageContext.request.contextPath}/base/goURL/project/listBoard">Flower</a></div><div class="page page-1 simple-pjax" style=""><div class="page-inner finished" data-since="2018-05-21 02:25:24 UTC" data-guest-unlockable="" data-project-creator="f7e254d7f54e40dbb93a33b737752fbc" data-page-name="已经结束的讨论" id="page-topics">
+    <div class="container workspace simple-stack simple-stack-transition"><div class="page page-root simple-pjax page-behind" style=""><a class="link-page-behind" href="${pageContext.request.contextPath}/project/detailProject?id=${requestScope.discussion.pId}">Flower</a></div><div class="page page-1 simple-pjax" style=""><div class="page-inner finished" data-since="2018-05-21 02:25:24 UTC" data-guest-unlockable="" data-project-creator="f7e254d7f54e40dbb93a33b737752fbc" data-page-name="已经结束的讨论" id="page-topics">
 
         <h3 class="page-title ">
             已经结束的讨论
@@ -382,46 +383,41 @@
         </div>
 
         <div class="messages">
-            <c:forEach items="${requestScope.discussionList }" var="discussion" >
+            <c:forEach items="${requestScope.discussionList}" var="discussion">
             <div class="message " data-last-comment-at="2018-05-21 10:24:06 +0800" data-guid="b1538a5f695446dda8a0752f44fd8f74">
+
                 <div class="message-actions actions" data-visible-to="member">
                     <div class="inr">
-                        <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/b1538a5f695446dda8a0752f44fd8f74/stick" class="stick" title="置顶" data-method="post" data-remote="true" data-loading="true">
-                            <i class="twr twr-arrow-circle-up"></i>
-                        </a>
-                        <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/b1538a5f695446dda8a0752f44fd8f74/unstick" class="unstick" title="取消置顶" data-method="post" data-remote="true" data-loading="true">
-                            <i class="twr twr-arrow-circle-up"></i>
-                        </a>
-                        <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/b1538a5f695446dda8a0752f44fd8f74/archive" class="archive" title="结束讨论" data-method="post" data-remote="true" data-loading="true">
-                            <i class="twr twr-archive-custom"></i>
-                        </a>
-                        <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/b1538a5f695446dda8a0752f44fd8f74/unarchive" class="unarchive" title="重新打开讨论" data-method="post" data-remote="true" data-loading="true">
+
+
+                        <a href="${pageContext.request.contextPath}/discussion/openDiscussion?id=${discussion.id}&pId=${discussion.pId}" class="unarchive" title="重新打开讨论" data-method="post"  data-loading="true">
                             <i class="twr twr-unarchive"></i>
                         </a>
                     </div>
                 </div>
 
-                <a title="OrionPax" target="_blank" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc"><img class="avatar" alt="OrionPax" src="${pageContext.request.contextPath}${discussion.user.img}"></a>
+                <span title="OrionPax" target="_blank" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc"><img class="avatar" alt="OrionPax" src="${pageContext.request.contextPath}${discussion.startUser.img}"></span>
 
                 <div class="name">
-                    <a title="OrionPax" data-stack="true" data-stack-root="true" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">${discussion.user.name}</a>
+                    <a title="OrionPax" data-stack="true" data-stack-root="true" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">${discussion.startUser.name}</a>
                 </div>
 
-                <a href="${pageContext.request.contextPath}/base/goURL/discussion/detailDiscussion" class="message-link">
+                <a href="${pageContext.request.contextPath}/discussion/detailDiscussion?id=${discussion.id}" class="message-link">
 
-                <span class="message-title">
+        <span class="message-title">
                 <span class="message-rest">${discussion.name}</span>
-                </span>
+        </span>
                     <span class="message-content">
                         ${discussion.remark}
-                    </span>
+        </span>
                 </a>
 
-                <span class="time" title="${discussion.startTime}" data-readable-time="${discussion.startTime}">${discussion.startTime}</span>
+                <span class="time" title="<fmt:formatDate value='${discussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/>" data-readable-time="<fmt:formatDate value='${discussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/>"><fmt:formatDate value='${discussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/></span>
+
+
 
             </div>
             </c:forEach>
-
         </div>
 
         <a href="javascript:;" id="btn-load-more" class="over">没有更多内容了</a>
@@ -429,7 +425,7 @@
         <script type="text/html" id="tpl-topics-select">
             <ul>
                 <li>
-                    <a href="${pageContext.request.contextPath}/discussion/continueDiscussion">
+                    <a href="${pageContext.request.contextPath}/discussion/continueDiscussion?pId=${requestScope.pId}">
                         <i class="twr twr-clock-o"></i> 正在进行
                     </a>
                 </li>
@@ -542,4 +538,4 @@
     <div class="filedrop-dropzone">
         <div class="filedrop-hints">拖拽到这里上传</div>
     </div>
-</div></body></html>
+</div></body></html></html>

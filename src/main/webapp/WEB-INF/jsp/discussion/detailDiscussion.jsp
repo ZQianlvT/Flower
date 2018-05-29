@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html>
 <head>
 
@@ -530,155 +533,107 @@
                  data-project-creator="f7e254d7f54e40dbb93a33b737752fbc"
                  data-page-name="Test" id="page-message">
                 <div class="topic">
-                    <div class="project-info">
-                    <span>
-                        项目：
-                        <a href="/projects/e26956389763492f891259d7d9c5b94d"
-                           data-stack data-stack-replace data-stack-root
-                           data-stack-fluid>Flower</a>
-                    </span>
-                    </div>
+
                     <div class="message" data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc">
                         <div class="message-subject">
                             <h3 class="title-with-btns">
-                                <span class="message-rest">Test</span>
+                                <span class="message-rest">${requestScope.currDiscussion.name}</span>
                             </h3>
                         </div>
 
-                        <a class="avatar-wrap" title="OrionPax" target="_blank"
-                           href="/members/f7e254d7f54e40dbb93a33b737752fbc"><img class="avatar" alt="OrionPax"
-                                                                                 src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3"/></a>
-
+                        <div class="avatar-wrap" title="OrionPax" target="_blank"
+                           href="/members/f7e254d7f54e40dbb93a33b737752fbc">
+                            <img class="avatar" alt="OrionPax" src="${pageContext.request.contextPath}${requestScope.currDiscussion.startUser.img}"/></div>
                         <div class="message-main">
                             <div class="info">
-                                <a class="author" title="OrionPax" data-stack="true" data-stack-root="true"
-                                   href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
+                                <span class="author" title="OrionPax" data-stack="true" data-stack-root="true"
+                                   >${requestScope.currDiscussion.startUser.name}</span>
 
-                                <span class="create-time" title="2018-05-21 10:23"
-                                      data-readable-time="2018-05-21T10:23:52+08:00"></span>
+                                <span class="create-time" title="<fmt:formatDate value='${requestScope.currDiscussion.startTime}' pattern="yyyy-MM-dd"/>"
+                                      data-readable-time="<fmt:formatDate value='${requestScope.currDiscussion.startTime}' pattern="yyyy-MM-dd"/>"></span>
+
                             </div>
 
-                            <div class="message-content editor-style"><p>asdasdasd</p></div>
+                            <div class="message-content editor-style"><p>${requestScope.currDiscussion.remark}</p></div>
 
                         </div>
                     </div>
-
                 </div>
 
                 <div class="comments streams">
+
                     <div class="event event-common event-message-add" id="event-176878293"
                          data-ancestor-guid="e26956389763492f891259d7d9c5b94d"
                          data-ancestor-name="Flower"
                          data-ancestor-url="/projects/e26956389763492f891259d7d9c5b94d">
 
-                        <a class="from" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc"><img
+                        <div class="from" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc"><img
                                 class="avatar" alt="OrionPax"
-                                src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3"/></a>
+                                src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3"/></div>
                         <i class="icon-event"></i>
 
                         <div class="event-main">
                             <div class="event-head">
-                                <a href="#event-176878293" data-created-at="2018-05-21T10:23:52+08:00"
+                                <span href="#event-176878293" data-created-at="<fmt:formatDate value='${requestScope.currDiscussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/>"
                                    class="event-created-at">
-                                    2018-05-21 10:23
-                                </a>
+                                    <fmt:formatDate value='${requestScope.currDiscussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/>
+                                </span>
                                 <span class="event-actor">
-				<a class="link-member" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
-			</span>
-                                <span class="event-action">
-				创建了讨论
-			</span>
-                                <span class="event-text">
-				<span class="emphasize">
-					<a class="message-rest" data-stack="true"
-                       href="/projects/e26956389763492f891259d7d9c5b94d/messages/7e54272c59ed4702a14222f45788182a">Test</a>
-				</span>
-			</span>
+                                <span class="link-member">${requestScope.currDiscussion.startUser.name}</span>
+                            </span>
+                                                <span class="event-action">
+                                创建了讨论
+                            </span>
+                                                <%--<span class="event-text">--%>
+                                <%--&lt;%&ndash;<span class="emphasize">&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;<a class="message-rest" data-stack="true"&ndash;%&gt;--%>
+                                       <%--&lt;%&ndash;href="/projects/e26956389763492f891259d7d9c5b94d/messages/7e54272c59ed4702a14222f45788182a">Test</a>&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;</span>&ndash;%&gt;--%>
+                            <%--</span>--%>
                             </div>
-                            <div class="event-body">
-                                <span class="event-text" title="asdasdasd">asdasdasd</span>
+                            <%--<div class="event-body">--%>
+                                <%--<span class="event-text" title="asdasdasd">asdasdasd</span>--%>
 
 
-                            </div>
+                            <%--</div>--%>
                         </div>
                     </div>
 
-
+                    <c:forEach items="${requestScope.currDiscussion.replyList}" var="reply">
                     <div class="comment" id="6d3cf7d1e0864fc1b0d29902925312d4"
                          data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc">
-                        <a class="avatar-wrap" href="/members/f7e254d7f54e40dbb93a33b737752fbc/" target="_blank">
-                            <img class="avatar" src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
-                        </a>
+                        <span class="avatar-wrap">
+                            <img class="avatar" src="${pageContext.request.contextPath}${reply.user.img}">
+                        </span>
 
 
                         <div class="comment-main">
                             <div class="info">
-                                <a class="author" href="/members/f7e254d7f54e40dbb93a33b737752fbc" data-stack
-                                   data-stack-root>OrionPax</a>
-                                <a class="create-time" href="#6d3cf7d1e0864fc1b0d29902925312d4"
-                                   title="创建于 2018-05-21 10:24">
-                                    <span data-readable-time="2018-05-21T10:24:03+08:00"></span>
-                                </a>
+                                <span class="author">${reply.user.name}</span>
+                                <span class="create-time" href="#6d3cf7d1e0864fc1b0d29902925312d4"
+                                   title="创建于 <fmt:formatDate value='${reply.replyTime}' pattern="yyyy-MM-dd HH:mm:ss"/>">
+                                    <span data-readable-time="<fmt:formatDate value='${reply.replyTime}' pattern="yyyy-MM-dd HH:mm:ss"/>"></span>
+                                </span>
 
                                 <span class="comment-created-from"></span>
                             </div>
 
-                            <div class="comment-content editor-style"><p>asdasdasdqweqw</p></div>
-
+                            <div class="comment-content editor-style"><p>${reply.remark}</p></div>
                         </div>
 
-                        <div class="tpl-comment-actions-menu">
-                            <a href="/comments/6d3cf7d1e0864fc1b0d29902925312d4/edit" class="edit"
-                               data-visible-to="creator" data-remote="true" data-loading="true" data-method="get">
-                                编辑
-                            </a>
-                            <a href="/comments/6d3cf7d1e0864fc1b0d29902925312d4/destroy" class="del"
-                               data-visible-to="creator,admin" data-remote="true" data-method="post"
-                               data-confirm="确定要删除这条回复吗？">
-                                删除
-                            </a>
-                        </div>
+                        <%--<div class="tpl-comment-actions-menu">--%>
+                            <%--<a href="/comments/6d3cf7d1e0864fc1b0d29902925312d4/edit" class="edit"--%>
+                               <%--data-visible-to="creator" data-remote="true" data-loading="true" data-method="get">--%>
+                                <%--编辑--%>
+                            <%--</a>--%>
+                            <%--<a href="/comments/6d3cf7d1e0864fc1b0d29902925312d4/destroy" class="del"--%>
+                               <%--data-visible-to="creator,admin" data-remote="true" data-method="post"--%>
+                               <%--data-confirm="确定要删除这条回复吗？">--%>
+                                <%--删除--%>
+                            <%--</a>--%>
+                        <%--</div>--%>
                     </div>
-
-
-                    <div class="comment" id="794865dd83224711a1c8cd68e5e799ba"
-                         data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc">
-                        <a class="avatar-wrap" href="/members/f7e254d7f54e40dbb93a33b737752fbc/" target="_blank">
-                            <img class="avatar" src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
-                        </a>
-
-
-
-                        <div class="comment-main">
-                            <div class="info">
-                                <a class="author" href="/members/f7e254d7f54e40dbb93a33b737752fbc" data-stack
-                                   data-stack-root>OrionPax</a>
-                                <a class="create-time" href="#794865dd83224711a1c8cd68e5e799ba"
-                                   title="创建于 2018-05-21 10:24">
-                                    <span data-readable-time="2018-05-21T10:24:06+08:00"></span>
-                                </a>
-
-                                <span class="comment-created-from"></span>
-                            </div>
-
-                            <div class="comment-content editor-style"><p>qqgqwgqwg</p></div>
-
-                        </div>
-
-                        <div class="tpl-comment-actions-menu">
-                            <a href="/comments/794865dd83224711a1c8cd68e5e799ba/edit" class="edit"
-                               data-visible-to="creator" data-remote="true" data-loading="true" data-method="get">
-                                编辑
-                            </a>
-                            <a href="/comments/794865dd83224711a1c8cd68e5e799ba/destroy" class="del"
-                               data-visible-to="creator,admin" data-remote="true" data-method="post"
-                               data-confirm="确定要删除这条回复吗？">
-                                删除
-                            </a>
-                        </div>
-                    </div>
-
-
+                    </c:forEach>
                 </div>
 
                 <script type="text/html" id="tpl-fold-comment">
@@ -696,9 +651,9 @@
 
 
                 <div class="comment comment-form new">
-                    <form class="form form-editor form-new-comment" method="post" data-remote="true"
-                          action="/projects/e26956389763492f891259d7d9c5b94d/messages/7e54272c59ed4702a14222f45788182a/comments"
-                    >
+                    <form class="form form-editor form-new-comment" method="post"
+                          action="${pageContext.request.contextPath}/discussion/addReply">
+
 
                         <a class="avatar-wrap" target="_blank">
                             <img class="avatar">
@@ -712,8 +667,9 @@
                                               data-autosave="new-comment-content"
                                               data-mention-group="e26956389763492f891259d7d9c5b94d"
                                               data-mention-type="project"
-                                              class="comment-content invisible" name="comment_content"></textarea>
+                                              class="comment-content invisible" name="remark"></textarea>
                                     <input type="hidden" name="is_html" value="1">
+                                    <input type="hidden" name="dId" value="${requestScope.currDiscussion.id}">
                                 </div>
                             </div>
 

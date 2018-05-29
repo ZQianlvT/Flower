@@ -86,8 +86,21 @@
     WHERE p_id = #{id}
     ORDER BY b_index ASC;
   </select>
-
     <select id="getBaseByPK" parameterType="orion_pax.entity.Project" resultMap="ProjectBaseResultMap">
         SELECT p_id,p_name,p_remark,p_status,p_t_id FROM f_project WHERE p_id = #{id}
     </select>
+    <delete id="deleteByPk" parameterType="orion_pax.entity.Project" >
+        DELETE FROM f_project
+        WHERE p_id=#{id}
+    </delete>
+    <update id="updateByPK" parameterType="orion_pax.entity.Project" >
+       UPDATE f_project
+        SET p_name=#{name},p_remark=#{remark}
+        WHERE p_id=#{id}
+    </update>
+    <update id="updateProject" parameterType="orion_pax.entity.Project" >
+       UPDATE f_project
+        SET p_status=1
+        WHERE p_id=#{id}
+    </update>
 </mapper>

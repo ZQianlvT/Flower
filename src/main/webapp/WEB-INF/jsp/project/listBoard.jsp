@@ -535,19 +535,19 @@
                  id="page-project">
                 <div class="project-header">
                     <div class="project-hd-info">
-                        <span class="project-name">Flower</span>
+                        <span class="project-name">${project.name}</span>
                         <span class="project-desc" data-tooltip="开发一个拥有Tower核心功能的Web应用" data-position="right">
         <i class="twr twr-info-circle"></i>
       </span>
                     </div>
 
                     <div class="project-links">
-                        <a href="${pageContext.request.contextPath}/base/goURL/project/projectMembers"
+                        <a href="${pageContext.request.contextPath}/project/membersProject?id=${project.id}"
                            class="link-admin-members">
                             <span class="main">2</span>
                             <span>成员</span>
                         </a>
-                        <a href="${pageContext.request.contextPath}/base/goURL/project/setProject"
+                        <a href="${pageContext.request.contextPath}/project/setProject?id=${project.id}"
                            class="link-admin-settings">
                               <span class="main">
                                 <i class="twr twr-cog"></i>

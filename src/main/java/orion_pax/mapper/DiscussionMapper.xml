@@ -10,6 +10,9 @@
     <result column="d_p_id" jdbcType="VARCHAR" property="pId" />
     <result column="d_u_id" jdbcType="VARCHAR" property="uId" />
   </resultMap>
+  <resultMap id="DiscussionResultMap" type="orion_pax.entity.Discussion" extends="DiscussionBaseResultMap">
+    <association property="startUser" resultMap="UserBaseResultMap" javaType="orion_pax.entity.User" />
+  </resultMap>
   <resultMap id="UserBaseResultMap" type="orion_pax.entity.User">
     <result column="u_id" jdbcType="VARCHAR" property="id"/>
     <result column="u_email" jdbcType="VARCHAR" property="email"/>
@@ -18,8 +21,18 @@
     <result column="u_img" jdbcType="VARCHAR" property="img"/>
     <result column="u_tel" jdbcType="VARCHAR" property="tel"/>
   </resultMap>
-  <resultMap id="DiscussionResultMap" type="orion_pax.entity.Discussion" extends="DiscussionBaseResultMap">
+  <resultMap id="ReplyBaseResultMap" type="orion_pax.entity.Reply">
+    <result column="r_id" jdbcType="VARCHAR" property="id" />
+    <result column="r_remark" jdbcType="VARCHAR" property="remark" />
+    <result column="r_reply_time" jdbcType="TIMESTAMP" property="replyTime" />
+    <result column="r_u_id" jdbcType="VARCHAR" property="uId" />
+    <result column="r_d_id" jdbcType="VARCHAR" property="dId" />
+  </resultMap>
+  <resultMap id="ReplyResultMap" type="orion_pax.entity.Reply" extends="ReplyBaseResultMap">
     <association property="user" resultMap="UserBaseResultMap" javaType="orion_pax.entity.User" />
+  </resultMap>
+  <resultMap id="DiscussionDetailResultMap" type="orion_pax.entity.Discussion" extends="DiscussionBaseResultMap">
+    <collection property="replyList" resultMap="ReplyResultMap" javaType="java.util.List" ofType="orion_pax.entity.Reply"/>
   </resultMap>
 
   <insert id="insert" parameterType="orion_pax.entity.Discussion">
@@ -73,7 +86,38 @@
   </insert>
   <select id="select" resultMap="DiscussionResultMap" parameterType="orion_pax.entity.Discussion">
       SELECT d_id ,d_name,d_remark,d_start_time,d_status,d_p_id,d_u_id,u_id,u_email,u_pwd,u_name,u_img,u_tel
-      FROM f_discussion ,f_user
-      WHERE d_p_id=#{pId} and d_u_id=#{uId} and d_status=#{status}
+      FROM f_discussion d
+      LEFT JOIN f_user u
+      ON d.d_u_id =  u.u_id
+      WHERE d_p_id = #{pId} AND d_status=#{status}
+      ORDER BY d_start_time ASC
   </select>
+
+  <select id="getByPK" resultMap="DiscussionResultMap" parameterType="orion_pax.entity.Discussion">
+      SELECT d_id ,d_name,d_remark,d_start_time,d_status,d_p_id,d_u_id,u_id,u_email,u_pwd,u_name,u_img,u_tel
+      FROM f_discussion d
+      LEFT JOIN f_user u
+      ON d.d_u_id =  u.u_id
+      WHERE d_id = #{id}
+  </select>
+  <select id="getDiscussionDetail" resultMap="DiscussionDetailResultMap" parameterType="orion_pax.entity.Discussion">
+      SELECT d_id ,d_name,d_remark,d_start_time,d_status,d_p_id,d_u_id,r_id,r_remark,r_reply_time,r_u_id,r_d_id,u_id,u_email,u_pwd,u_name,u_img,u_tel
+      FROM f_discussion d
+      LEFT JOIN f_reply r
+      ON d.d_id = r.r_d_id
+      LEFT JOIN f_user u
+      ON u.u_id = r.r_u_id
+      WHERE d_id= #{id}
+      ORDER BY r_reply_time ASC
+  </select>
+  <update id="updateByPK" parameterType="orion_pax.entity.Discussion" >
+    UPDATE f_discussion
+    SET d_status=1
+    WHERE d_id=#{id}
+  </update>
+  <update id="openDiscussion" parameterType="orion_pax.entity.Discussion" >
+    UPDATE f_discussion
+    SET d_status=0
+    WHERE d_id=#{id}
+  </update>
 </mapper>

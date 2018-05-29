@@ -1,8 +1,7 @@
 package orion_pax.entity;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.Date;
+import java.util.List;
 
 public class Discussion {
     private String id;
@@ -19,7 +18,9 @@ public class Discussion {
 
     private String uId;
 
-    private User user;
+    private User startUser;
+
+    private List<Reply> replyList;
 
     public String getId() {
         return id;
@@ -77,12 +78,20 @@ public class Discussion {
         this.uId = uId == null ? null : uId.trim();
     }
 
-    public User getUser() {
-        return user;
+    public User getStartUser() {
+        return startUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setStartUser(User startUser) {
+        this.startUser = startUser;
+    }
+
+    public List<Reply> getReplyList() {
+        return replyList;
+    }
+
+    public void setReplyList(List<Reply> replyList) {
+        this.replyList = replyList;
     }
 
     @Override
@@ -95,7 +104,8 @@ public class Discussion {
                 ", status=" + status +
                 ", pId='" + pId + '\'' +
                 ", uId='" + uId + '\'' +
-                ", user=" + user +
+                ", startUser=" + startUser +
+                ", replyList=" + replyList +
                 '}';
     }
 }

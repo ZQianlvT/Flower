@@ -28,4 +28,11 @@ public interface ProjectService extends BaseService<Project> {
      * @return 查询到的Project
      */
     Project getBaseByPK(Project project);
+
+    /**
+     * 通过project的id修改项目状态
+     * @param project 封装对象
+     * @return 正整数，大于零修改成功
+     */
+    int updateProject(Project project);
 }

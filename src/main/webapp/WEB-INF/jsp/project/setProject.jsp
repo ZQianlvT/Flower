@@ -521,7 +521,7 @@
     <div class="container workspace">
         <div class="page "
              data-url="/projects/d5ca7313dcda442ba53d6d4190aa4d92">
-            <a href="${pageContext.request.contextPath}/base/goURL/project/listBoard" class="link-page-behind">test</a>
+            <a href="${pageContext.request.contextPath}/project/detailProject?id=${requestScope.project.id}" class="link-page-behind">${project.name}</a>
         </div>
         <div class="page">
 
@@ -532,21 +532,21 @@
                  data-page-name="项目设置" id="page-project-settings">
 
                 <h3 class="page-title">项目设置</h3>
-                <form class="form" id="form-info" action="/projects/d5ca7313dcda442ba53d6d4190aa4d92/settings"
-                      method="post" data-remote="true">
+                <form class="form" id="form-info" action="${pageContext.request.contextPath}/project/updateProject?id=${requestScope.project.id}"
+                      method="post" >
                     <div class="form-item">
                         <div class="form-field">
-                            <input type="text" name="project_name"
+                            <input type="text" name="name"
                                    id="project-name"
                                    placeholder="项目名称" data-validate="required;length:1,255"
-                                   data-validate-msg="请填写项目名称;项目名称最长255个字符" value="test">
+                                   data-validate-msg="请填写项目名称;项目名称最长255个字符" value="${requestScope.project.name}">
                         </div>
                     </div>
                     <div class="form-item">
                         <div class="form-field">
-            <textarea name="project_desc" id="project-desc"
+            <textarea name="remark" id="project-desc"
                       data-validate-msg="项目描述最长1000个字符" data-validate="length:1,1000"
-                      placeholder="简单描述项目，便于其他人理解（选填）">asd</textarea>
+                      placeholder="简单描述项目，便于其他人理解（选填）">${requestScope.project.remark}</textarea>
                         </div>
                     </div>
 
@@ -564,17 +564,17 @@
 
                 <div class="setting-section" id="section-archive">
                     <h4>归档项目</h4>
-                    <p class="desc">项目归档后，所有的内容将变为只读，不能再修改。你只能通过激活操作，将项目重新恢复正常。</p>
-                    <a href="/projects/d5ca7313dcda442ba53d6d4190aa4d92/archive/" id="btn-archive-project"
+                    <p class="desc">项目归档后，你只能通过激活操作，将项目重新恢复正常。</p>
+                    <a href="${pageContext.request.contextPath}/project/endProject?id=${project.id}"
                        class="btn btn-mini"
-                       data-remote="true" data-method="post" data-confirm="确定要归档 test 吗？"
+
                        data-goto="/teams/7feef4ba8611443ebd06db497618beb4/" data-goto-root data-loading>了解，归档这个项目</a>
                 </div>
 
                 <div class="setting-section" id="section-delete">
                     <h4>删除项目</h4>
                     <p class="desc">项目删除后，所有的内容也将被立刻删除，不能恢复。请谨慎操作。</p>
-                    <button type="button" class="link-delete btn btn-mini" id="btn-del-project">了解风险，删除这个项目</button>
+                    <a href="${pageContext.request.contextPath}/project/removeProject?id=${project.id}" type="button" class="link-delete btn btn-mini" >了解风险，删除这个项目</a>
                 </div>
 
                 <script type="text/html" id="tpl-del-project">

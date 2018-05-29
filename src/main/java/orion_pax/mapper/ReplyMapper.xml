@@ -8,13 +8,7 @@
     <result column="r_u_id" jdbcType="VARCHAR" property="uId" />
     <result column="r_d_id" jdbcType="VARCHAR" property="dId" />
   </resultMap>
-  <insert id="insert" parameterType="orion_pax.entity.Reply">
-    insert into f_reply (r_id, r_remark, r_reply_time, 
-      r_u_id, r_d_id)
-    values (#{id,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{replyTime,jdbcType=TIMESTAMP}, 
-      #{uId,jdbcType=VARCHAR}, #{dId,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="orion_pax.entity.Reply">
+  <insert id="insertReply" parameterType="orion_pax.entity.Reply">
     insert into f_reply
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

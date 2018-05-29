@@ -5,9 +5,9 @@
   Time: 22:21
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 
@@ -524,7 +524,7 @@
     <div class="container workspace simple-stack simple-stack-transition">
         <div class="page page-root simple-pjax page-behind" style="">
             <a class="link-page-behind"
-               href="${pageContext.request.contextPath}/base/goURL/project/listBoard">Flower</a>
+               href="${pageContext.request.contextPath}/project/detailProject?id=${requestScope.discussion.pId}">Flower</a>
         </div>
         <div class="page page-1 simple-pjax" style="">
             <div class="page-inner " data-since="2018-05-21 02:24:19 UTC" data-guest-unlockable=""
@@ -591,31 +591,26 @@
 
                         <div class="message-actions actions" data-visible-to="member">
                             <div class="inr">
-                                <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/a96ccdc538634352a7703d20a36a6608/archive"
-                                   class="archive" title="结束讨论" data-method="post" data-remote="true"
+                                <a href="${pageContext.request.contextPath}/discussion/closeDiscussion?id=${discussion.id}&pId=${discussion.pId}"
+                                   class="archive" title="结束讨论" data-method="post"
                                    data-loading="true">
                                     <i class="twr twr-archive-custom"></i>
-                                </a>
-                                <a href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/topics/a96ccdc538634352a7703d20a36a6608/unarchive"
-                                   class="unarchive" title="重新打开讨论" data-method="post" data-remote="true"
-                                   data-loading="true">
-                                    <i class="twr twr-unarchive"></i>
                                 </a>
                             </div>
                         </div>
 
-                        <a title="OrionPax" target="_blank"
+                        <span title="OrionPax" target="_blank"
                            href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">
                             <img class="avatar"
                                  alt="OrionPax"
-                                 src="${pageContext.request.contextPath}${discussion.user.img}"></a>
+                                 src="${pageContext.request.contextPath}${discussion.startUser.img}"></span>
 
                         <div class="name">
                             <a title="OrionPax" data-stack="true" data-stack-root="true"
-                               href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">${discussion.user.name}</a>
+                               href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">${discussion.startUser.name}</a>
                         </div>
 
-                        <a href="${pageContext.request.contextPath}/base/goURL/discussion/detailDiscussion"
+                        <a href="${pageContext.request.contextPath}/discussion/detailDiscussion?id=${discussion.id}"
                            class="message-link">
                         <span class="message-title">
                                 <span class="message-rest">${discussion.name}</span>
@@ -625,8 +620,8 @@
                         </span>
                         </a>
 
-                        <span class="time" title="${discussion.startTime}"
-                              data-readable-time="${discussion.startTime}">${discussion.startTime}</span>
+                        <span class="time" title="<fmt:formatDate value='${discussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/>"
+                              data-readable-time="<fmt:formatDate value='${discussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/>"><fmt:formatDate value='${discussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/></span>
                     </div>
                     </c:forEach>
 

@@ -11,4 +11,6 @@ public interface ProjectMapper extends BaseMapper<Project> {
     List<Project> selectAll(User currUser);
 
     Project getBaseByPK(Project project);
+
+    int updateProject(Project project);
 }

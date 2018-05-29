@@ -50,4 +50,15 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
     public Project getBaseByPK(Project project) {
         return projectMapper.getBaseByPK(project);
     }
+
+    /**
+     * 通过project的id修改项目状态
+     *
+     * @param project 封装对象
+     * @return 正整数，大于零修改成功
+     */
+    @Override
+    public int updateProject(Project project) {
+        return projectMapper.updateProject(project);
+    }
 }

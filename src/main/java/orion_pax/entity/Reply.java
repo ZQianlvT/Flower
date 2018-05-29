@@ -13,6 +13,8 @@ public class Reply {
 
     private String dId;
 
+    private User user;
+
     public String getId() {
         return id;
     }
@@ -51,5 +53,25 @@ public class Reply {
 
     public void setdId(String dId) {
         this.dId = dId == null ? null : dId.trim();
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Reply{" +
+                "id='" + id + '\'' +
+                ", remark='" + remark + '\'' +
+                ", replyTime=" + replyTime +
+                ", uId='" + uId + '\'' +
+                ", dId='" + dId + '\'' +
+                ", user=" + user +
+                '}';
     }
 }

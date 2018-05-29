@@ -36,6 +36,8 @@ public class ProjectController extends BaseController {
     public String detailProject(Map<String, Object> map,Project project) {
         project = projectService.getByPK(project);
         map.put("project", project);
+        map.put("id",project.getId());
+        System.out.println("3333333333333333"+project.getId());
         return "forward:/WEB-INF/jsp/project/listBoard.jsp";
     }
 
@@ -60,7 +62,42 @@ public class ProjectController extends BaseController {
 //        map.put("success",true);
 //        map.put("target_url","/Flower/base/goURL/project/listProject");
         return "/project/listProject";
+    }
 
+    @RequestMapping("/removeProject")
+    public String removeProject(Project project){
+        //获取当前项目id
+        //调用service方法删除项目
+        System.out.println("1111111111111111111222222222"+project.getId());
+        projectService.deleteByPk(project);
+        return "/project/listProject";
+    }
+    @RequestMapping("/updateProject")
+    public String updateProject(Project project){
 
+        projectService.updateByPK(project);
+        System.out.println("2222222222222"+project);
+        return "/project/listProject";
+    }
+    @RequestMapping("/setProject")
+    public String setProject(Map<String, Object> map,Project project){
+        //获取当前项目id
+        Project baseProject = projectService.getBaseByPK(project);
+        System.out.println("2222222222222"+project);
+        map.put("project",baseProject);
+        return "forward:/WEB-INF/jsp/project/setProject.jsp";
+    }
+    @RequestMapping("/endProject")
+    public String endProject(Project project){
+        projectService.updateProject(project);
+        return "/project/listProject";
+    }
+    @RequestMapping("/membersProject")
+    public String membersProject(Map<String, Object> map,Project project){
+        //获取当前项目id
+        Project baseProject = projectService.getBaseByPK(project);
+        System.out.println("2222222222222"+project);
+        map.put("project",baseProject);
+        return "forward:/WEB-INF/jsp/project/projectMembers.jsp";
     }
 }
