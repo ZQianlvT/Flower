@@ -36,6 +36,9 @@ public class BaseServiceImpl<T> implements BaseService<T> {
     protected ScheduleMapper scheduleMapper;
 
     @Autowired
+    protected DiscussionMapper discussionMapper;
+
+    @Autowired
     protected UserAndScheduleMapper userAndScheduleMapper;
 
     @PostConstruct

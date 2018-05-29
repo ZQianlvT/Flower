@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="orion_pax.dao.DiscussionMapper">
-  <resultMap id="BaseResultMap" type="orion_pax.entity.Discussion">
+  <resultMap id="DiscussionBaseResultMap" type="orion_pax.entity.Discussion">
     <result column="d_id" jdbcType="VARCHAR" property="id" />
     <result column="d_name" jdbcType="VARCHAR" property="name" />
     <result column="d_remark" jdbcType="VARCHAR" property="remark" />
@@ -10,15 +10,19 @@
     <result column="d_p_id" jdbcType="VARCHAR" property="pId" />
     <result column="d_u_id" jdbcType="VARCHAR" property="uId" />
   </resultMap>
+  <resultMap id="UserBaseResultMap" type="orion_pax.entity.User">
+    <result column="u_id" jdbcType="VARCHAR" property="id"/>
+    <result column="u_email" jdbcType="VARCHAR" property="email"/>
+    <result column="u_pwd" jdbcType="VARCHAR" property="pwd"/>
+    <result column="u_name" jdbcType="VARCHAR" property="name"/>
+    <result column="u_img" jdbcType="VARCHAR" property="img"/>
+    <result column="u_tel" jdbcType="VARCHAR" property="tel"/>
+  </resultMap>
+  <resultMap id="DiscussionResultMap" type="orion_pax.entity.Discussion" extends="DiscussionBaseResultMap">
+    <association property="user" resultMap="UserBaseResultMap" javaType="orion_pax.entity.User" />
+  </resultMap>
+
   <insert id="insert" parameterType="orion_pax.entity.Discussion">
-    insert into f_discussion (d_id, d_name, d_remark, 
-      d_start_time, d_status, d_p_id, 
-      d_u_id)
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
-      #{startTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{pId,jdbcType=VARCHAR}, 
-      #{uId,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="orion_pax.entity.Discussion">
     insert into f_discussion
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -67,4 +71,9 @@
       </if>
     </trim>
   </insert>
+  <select id="select" resultMap="DiscussionResultMap" parameterType="orion_pax.entity.Discussion">
+      SELECT d_id ,d_name,d_remark,d_start_time,d_status,d_p_id,d_u_id,u_id,u_email,u_pwd,u_name,u_img,u_tel
+      FROM f_discussion ,f_user
+      WHERE d_p_id=#{pId} and d_u_id=#{uId} and d_status=#{status}
+  </select>
 </mapper>
