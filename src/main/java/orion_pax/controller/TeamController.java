@@ -111,6 +111,6 @@ public class TeamController extends BaseController {
         userAndTeam.settId(team.getId());
         userAndTeam.setuId(currUser.getId());
         teamService.joinTeam(userAndTeam);
-        return "/WEB-INF/jsp/project/listProject.jsp";
+        return "/project/listProject";
     }
 }

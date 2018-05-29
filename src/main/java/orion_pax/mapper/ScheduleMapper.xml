@@ -29,6 +29,12 @@
     WHERE s_p_id = #{pId}  AND s_start_time BETWEEN #{startTime} AND #{endTime}
   </select>
 
+  <select id="getByUId" parameterType="orion_pax.entity.User" resultMap="ScheduleResultMap">
+    SELECT s_id,s_name,s_start_time,s_end_time,s_p_id
+    FROM f_schedule s,f_project p,f_team t,f_user u
+    where s.s_p_id = p.p_id and p.p_t_id = t.t_id and t.t_u_id = u.u_id and u.u_id = #{id}
+  </select>
+
   <insert id="insert" parameterType="orion_pax.entity.Schedule">
     insert into f_schedule (s_id, s_name,
       s_start_time, s_end_time, s_p_id

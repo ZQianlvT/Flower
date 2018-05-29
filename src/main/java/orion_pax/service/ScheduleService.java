@@ -1,6 +1,9 @@
 package orion_pax.service;
 
 import orion_pax.entity.Schedule;
+import orion_pax.entity.User;
+
+import java.util.List;
 
 public interface ScheduleService extends BaseService<Schedule> {
 
@@ -12,4 +15,12 @@ public interface ScheduleService extends BaseService<Schedule> {
      * @return 正整数，大于零添加成功
      */
     int addSchedule(Schedule schedule, String[] ids);
+
+    /**
+     * 通过当前用户id查询，其需要显示的所有日程
+     *
+     * @param user 封装id的User对象
+     * @return 查询到的日程列表
+     */
+    List<Schedule> showCalendar(User user);
 }

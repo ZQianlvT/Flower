@@ -2,9 +2,11 @@ package orion_pax.service.impl;
 
 import org.springframework.stereotype.Service;
 import orion_pax.entity.Schedule;
+import orion_pax.entity.User;
 import orion_pax.entity.UserAndSchedule;
 import orion_pax.service.ScheduleService;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service("scheduleService")
@@ -28,5 +30,16 @@ public class ScheduleServiceImpl extends BaseServiceImpl<Schedule> implements Sc
             userAndScheduleMapper.insert(userAndSchedule);
         }
         return count;
+    }
+
+    /**
+     * 通过当前用户id查询，其需要显示的所有日程
+     *
+     * @param user 封装id的User对象
+     * @return 查询到的日程列表
+     */
+    @Override
+    public List<Schedule> showCalendar(User user) {
+        return scheduleMapper.getByUId(user);
     }
 }

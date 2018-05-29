@@ -440,17 +440,17 @@
         }, {}]
     }, {}, ["loader"]);</script>
 
-    <title>所有的日程 - Tower</title>
+    <title>所有的日程 - Flower</title>
     <meta name="renderer" content="webkit">
     <meta name="baidu-site-verification" content="qLDoHdGnb64RHlkm">
     <meta name="alexaVerifyID" content="SIgQikd9LazsFz9M1vPBaQyC4Gw">
 
     <link rel="dns-prefetch" href="//avatar.tower.im">
     <link rel="dns-prefetch" href="//atttachments.tower.im">
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico" sizes="32x32">
-    <link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico" sizes="64x64">
-    <link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico" sizes="128x128">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/head/ChatHead.jpg" type="image/x-icon">
+    <link rel="icon" href="${pageContext.request.contextPath}/head/ChatHead.jpg" sizes="32x32">
+    <link rel="icon" href="${pageContext.request.contextPath}/head/ChatHead.jpg" sizes="64x64">
+    <link rel="icon" href="${pageContext.request.contextPath}/head/ChatHead.jpg" sizes="128x128">
     <link rel="apple-touch-icon-precomposed"
           href="${pageContext.request.contextPath}/images/icon@512-c7c654c8348a4af697bb86f952f57923247c48b88fbbed1a472839eb800d2000.png">
 
@@ -505,7 +505,7 @@
                     <div class="member-settings">
                         <a class="link-member-menu ab-test-old" href="javascript:;" data-new-feature="false">
                             <span class="twr twr-caret-down"></span>
-                            <img class="avatar" src="${pageContext.request.contextPath}/images/noon.jpg" alt="Noon"/>
+                            <img class="avatar" src="${pageContext.request.contextPath}${sessionScope.currUser.img}" alt="Noon"/>
                         </a>
                     </div>
                 </div>
