@@ -25,7 +25,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
         }
         //添加一个用户
         user.setId(UUID.randomUUID().toString().replace("-",""));
-        user.setImg("/head/ChatHead.jpg.jpg");
+        user.setImg("/head/ChatHead.jpg");
         userMapper.insert(user);
         //添加一个团队
         Team team = new Team();
