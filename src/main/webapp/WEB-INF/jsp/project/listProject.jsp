@@ -495,7 +495,7 @@
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-calendar">
-                    <a href="${pageContext.request.contextPath}/base/goURL/calendar/calendar">日历</a>
+                    <a href="${pageContext.request.contextPath}/calendar/prepareCalendar">日历</a>
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-members">

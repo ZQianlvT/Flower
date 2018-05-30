@@ -481,7 +481,7 @@
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-calendar">
-                    <a href="${pageContext.request.contextPath}/base/goURL/calendar/calendar">日历</a>
+                    <a href="${pageContext.request.contextPath}/calendar/prepareCalendar">日历</a>
                 </li>
                 <li class="dividing"></li>
                 <li class="" id="nav-members">
@@ -545,7 +545,6 @@
 
                         <div class="form-item">
                             <label>项目</label>
-
                             <select name="caleventable_guid" id="select-cal" disabled>
                                 <option value="e26956389763492f891259d7d9c5b94d" data-project="true" selected
                                         data-member-guids="[&quot;f7e254d7f54e40dbb93a33b737752fbc&quot;, &quot;ce2b30066f034bf9a69113963da165fd&quot;]">
