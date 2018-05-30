@@ -2,6 +2,8 @@ package orion_pax.dao;
 
 import orion_pax.entity.Board;
 
+import javax.swing.border.Border;
+
 public interface BoardMapper extends BaseMapper<Board> {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +16,6 @@ public interface BoardMapper extends BaseMapper<Board> {
     int updateByPrimaryKeySelective(Board record);
 
     int updateByPrimaryKey(Board record);
+
+    int selectMaxIndex(Board board);
 }

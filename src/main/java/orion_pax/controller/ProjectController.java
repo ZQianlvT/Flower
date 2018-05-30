@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import orion_pax.entity.Project;
-import orion_pax.entity.Team;
-import orion_pax.entity.User;
+import orion_pax.entity.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -34,6 +32,7 @@ public class ProjectController extends BaseController {
 
     @RequestMapping("/detailProject")
     public String detailProject(Map<String, Object> map,Project project) {
+        System.out.println("qqqqqqqqqqqqqqqqqqq"+project);
         project = projectService.getByPK(project);
         map.put("project", project);
         map.put("id",project.getId());
@@ -99,5 +98,35 @@ public class ProjectController extends BaseController {
         System.out.println("2222222222222"+project);
         map.put("project",baseProject);
         return "forward:/WEB-INF/jsp/project/projectMembers.jsp";
+    }
+    @RequestMapping("/addBoard")
+    public String addBoard(Board board){
+        board.setId(UUID.randomUUID().toString().replace("-",""));
+        board.setUnfinished(0);
+
+//        int maxIndex = projectService.getMaxIndex(board);
+//        board.setIndex(maxIndex+1);
+//        System.out.println("yyyyyyyyyyyyyyyyyyyyyyyyyy"+board);
+        projectService.insertBoard(board);
+
+        System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmmmm"+board);
+        System.out.println(board.getpId());
+        return "redirect:/project/detailProject?id="+board.getpId();
+    }
+    @RequestMapping("/deleteBoard")
+    public String deleteBoard(Board board){
+        System.out.println("4444444444444444444444444"+board);
+        projectService.deleteBoard(board);
+        System.out.println("123123123123123123123123"+board.getpId());
+        return "redirect:/project/detailProject?id="+board.getpId();
+    }
+
+    @RequestMapping("/addTask")
+    public String addTask(Task task){
+        task.setId(UUID.randomUUID().toString().replace("-",""));
+        task.setStatus(0);
+        projectService.insertTask(task);
+        System.out.println("999999999999999999999999"+task);
+        return "redirect:/project/detailProject";
     }
 }

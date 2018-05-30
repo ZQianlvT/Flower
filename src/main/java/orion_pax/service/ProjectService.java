@@ -1,7 +1,10 @@
 package orion_pax.service;
 
+import orion_pax.entity.Board;
 import orion_pax.entity.Project;
+import orion_pax.entity.Task;
 import orion_pax.entity.User;
+
 
 import java.util.List;
 
@@ -36,4 +39,31 @@ public interface ProjectService extends BaseService<Project> {
      */
     int updateProject(Project project);
 
+    /**
+     * 通过浏览器提供的信息创建一个看板
+     * @param board 封装信息的对象
+     * @return查询到的看板
+     */
+    int insertBoard(Board board);
+
+    /**
+     * 获取Board的index的最大值
+     * @param board 封装信息
+     * @return返回board
+     */
+    int getMaxIndex(Board board);
+
+    /**
+     * 修改看板名称
+     * @param board 封装对象信息
+     * @return 正整数成功
+     */
+    int deleteBoard(Board board);
+
+    /**
+     * 通过浏览器提供的任务名，任务截止时间任务指派人信息创建一个任务
+     * @param task 封装对象
+     * @return 正整数成功
+     */
+    int insertTask(Task task);
 }

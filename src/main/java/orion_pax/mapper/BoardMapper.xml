@@ -85,4 +85,12 @@
       b_p_id = #{pId,jdbcType=VARCHAR}
     where b_id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="selectMaxIndex" parameterType="orion_pax.entity.Board" resultType="_int">
+    SELECT MAX(b_index) FROM f_board
+    where  b_p_id=#{pId}
+  </select>
+<delete id="deleteByPk" parameterType="orion_pax.entity.Board" >
+  DELETE FROM f_board
+  WHERE b_id=#{id}
+</delete>
 </mapper>

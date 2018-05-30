@@ -43,6 +43,9 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 
     @Autowired
     protected  ReplyMapper replyMapper;
+
+    @Autowired
+    protected  TaskMapper taskMapper;
     @PostConstruct
     // 在构造方法后，初化前执行
     protected void initBaseMapper() throws Exception {
