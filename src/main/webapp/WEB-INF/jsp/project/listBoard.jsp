@@ -473,7 +473,7 @@
         <div class="header-container">
             <h1 class="logo">
                 <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-team-menu">
-                    alikes
+                    ${sessionScope.currTeam.name}
                 </a>
             </h1>
 

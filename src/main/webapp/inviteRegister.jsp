@@ -467,17 +467,16 @@
 
 
     <div class="page" id="page-signup">
-        <div class="sign-page">
+        <div class="sign-page" style="margin-top: 20px">
             <div class="hd">
                 <a class="link-logo" href="${pageContext.request.contextPath}/index.jsp">
                     <span class="twr twr-logo"></span>
                 </a></div>
 
             <div class="bd">
-                <form class="form box" action="/users/sign_up" method="post" data-remote="true" novalidate>
+                <form class="form box" action="${pageContext.request.contextPath}/user/sign_up" method="post" data-remote="true" novalidate>
                     <div class="form-item">
-                        <h1 class="bd-title">加入「HYLT」</h1>
-                        <p class="desc">你需要注册 Tower 账户</p>
+                        <p class="desc">你需要注册 Flower 账户</p>
                     </div>
 
                     <div class="form-item">

@@ -279,7 +279,7 @@
             <c:choose>
                 <c:when test="${sessionScope.currUser!=null}">
                     <a class="btn" data-turbolinks="false"
-                       href="${pageContext.request.contextPath}/base/goURL/project/listProject">进入 Tower</a>
+                       href="${pageContext.request.contextPath}/base/goURL/project/listProject">进入 Flower</a>
                 </c:when>
                 <c:otherwise>
                     <a class="btn btn-no-border" data-turbolinks="false"
@@ -290,15 +290,15 @@
         </div>
     </div>
 </header>
-<div class="masthead" data-turbolinks="false">
+<div class="masthead" data-turbolinks="false" style="padding-top: 150px">
     <div class="container">
-        <h1 class="solgan">深受用户喜爱的团队协作工具</h1>
-        <p class="status">七十万团队、七百万人正在高效率地使用 Tower 进行协作，<br>你的团队也应如此。</p>
+        <h1 class="solgan">简单高效的团队协作工具</h1>
+        <p class="status">不善合作，一败涂地，齐心协力，共享成功。<br>一个人时要像一个团队，一个团队时要像一个人。</p>
         <c:choose>
             <c:when test="${sessionScope.currUser!=null}">
                 <p><a href="${pageContext.request.contextPath}/base/goURL/project/listProject"
                       class="btn btn-signin">进入
-                    Tower <i class="twr twr-fighter-jet"></i></a></p>
+                    Flower <i class="twr twr-fighter-jet"></i></a></p>
             </c:when>
             <c:otherwise>
                 <p><a href="${pageContext.request.contextPath}/register.jsp" class="btn btn-signup">免费注册</a></p>

@@ -471,7 +471,7 @@
         <div class="header-container">
             <h1 class="logo">
                 <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-team-menu">
-                    alikes
+                    ${sessionScope.currTeam.name}
                 </a>
             </h1>
 
@@ -522,7 +522,7 @@
 
     <div class="container workspace">
         <div class="page">
-            <a href="${pageContext.request.contextPath}/base/goURL/schedule/listSchedule" class="link-page-behind">日程</a>
+            <a href="${pageContext.request.contextPath}/schedule/listSchedule?pId=${requestScope.currProject.id}" class="link-page-behind">日程</a>
         </div>
         <div class="page">
 

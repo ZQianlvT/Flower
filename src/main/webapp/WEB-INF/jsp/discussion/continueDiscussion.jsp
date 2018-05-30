@@ -472,7 +472,7 @@
         <div class="header-container">
             <h1 class="logo">
                 <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-team-menu">
-                    alikes
+                    ${sessionScope.currTeam.name}
                 </a>
             </h1>
 
@@ -524,7 +524,7 @@
     <div class="container workspace simple-stack simple-stack-transition">
         <div class="page page-root simple-pjax page-behind" style="">
             <a class="link-page-behind"
-               href="${pageContext.request.contextPath}/project/detailProject?id=${requestScope.discussion.pId}">Flower</a>
+               href="${pageContext.request.contextPath}/project/detailProject?id=${requestScope.discussion.pId}">项目详情</a>
         </div>
         <div class="page page-1 simple-pjax" style="">
             <div class="page-inner " data-since="2018-05-21 02:24:19 UTC" data-guest-unlockable=""

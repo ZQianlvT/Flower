@@ -474,7 +474,7 @@
         <div class="header-container">
             <h1 class="logo">
                 <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-team-menu">
-                    alikes
+                    ${sessionScope.currTeam.name}
                 </a>
             </h1>
 
@@ -505,7 +505,8 @@
                     <div class="member-settings">
                         <a class="link-member-menu ab-test-old" href="javascript:;" data-new-feature="false">
                             <span class="twr twr-caret-down"></span>
-                            <img class="avatar" src="${pageContext.request.contextPath}${sessionScope.currUser.img}" alt="Noon"/>
+                            <img class="avatar" src="${pageContext.request.contextPath}${sessionScope.currUser.img}"
+                                 alt="Noon"/>
                         </a>
                     </div>
                 </div>
@@ -515,7 +516,7 @@
 
     <script id="tpl-member-menu" type="text/html">
         <ul class="menu">
-            <li><a  href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
+            <li><a href="${pageContext.request.contextPath}/user/findUser">个人设置</a>
             </li>
             <li class="part-line"></li>
             <li><a rel="nofollow" data-method="DELETE" href="${pageContext.request.contextPath}/user/exit">退出</a></li>
@@ -526,7 +527,8 @@
     <div class="container workspace">
         <div class="page "
              data-url="/projects/e26956389763492f891259d7d9c5b94d">
-            <a href="${pageContext.request.contextPath}/project/listBoard" class="link-page-behind">Flower</a>
+            <a href="${pageContext.request.contextPath}/project/detailProject?id=${requestScope.pId}"
+               class="link-page-behind">项目详情</a>
         </div>
         <div class="page">
 
@@ -540,13 +542,16 @@
                 <div class="calendar-events-topbar">
                     <a class="btn btn-mini btn-new-calendar-event"
                        href="${pageContext.request.contextPath}/schedule/createSchedule?id=${requestScope.pId}">创建日程</a>
-                    <h4 class="date" data-date="<fmt:formatDate value='${sessionScope.currTimeStr}' pattern='yyyy-MM' />"></h4>
+                    <h4 class="date"
+                        data-date="<fmt:formatDate value='${sessionScope.currTimeStr}' pattern='yyyy-MM' />"></h4>
 
                     <div class="nav-buttons">
-                        <a href="${pageContext.request.contextPath}/schedule/listSchedule?pId=${requestScope.pId}&month=left" class="" title="上个月">
+                        <a href="${pageContext.request.contextPath}/schedule/listSchedule?pId=${requestScope.pId}&month=left"
+                           class="" title="上个月">
                             <i class="twr twr-angle-left"></i>
                         </a>
-                        <a href="${pageContext.request.contextPath}/schedule/listSchedule?pId=${requestScope.pId}&month=right" class="" title="下个月">
+                        <a href="${pageContext.request.contextPath}/schedule/listSchedule?pId=${requestScope.pId}&month=right"
+                           class="" title="下个月">
                             <i class="twr twr-angle-right"></i>
                         </a>
                     </div>
@@ -555,48 +560,49 @@
                 <div class="calendar-events">
 
                     <c:forEach items="${requestScope.scheduleList}" var="schedule">
-                    <div class="calendar-event">
+                        <div class="calendar-event">
 
-                        <div class="date">
+                            <div class="date">
                             <span class="start-time" data-time="${schedule.startTime}"
                                   title="<fmt:formatDate value='${schedule.startTime}' pattern='yyyy-MM-dd'/>">
-                                <fmt:formatDate value="${schedule.startTime}" pattern="yyyy-MM-dd" />
+                                <fmt:formatDate value="${schedule.startTime}" pattern="yyyy-MM-dd"/>
                             </span>
 
                                 <span class="end-time" data-time="${schedule.endTime}"
                                       title="<fmt:formatDate value='${schedule.endTime}' pattern='yyyy-MM-dd'/>">
-                                - <fmt:formatDate value="${schedule.endTime}" pattern="yyyy-MM-dd" />
+                                - <fmt:formatDate value="${schedule.endTime}" pattern="yyyy-MM-dd"/>
                             </span>
-                        </div>
+                            </div>
 
-                        <div class="event">
-                            <p class="event-detail">
+                            <div class="event">
+                                <p class="event-detail">
                             <span class="event-content">
                                 <div class="calendar_event-rest">${schedule.name}</div>
                             </span>
-                            </p>
-                            <%--<div class="calendar">--%>
-                                <%--<span class="name">日历：<span class="cal-color-11">Flower</span></span>--%>
-                            <%--</div>--%>
-                            <p class="member-list">参与人：
-                                <c:forEach items="${schedule.userList}" var="user">
-                                    ${user.name}&nbsp&nbsp&nbsp
-                                </c:forEach></p>
+                                </p>
+                                    <%--<div class="calendar">--%>
+                                    <%--<span class="name">日历：<span class="cal-color-11">Flower</span></span>--%>
+                                    <%--</div>--%>
+                                <p class="member-list">参与人：
+                                    <c:forEach items="${schedule.userList}" var="user">
+                                        ${user.name}&nbsp&nbsp&nbsp
+                                    </c:forEach></p>
+                            </div>
                         </div>
-                    </div>
                     </c:forEach>
 
 
+                </div>
+
             </div>
-
         </div>
+
+        <div class="footer">
+            &copy; 晴天设计
+        </div>
+
+
     </div>
-
-    <div class="footer">
-        &copy; 晴天设计
-    </div>
-
-
 </div>
 
 <input type="hidden" id="d18n-enabled" value="false">

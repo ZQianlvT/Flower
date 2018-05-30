@@ -437,7 +437,7 @@
         }, {}]
     }, {}, ["loader"]);</script>
 
-    <title>alikes 的团队账户 - Flower</title>
+    <title>${sessionScope.currTeam.name} 的团队账户 - Flower</title>
     <meta name="renderer" content="webkit">
     <meta name="baidu-site-verification" content="qLDoHdGnb64RHlkm">
     <meta name="alexaVerifyID" content="SIgQikd9LazsFz9M1vPBaQyC4Gw">
@@ -471,7 +471,7 @@
         <div class="header-container">
             <h1 class="logo">
                 <a href="${pageContext.request.contextPath}/base/goURL/team/updateTeam" class="link-team-menu">
-                    alikes
+                    ${sessionScope.currTeam.name}
                 </a>
             </h1>
 
@@ -523,7 +523,7 @@
     <div class="container workspace">
         <div class="page">
 
-            <div class="page-inner" id="page-team-settings" data-page-name="alikes 的团队账户">
+            <div class="page-inner" id="page-team-settings" data-page-name="${sessionScope.currTeam.name} 的团队账户">
                 <div class="team-name">
                     <h3 class="page-title">
                         <span class="name">${sessionScope.currTeam.name}</span>
@@ -561,7 +561,7 @@
 <input type="hidden" id="server-time" value="2018-05-21 18:10:35">
 
 <input type="hidden" id="team-guid" value="7feef4ba8611443ebd06db497618beb4">
-<input type="hidden" id="team-name" value="alikes">
+<input type="hidden" id="team-name" value="${sessionScope.currTeam.name}">
 <input type="hidden" id="team-enable-pusher" value="true">
 
 <input type="hidden" id="user-id" value="7432036">
@@ -627,7 +627,7 @@
     "app_id": "xbtsuf77",
     "company": {
         "id": 701306,
-        "name": "alikes",
+        "name": "${sessionScope.currTeam.name}",
         "created_at": "2018-05-17T03:17:32.000Z",
         "guid": "7feef4ba8611443ebd06db497618beb4",
         "next_charge_date": null,
@@ -746,13 +746,13 @@
 
     ga('send', 'pageview', {
         'userId': '12535468',
-        'dimension1': '701306 : alikes',
+        'dimension1': '701306 : ${sessionScope.currTeam.name}',
         'dimension2': '7432036',
         'dimension3': 'pro_trial'
     });
     ga('teamTracker.send', 'pageview', {
         'userId': '701306',
-        'dimension1': 'alikes',
+        'dimension1': '${sessionScope.currTeam.name}',
         'dimension2': 11,
         'dimension3': 'pro_trial'
     });
