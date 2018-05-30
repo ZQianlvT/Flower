@@ -66,4 +66,28 @@ public interface ProjectService extends BaseService<Project> {
      * @return 正整数成功
      */
     int insertTask(Task task);
+
+    /**
+     * 通过id获取Board对象
+     *
+     * @param board 封装id的Board
+     * @return 查询到的Board对象
+     */
+    Board getBoardByPK(Board board);
+
+    /**
+     * 通过taskId将其状态取反
+     *
+     * @param task 封装id的Task对象
+     * @return 正整数，大于零修改成功
+     */
+    int updateTaskStatus(Task task);
+
+    /**
+     * 通过taskId获取task对象
+     *
+     * @param task 封装id的Task
+     * @return 查询到的Task
+     */
+    Task getTaskById(Task task);
 }

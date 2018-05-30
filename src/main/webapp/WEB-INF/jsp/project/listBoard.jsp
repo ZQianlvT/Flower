@@ -536,19 +536,19 @@
                  id="page-project">
                 <div class="project-header">
                     <div class="project-hd-info">
-                        <span class="project-name">${project.name}</span>
-                        <span class="project-desc" data-tooltip="开发一个拥有Tower核心功能的Web应用" data-position="right">
-        <i class="twr twr-info-circle"></i>
-      </span>
+                        <span class="project-name">${requestScope.project.name}</span>
+                        <span class="project-desc" data-tooltip="${requestScope.project.remark}" data-position="right" style="display: none;">
+                        <i class="twr twr-info-circle"></i>
+                      </span>
                     </div>
 
                     <div class="project-links">
-                        <a href="${pageContext.request.contextPath}/project/membersProject?id=${project.id}"
+                        <a href="${pageContext.request.contextPath}/project/membersProject?id=${requestScope.project.id}"
                            class="link-admin-members">
                             <span class="main">2</span>
                             <span>成员</span>
                         </a>
-                        <a href="${pageContext.request.contextPath}/project/setProject?id=${project.id}"
+                        <a href="${pageContext.request.contextPath}/project/setProject?id=${requestScope.project.id}"
                            class="link-admin-settings">
                               <span class="main">
                                 <i class="twr twr-cog"></i>
@@ -611,7 +611,7 @@
                                         <option value="ce2b30066f034bf9a69113963da165fd">浮点农国</option>
                                         <option value="f7e254d7f54e40dbb93a33b737752fbc">OrionPax</option>
                                         <option disabled>-----</option>
-                                        <option value="-1">未分派</option>
+                                        <option value="">未分派</option>
                                     </select>
                                     <select id="filter-due">
                                         <option value="-1">所有时间</option>
@@ -626,8 +626,8 @@
                                         <option value="6">没有截止时间</option>
                                     </select>
                                     <span class="filter-desc">
-		<strong>&larr;</strong>筛选结果已用<em> 荧光笔 </em>标记
-	</span>
+                                    <strong>&larr;</strong>筛选结果已用<em> 荧光笔 </em>标记
+                                </span>
                                 </div>
 
 
@@ -675,10 +675,11 @@
                         <div class="todolists-wrap">
                             <div class="todolists">
 
-                                <c:forEach items="${requestScope.project.boardList}" var="board">
+                                <c:forEach items="${requestScope.project.boardList}" var="board" varStatus="status">
                                     <div class="todolist ui-sortable" data-guid="7eea1fdab77c4e6a84ec744bb869c7a6"
                                          data-sort="2" data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
                                          data-project-guid="e26956389763492f891259d7d9c5b94d">
+                                        <span id="spanBId${status.count}" style="display: none;">${board.id}</span>
 
                                         <div class="flex-container">
                                             <div class="title" style="display: block;">
@@ -696,9 +697,13 @@
                                                 </div>
 
 
-                                                <a href="${pageContext.request.contextPath}/project/addTask" class="btn-new-todo"
-                                                   data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6"
-                                                   data-request-members="e26956389763492f891259d7d9c5b94d">
+                                                <a href="${pageContext.request.contextPath}/project/addTask"
+                                                   class="btn-new-todo aBId"
+                                                   data-url="${pageContext.request.contextPath}/project/addTask?bId=${board.id}"
+                                                   data-request-members="e26956389763492f891259d7d9c5b94d"
+
+                                                >
+                                                    <span style="display: none;">${status.count}</span>
                                                     <i class="twr twr-plus"></i>
                                                 </a>
                                                 <a href="javascript:;" class="link-kanban-menu">
@@ -709,14 +714,14 @@
                                                     <a href="javascript:;" data-visible-to="admin,creator" class="del">删除</a>
                                                 </div>
                                                 <h4>
-    <span class="name-non-linkable">
-        <span class="todolist-rest">开发</span>
-    </span>
+                                                <span class="name-non-linkable">
+                                                    <span class="todolist-rest">开发</span>
+                                                </span>
                                                     <span class="name">
-            <span class="todolist-todos-count">${board.unfinished}</span>
-        <span class="todolist-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">${board.name}</span>
-    </span>
+                                                        <span class="todolist-todos-count">${board.unfinished}</span>
+                                                    <span class="todolist-rest"
+                                                          href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">${board.name}</span>
+                                                </span>
 
 
                                                     <a href="javascript:;" class="fold">
@@ -724,159 +729,176 @@
                                                     </a>
                                                 </h4></div>
                                             <div class="todos-container">
-                                                <ul class="todos todos-uncompleted">
+                                                <c:forEach items="${board.taskList}" var="task">
+                                                    <c:choose>
+                                                        <c:when test="${task.status==0}">
+                                                            <ul class="todos todos-uncompleted">
 
-                                                    <li class="todo" data-guid="79b9b26712604aa09f2bcb61361d3476"
-                                                        data-sort="2048.0" data-sequence-mine="1024.0"
-                                                        data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/reorder"
-                                                        data-project-guid="e26956389763492f891259d7d9c5b94d"
-                                                        data-project-name="Flower"
-                                                        data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                        data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                        data-updated-at="1527431052" data-check-items-size="0"
-                                                        data-completed-check-items-size="0">
+                                                                <li class="todo"
+                                                                    data-guid="?id=${task.id}&bId=${task.bId}"
+                                                                    data-sort="2048.0" data-sequence-mine="1024.0"
+                                                                    data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/reorder"
+                                                                    data-project-guid="e26956389763492f891259d7d9c5b94d"
+                                                                    data-project-name="Flower"
+                                                                    data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
+                                                                    data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
+                                                                    data-updated-at="1527431052"
+                                                                    data-check-items-size="0"
+                                                                    data-completed-check-items-size="0">
 
-                                                        <div class="todo-actions actions">
-                                                            <div class="inr">
-                                                                <a class="run" title="标记成正在进行中" data-loading="true"
-                                                                   data-remote="true" data-method="post"
-                                                                   href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/running">执行</a>
-                                                                <a class="pause" title="暂停" data-loading="true"
-                                                                   data-remote="true" data-method="post"
-                                                                   href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/pause">暂停</a>
-                                                                <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/edit"
-                                                                   class="edit"
-                                                                   data-request-members="e26956389763492f891259d7d9c5b94d"
-                                                                   title="编辑">编辑</a>
+                                                                    <%--<div class="todo-actions actions">--%>
+                                                                        <%--<div class="inr">--%>
+                                                                            <%--<a class="run" title="标记成正在进行中"--%>
+                                                                               <%--data-loading="true"--%>
+                                                                               <%--data-remote="true" data-method="post"--%>
+                                                                               <%--href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/running">执行</a>--%>
+                                                                            <%--<a class="pause" title="暂停"--%>
+                                                                               <%--data-loading="true"--%>
+                                                                               <%--data-remote="true" data-method="post"--%>
+                                                                               <%--href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/pause">暂停</a>--%>
+                                                                            <%--<a href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/edit"--%>
+                                                                               <%--class="edit"--%>
+                                                                               <%--data-request-members="e26956389763492f891259d7d9c5b94d"--%>
+                                                                               <%--title="编辑">编辑</a>--%>
 
-                                                                <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/destroy"
-                                                                   data-visible-to="creator,admin" class="del"
-                                                                   data-remote="true" data-method="post"
-                                                                   data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
-                                                            </div>
-                                                        </div>
+                                                                            <%--<a href="/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476/destroy"--%>
+                                                                               <%--data-visible-to="creator,admin"--%>
+                                                                               <%--class="del"--%>
+                                                                               <%--data-remote="true" data-method="post"--%>
+                                                                               <%--data-confirm="确定要删除这条任务吗？"--%>
+                                                                               <%--title="删除">删除</a>--%>
+                                                                        <%--</div>--%>
+                                                                    <%--</div>--%>
 
-                                                        <div class="todo-wrap">
-                                                            <div class="simple-checkbox"
-                                                                 style="height: 18px; width: 18px;">
-                                                                <div class="checkbox-container"
-                                                                     style="border: 1.8px solid;">
-                                                                    <div class="checkbox-tick"
-                                                                         style="border-right: 2.52px solid; border-bottom: 2.52px solid;">
+                                                                    <div class="todo-wrap">
+                                                                        <a href="/asdasd">
+                                                                        <div class="simple-checkbox"
+                                                                             style="height: 18px; width: 18px;">
+                                                                            <div class="checkbox-container"
+                                                                                 style="border: 1.8px solid;">
+                                                                                <div class="checkbox-tick"
+                                                                                     style="border-right: 2.52px solid; border-bottom: 2.52px solid;">
+                                                                                </div>
+                                                                            </div>
+                                                                            <input type="checkbox" name="todo-done"
+                                                                                   class="checkbox-input"
+                                                                                   style="display: none;">
+                                                                        </div>
+                                                                        </a>
+
+
+                                                                        <span class="todo-content">
+                                                              <span class="raw">${task.name}</span>
+                                                              <span class="content-non-linkable">
+                                                                <span class="todo-rest">${task.name}</span>
+                                                              </span>
+                                                              <span class="content-linkable">
+                                                                <a class="todo-rest"
+                                                                   href="${pageContext.request.contextPath}/project/detailTask?id=${task.id}">${task.name}</a>
+                                                              </span>
+                                                            </span>
+
+                                                                        <span class="todo-detail">
+
+                                                            <a class="label todo-assign-due" href="javascript:;"
+                                                               data-request-members="e26956389763492f891259d7d9c5b94d">
+                                                              <span class="assignee"
+                                                                    data-guid="f7e254d7f54e40dbb93a33b737752fbc"
+                                                                    data-gavatar="https://avatar.tower.im/b8d097bc5a95408395bf6023807ec958">
+                                                                ${task.user.name}
+                                                              </span>
+
+                                                            </a>
+                                                            </span>
+
+                                                                        <a class="label todo-proj" title="Flower - qwe"
+                                                                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">Flower
+                                                                            - qwe</a>
                                                                     </div>
-                                                                </div>
-                                                                <input type="checkbox" name="todo-done"
-                                                                       class="checkbox-input" style="display: none;">
-                                                            </div>
+                                                                </li>
+                                                            </ul>
+                                                        </c:when>
 
 
-                                                            <span class="todo-content">
-      <span class="raw">可行性分析</span>
-      <span class="content-non-linkable">
-        <span class="todo-rest">可行性分析</span>
-      </span>
-      <span class="content-linkable">
-        <a class="todo-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/79b9b26712604aa09f2bcb61361d3476">可行性分析</a>
-      </span>
-    </span>
 
-                                                            <span class="todo-detail">
+                                                        <c:otherwise>
 
-          <a class="label todo-assign-due" href="javascript:;" data-request-members="e26956389763492f891259d7d9c5b94d">
-              <span class="assignee" data-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                    data-gavatar="https://avatar.tower.im/b8d097bc5a95408395bf6023807ec958">
-                OrionPax
-              </span>
+                                                            <ul class="todos todos-completed" data-length="3"
+                                                                data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/completed">
+                                                                <li class="todo completed"
+                                                                    data-guid="?id=${task.id}&bId=${task.bId}"
+                                                                    data-sort="2048.0"
+                                                                    data-sequence-mine="7168.0"
+                                                                    data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c/reorder"
+                                                                    data-project-guid="e26956389763492f891259d7d9c5b94d"
+                                                                    data-project-name="Flower"
+                                                                    data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
+                                                                    data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
+                                                                    data-updated-at="1527075878"
+                                                                    data-check-items-size="0"
+                                                                    data-completed-check-items-size="0"
+                                                                    data-closed-at="1526610528">
 
-          </a>
+                                                                    <div class="todo-actions actions">
+                                                                        <div class="inr">
 
-
-    </span>
-
-                                                            <a class="label todo-proj" title="Flower - qwe"
-                                                               data-stack="true"
-                                                               href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">Flower
-                                                                - qwe</a>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-
-                                                <ul class="todo-new-wrap"></ul>
-
-                                                <ul class="todos todos-completed" data-length="3"
-                                                    data-url="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/completed">
-
-
-                                                    <li class="todo completed"
-                                                        data-guid="70d66a5f040f4f6caf6cb4aa172a3d0c" data-sort="2048.0"
-                                                        data-sequence-mine="7168.0"
-                                                        data-sort-url="/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c/reorder"
-                                                        data-project-guid="e26956389763492f891259d7d9c5b94d"
-                                                        data-project-name="Flower"
-                                                        data-creator-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                        data-assignee-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                                                        data-updated-at="1527075878" data-check-items-size="0"
-                                                        data-completed-check-items-size="0" data-closed-at="1526610528">
-
-                                                        <div class="todo-actions actions">
-                                                            <div class="inr">
-
-                                                                <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c/destroy"
-                                                                   data-visible-to="creator,admin" class="del"
-                                                                   data-remote="true" data-method="post"
-                                                                   data-confirm="确定要删除这条任务吗？" title="删除">删除</a>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="todo-wrap">
-                                                            <div class="simple-checkbox checked"
-                                                                 style="height: 18px; width: 18px;">
-                                                                <div class="checkbox-container"
-                                                                     style="border: 1.8px solid;">
-                                                                    <div class="checkbox-tick"
-                                                                         style="border-right: 2.52px solid; border-bottom: 2.52px solid;">
+                                                                            <a href="/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c/destroy"
+                                                                               data-visible-to="creator,admin"
+                                                                               class="del"
+                                                                               data-remote="true" data-method="post"
+                                                                               data-confirm="确定要删除这条任务吗？"
+                                                                               title="删除">删除</a>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <input type="checkbox" name="todo-done" checked=""
-                                                                       class="checkbox-input" style="display: none;">
-                                                            </div>
+
+                                                                    <div class="todo-wrap">
+                                                                        <div class="simple-checkbox checked"
+                                                                             style="height: 18px; width: 18px;">
+                                                                            <div class="checkbox-container"
+                                                                                 style="border: 1.8px solid;">
+                                                                                <div class="checkbox-tick"
+                                                                                     style="border-right: 2.52px solid; border-bottom: 2.52px solid;">
+                                                                                </div>
+                                                                            </div>
+                                                                            <input type="checkbox" name="todo-done"
+                                                                                   checked=""
+                                                                                   class="checkbox-input"
+                                                                                   style="display: none;">
+                                                                        </div>
 
 
-                                                            <span class="todo-content">
-                                                          <span class="raw">网页流转设计</span>
+                                                                        <span class="todo-content">
+                                                          <span class="raw">${task.name}</span>
                                                           <span class="content-non-linkable">
-                                                            <span class="todo-rest">网页流转设计</span>
+                                                            <span class="todo-rest">${task.name}</span>
                                                           </span>
                                                           <span class="content-linkable">
-                                                            <a class="todo-rest" data-stack="true"
-                                                               href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/70d66a5f040f4f6caf6cb4aa172a3d0c">网页流转设计</a>
+                                                            <a class="todo-rest"
+                                                               href="${pageContext.request.contextPath}/project/detailTask?id=${task.id}">${task.name}</a>
                                                           </span>
                                                         </span>
 
-                                                            <span class="todo-detail">
-                                                            <span class="label completed-member">( OrionPax <span
+                                                                        <span class="todo-detail">
+                                                            <span class="label completed-member">( ${task.user.name} <span
                                                                     class="completed-time"
-                                                                    data-readable-time="2018-05-18T10:28:48+08:00">5月18日</span> )</span>
+                                                                    data-readable-time="${task.endTime}">${task.endTime}</span> )</span>
                                                         </span>
 
-                                                            <a class="label todo-proj" title="Flower - qwe"
-                                                               data-stack="true"
-                                                               href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">Flower
-                                                                - qwe</a>
-                                                        </div>
-                                                    </li>
+                                                                        <a class="label todo-proj" title="Flower - qwe"
+                                                                           href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">Flower
+                                                                            - qwe</a>
+                                                                    </div>
+                                                                </li>
 
-                                                </ul>
+                                                            </ul>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </c:forEach>
+                                                <ul class="todo-new-wrap"></ul>
                                             </div>
                                         </div>
                                     </div>
                                 </c:forEach>
-                                <script>
-
-                                </script>
-
-
                                 <a href="javascript:;" class="link-show-todolist-form">
                                     <i class="twr twr-plus"></i>
                                     <span>添加新清单</span>
@@ -935,10 +957,10 @@
                         <script type="text/html" id="tpl-todo-form">
 
                             <li class="todo-form">
-                                <form class="form form-edit-todo" method="post" data-remote="true">
+                                <form class="form form-edit-todo" method="post">
                                     <div class="form-body">
                                         <input type="checkbox" name="todo-done" disabled/>
-                                        <textarea name="todo_content" class="todo-content no-border" placeholder="新的任务"
+                                        <textarea name="name" class="todo-content no-border" placeholder="新的任务"
                                                   data-validate="custom" data-validate-msg=""></textarea>
 
                                         <div class="todo-toolbar">
@@ -947,9 +969,24 @@
                                         </div>
 
                                         <a href="javascript:;" class="todo-label">
-                                            <span class="assignee">未指派</span> ·
+                                            <%--<span class="assignee">未指派</span> ·--%>
                                             <span class="due">没有截止时间</span>
                                         </a>
+                                    </div>
+                                    <div class="assignee-wrapper">
+                                        <%--<select id="txt-assignee"></select>--%>
+                                        <select id="txt-assignee" name="uId" style="
+                                                                            width: 154px;
+                                                                            height: 28;
+                                                                            padding: 5px 6px;
+                                                                            line-height: 14px;
+                                                                            font-size: 12px;
+                                                                            border-radius: 4px;
+                                                                        ">
+                                            <c:forEach items="${requestScope.userList}" var="user">
+                                                <option value="${user.id}">${user.name}</option>
+                                            </c:forEach>
+                                        </select>
                                     </div>
                                     <div class="buttons create-buttons">
                                         <button type="submit" class="btn btn-primary btn-create-todo"
@@ -963,21 +1000,24 @@
                                         </button>
                                         <a href="javascript:;" class="btn-cancel-update-todo">取消</a>
                                     </div>
-
-                                    <input type="hidden" name="assignee_guid" class="hidden-assignee" value="-1"/>
-                                    <input type="hidden" name="due_at" class="hidden-due-date" value=""/>
+                                    <%--<input id="boardId" type="hidden" name="bId" value=""/>--%>
+                                    <%--<input type="hidden" name="uId" class="hidden-assignee" value=""/>--%>
+                                    <input type="hidden" name="endTimeLong" class="hidden-due-date" value=""/>
                                 </form>
                             </li>
-
-
+                            <%--$("#boardId").val($(str).text());--%>
                         </script>
 
                         <script type="text/html" id="tpl-todo-popover">
                             <div class="todo-popover">
-                                <div class="select-assignee">
+                                <div class="select-assignee" style="display: none;">
                                     <h3>将任务指派给</h3>
                                     <div class="assignee-wrapper">
                                         <select id="txt-assignee"></select>
+                                        <%--<select id="txt-assignee">--%>
+                                        <%--&lt;%&ndash;<option value="ce2b30066f034bf9a69113963da165fd">浮点农国</option>&ndash;%&gt;--%>
+                                        <%--&lt;%&ndash;<option value="f7e254d7f54e40dbb93a33b737752fbc">OrionPax</option>&ndash;%&gt;--%>
+                                        <%--</select>--%>
                                     </div>
                                 </div>
 
@@ -1248,6 +1288,13 @@
 <script>
     $(function () {
         $("a.link-more-completed").css("display", "none");
+        $("div.todo-wrap .checkbox-container").click(function(){
+            setTimeout(function(){location.reload()},40);
+        });
     })
+    // $(".aBId").click(function(){
+    //     var str = "#spanBId"+$(this).children("span").text();
+    //     alert($(str).text());
+    // });
 </script>
 </html>

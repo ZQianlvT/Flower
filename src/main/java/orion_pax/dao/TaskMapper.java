@@ -2,16 +2,6 @@ package orion_pax.dao;
 
 import orion_pax.entity.Task;
 
-public interface TaskMapper {
-    int deleteByPrimaryKey(String id);
+public interface TaskMapper extends BaseMapper<Task>{
 
-    int insert(Task record);
-
-    int insertSelective(Task record);
-
-    Task selectByPrimaryKey(String id);
-
-    int updateByPrimaryKeySelective(Task record);
-
-    int updateByPrimaryKey(Task record);
 }

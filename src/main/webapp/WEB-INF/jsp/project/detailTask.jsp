@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 
@@ -458,6 +460,11 @@
     <meta name="csrf-param" content="authenticity_token"/>
     <meta name="csrf-token"
           content="VV9CDaky9cdtLfldi/+Dh1/6BzzYFIWfnicfLIO6ha16YENbbaqRcLI1XEzBSGfWXVVeVP5J5maHjavOl6il2A=="/>
+    <style>
+        .todo-wrap>.simple-checkbox{
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="">
@@ -522,8 +529,8 @@
     <div class="container workspace">
         <div class="page "
              data-url="/projects/e26956389763492f891259d7d9c5b94d">
-            <a href="${pageContext.request.contextPath}/base/goURL/project/listBoard"
-               class="link-page-behind">Flower</a>
+            <a href="${pageContext.request.contextPath}/project/detailProject?id=${requestScope.pId}"
+               class="link-page-behind">项目详情</a>
         </div>
         <div class="page">
 
@@ -566,33 +573,33 @@
 
 
                                 <div class="todo-wrap">
-                                    <input type="checkbox" name="todo-done"/>
+                                    <input type="checkbox" name="todo-done" />
 
 
                                     <span class="todo-content">
-      <span class="raw">数据库表开发</span>
-      <span class="content-non-linkable">
-        <span class="todo-rest">数据库表开发</span>
-      </span>
-      <span class="content-linkable">
-        <a class="todo-rest" data-stack="true"
-           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8">数据库表开发</a>
-      </span>
-    </span>
+                                      <span class="raw">${requestScope.task.name}</span>
+                                      <span class="content-non-linkable">
+                                        <span class="todo-rest">${requestScope.task.name}</span>
+                                      </span>
+                                      <span class="content-linkable">
+                                        <a class="todo-rest" data-stack="true"
+                                           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8">${requestScope.task.name}</a>
+                                      </span>
+                                    </span>
 
-                                    <span class="todo-detail">
+                                    <%--<span class="todo-detail">--%>
 
-          <a class="label todo-assign-due" href="javascript:;" data-request-members="e26956389763492f891259d7d9c5b94d">
-              <span class="assignee" data-guid="f7e254d7f54e40dbb93a33b737752fbc"
-                    data-gavatar="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">
-                OrionPax
-              </span>
+          <%--<a class="label todo-assign-due" href="javascript:;" data-request-members="e26956389763492f891259d7d9c5b94d">--%>
+              <%--<span class="assignee" data-guid="f7e254d7f54e40dbb93a33b737752fbc"--%>
+                    <%--data-gavatar="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3">--%>
+                <%--OrionPax--%>
+              <%--</span>--%>
 
-              <span class="due" data-date="2018-05-21T23:59:59+08:00">2018-05-21</span>
-          </a>
+              <%--<span class="due" data-date="2018-05-21T23:59:59+08:00">2018-05-21</span>--%>
+          <%--</a>--%>
 
 
-    </span>
+    <%--</span>--%>
 
                                     <a class="label todo-proj" title="Flower - 开发" data-stack="true"
                                        href="/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">Flower
@@ -609,33 +616,33 @@
 
 
                 <div class="comments streams">
-                    <div class="event event-common event-todo-add" id="event-176798292"
-                         data-ancestor-guid="e26956389763492f891259d7d9c5b94d"
-                         data-ancestor-name="Flower"
-                         data-ancestor-url="/projects/e26956389763492f891259d7d9c5b94d">
+                    <%--<div class="event event-common event-todo-add" id="event-176798292"--%>
+                         <%--data-ancestor-guid="e26956389763492f891259d7d9c5b94d"--%>
+                         <%--data-ancestor-name="Flower"--%>
+                         <%--data-ancestor-url="/projects/e26956389763492f891259d7d9c5b94d">--%>
 
-                        <a class="from" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc"><img
-                                class="avatar" alt="OrionPax"
-                                src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3"/></a>
-                        <i class="icon-event"></i>
+                        <%--<a class="from" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc"><img--%>
+                                <%--class="avatar" alt="OrionPax"--%>
+                                <%--src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3"/></a>--%>
+                        <%--<i class="icon-event"></i>--%>
 
-                        <div class="event-main">
-                            <div class="event-head">
-                                <span class="event-actor">
-				<a class="link-member" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
-			</span>
-                                <span class="event-action">
-				创建了任务
-			</span>
-                                <span class="event-text">
-				<span class="emphasize">
-					<a class="todo-rest" data-stack="true"
-                       href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8">数据库表开发</a>
-				</span>
-			</span>
-                            </div>
-                        </div>
-                    </div>
+                        <%--<div class="event-main">--%>
+                            <%--<div class="event-head">--%>
+                                <%--<span class="event-actor">--%>
+                                <%--<a class="link-member" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>--%>
+                            <%--</span>--%>
+                                                <%--<span class="event-action">--%>
+                                <%--创建了任务--%>
+                            <%--</span>--%>
+                                                <%--<span class="event-text">--%>
+                                <%--<span class="emphasize">--%>
+                                    <%--<a class="todo-rest" data-stack="true"--%>
+                                       <%--href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8">数据库表开发</a>--%>
+                                <%--</span>--%>
+                            <%--</span>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
 
                     <div class="event event-common event-todo-due_at_changed" id="event-176798300"
                          data-ancestor-guid="e26956389763492f891259d7d9c5b94d"
@@ -650,18 +657,18 @@
                         <div class="event-main">
                             <div class="event-head">
                                 <span class="event-actor">
-				<a class="link-member" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
-			</span>
-                                <span class="event-action">
-				将任务完成时间设置为 <span
-                                        data-readable-date="2018-05-20T23:59:59+08:00">没有截止日期</span>
-			</span>
-                                <span class="event-text">
-				<span class="emphasize">
-					<a class="todo-rest" data-stack="true"
-                       href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8">数据库表开发</a>
-				</span>
-			</span>
+                            <%--<a class="link-member" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>--%>
+                                </span>
+                                                    <span class="event-action">
+                                    将任务完成时间设置为 <span
+                                                            data-readable-date="<fmt:formatDate value='${requestScope.task.endTime}' pattern="yyyy-MM-dd"/>">没有截止日期</span>
+                                </span>
+                                                    <span class="event-text">
+                                    <span class="emphasize">
+                                        <a class="todo-rest" data-stack="true"
+                                           href="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8">数据库表开发</a>
+                                    </span>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -679,10 +686,9 @@
                         <div class="event-main">
                             <div class="event-head">
                                 <span class="event-actor">
-				<a class="link-member" data-stack="true" href="/members/f7e254d7f54e40dbb93a33b737752fbc">OrionPax</a>
 			</span>
                                 <span class="event-action">
-				将任务指派给了 OrionPax
+				将任务指派给了 ${requestScope.task.user.name}
 			</span>
                                 <span class="event-text">
 				<span class="emphasize">
@@ -835,7 +841,7 @@
                 </script>
 
 
-                <div class="comment comment-form new">
+                <div class="comment comment-form new" style="display: none;">
                     <form class="form form-editor form-new-comment" method="post" data-remote="true"
                           action="/projects/e26956389763492f891259d7d9c5b94d/todos/ec69d30b1b5f4759b823771882da98e8/comments">
 

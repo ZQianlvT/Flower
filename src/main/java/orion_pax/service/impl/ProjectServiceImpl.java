@@ -1,10 +1,7 @@
 package orion_pax.service.impl;
 
 import org.springframework.stereotype.Service;
-import orion_pax.entity.Board;
-import orion_pax.entity.Project;
-import orion_pax.entity.Task;
-import orion_pax.entity.User;
+import orion_pax.entity.*;
 import orion_pax.service.ProjectService;
 
 
@@ -115,5 +112,40 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
         return taskMapper.insert(task);
     }
 
+    /**
+     * 通过id获取Board对象
+     *
+     * @param board 封装id的Board
+     * @return 查询到的Board对象
+     */
+    @Override
+    public Board getBoardByPK(Board board) {
+        return boardMapper.getByPK(board);
+    }
+
+    /**
+     * 通过taskId将其状态取反
+     *
+     * @param task 封装id的Task对象
+     * @return 正整数，大于零修改成功
+     */
+    @Override
+    public int updateTaskStatus(Task task) {
+        task = taskMapper.getByPK(task);
+        task.setStatus(~task.getStatus());
+        System.out.println("-----------OrionPax测试变量值----------task值=" + task + "," + "当前类=ProjectServiceImpl.updateTaskStatus()");
+        return taskMapper.updateByPK(task);
+    }
+
+    /**
+     * 通过taskId获取task对象
+     *
+     * @param task 封装id的Task
+     * @return 查询到的Task
+     */
+    @Override
+    public Task getTaskById(Task task) {
+        return taskMapper.getByPK(task);
+    }
 
 }

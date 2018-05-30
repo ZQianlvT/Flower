@@ -93,4 +93,7 @@
   DELETE FROM f_board
   WHERE b_id=#{id}
 </delete>
+  <select id="getByPK" resultMap="BoardBaseResultMap" parameterType="orion_pax.entity.Board">
+    SELECt b_id, b_index, b_name, b_unfinished, b_p_id FROM f_board WHERE b_id = #{id}
+  </select>
 </mapper>

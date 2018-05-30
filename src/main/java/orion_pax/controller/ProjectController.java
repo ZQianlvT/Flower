@@ -8,6 +8,7 @@ import orion_pax.entity.*;
 
 import javax.servlet.http.HttpSession;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -32,10 +33,13 @@ public class ProjectController extends BaseController {
 
     @RequestMapping("/detailProject")
     public String detailProject(Map<String, Object> map,Project project) {
-        System.out.println("qqqqqqqqqqqqqqqqqqq"+project);
+
         project = projectService.getByPK(project);
+        System.out.println("qqqqqqqqqqqqqqqqqqq"+project);
+        List<User> userList = userService.getByTeamId((Team) session.getAttribute("currTeam"));
         map.put("project", project);
         map.put("id",project.getId());
+        map.put("userList",userList);
         System.out.println("3333333333333333"+project.getId());
         return "forward:/WEB-INF/jsp/project/listBoard.jsp";
     }
@@ -122,11 +126,38 @@ public class ProjectController extends BaseController {
     }
 
     @RequestMapping("/addTask")
-    public String addTask(Task task){
+    public String addTask(Task task,String endTimeLong){
         task.setId(UUID.randomUUID().toString().replace("-",""));
         task.setStatus(0);
+        if(!"".equals(endTimeLong)){
+            task.setEndTime(new Date(Long.parseLong(endTimeLong)));
+        }
         projectService.insertTask(task);
+        Board board = new Board();
+        board.setId(task.getbId());
+        board = projectService.getBoardByPK(board);
+
         System.out.println("999999999999999999999999"+task);
-        return "redirect:/project/detailProject";
+        return "redirect:/project/detailProject?id="+board.getpId();
+    }
+
+    @RequestMapping(value={"closeTask","reopenTask"})
+    public String closeTask(Task task){
+        projectService.updateTaskStatus(task);
+        Board board = new Board();
+        board.setId(task.getbId());
+        board = projectService.getBoardByPK(board);
+        return "redirect:/project/detailProject?id="+board.getpId();
+    }
+
+    @RequestMapping("detailTask")
+    public String detailTask(Map<String,Object> map,Task task){
+        task = projectService.getTaskById(task);
+        map.put("task",task);
+        Board board = new Board();
+        board.setId(task.getbId());
+        board = projectService.getBoardByPK(board);
+        map.put("pId",board.getpId());
+        return "forward:/WEB-INF/jsp/project/detailTask.jsp";
     }
 }

@@ -23,8 +23,15 @@
         <result column="t_u_id" jdbcType="VARCHAR" property="uId" />
         <result column="t_b_id" jdbcType="VARCHAR" property="bId" />
     </resultMap>
+    <resultMap id="UserBaseResultMap" type="orion_pax.entity.User">
+        <result column="u_id" jdbcType="VARCHAR" property="id"/>
+        <result column="u_name" jdbcType="VARCHAR" property="name"/>
+    </resultMap>
+    <resultMap id="TaskResultMap" type="orion_pax.entity.Task" extends="TaskBaseResultMap">
+        <association property="user" resultMap="UserBaseResultMap" javaType="orion_pax.entity.User"/>
+    </resultMap>
     <resultMap id="BoardResultMap" type="orion_pax.entity.Board" extends="BoardBaseResultMap">
-        <collection property="taskList" resultMap="TaskBaseResultMap" javaType="java.util.List" ofType="orion_pax.entity.Board" />
+        <collection property="taskList" resultMap="TaskResultMap" javaType="java.util.List" ofType="orion_pax.entity.Board" />
     </resultMap>
     <resultMap id="ProjectResultMap" type="orion_pax.entity.Project" extends="ProjectBaseResultMap">
         <collection property="boardList" resultMap="BoardResultMap" javaType="java.util.List" ofType="orion_pax.entity.Project" />
@@ -77,14 +84,16 @@
     WHERE p.p_t_id=uat.uat_t_id AND uat.uat_u_id = #{id} AND p_status = 0
   </select>
     <select id="getByPK" resultMap="ProjectResultMap" parameterType="orion_pax.entity.Project">
-   SELECT p_id,p_name,p_remark,p_status,p_t_id,b_id,b_index,b_name,b_unfinished,b_p_id,t_id,t_name,t_status,t_end_time,t_u_id,t_b_id
-    FROM f_project p
-    LEFT JOIN f_board b
-    ON p.p_id = b.b_p_id
-    LEFT JOIN f_task t
-    ON b.b_id = t.t_b_id
-    WHERE p_id = #{id}
-    ORDER BY b_index ASC;
+        SELECT p_id,p_name,p_remark,p_status,p_t_id,b_id,b_index,b_name,b_unfinished,b_p_id,t_id,t_name,t_status,t_end_time,t_u_id,t_b_id, u_id,u_name
+        FROM f_project p
+        LEFT JOIN f_board b
+        ON p.p_id = b.b_p_id
+        LEFT JOIN f_task t
+        ON b.b_id = t.t_b_id
+        LEFT JOIN f_user u
+        ON t.t_u_id = u.u_id
+        WHERE p_id = #{id}
+        ORDER BY b_index ASC
   </select>
     <select id="getBaseByPK" parameterType="orion_pax.entity.Project" resultMap="ProjectBaseResultMap">
         SELECT p_id,p_name,p_remark,p_status,p_t_id FROM f_project WHERE p_id = #{id}

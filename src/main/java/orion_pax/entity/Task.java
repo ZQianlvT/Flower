@@ -15,6 +15,8 @@ public class Task {
 
     private String bId;
 
+    private User user;
+
     public String getId() {
         return id;
     }
@@ -61,5 +63,26 @@ public class Task {
 
     public void setbId(String bId) {
         this.bId = bId == null ? null : bId.trim();
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", status=" + status +
+                ", endTime=" + endTime +
+                ", uId='" + uId + '\'' +
+                ", bId='" + bId + '\'' +
+                ", user=" + user +
+                '}';
     }
 }
