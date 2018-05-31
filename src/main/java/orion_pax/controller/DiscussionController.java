@@ -83,7 +83,7 @@ public class DiscussionController extends BaseController {
         //调用Service方法添加
         discussionService.insertReply(reply);
         System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzz"+reply);
-        return "/discussion/detailDiscussion?id="+reply.getdId();
+        return "redirect:/discussion/detailDiscussion?id="+reply.getdId();
     }
     @RequestMapping("/closeDiscussion")
     public String closeDiscussion(Discussion discussion){

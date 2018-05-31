@@ -93,7 +93,7 @@
         LEFT JOIN f_user u
         ON t.t_u_id = u.u_id
         WHERE p_id = #{id}
-        ORDER BY b_index ASC
+        ORDER BY b_index ASC,t_end_time ASC
   </select>
     <select id="getBaseByPK" parameterType="orion_pax.entity.Project" resultMap="ProjectBaseResultMap">
         SELECT p_id,p_name,p_remark,p_status,p_t_id FROM f_project WHERE p_id = #{id}

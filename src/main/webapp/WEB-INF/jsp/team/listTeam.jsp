@@ -535,7 +535,7 @@
                     <h1 class="group-title">
                         <span class="twr twr-visitor" data-tooltip="访客可以参与项目的进行，<br>但只能看到和自己在同一个项目的团队成员。"></span>
                         <span id="group-title-content">${sessionScope.currTeam.name}</span>
-                        <span class="group-count">共 2 人</span>
+                        <%--<span class="group-count">共 2 人</span>--%>
                     </h1>
 
                     <div class="member-links">

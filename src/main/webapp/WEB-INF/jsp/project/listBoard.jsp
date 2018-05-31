@@ -545,7 +545,7 @@
                     <div class="project-links">
                         <a href="${pageContext.request.contextPath}/project/membersProject?id=${requestScope.project.id}"
                            class="link-admin-members">
-                            <span class="main">2</span>
+                            <%--<span class="main">2</span>--%>
                             <span>成员</span>
                         </a>
                         <a href="${pageContext.request.contextPath}/project/setProject?id=${requestScope.project.id}"
@@ -718,7 +718,7 @@
                                                     <span class="todolist-rest">开发</span>
                                                 </span>
                                                     <span class="name">
-                                                        <span class="todolist-todos-count">${board.unfinished}</span>
+                                                        <%--<span class="todolist-todos-count"></span>--%>
                                                     <span class="todolist-rest"
                                                           href="https://tower.im/projects/e26956389763492f891259d7d9c5b94d/lists/7eea1fdab77c4e6a84ec744bb869c7a6/show">${board.name}</span>
                                                 </span>
