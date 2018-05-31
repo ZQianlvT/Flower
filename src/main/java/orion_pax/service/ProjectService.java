@@ -1,9 +1,6 @@
 package orion_pax.service;
 
-import orion_pax.entity.Board;
-import orion_pax.entity.Project;
-import orion_pax.entity.Task;
-import orion_pax.entity.User;
+import orion_pax.entity.*;
 
 
 import java.util.List;
@@ -66,6 +63,13 @@ public interface ProjectService extends BaseService<Project> {
      * @return 正整数成功
      */
     int insertTask(Task task);
+
+    /**
+     * 查询用户团队详情表中的成员数量
+     * @param userAndTeam 封装信息
+     * @return 返回数量
+     */
+    int countsMembers(UserAndTeam userAndTeam);
 
     /**
      * 通过id获取Board对象

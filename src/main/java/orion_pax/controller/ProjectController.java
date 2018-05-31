@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import orion_pax.entity.*;
+import orion_pax.dao.UserAndTeamMapper;
+ import orion_pax.entity.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -33,7 +34,7 @@ public class ProjectController extends BaseController {
 
     @RequestMapping("/detailProject")
     public String detailProject(Map<String, Object> map,Project project) {
-
+        System.out.println("qqqqqqqqqqqqqqqqqqq"+project);
         project = projectService.getByPK(project);
         System.out.println("qqqqqqqqqqqqqqqqqqq"+project);
         List<User> userList = userService.getByTeamId((Team) session.getAttribute("currTeam"));
@@ -96,11 +97,10 @@ public class ProjectController extends BaseController {
         return "/project/listProject";
     }
     @RequestMapping("/membersProject")
-    public String membersProject(Map<String, Object> map,Project project){
-        //获取当前项目id
-        Project baseProject = projectService.getBaseByPK(project);
-        System.out.println("2222222222222"+project);
-        map.put("project",baseProject);
+    public String membersProject(Map<String, Object> map){
+        Team team = (Team) session.getAttribute("currTeam");
+        List<User> userList = userService.getByTeamId(team);
+        map.put("userList",userList);
         return "forward:/WEB-INF/jsp/project/projectMembers.jsp";
     }
     @RequestMapping("/addBoard")

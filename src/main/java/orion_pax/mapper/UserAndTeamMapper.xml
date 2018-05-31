@@ -47,4 +47,8 @@
         </foreach>
         AND uat_t_id = #{teamId}
     </delete>
+    <select id="countsMembers" parameterType="orion_pax.entity.UserAndTeam" resultType="_int">
+        SELECT COUNT(*) FROM f_userandteam
+        WHERE uat_u_id
+    </select>
 </mapper>

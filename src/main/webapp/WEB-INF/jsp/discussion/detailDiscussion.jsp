@@ -524,7 +524,7 @@
     <div class="container workspace">
         <div class="page "
              data-url="/projects/e26956389763492f891259d7d9c5b94d">
-            <a href="${pageContext.request.contextPath}/base/goURL/discussion/continueDiscussion" class="link-page-behind">正在进行的讨论</a>
+            <a href="${pageContext.request.contextPath}/discussion/continueDiscussion?pId=${requestScope.currDiscussion.pId}" class="link-page-behind">正在进行的讨论</a>
         </div>
         <div class="page">
             <div class="page-inner" data-since="2018-05-21 14:06:15 UTC"
@@ -549,8 +549,8 @@
                                 <span class="author" title="OrionPax" data-stack="true" data-stack-root="true"
                                    >${requestScope.currDiscussion.startUser.name}</span>
 
-                                <span class="create-time" title="<fmt:formatDate value='${requestScope.currDiscussion.startTime}' pattern="yyyy-MM-dd"/>"
-                                      data-readable-time="<fmt:formatDate value='${requestScope.currDiscussion.startTime}' pattern="yyyy-MM-dd"/>"></span>
+                                <span class="create-time" title="<fmt:formatDate value='${requestScope.currDiscussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/>"
+                                      data-readable-time="<fmt:formatDate value='${requestScope.currDiscussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/>"></span>
 
                             </div>
 

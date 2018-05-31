@@ -113,6 +113,17 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
     }
 
     /**
+     * 查询用户团队详情表中的成员数量
+     *
+     * @param userAndTeam 封装信息
+     * @return 返回数量
+     */
+    @Override
+    public int countsMembers(UserAndTeam userAndTeam) {
+        return userAndTeamMapper.countsMembers(userAndTeam);
+    }
+
+    /**
      * 通过id获取Board对象
      *
      * @param board 封装id的Board

@@ -536,32 +536,39 @@
                     <a href="javascript:;" class="link-edit-members" data-visible-to="admin">编辑</a>
                 </h3>
 
-
+                <c:forEach items="${requestScope.userList}" var="user">
+                    <c:choose>
+                    <c:when test="${user.id==sessionScope.currUser.id}">
                 <div class="project-members">
                     <ul>
                         <li class="member">
-                            <span href="/members/ce2b30066f034bf9a69113963da165fd" title="浮点农国"
-                               class="member-link"
+                            <span href="/members/ce2b30066f034bf9a69113963da165fd"
+                                  class="member-link owner"
+
                                data-stack>
-                                <img src="${pageContext.request.contextPath}${sessionScope.currUser.img}" class="avatar" alt="浮点农国"/>
-                                <span class="name">浮点农国</span>
-                                <span class="role">成员</span>
+                                <img src="${pageContext.request.contextPath}${user.img}" class="avatar" alt="${user.name}"/>
+                                <span class="name">${user.name}</span>
+                                <span class="role">超级管理员</span>
                             </span>
                         </li>
+                    </c:when>
+                        <c:otherwise>
                         <li class="member">
-                            <a href="/members/f7e254d7f54e40dbb93a33b737752fbc" title="OrionPax"
-                               class="member-link owner"
+                            <span href="/members/f7e254d7f54e40dbb93a33b737752fbc"
+                                  class="member-link"
                                data-stack>
-                                <img src="https://avatar.tower.im/3e2790283b5947f7bb2da54a779c60f3" class="avatar"
-                                     alt="OrionPax"/>
-                                <span class="name">OrionPax</span>
-                                <span class="role">超级管理员</span>
-                            </a>
+                                <img src="${pageContext.request.contextPath}${user.img}" class="avatar"
+                                     alt="${user.name}"/>
+                                <span class="name">${user.name}</span>
+                                <span class="role">成员</span>
+                            </span>
                         </li>
 
                     </ul>
                 </div>
-
+                    </c:otherwise>
+                    </c:choose>
+                </c:forEach>
                 <form class="form form-invite hide" id="form-members"
                       action="/projects/e26956389763492f891259d7d9c5b94d/members"
                       method="post" data-remote="true" data-visible-to="admin">

@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS f_team(
 	t_u_id VARCHAR(40)
 );
 
-CREATE TABLE if NOT EXISTS f_userandteam(
+CREATE TABLE IF NOT EXISTS f_userandteam(
 	uat_id VARCHAR(40) PRIMARY KEY,
 	uat_u_id VARCHAR(40),
 	uat_t_id VARCHAR(40)
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS f_discussion(
 
 CREATE TABLE IF NOT EXISTS f_reply(
 	r_id VARCHAR(40) PRIMARY KEY,
-	r_remark VARCHAR(260),
+	r_remark VARCHAR(1000),
 	r_reply_time DATETIME,
 	r_u_id VARCHAR(40),
 	r_d_id VARCHAR(40)
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS f_userAndSchedule(
 
 CREATE TABLE IF NOT EXISTS f_board(
 	b_id VARCHAR(40) PRIMARY KEY,
-	b_index int,
+	b_index INT,
 	b_name VARCHAR(40),
 	b_unfinished INT,
 	b_p_id VARCHAR(40)

@@ -545,12 +545,12 @@
 
                 <div class="topic">
                     <div class="project-info">
-                    <span>
-                        项目：
-                        <a href="/projects/e26956389763492f891259d7d9c5b94d"
-                           data-stack data-stack-replace data-stack-root
-                           data-stack-fluid>Flower</a>
-                    </span>
+                    <%--<span>--%>
+                        <%--项目：--%>
+                        <%--<a href="/projects/e26956389763492f891259d7d9c5b94d"--%>
+                           <%--data-stack data-stack-replace data-stack-root--%>
+                           <%--data-stack-fluid>Flower</a>--%>
+                    <%--</span>--%>
 
                     </div>
                     <br/>

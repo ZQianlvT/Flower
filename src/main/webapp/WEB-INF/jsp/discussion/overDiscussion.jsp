@@ -402,7 +402,7 @@
                     <a title="OrionPax" data-stack="true" data-stack-root="true" href="https://tower.im/members/f7e254d7f54e40dbb93a33b737752fbc">${discussion.startUser.name}</a>
                 </div>
 
-                <a href="${pageContext.request.contextPath}/discussion/detailDiscussion?id=${discussion.id}" class="message-link">
+                <span href="${pageContext.request.contextPath}/discussion/detailDiscussion?id=${discussion.id}" class="message-link">
 
         <span class="message-title">
                 <span class="message-rest">${discussion.name}</span>
@@ -410,7 +410,7 @@
                     <span class="message-content">
                         ${discussion.remark}
         </span>
-                </a>
+                </span>
 
                 <span class="time" title="<fmt:formatDate value='${discussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/>" data-readable-time="<fmt:formatDate value='${discussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/>"><fmt:formatDate value='${discussion.startTime}' pattern="yyyy-MM-dd HH:mm:ss"/></span>
 
